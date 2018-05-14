@@ -1,0 +1,49 @@
+version: '3'
+services:
+  crawl_btcde:
+    restart: always
+    image: jsonfry/curl-cron
+    volumes:
+     - ./output/bitcoin.de:/output
+     - ./curl.sh:/curl.sh
+    environment:
+     - "OPTIONS=https://www.bitcoin.de/de/btceur/market"
+     - "CRON_SCHEDULE=0 * * * *"
+
+  crawl_cnmarketcap_main:
+    restart: always
+    image: jsonfry/curl-cron
+    volumes:
+     - ./output/coinmarketcap.com:/output
+     - ./curl.sh:/curl.sh
+    environment:
+     - "OPTIONS=https://coinmarketcap.com/"
+     - "CRON_SCHEDULE=0 * * * *"
+
+  crawl_cnmarketcap_btc:
+    restart: always
+    image: jsonfry/curl-cron
+    volumes:
+     - ./output/coinmarketcap.com.markets:/output
+     - ./curl.sh:/curl.sh
+    environment:
+     - "OPTIONS=https://coinmarketcap.com/currencies/bitcoin/#markets"
+     - "CRON_SCHEDULE=0 * * * *"
+
+  crawl_cnmarketcap_api:
+    restart: always
+    image: jsonfry/curl-cron
+    volumes:
+     - ./output/coinmarketcap.com.api:/output
+     - ./curl.sh:/curl.sh
+    environment:
+     - "OPTIONS=https://api.coinmarketcap.com/v1/ticker/?convert=EUR&limit=1000"
+     - "CRON_SCHEDULE=0 * * * *"
+
+  webserver_crawler:
+    restart: always
+    image: halverneus/static-file-server
+    volumes:
+     - ./output:/web
+    ports:
+     - "9876:8080"
