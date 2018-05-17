@@ -1,0 +1,194 @@
+[
+ {
+   "Name": "Super Bitcoin",
+   "ShortName": "SBTC",
+   "Ratio": 1,
+   "Price": "16,64",
+   "PriceTimesRatio": "16,64",
+   "Link": "https://coinmarketcap.com/currencies/super-bitcoin/"
+ },
+ {
+   "Name": "BitcoinX",
+   "ShortName": "BCX",
+   "Ratio": 10000,
+   "Price": "0,02",
+   "PriceTimesRatio": "161,01",
+   "Link": "https://coinmarketcap.com/currencies/bitcoinx/"
+ },
+ {
+   "Name": "Lightning Bitcoin",
+   "ShortName": "LBTC",
+   "Ratio": 1,
+   "Price": "101,13",
+   "PriceTimesRatio": "101,13",
+   "Link": "https://coinmarketcap.com/currencies/lightning-bitcoin/"
+ },
+ {
+   "Name": "Bitcoin God",
+   "ShortName": "GOD",
+   "Ratio": 1,
+   "Price": "44,68",
+   "PriceTimesRatio": "44,68",
+   "Link": "https://coinmarketcap.com/currencies/bitcoin-god/"
+ },
+ {
+   "Name": "Bitcoin Cash Plus",
+   "ShortName": "BCP",
+   "Ratio": 1,
+   "Price": "",
+   "PriceTimesRatio": "",
+   "Link": "NOT_FOUND"
+ },
+ {
+   "Name": "Bitcoin Uranium",
+   "ShortName": "BUM",
+   "Ratio": 1,
+   "Price": "",
+   "PriceTimesRatio": "",
+   "Link": "NOT_FOUND"
+ },
+ {
+   "Name": "Bitcoin Atom",
+   "ShortName": "BCA",
+   "Ratio": 1,
+   "Price": "0,82",
+   "PriceTimesRatio": "0,82",
+   "Link": "https://coinmarketcap.com/currencies/bitcoin-atom/"
+ },
+ {
+   "Name": "Bitcoin Silver",
+   "ShortName": "BTCS",
+   "Ratio": 1,
+   "Price": "",
+   "PriceTimesRatio": "",
+   "Link": "NOT_FOUND"
+ },
+ {
+   "Name": "UnitedBitcoin ",
+   "ShortName": "UB",
+   "Ratio": 1,
+   "Price": "10,63",
+   "PriceTimesRatio": "10,63",
+   "Link": "https://coinmarketcap.com/currencies/united-bitcoin/"
+ },
+ {
+   "Name": "Bitcoin Diamond",
+   "ShortName": "BCD",
+   "Ratio": 10,
+   "Price": "4,61",
+   "PriceTimesRatio": "46,10",
+   "Link": "https://coinmarketcap.com/currencies/bitcoin-diamond/"
+ },
+ {
+   "Name": "Bitcoin Oil ",
+   "ShortName": "OBTC",
+   "Ratio": 10,
+   "Price": "",
+   "PriceTimesRatio": "",
+   "Link": "NOT_FOUND"
+ },
+ {
+   "Name": "Bitcoin World",
+   "ShortName": "BTW",
+   "Ratio": 10000,
+   "Price": "",
+   "PriceTimesRatio": "",
+   "Link": "NOT_FOUND"
+ },
+ {
+   "Name": "Bitcoin Stake",
+   "ShortName": "BTCS",
+   "Ratio": 100,
+   "Price": "",
+   "PriceTimesRatio": "",
+   "Link": "NOT_FOUND"
+ },
+ {
+   "Name": "Bitcoin Faith",
+   "ShortName": "BTF",
+   "Ratio": 1,
+   "Price": "",
+   "PriceTimesRatio": "",
+   "Link": "NOT_FOUND"
+ },
+ {
+   "Name": "Bitcoin Top",
+   "ShortName": "BTT",
+   "Ratio": 1,
+   "Price": "",
+   "PriceTimesRatio": "",
+   "Link": "NOT_FOUND"
+ },
+ {
+   "Name": "Bitcoin File",
+   "ShortName": "BIFI",
+   "Ratio": 1000,
+   "Price": "",
+   "PriceTimesRatio": "",
+   "Link": "NOT_FOUND"
+ },
+ {
+   "Name": "Bitcoin Segwit2X X11",
+   "ShortName": "B2X",
+   "Ratio": 1,
+   "Price": "0,85",
+   "PriceTimesRatio": "0,85",
+   "Link": "https://coinmarketcap.com/currencies/segwit2x/"
+ },
+ {
+   "Name": "Bitcoin Pizza",
+   "ShortName": "BPA",
+   "Ratio": 1,
+   "Price": "",
+   "PriceTimesRatio": "",
+   "Link": "NOT_FOUND"
+ },
+ {
+   "Name": "Bitcoin Smart",
+   "ShortName": "BCS",
+   "Ratio": 1,
+   "Price": "",
+   "PriceTimesRatio": "",
+   "Link": "NOT_FOUND"
+ },
+ {
+   "Name": "Bitcoin Private",
+   "ShortName": "BTCP",
+   "Ratio": 1,
+   "Price": "32,59",
+   "PriceTimesRatio": "32,59",
+   "Link": "https://coinmarketcap.com/currencies/bitcoin-private/"
+ },
+ {
+   "Name": "Bitcoin Ore",
+   "ShortName": "BCO",
+   "Ratio": 1,
+   "Price": "",
+   "PriceTimesRatio": "",
+   "Link": "NOT_FOUND"
+ },
+ {
+   "Name": "Bitcoin LITE",
+   "ShortName": "BTCL",
+   "Ratio": 1,
+   "Price": "",
+   "PriceTimesRatio": "",
+   "Link": "NOT_FOUND"
+ },
+ {
+   "Name": "Bitcoin Interest",
+   "ShortName": "BCI",
+   "Ratio": 1,
+   "Price": "",
+   "PriceTimesRatio": "",
+   "Link": "NOT_FOUND"
+ },
+ {
+   "Name": "Quantum Bitcoin",
+   "ShortName": "QBTC",
+   "Ratio": 1,
+   "Price": "",
+   "PriceTimesRatio": "",
+   "Link": "NOT_FOUND"
+ }
+]
