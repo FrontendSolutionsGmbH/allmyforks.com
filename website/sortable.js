@@ -475,8 +475,3 @@ var forEach = function(object, block, context) {
 	}
 };
 
-
-/* https://cryptocurrencyfacts.com/a-list-of-upcoming-bitcoin-forks-and-past-forks/
-https://99bitcoins.com/upcoming-bitcoin-forks/
-
-*/
