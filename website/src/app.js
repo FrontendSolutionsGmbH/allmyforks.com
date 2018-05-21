@@ -1,4 +1,47 @@
 
+var query = window.location.search.substring(1);
+var qs = parse_query_string(query);
+
+
+const donations = [
+{
+  "Name": "Bitcoin",
+  "Address": "1BoatSLRHtKNngkdXEeobR76b53LETtpyT"
+}]
+
+const currencies = [
+	{
+		"Name": "Dollar",
+		"ShortName": "$",
+		"Ratio": 1.0
+	},
+	{
+		"Name": "Euro",
+		"ShortName": "€",
+		"Ratio": 0.849855227
+	},
+
+]
+
+const languages = [
+	{
+		"Name": "English",
+		"ShortName": "en",
+	},
+	{
+		"Name": "Deutsch",
+		"ShortName": "de",
+	},
+]
+
+const config = {
+	lang: qs.lang || languages[0].ShortName,
+	currency: qs.currency || currencies[0].Name
+}
+
+
+
+
 var tableOuterElem = document.getElementById('table-forks-outer')
 var sum = document.getElementById('sum-forks')
 var sum2 = document.getElementById('sum-forks-top')
@@ -24,43 +67,17 @@ tableOuterElem.innerHTML = htmlToAdd + '</table>'
 
 
 
-var donations = [
-{
-  "Name": "Bitcoin",
-  "Address": "1BoatSLRHtKNngkdXEeobR76b53LETtpyT"
-}]
 
 var tableDonations = document.getElementById('table-donations')
   var htmlToAdd = '' //<tr><th>Name</th><th>Address</th></tr>'
   
 
 
-var currencies = [
-	{
-		"Name": "Dollar",
-		"ShortName": "$",
-		"Ratio": 1.0
-	},
-	{
-		"Name": "Euro",
-		"ShortName": "€",
-		"Ratio": 0.849855227
-	},
 
-]
 
-var languages = [
-	{
-		"Name": "English",
-		"ShortName": "en",
-	},
-	{
-		"Name": "Deutsch",
-		"ShortName": "de",
-	},
-]
 
-document.getElementById('select-languages').innerHTML = languages.map(e => '<option>'+e.Name+'</option>')
+
+document.getElementById('select-languages').innerHTML = languages.map(e => '<option '+ (config.lang === e.ShortName ? 'selected' : '' ) + '>'+e.Name+'</option>')
 document.getElementById('select-currencies').innerHTML = currencies.map(e => '<option>'+e.Name+'</option>')
 
 donations.map((e,index) => {
