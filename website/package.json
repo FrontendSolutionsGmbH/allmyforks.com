@@ -1,0 +1,16 @@
+{
+  "name": "bitcoin-forks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "inliner": "^1.13.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build": "mkdir dist/ && node inliner.js > dist/index.htm && cp favicon.ico dist/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
