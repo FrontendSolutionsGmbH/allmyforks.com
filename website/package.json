@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "inliner": "^1.13.1"
+    "ufp-optimizer": "^0.11.0"
   },
   "devDependencies": {},
   "scripts": {
-    "build": "mkdir dist/ && node inliner.js > dist/index.htm && cp favicon.ico dist/",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "config": "ufp-optimizer-cli config > ufp-optimizer.json",
+    "build": "ufp-optimizer-cli optimize src dist --config=ufp-optimizer.json "
   },
   "author": "",
   "license": "ISC"

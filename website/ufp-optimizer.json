@@ -1,0 +1,14 @@
+{
+  "optimizer": {
+    "htaccessOptim": {
+      "enabled": true,
+      "options": {
+        "expire": "access plus 1 year",
+        "expireHTML": "access plus 1 minute",
+        "maxageHTML": 86400,
+        "maxage": 31536000,
+        "outputFile": "/.htaccess"
+      }
+    }
+  }
+}
