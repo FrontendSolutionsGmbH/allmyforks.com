@@ -1,34 +1,47 @@
 [
+      {
+   "Name": "Bitcoin Cash",
+   "ShortName": "BCH",
+   "Ratio": 1,
+   "Price": "1024",
+   "Block": "478558",
+   "Date": "01.08.2017",
+   "Link": "https://coinmarketcap.com/currencies/bitcoin-cash/"
+ },
  {
    "Name": "Super Bitcoin",
    "ShortName": "SBTC",
    "Ratio": 1,
-   "Price": "16,64",
-   "PriceTimesRatio": "16,64",
+   "Price": "16.64",
+   "Block": "498888",
+   "Date": "12.12.2017",
    "Link": "https://coinmarketcap.com/currencies/super-bitcoin/"
  },
  {
    "Name": "BitcoinX",
    "ShortName": "BCX",
    "Ratio": 10000,
-   "Price": "0,02",
-   "PriceTimesRatio": "161,01",
+   "Price": "0.02",
+   "Block": "498888",
+   "Date": "12.12.2017",
    "Link": "https://coinmarketcap.com/currencies/bitcoinx/"
  },
  {
    "Name": "Lightning Bitcoin",
    "ShortName": "LBTC",
    "Ratio": 1,
-   "Price": "101,13",
-   "PriceTimesRatio": "101,13",
+   "Price": "101.13",
+   "Block": "499999",
+   "Date": "18.12.2017",
    "Link": "https://coinmarketcap.com/currencies/lightning-bitcoin/"
  },
  {
    "Name": "Bitcoin God",
    "ShortName": "GOD",
    "Ratio": 1,
-   "Price": "44,68",
-   "PriceTimesRatio": "44,68",
+   "Price": "44.68",
+   "Block": "5012225",
+   "Date": "25.12.2017",
    "Link": "https://coinmarketcap.com/currencies/bitcoin-god/"
  },
  {
@@ -36,7 +49,8 @@
    "ShortName": "BCP",
    "Ratio": 1,
    "Price": "",
-   "PriceTimesRatio": "",
+   "Block": "501407",
+   "Date": "02.01.2018",
    "Link": "NOT_FOUND"
  },
  {
@@ -44,15 +58,17 @@
    "ShortName": "BUM",
    "Ratio": 1,
    "Price": "",
-   "PriceTimesRatio": "",
+   "Block": "XXX",
+   "Date": "31.12.2017",
    "Link": "NOT_FOUND"
  },
  {
    "Name": "Bitcoin Atom",
    "ShortName": "BCA",
    "Ratio": 1,
-   "Price": "0,82",
-   "PriceTimesRatio": "0,82",
+   "Price": "0.82",
+   "Block": "505888",
+   "Date": "January 2018",
    "Link": "https://coinmarketcap.com/currencies/bitcoin-atom/"
  },
  {
@@ -60,23 +76,26 @@
    "ShortName": "BTCS",
    "Ratio": 1,
    "Price": "",
-   "PriceTimesRatio": "",
+   "Block": "XXX",
+   "Date": "December 2017",
    "Link": "NOT_FOUND"
  },
  {
    "Name": "UnitedBitcoin ",
    "ShortName": "UB",
    "Ratio": 1,
-   "Price": "10,63",
-   "PriceTimesRatio": "10,63",
+   "Price": "10.63",
+   "Block": "498777",
+   "Date": "12.12.2017",
    "Link": "https://coinmarketcap.com/currencies/united-bitcoin/"
  },
  {
    "Name": "Bitcoin Diamond",
    "ShortName": "BCD",
    "Ratio": 10,
-   "Price": "4,61",
-   "PriceTimesRatio": "46,10",
+   "Price": "4.61",
+   "Block": "495866",
+   "Date": "24.11.2017",
    "Link": "https://coinmarketcap.com/currencies/bitcoin-diamond/"
  },
  {
@@ -84,7 +103,8 @@
    "ShortName": "OBTC",
    "Ratio": 10,
    "Price": "",
-   "PriceTimesRatio": "",
+   "Block": "498888",
+   "Date": "12.12.2017",
    "Link": "NOT_FOUND"
  },
  {
@@ -92,7 +112,8 @@
    "ShortName": "BTW",
    "Ratio": 10000,
    "Price": "",
-   "PriceTimesRatio": "",
+   "Block": "499777",
+   "Date": "17.12.2017",
    "Link": "NOT_FOUND"
  },
  {
@@ -100,7 +121,8 @@
    "ShortName": "BTCS",
    "Ratio": 100,
    "Price": "",
-   "PriceTimesRatio": "",
+   "Block": "499999",
+   "Date": "19.12.2017",
    "Link": "NOT_FOUND"
  },
  {
@@ -108,7 +130,8 @@
    "ShortName": "BTF",
    "Ratio": 1,
    "Price": "",
-   "PriceTimesRatio": "",
+   "Block": "500000",
+   "Date": "19.12.2017",
    "Link": "NOT_FOUND"
  },
  {
@@ -116,7 +139,8 @@
    "ShortName": "BTT",
    "Ratio": 1,
    "Price": "",
-   "PriceTimesRatio": "",
+   "Block": "501118",
+   "Date": "26.12.2017",
    "Link": "NOT_FOUND"
  },
  {
@@ -124,15 +148,17 @@
    "ShortName": "BIFI",
    "Ratio": 1000,
    "Price": "",
-   "PriceTimesRatio": "",
+   "Block": "501225",
+   "Date": "27.12.2017",
    "Link": "NOT_FOUND"
  },
  {
    "Name": "Bitcoin Segwit2X X11",
    "ShortName": "B2X",
    "Ratio": 1,
-   "Price": "0,85",
-   "PriceTimesRatio": "0,85",
+   "Price": "0.85",
+   "Block": "501451",
+   "Date": "28.12.2017",
    "Link": "https://coinmarketcap.com/currencies/segwit2x/"
  },
  {
@@ -140,7 +166,8 @@
    "ShortName": "BPA",
    "Ratio": 1,
    "Price": "",
-   "PriceTimesRatio": "",
+   "Block": "501888",
+   "Date": "01.01.2018",
    "Link": "NOT_FOUND"
  },
  {
@@ -148,23 +175,17 @@
    "ShortName": "BCS",
    "Ratio": 1,
    "Price": "",
-   "PriceTimesRatio": "",
+   "Block": "505050",
+   "Date": "21.01.2017",
    "Link": "NOT_FOUND"
- },
- {
-   "Name": "Bitcoin Private",
-   "ShortName": "BTCP",
-   "Ratio": 1,
-   "Price": "32,59",
-   "PriceTimesRatio": "32,59",
-   "Link": "https://coinmarketcap.com/currencies/bitcoin-private/"
  },
  {
    "Name": "Bitcoin Ore",
    "ShortName": "BCO",
    "Ratio": 1,
    "Price": "",
-   "PriceTimesRatio": "",
+   "Block": "501949",
+   "Date": "31.12.2017",
    "Link": "NOT_FOUND"
  },
  {
@@ -172,7 +193,8 @@
    "ShortName": "BTCL",
    "Ratio": 1,
    "Price": "",
-   "PriceTimesRatio": "",
+   "Block": "XXX",
+   "Date": "30.01.2018",
    "Link": "NOT_FOUND"
  },
  {
@@ -180,7 +202,8 @@
    "ShortName": "BCI",
    "Ratio": 1,
    "Price": "",
-   "PriceTimesRatio": "",
+   "Block": "505083",
+   "Date": "22.01.2018",
    "Link": "NOT_FOUND"
  },
  {
@@ -188,7 +211,73 @@
    "ShortName": "QBTC",
    "Ratio": 1,
    "Price": "",
-   "PriceTimesRatio": "",
+   "Block": "XXX",
+   "Date": "28.01.2018",
    "Link": "NOT_FOUND"
- }
+ },
+  {
+   "Name": "Bitcoin Private",
+   "ShortName": "BTCP",
+   "Ratio": 1,
+   "Price": "18.97",
+   "Block": "478558",
+   "Date": "01.08.2017",
+   "Link": "https://coinmarketcap.com/currencies/bitcoin-private/"
+ },
+ {
+   "Name": "ABitcoin ",
+   "ShortName": "ABTC",
+   "Ratio": 1,
+   "Price": "",
+   "Block": "498888",
+   "Date": "",
+   "Link": "https://www.abitcoin.one/"
+ },
+ {
+   "Name": "Bitcoin Hot ",
+   "ShortName": "BTH",
+   "Ratio": 1,
+   "Price": "",
+   "Block": "498848",
+   "Date": "",
+   "Link": "https://bithot.org/"
+ },
+ {
+   "Name": "BitEthereum",
+   "ShortName": "BITE",
+   "Ratio": 3.93946357,
+   "Price": "",
+   "Block": "500283",
+   "Date": "12.12.2017",
+   "Link": "https://www.bitethereum.io/"
+ },
+ {
+   "Name": "Bitcoin Rhodium",
+   "ShortName": "BTR",
+   "Ratio": 3.93946357,
+   "Price": "",
+   "Block": "",
+   "Date": "10.01.2018",
+   "Link": "https://www.bitcoinrh.org/"
+ },
+{
+   "Name": "Bitcoin Platinum",
+   "Scam": true,
+   "ShortName": "BTP",
+   "Ratio": 3.93946357,
+   "Price": "",
+   "Block": "498533",
+   "Date": "12.12.2017",
+   "Link": "https://cointelegraph.com/news/bitcoin-platinum-created-by-south-korean-teenager-as-a-scam-local-market-erupts"
+ },
+{
+   "Name": "BitcoinClean",
+   "Scam": true,
+   "ShortName": "BCL",
+   "Ratio": 3.93946357,
+   "Price": "",
+   "Block": "",
+   "Date": "20.03.2018",
+   "Link": "https://www.bitcoinclean.org/"
+ },
 ]
