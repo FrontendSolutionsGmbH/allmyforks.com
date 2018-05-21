@@ -32,7 +32,36 @@ var donations = [
 
 var tableDonations = document.getElementById('table-donations')
   var htmlToAdd = '' //<tr><th>Name</th><th>Address</th></tr>'
+  
 
+
+var currencies = [
+	{
+		"Name": "Dollar",
+		"ShortName": "$",
+		"Ratio": 1.0
+	},
+	{
+		"Name": "Euro",
+		"ShortName": "€",
+		"Ratio": 0.849855227
+	},
+
+]
+
+var languages = [
+	{
+		"Name": "English",
+		"ShortName": "en",
+	},
+	{
+		"Name": "Deutsch",
+		"ShortName": "de",
+	},
+]
+
+document.getElementById('select-languages').innerHTML = languages.map(e => '<option>'+e.Name+'</option>')
+document.getElementById('select-currencies').innerHTML = currencies.map(e => '<option>'+e.Name+'</option>')
 
 donations.map((e,index) => {
 
