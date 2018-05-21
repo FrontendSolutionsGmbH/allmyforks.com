@@ -1,6 +1,7 @@
 
 var tableOuterElem = document.getElementById('table-forks-outer')
 var sum = document.getElementById('sum-forks')
+var sum2 = document.getElementById('sum-forks-top')
 
 var htmlToAdd = '<table class="w3-table sortable" id="table-forks"><tr><th>#</th><th>Name</th><th class="w3-hide-small">Fork date</th><th class="w3-hide-small">Fork Block</th><th class="w3-hide-small">Price</th><th class="w3-hide-small">1 BTC=</th><th>1 BTC=</th></tr>'
 
@@ -16,6 +17,8 @@ data.coins[0].forks.map((e,index) => {
 
 
 sum.innerHTML = '<b>1 BTC= Sum forks '+sumValues+' €</b>'
+sum2.innerHTML = '<b>1 BTC= Sum forks '+sumValues+' €</b>'
+
 tableOuterElem.innerHTML = htmlToAdd + '</table>'
 
 
