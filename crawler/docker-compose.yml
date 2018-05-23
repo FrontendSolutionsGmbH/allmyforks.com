@@ -40,6 +40,16 @@ services:
      - "OPTIONS=https://api.coinmarketcap.com/v1/ticker/?convert=EUR&limit=1000"
      - "CRON_SCHEDULE=0 * * * *"
 
+  crawl_cnmarketcap_all:
+    image: froso/bitcoin-forks-crawler-cmc
+    build:
+      context: ./coinmarketcap/
+    environment:
+      - CFG_OUTPUT_DIR=/output
+    volumes:
+       - ./output/coinmarketcap.com.all:/output
+    restart: always
+
   webserver_crawler:
     restart: always
     image: halverneus/static-file-server
