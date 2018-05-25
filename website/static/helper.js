@@ -19,6 +19,9 @@ var getTableForksAndSumValue = function (currentCoin, currentFiat, currentLangua
 
         var graph = ''
 
+        if (!e.priceHistory) {
+            e.priceHistory = [Math.random(), Math.random(), Math.random(), Math.random(), Math.random(), Math.random(), Math.random(), Math.random(), Math.random(),]
+        }
         if (e.priceHistory) {
             var max = Math.max(...e.priceHistory)
             var min = Math.min(...e.priceHistory)

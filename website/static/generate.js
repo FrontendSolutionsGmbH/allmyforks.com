@@ -51,6 +51,12 @@ const languages = [
 ]
 
 var source = fs.readFileSync('static/list.html', 'utf8')
+var sortableJS = fs.readFileSync('static/res/sortable.js')
+var w3proCss = fs.readFileSync('static/res/w3pro.css')
+source = source.replace('{{{styles}}}', '<style>' + w3proCss + '</style>')
+source = source.replace('{{{javascript}}}', '<script type="text/javascript">' + sortableJS + '</script>')
+
+
 var template = Handlebars.compile(source)
 var currentCoin = forkData.coins[0]
 var currentLanguage = languages[0]
