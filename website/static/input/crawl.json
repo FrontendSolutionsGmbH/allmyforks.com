@@ -1,0 +1,158 @@
+{
+  "fiats": [
+    {
+      "id": "dollar",
+      "ratio": 1
+    },
+    {
+      "id": "euro",
+      "ratio": 0.849855227
+    }
+  ],
+  "coins": [
+    {
+      "id": "bitcoincash",
+      "priceHistory": [
+        1024,
+        1000,
+        1005,
+        1016,
+        1500,
+        1403,
+        1400,
+        1330
+      ],
+      "price": "1024"
+    },
+    {
+      "id": "superbitcoin",
+      "price": "16.64"
+    },
+    {
+      "id": "bitcoin",
+      "price": "6000"
+    },
+    {
+      "id": "bitcoinx",
+      "price": "0.02"
+    },
+    {
+      "id": "bitcoinlightning",
+      "price": "101.13"
+    },
+    {
+      "id": "bitcoingod",
+      "price": "44.68"
+    },
+    {
+      "id": "bitcoincashplus",
+      "price": ""
+    },
+    {
+      "id": "bitcoinuranium",
+      "price": ""
+    },
+    {
+      "id": "bitcoinatom",
+      "price": "0.82"
+    },
+    {
+      "id": "bitcoinsilver",
+      "price": ""
+    },
+    {
+      "id": "unitedbitcoin",
+      "price": "10.63"
+    },
+    {
+      "id": "bitcoindiamond",
+      "price": "4.61"
+    },
+    {
+      "id": "bitcoinoil",
+      "price": ""
+    },
+    {
+      "id": "bitcoinworld",
+      "price": ""
+    },
+    {
+      "id": "bitcoinstake",
+      "price": ""
+    },
+    {
+      "id": "bitcoinfaith",
+      "price": ""
+    },
+    {
+      "id": "bitcointop",
+      "price": ""
+    },
+    {
+      "id": "bitcoinfile",
+      "price": ""
+    },
+    {
+      "id": "bitcoinsegwit",
+      "price": "0.85"
+    },
+    {
+      "id": "bitcoinpizza",
+      "price": ""
+    },
+    {
+      "id": "bitcoinsmart",
+      "price": ""
+    },
+    {
+      "id": "bitcoinore",
+      "price": ""
+    },
+    {
+      "id": "bitcoinlite",
+      "price": ""
+    },
+    {
+      "id": "bitcoininterest",
+      "price": ""
+    },
+    {
+      "id": "quantumbitcoin",
+      "price": ""
+    },
+    {
+      "id": "bitcoinprivate",
+      "price": "18.97"
+    },
+    {
+      "id": "abitcoin",
+      "price": ""
+    },
+    {
+      "id": "bitcoinhot",
+      "price": ""
+    },
+    {
+      "id": "bitethereum",
+      "price": ""
+    },
+    {
+      "id": "bitcoinrhodium",
+      "price": ""
+    },
+    {
+      "id": "bitcoinplatinum",
+      "price": ""
+    },
+    {
+      "id": "bitcoinclean",
+      "price": ""
+    },
+    {
+      "id": "ethc"
+    },
+    {
+      "id": "bcsch"
+    }
+  ]
+}

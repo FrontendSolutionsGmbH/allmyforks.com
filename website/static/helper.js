@@ -1,7 +1,7 @@
 var fiatWithCurrency = function (value, currentFiat, currentLanguage) {
 
-    if (value === '') {
-        return ''
+    if (value === '' || value == undefined) {
+        return '-'
     }
 
     return (value * currentFiat.ratio).toFixed(2).replace('.', currentLanguage.decimalSeparator) + '&nbsp;' + currentFiat.shortName
@@ -60,14 +60,47 @@ var getSelectorsLangFiatCoins = function (data) {
     return {
         selectLanguages: data.languages.map(e => '<option value="' + getListUrl(data.coin, data.fiat, e) + '" ' + (data.language.id === e.id ? 'selected' : '' ) + '>' + e.name + '</option>'),
         selectFiats: data.fiats.map(e => '<option value="' + getListUrl(data.coin, e, data.language) + '" ' + (data.fiat.id === e.id ? 'selected' : '' ) + '>' + e.name + '</option>'),
-        selectCoins: data.coins.map(e => '<option value="' + getListUrl(e, data.fiat, data.language) + '" ' + (data.coin.id === e.id ? 'selected' : '' ) + '>' + e.name + '</option>')
+        selectCoins: data.coinsWithForks.map(e => '<option value="' + getListUrl(e, data.fiat, data.language) + '" ' + (data.coin.id === e.id ? 'selected' : '' ) + '>' + e.name + '</option>')
     }
 }
 
+
+var mergeData = function (localData, crawledData) {
+    var data = {
+        fiats: localData.fiats,
+        donations: localData.donations,
+        languages: localData.languages,
+        coins: localData.coins
+    }
+
+    data.fiats = data.fiats.map((f) => {
+        var crawledFiat = crawledData.fiats.find(cf => cf.id === f.id)
+        return Object.assign(f, crawledFiat)
+    })
+
+    data.coins = data.coins.map((d) => {
+        var crawledCoin = crawledData.coins.find(cf => cf.id === d.id)
+        crawledCoin = Object.assign(d, crawledCoin)
+
+        if (crawledCoin.forks) {
+
+            crawledCoin.forks = crawledCoin.forks.map((ff) => {
+                var crawledForkCoin = crawledData.coins.find(cf => cf.id === ff.id)
+                var localCoin = localData.coins.find(cf => cf.id === ff.id)
+                return Object.assign(ff, localCoin, crawledForkCoin)
+            })
+        }
+
+        return crawledCoin
+
+    })
+    return data
+}
 module.exports = {
     fiatWithCurrency: fiatWithCurrency,
     getTableForksAndSumValue: getTableForksAndSumValue,
-    getSelectorsLangFiatCoins: getSelectorsLangFiatCoins
+    getSelectorsLangFiatCoins: getSelectorsLangFiatCoins,
+    mergeData: mergeData
 }
 
 /*
