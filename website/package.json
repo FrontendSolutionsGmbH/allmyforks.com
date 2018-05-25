@@ -4,12 +4,14 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "handlebars": "^4.0.11",
     "ufp-optimizer": "^0.11.0"
   },
   "devDependencies": {},
   "scripts": {
     "config": "ufp-optimizer-cli config > ufp-optimizer.json",
-    "build": "ufp-optimizer-cli optimize src dist --config=ufp-optimizer.json "
+    "build": "ufp-optimizer-cli optimize src dist --config=ufp-optimizer.json ",
+    "generate": "node static/generate.js"
   },
   "author": "",
   "license": "ISC"

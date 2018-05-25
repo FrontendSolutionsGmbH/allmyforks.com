@@ -1,0 +1,111 @@
+<html>
+
+<head>
+    <title>BTC-Forks 1403,02 $</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3pro.css">
+    <!--<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">-->
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <style>
+
+        table.sortable thead {
+            background-color: #eee;
+            color: #666666;
+            font-weight: bold;
+            cursor: default;
+        }
+    </style>
+
+</head>
+
+<body class="w3-theme-l3">
+
+
+
+
+
+<div class="w3-bar w3-theme-d4">
+
+    <div class="w3-bar-item w3-button">
+        <div style="width:22px">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0, 0, 64, 64">
+                <path fill="#f7931a" d="M63 40A32 32 0 1 1 1 24a32 32 0 0 1 62 16z"/>
+                <path fill="#FFF"
+                      d="M46 27c1-4-2-6-7-8l2-5-4-1-1 5h-3l1-6-3-1-2 6-2-1-5-1-1 4 3 1 1 2-1 6-3 9-1 1h-3l-1 4 4 1h3l-2 6 4 1 1-6 3 1-1 6 3 1 1-6c6 1 11 1 13-5 1-4 0-7-3-8 2-1 4-2 4-6zm-8 12c-1 4-8 2-11 1l2-8c3 1 10 2 9 7zm1-12c-1 4-7 2-9 2l2-7c2 0 8 1 7 5z"/>
+            </svg>
+        </div>
+    </div>
+
+    <span class="w3-bar-item w3-button">Bitcoin-Forks.com</span>
+    <span class="w3-bar-item w3-button w3-right"></span>
+  <span class="w3-bar-item w3-right"><select style="width:auto" name="option" id="select-languages"
+                                             onchange="location = this.value;">
+      <option value="?coin=BTC&fiat=Dollar&lang=en" >English</option>,<option value="?coin=BTC&fiat=Dollar&lang=de" >Deutsch</option>
+  </select></span></span>
+  <span class="w3-bar-item w3-right"><select style="width:auto" name="option" id="select-currencies"
+                                             onchange="location = this.value;">
+      <option value="?coin=BTC&fiat=Dollar&lang=en" >Dollar</option>,<option value="?coin=BTC&fiat=Euro&lang=en" >Euro</option>
+  </select></span>
+
+</div>
+
+
+<div class="w3-container w3-content">
+    
+    <h2>Forks for <select class="w3-select" style="width:auto" name="option" id="select-forks"
+                          onchange="location = this.value;">
+        <option value="?coin=BTC&fiat=Dollar&lang=en" >Bitcoin</option>,<option value="?coin=ETH&fiat=Dollar&lang=en" >Ethereum</option>,<option value="?coin=BCH&fiat=Dollar&lang=en" >Bitcoin Cash</option>
+    </select></h2>14.05.2018 14:45 MEZ
+</div>
+
+
+<div class="w3-container w3-content">
+
+    <div class="w3-right" id="sum-forks-top">
+        <b>BTC= Σ 1463.82&nbsp;$</b>
+    </div>
+</div>
+
+
+<!--<div class="w3-container w3-content">
+  <input class="w3-button w3-right w3-button" type="" value="Filter by date">
+</div>-->
+
+<div class="w3-container w3-content">
+    <div id="table-forks-outer">
+        <table class="w3-table sortable" id="table-forks"><tr><th>#</th><th>Name</th><th class="w3-hide-small">Fork date</th><th class="w3-hide-small">Fork Block</th><th class="w3-hide-small">Price</th><th class="w3-hide-small">1 BTC=</th><th>1 BTC=</th><th>Change (24h)</th><th>Price Graph (7d)</th></tr><tr><td sorttable_customkey="0">#1</td><td><a href="https://coinmarketcap.com/currencies/bitcoin-cash/">Bitcoin Cash</a></td><td class="w3-hide-small">01.08.2017</td><td class="w3-hide-small">478558</td><td class="w3-hide-small" sorttable_customkey="1024">1024.00&nbsp;$</td><td class="w3-hide-small">1 BCH</td><td sorttable_customkey="1024">1024.00&nbsp;$</td><td>+ 2%</td><td><svg xmlns="http://www.w3.org/2000/svg" version="1" width="128" height="32"><path stroke="#f7931a" stroke-width="2" fill="transparent" stroke-linecap="square" d="M0 1.536L 18.285714285714285 0L 36.57142857142857 0.32L 54.857142857142854 1.024L 73.14285714285714 32L 91.42857142857142 25.792L 109.71428571428571 25.6L 128 21.12"/></svg></td></tr><tr><td sorttable_customkey="1">#2</td><td><a href="https://coinmarketcap.com/currencies/super-bitcoin/">Super Bitcoin</a></td><td class="w3-hide-small">12.12.2017</td><td class="w3-hide-small">498888</td><td class="w3-hide-small" sorttable_customkey="16.64">16.64&nbsp;$</td><td class="w3-hide-small">1 SBTC</td><td sorttable_customkey="16.64">16.64&nbsp;$</td><td>+ 2%</td><td></td></tr><tr><td sorttable_customkey="2">#3</td><td><a href="https://coinmarketcap.com/currencies/bitcoinx/">BitcoinX</a></td><td class="w3-hide-small">12.12.2017</td><td class="w3-hide-small">498888</td><td class="w3-hide-small" sorttable_customkey="0.02">0.02&nbsp;$</td><td class="w3-hide-small">10000 BCX</td><td sorttable_customkey="200">200.00&nbsp;$</td><td>+ 2%</td><td></td></tr><tr><td sorttable_customkey="3">#4</td><td><a href="https://coinmarketcap.com/currencies/lightning-bitcoin/">Lightning Bitcoin</a></td><td class="w3-hide-small">18.12.2017</td><td class="w3-hide-small">499999</td><td class="w3-hide-small" sorttable_customkey="101.13">101.13&nbsp;$</td><td class="w3-hide-small">1 LBTC</td><td sorttable_customkey="101.13">101.13&nbsp;$</td><td>+ 2%</td><td></td></tr><tr><td sorttable_customkey="4">#5</td><td><a href="https://coinmarketcap.com/currencies/bitcoin-god/">Bitcoin God</a></td><td class="w3-hide-small">25.12.2017</td><td class="w3-hide-small">5012225</td><td class="w3-hide-small" sorttable_customkey="44.68">44.68&nbsp;$</td><td class="w3-hide-small">1 GOD</td><td sorttable_customkey="44.68">44.68&nbsp;$</td><td>+ 2%</td><td></td></tr><tr><td sorttable_customkey="5">#6</td><td><a href="NOT_FOUND">Bitcoin Cash Plus</a></td><td class="w3-hide-small">02.01.2018</td><td class="w3-hide-small">501407</td><td class="w3-hide-small" sorttable_customkey=""></td><td class="w3-hide-small">1 BCP</td><td sorttable_customkey="0">0.00&nbsp;$</td><td>+ 2%</td><td></td></tr><tr><td sorttable_customkey="6">#7</td><td><a href="NOT_FOUND">Bitcoin Uranium</a></td><td class="w3-hide-small">31.12.2017</td><td class="w3-hide-small">XXX</td><td class="w3-hide-small" sorttable_customkey=""></td><td class="w3-hide-small">1 BUM</td><td sorttable_customkey="0">0.00&nbsp;$</td><td>+ 2%</td><td></td></tr><tr><td sorttable_customkey="7">#8</td><td><a href="https://coinmarketcap.com/currencies/bitcoin-atom/">Bitcoin Atom</a></td><td class="w3-hide-small">January 2018</td><td class="w3-hide-small">505888</td><td class="w3-hide-small" sorttable_customkey="0.82">0.82&nbsp;$</td><td class="w3-hide-small">1 BCA</td><td sorttable_customkey="0.82">0.82&nbsp;$</td><td>+ 2%</td><td></td></tr><tr><td sorttable_customkey="8">#9</td><td><a href="NOT_FOUND">Bitcoin Silver</a></td><td class="w3-hide-small">December 2017</td><td class="w3-hide-small">XXX</td><td class="w3-hide-small" sorttable_customkey=""></td><td class="w3-hide-small">1 BTCS</td><td sorttable_customkey="0">0.00&nbsp;$</td><td>+ 2%</td><td></td></tr><tr><td sorttable_customkey="9">#10</td><td><a href="https://coinmarketcap.com/currencies/united-bitcoin/">UnitedBitcoin </a></td><td class="w3-hide-small">12.12.2017</td><td class="w3-hide-small">498777</td><td class="w3-hide-small" sorttable_customkey="10.63">10.63&nbsp;$</td><td class="w3-hide-small">1 UB</td><td sorttable_customkey="10.63">10.63&nbsp;$</td><td>+ 2%</td><td></td></tr><tr><td sorttable_customkey="10">#11</td><td><a href="https://coinmarketcap.com/currencies/bitcoin-diamond/">Bitcoin Diamond</a></td><td class="w3-hide-small">24.11.2017</td><td class="w3-hide-small">495866</td><td class="w3-hide-small" sorttable_customkey="4.61">4.61&nbsp;$</td><td class="w3-hide-small">10 BCD</td><td sorttable_customkey="46.1">46.10&nbsp;$</td><td>+ 2%</td><td></td></tr><tr><td sorttable_customkey="11">#12</td><td><a href="NOT_FOUND">Bitcoin Oil </a></td><td class="w3-hide-small">12.12.2017</td><td class="w3-hide-small">498888</td><td class="w3-hide-small" sorttable_customkey=""></td><td class="w3-hide-small">10 OBTC</td><td sorttable_customkey="0">0.00&nbsp;$</td><td>+ 2%</td><td></td></tr><tr><td sorttable_customkey="12">#13</td><td><a href="NOT_FOUND">Bitcoin World</a></td><td class="w3-hide-small">17.12.2017</td><td class="w3-hide-small">499777</td><td class="w3-hide-small" sorttable_customkey=""></td><td class="w3-hide-small">10000 BTW</td><td sorttable_customkey="0">0.00&nbsp;$</td><td>+ 2%</td><td></td></tr><tr><td sorttable_customkey="13">#14</td><td><a href="NOT_FOUND">Bitcoin Stake</a></td><td class="w3-hide-small">19.12.2017</td><td class="w3-hide-small">499999</td><td class="w3-hide-small" sorttable_customkey=""></td><td class="w3-hide-small">100 BTCS</td><td sorttable_customkey="0">0.00&nbsp;$</td><td>+ 2%</td><td></td></tr><tr><td sorttable_customkey="14">#15</td><td><a href="NOT_FOUND">Bitcoin Faith</a></td><td class="w3-hide-small">19.12.2017</td><td class="w3-hide-small">500000</td><td class="w3-hide-small" sorttable_customkey=""></td><td class="w3-hide-small">1 BTF</td><td sorttable_customkey="0">0.00&nbsp;$</td><td>+ 2%</td><td></td></tr><tr><td sorttable_customkey="15">#16</td><td><a href="NOT_FOUND">Bitcoin Top</a></td><td class="w3-hide-small">26.12.2017</td><td class="w3-hide-small">501118</td><td class="w3-hide-small" sorttable_customkey=""></td><td class="w3-hide-small">1 BTT</td><td sorttable_customkey="0">0.00&nbsp;$</td><td>+ 2%</td><td></td></tr><tr><td sorttable_customkey="16">#17</td><td><a href="NOT_FOUND">Bitcoin File</a></td><td class="w3-hide-small">27.12.2017</td><td class="w3-hide-small">501225</td><td class="w3-hide-small" sorttable_customkey=""></td><td class="w3-hide-small">1000 BIFI</td><td sorttable_customkey="0">0.00&nbsp;$</td><td>+ 2%</td><td></td></tr><tr><td sorttable_customkey="17">#18</td><td><a href="https://coinmarketcap.com/currencies/segwit2x/">Bitcoin Segwit2X X11</a></td><td class="w3-hide-small">28.12.2017</td><td class="w3-hide-small">501451</td><td class="w3-hide-small" sorttable_customkey="0.85">0.85&nbsp;$</td><td class="w3-hide-small">1 B2X</td><td sorttable_customkey="0.85">0.85&nbsp;$</td><td>+ 2%</td><td></td></tr><tr><td sorttable_customkey="18">#19</td><td><a href="NOT_FOUND">Bitcoin Pizza</a></td><td class="w3-hide-small">01.01.2018</td><td class="w3-hide-small">501888</td><td class="w3-hide-small" sorttable_customkey=""></td><td class="w3-hide-small">1 BPA</td><td sorttable_customkey="0">0.00&nbsp;$</td><td>+ 2%</td><td></td></tr><tr><td sorttable_customkey="19">#20</td><td><a href="NOT_FOUND">Bitcoin Smart</a></td><td class="w3-hide-small">21.01.2017</td><td class="w3-hide-small">505050</td><td class="w3-hide-small" sorttable_customkey=""></td><td class="w3-hide-small">1 BCS</td><td sorttable_customkey="0">0.00&nbsp;$</td><td>+ 2%</td><td></td></tr><tr><td sorttable_customkey="20">#21</td><td><a href="NOT_FOUND">Bitcoin Ore</a></td><td class="w3-hide-small">31.12.2017</td><td class="w3-hide-small">501949</td><td class="w3-hide-small" sorttable_customkey=""></td><td class="w3-hide-small">1 BCO</td><td sorttable_customkey="0">0.00&nbsp;$</td><td>+ 2%</td><td></td></tr><tr><td sorttable_customkey="21">#22</td><td><a href="NOT_FOUND">Bitcoin LITE</a></td><td class="w3-hide-small">30.01.2018</td><td class="w3-hide-small">XXX</td><td class="w3-hide-small" sorttable_customkey=""></td><td class="w3-hide-small">1 BTCL</td><td sorttable_customkey="0">0.00&nbsp;$</td><td>+ 2%</td><td></td></tr><tr><td sorttable_customkey="22">#23</td><td><a href="NOT_FOUND">Bitcoin Interest</a></td><td class="w3-hide-small">22.01.2018</td><td class="w3-hide-small">505083</td><td class="w3-hide-small" sorttable_customkey=""></td><td class="w3-hide-small">1 BCI</td><td sorttable_customkey="0">0.00&nbsp;$</td><td>+ 2%</td><td></td></tr><tr><td sorttable_customkey="23">#24</td><td><a href="NOT_FOUND">Quantum Bitcoin</a></td><td class="w3-hide-small">28.01.2018</td><td class="w3-hide-small">XXX</td><td class="w3-hide-small" sorttable_customkey=""></td><td class="w3-hide-small">1 QBTC</td><td sorttable_customkey="0">0.00&nbsp;$</td><td>+ 2%</td><td></td></tr><tr><td sorttable_customkey="24">#25</td><td><a href="https://coinmarketcap.com/currencies/bitcoin-private/">Bitcoin Private</a></td><td class="w3-hide-small">01.08.2017</td><td class="w3-hide-small">478558</td><td class="w3-hide-small" sorttable_customkey="18.97">18.97&nbsp;$</td><td class="w3-hide-small">1 BTCP</td><td sorttable_customkey="18.97">18.97&nbsp;$</td><td>+ 2%</td><td></td></tr><tr><td sorttable_customkey="25">#26</td><td><a href="https://www.abitcoin.one/">ABitcoin </a></td><td class="w3-hide-small"></td><td class="w3-hide-small">498888</td><td class="w3-hide-small" sorttable_customkey=""></td><td class="w3-hide-small">1 ABTC</td><td sorttable_customkey="0">0.00&nbsp;$</td><td>+ 2%</td><td></td></tr><tr><td sorttable_customkey="26">#27</td><td><a href="https://bithot.org/">Bitcoin Hot </a></td><td class="w3-hide-small"></td><td class="w3-hide-small">498848</td><td class="w3-hide-small" sorttable_customkey=""></td><td class="w3-hide-small">1 BTH</td><td sorttable_customkey="0">0.00&nbsp;$</td><td>+ 2%</td><td></td></tr><tr><td sorttable_customkey="27">#28</td><td><a href="https://www.bitethereum.io/">BitEthereum</a></td><td class="w3-hide-small">12.12.2017</td><td class="w3-hide-small">500283</td><td class="w3-hide-small" sorttable_customkey=""></td><td class="w3-hide-small">3.93946357 BITE</td><td sorttable_customkey="0">0.00&nbsp;$</td><td>+ 2%</td><td></td></tr><tr><td sorttable_customkey="28">#29</td><td><a href="https://www.bitcoinrh.org/">Bitcoin Rhodium</a></td><td class="w3-hide-small">10.01.2018</td><td class="w3-hide-small"></td><td class="w3-hide-small" sorttable_customkey=""></td><td class="w3-hide-small">1 BTR</td><td sorttable_customkey="0">0.00&nbsp;$</td><td>+ 2%</td><td></td></tr><tr><td sorttable_customkey="29">#30</td><td><a href="https://cointelegraph.com/news/bitcoin-platinum-created-by-south-korean-teenager-as-a-scam-local-market-erupts">Bitcoin Platinum</a></td><td class="w3-hide-small">12.12.2017</td><td class="w3-hide-small">498533</td><td class="w3-hide-small" sorttable_customkey=""></td><td class="w3-hide-small">1 BTP</td><td sorttable_customkey="0">0.00&nbsp;$</td><td>+ 2%</td><td></td></tr><tr><td sorttable_customkey="30">#31</td><td><a href="https://www.bitcoinclean.org/">BitcoinClean</a></td><td class="w3-hide-small">20.03.2018</td><td class="w3-hide-small"></td><td class="w3-hide-small" sorttable_customkey=""></td><td class="w3-hide-small">1 BCL</td><td sorttable_customkey="0">0.00&nbsp;$</td><td>+ 2%</td><td></td></tr></table>
+    </div>
+</div>
+
+<div class="w3-container w3-content">
+    <div class="w3-right" id="sum-forks">
+        <b>BTC= Σ 1463.82&nbsp;$</b>
+    </div>
+</div>
+
+<div class="w3-container w3-content">
+    If you like this project, feel free to <a>support us</a> !
+
+    <table class="w3-table" id="table-donations">
+    </table>
+
+</div>
+
+<div class="w3-container w3-bar w3-large w3-theme-d4">
+    <a class="w3-bar-item w3-button w3-right" href="https://froso.de">Copyright 2018 - Frontend Solutions GmbH</a>
+    <a class="w3-bar-item w3-button" href="https://github.com/FrontendSolutionsGmbH/bitcoin-forks">Github</a>
+    <span class="w3-bar-item w3-button">Imprint</span>
+    <span class="w3-bar-item w3-button">Data Privacy</span>
+</div>
+
+
+<script defer src="sortable.js"></script>
+
+</body>
+
+</html>
+
+
+
