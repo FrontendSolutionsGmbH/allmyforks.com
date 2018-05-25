@@ -51,16 +51,16 @@ var getTableForksAndSumValue = function (currentCoin, currentFiat, currentLangua
 }
 
 var getListUrl = function (coin, fiat, language) {
-    return '?coin=' + coin.shortName + '&fiat=' + fiat.name + '&lang=' + language.shortName
+    return '/' + language.id + '/' + coin.id + '/' + fiat.id + '/'
 }
 
 var getSelectorsLangFiatCoins = function (data) {
 
 
     return {
-        selectLanguages: data.languages.map(e => '<option value="' + getListUrl(data.coin, data.fiat, e) + '" ' + (data.language === e.shortName ? 'selected' : '' ) + '>' + e.name + '</option>'),
-        selectFiats: data.fiats.map(e => '<option value="' + getListUrl(data.coin, e, data.language) + '" ' + (data.fiat === e.name ? 'selected' : '' ) + '>' + e.name + '</option>'),
-        selectCoins: data.coins.map(e => '<option value="' + getListUrl(e, data.fiat, data.language) + '" ' + (data.coin === e.shortName ? 'selected' : '' ) + '>' + e.name + '</option>')
+        selectLanguages: data.languages.map(e => '<option value="' + getListUrl(data.coin, data.fiat, e) + '" ' + (data.language.id === e.id ? 'selected' : '' ) + '>' + e.name + '</option>'),
+        selectFiats: data.fiats.map(e => '<option value="' + getListUrl(data.coin, e, data.language) + '" ' + (data.fiat.id === e.id ? 'selected' : '' ) + '>' + e.name + '</option>'),
+        selectCoins: data.coins.map(e => '<option value="' + getListUrl(e, data.fiat, data.language) + '" ' + (data.coin.id === e.id ? 'selected' : '' ) + '>' + e.name + '</option>')
     }
 }
 

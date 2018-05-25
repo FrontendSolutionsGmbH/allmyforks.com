@@ -1,7 +1,24 @@
 module.exports = {
+
+    fiats: [
+        {
+            "id": "dollar",
+            "name": "Dollar",
+            "shortName": "$",
+            "ratio": 1.0
+        },
+        {
+            "id": "euro",
+            "name": "Euro",
+            "shortName": "€",
+            "ratio": 0.849855227
+        }],
+
+
     coins: [
         {
-            name: "bitcoin",
+            id: "bitcoin",
+            name: "Bitcoin",
             shortName: "BTC",
             price: 10000,
             forks: [
@@ -286,6 +303,42 @@ module.exports = {
                     "block": "",
                     "date": "20.03.2018",
                     "link": "https://www.bitcoinclean.org/"
+                }
+            ]
+        },
+        {
+            id: "ethereum",
+            name: "Ethereum",
+            shortName: "ETH",
+            price: 10000,
+            forks: [
+                {
+                    "name": "Ethereum Cash",
+                    "shortName": "ETHC",
+                    "ratio": 1,
+                    "price": "1024",
+                    "priceHistory": [1024, 1000, 1005, 1016, 1500, 1403, 1400, 1330],
+                    "block": "478558",
+                    "date": "01.08.2017",
+                    "link": "https://coinmarketcap.com/currencies/bitcoin-cash/"
+                }
+            ]
+        },
+        {
+            id: "bitcoincash",
+            name: "Bitcoin Cash",
+            shortName: "BCH",
+            price: 10000,
+            forks: [
+                {
+                    "name": "Bitcoin Cash Super Cash",
+                    "shortName": "ETHC",
+                    "ratio": 1,
+                    "price": "1024",
+                    "priceHistory": [1024, 1000, 1005, 1016, 1500, 1403, 1400, 1330],
+                    "block": "478558",
+                    "date": "01.08.2017",
+                    "link": "https://coinmarketcap.com/currencies/bitcoin-cash/"
                 }
             ]
         }
