@@ -1,7 +1,7 @@
 var fiatWithCurrency = function (value, currentFiat, currentLanguage) {
 
     if (value === '' || value == undefined || isNaN(value)) {
-        return '-'
+        return '-' + '&nbsp;' + currentFiat.shortName
     }
 
 

@@ -12,6 +12,8 @@
   "coins": [
     {
       "id": "bitcoincash",
+      "price": "1024",
+      "timestamp": "1527264625827",
       "priceHistory": [
         1024,
         1000,
@@ -22,7 +24,6 @@
         1400,
         1330
       ],
-      "price": "1024"
     },
     {
       "id": "superbitcoin",

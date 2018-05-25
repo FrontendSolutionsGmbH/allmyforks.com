@@ -34,7 +34,10 @@ var generateListHTML = function (currentCoin, currentLanguage, currentFiat) {
         fiat: currentFiat,
 
         tableForks: tableAndSum.htmlTable,
-        sumForks: tableAndSum.htmlSum
+        sumForks: tableAndSum.htmlSum,
+
+
+        timestamp: Date.now()
     }
 
     var selectors = helper.getSelectorsLangFiatCoins(data)
@@ -42,7 +45,7 @@ var generateListHTML = function (currentCoin, currentLanguage, currentFiat) {
     data.selectLanguages = selectors.selectLanguages
     data.selectFiats = selectors.selectFiats
     data.selectCoins = selectors.selectCoins
-    
+
 
     var result = template(data)
 
