@@ -1,6 +1,9 @@
 /* https://cryptocurrencyfacts.com/a-list-of-upcoming-bitcoin-forks-and-past-forks/
  https://99bitcoins.com/upcoming-bitcoin-forks/
 
+https://bitinfocharts.com/de/bitcoin%20uranium/
+https://yobit.net/en/trade/BUM/BTC
+
  */
 
 const data = {
@@ -72,11 +75,11 @@ const data = {
             ]
             "links": [
 	            {
-	            	"type": "Website",
+	            	"type": "website",
 	            	"url": "https://bitcoin.org "
 	            },
 	            {
-	            	"type": "CoinMarketCap",
+	            	"type": "coinmarketcap",
 	            	"url": "https://coinmarketcap.com/currencies/bitcoin"
 	            }
             ],
@@ -299,21 +302,12 @@ const data = {
 		    		"id": "binance"
 
 		    	}
-		    ],
-            "forks": [
-                {
-                    "id": "bcsch",
-                    "ratio": 1,
-                    "block": "478558",
-                    "date": "2017-08-01 13:16:14"
-                }
-            ]
+		    ]
         },
         {
             "id": "superbitcoin",
             "name": "Super Bitcoin",
             "shortName": "SBTC",
-            "link": "https://coinmarketcap.com/currencies/super-bitcoin/"
               "links": [
 	            {
 	            	"type": "website",
@@ -321,15 +315,14 @@ const data = {
 	            },
 	            {
 	            	"type": "coinmarketcap",
-	            	"url": "https://coinmarketcap.com/currencies/bitcoin-cash"
+	            	"url": "https://coinmarketcap.com/currencies/super-bitcoin"
 	            }
-            ],
+            ]
         },
         {
             "id": "bitcoinx",
             "name": "BitcoinX",
             "shortName": "BCX",
-            "link": "https://coinmarketcap.com/currencies/bitcoinx/"
               "links": [
 	            {
 	            	"type": "website",
@@ -337,15 +330,14 @@ const data = {
 	            },
 	            {
 	            	"type": "coinmarketcap",
-	            	"url": "https://coinmarketcap.com/currencies/bitcoin-cash"
+	            	"url": "https://coinmarketcap.com/currencies/bitcoinx"
 	            }
-            ],
+            ]
         },
         {
             "id": "bitcoinlightning",
             "name": "Lightning Bitcoin",
             "shortName": "LBTC",
-            "link": "https://coinmarketcap.com/currencies/lightning-bitcoin/"
               "links": [
 	            {
 	            	"type": "website",
@@ -353,15 +345,14 @@ const data = {
 	            },
 	            {
 	            	"type": "coinmarketcap",
-	            	"url": "https://coinmarketcap.com/currencies/bitcoin-cash"
+	            	"url": "https://coinmarketcap.com/currencies/lightning-bitcoin"
 	            }
-            ],
+            ]
         },
         {
             "id": "bitcoingod",
             "name": "Bitcoin God",
             "shortName": "GOD",
-            "link": "https://coinmarketcap.com/currencies/bitcoin-god/"
   "links": [
 	            {
 	            	"type": "website",
@@ -369,48 +360,37 @@ const data = {
 	            },
 	            {
 	            	"type": "coinmarketcap",
-	            	"url": "https://coinmarketcap.com/currencies/bitcoin-cash"
+	            	"url": "https://coinmarketcap.com/currencies/bitcoin-god"
 	            }
-            ],
+            ]
         },
         {
             "id": "bitcoincashplus",
             "name": "Bitcoin Cash Plus",
             "shortName": "BCP",
-            "block": "509695",http://www.bitcoincashplus.org/
-            "link": "NOT_FOUND"
+            "block": "509695",
               "links": [
 	            {
 	            	"type": "website",
-	            	"url": "https://www.bitcoincash.org/"
-	            },
-	            {
-	            	"type": "coinmarketcap",
-	            	"url": "https://coinmarketcap.com/currencies/bitcoin-cash"
+	            	"url": "http://www.bitcoincashplus.org/"
 	            }
-            ],
+            ]
         },
         {
             "id": "bitcoinuranium",
             "name": "Bitcoin Uranium",
             "shortName": "BUM",
-            "link": "NOT_FOUND"
               "links": [
 	            {
 	            	"type": "website",
-	            	"url": "https://www.bitcoincash.org/"
-	            },
-	            {
-	            	"type": "coinmarketcap",
-	            	"url": "https://coinmarketcap.com/currencies/bitcoin-cash"
+	            	"url": "https://github.com/BitcoinUranium"
 	            }
-            ],
+            ]
         },
         {
             "id": "bitcoinatom",
             "name": "Bitcoin Atom",
             "shortName": "BCA",
-            "link": "https://coinmarketcap.com/currencies/bitcoin-atom/"
               "links": [
 	            {
 	            	"type": "website",
@@ -418,7 +398,7 @@ const data = {
 	            },
 	            {
 	            	"type": "coinmarketcap",
-	            	"url": "https://coinmarketcap.com/currencies/bitcoin-cash"
+	            	"url": "https://coinmarketcap.com/currencies/bitcoin-atom/"
 	            }
             ],
         },
@@ -426,23 +406,17 @@ const data = {
             "id": "bitcoinsilver",
             "name": "Bitcoin Silver",
             "shortName": "BTCS",
-            "link": "NOT_FOUND"
               "links": [
 	            {
 	            	"type": "website",
 	            	"url": "https://www.bitcoincash.org/"
-	            },
-	            {
-	            	"type": "coinmarketcap",
-	            	"url": "https://coinmarketcap.com/currencies/bitcoin-cash"
 	            }
-            ],
+            ]
         },
         {
             "id": "unitedbitcoin",
             "name": "UnitedBitcoin ",
             "shortName": "UB",
-            "link": "https://coinmarketcap.com/currencies/united-bitcoin/"
               "links": [
 	            {
 	            	"type": "website",
@@ -450,15 +424,14 @@ const data = {
 	            },
 	            {
 	            	"type": "coinmarketcap",
-	            	"url": "https://coinmarketcap.com/currencies/bitcoin-cash"
+	            	"url": "https://coinmarketcap.com/currencies/united-bitcoin/"
 	            }
-            ],
+            ]
         },
         {
             "id": "bitcoindiamond",
             "name": "Bitcoin Diamond",
             "shortName": "BCD",
-            "link": "https://coinmarketcap.com/currencies/bitcoin-diamond/"
               "links": [
 	            {
 	            	"type": "website",
@@ -466,111 +439,80 @@ const data = {
 	            },
 	            {
 	            	"type": "coinmarketcap",
-	            	"url": "https://coinmarketcap.com/currencies/bitcoin-cash"
+	            	"url": "https://coinmarketcap.com/currencies/bitcoin-diamond/"
 	            }
-            ],
+            ]
         },
         {
             "id": "bitcoinoil",
             "name": "Bitcoin Oil ",
             "shortName": "OBTC",
-            "link": "NOT_FOUND"
               "links": [
 	            {
 	            	"type": "website",
 	            	"url": "https://www.bitcoincash.org/"
-	            },
-	            {
-	            	"type": "coinmarketcap",
-	            	"url": "https://coinmarketcap.com/currencies/bitcoin-cash"
 	            }
-            ],
+            ]
         },
         {
             "id": "bitcoinworld",
             "name": "Bitcoin World",
             "shortName": "BTW",
-            "link": "NOT_FOUND"
               "links": [
 	            {
 	            	"type": "website",
 	            	"url": "https://www.bitcoincash.org/"
-	            },
-	            {
-	            	"type": "coinmarketcap",
-	            	"url": "https://coinmarketcap.com/currencies/bitcoin-cash"
 	            }
-            ],
+            ]
         },
         {
             "id": "bitcoinstake",
             "name": "Bitcoin Stake",
             "shortName": "BTCS",
-            "link": "NOT_FOUND"
               "links": [
 	            {
 	            	"type": "website",
 	            	"url": "https://www.bitcoincash.org/"
-	            },
-	            {
-	            	"type": "coinmarketcap",
-	            	"url": "https://coinmarketcap.com/currencies/bitcoin-cash"
 	            }
-            ],
+            ]
         },
         {
             "id": "bitcoinfaith",
             "name": "Bitcoin Faith",
             "shortName": "BTF",
-            "link": "NOT_FOUND"
               "links": [
 	            {
 	            	"type": "website",
 	            	"url": "https://www.bitcoincash.org/"
-	            },
-	            {
-	            	"type": "coinmarketcap",
-	            	"url": "https://coinmarketcap.com/currencies/bitcoin-cash"
 	            }
-            ],
+            ]
         },
         {
             "id": "bitcointop",
             "name": "Bitcoin Top",
             "shortName": "BTT",
-            "link": "NOT_FOUND"
               "links": [
 	            {
 	            	"type": "website",
 	            	"url": "https://www.bitcoincash.org/"
-	            },
-	            {
-	            	"type": "coinmarketcap",
-	            	"url": "https://coinmarketcap.com/currencies/bitcoin-cash"
 	            }
-            ],
+            ]
         },
         {
             "id": "bitcoinfile",
             "name": "Bitcoin File",
             "shortName": "BIFI",
-            "link": "NOT_FOUND"
               "links": [
 	            {
 	            	"type": "website",
 	            	"url": "https://www.bitcoincash.org/"
-	            },
-	            {
-	            	"type": "coinmarketcap",
-	            	"url": "https://coinmarketcap.com/currencies/bitcoin-cash"
 	            }
-            ],
+            ]
         },
         {
             "id": "bitcoinsegwit",
             "name": "Bitcoin Segwit2X X11",
             "shortName": "B2X",
-            "link": "https://coinmarketcap.com/currencies/segwit2x/"
               "links": [
 	            {
 	            	"type": "website",
@@ -578,111 +520,80 @@ const data = {
 	            },
 	            {
 	            	"type": "coinmarketcap",
-	            	"url": "https://coinmarketcap.com/currencies/bitcoin-cash"
+	            	"url": "https://coinmarketcap.com/currencies/segwit2x/"
 	            }
-            ],
+            ]
         },
         {
             "id": "bitcoinpizza",
             "name": "Bitcoin Pizza",
             "shortName": "BPA",
-            "link": "NOT_FOUND"
               "links": [
 	            {
 	            	"type": "website",
 	            	"url": "https://www.bitcoincash.org/"
-	            },
-	            {
-	            	"type": "coinmarketcap",
-	            	"url": "https://coinmarketcap.com/currencies/bitcoin-cash"
 	            }
-            ],
+            ]
         },
         {
             "id": "bitcoinsmart",
             "name": "Bitcoin Smart",
             "shortName": "BCS",
-            "link": "NOT_FOUND"
               "links": [
 	            {
 	            	"type": "website",
 	            	"url": "https://www.bitcoincash.org/"
-	            },
-	            {
-	            	"type": "coinmarketcap",
-	            	"url": "https://coinmarketcap.com/currencies/bitcoin-cash"
 	            }
-            ],
+            ]
         },
         {
             "id": "bitcoinore",
             "name": "Bitcoin Ore",
             "shortName": "BCO",
-            "link": "NOT_FOUND"
               "links": [
 	            {
 	            	"type": "website",
 	            	"url": "https://www.bitcoincash.org/"
-	            },
-	            {
-	            	"type": "coinmarketcap",
-	            	"url": "https://coinmarketcap.com/currencies/bitcoin-cash"
 	            }
-            ],
+            ]
         },
         {
             "id": "bitcoinlite",
             "name": "Bitcoin LITE",
             "shortName": "BTCL",
-            "link": "NOT_FOUND"
               "links": [
 	            {
 	            	"type": "website",
 	            	"url": "https://www.bitcoincash.org/"
-	            },
-	            {
-	            	"type": "coinmarketcap",
-	            	"url": "https://coinmarketcap.com/currencies/bitcoin-cash"
 	            }
-            ],
+            ]
         },
         {
             "id": "bitcoininterest",
             "name": "Bitcoin Interest",
             "shortName": "BCI",
-            "link": "NOT_FOUND"
               "links": [
 	            {
 	            	"type": "website",
 	            	"url": "https://www.bitcoincash.org/"
-	            },
-	            {
-	            	"type": "coinmarketcap",
-	            	"url": "https://coinmarketcap.com/currencies/bitcoin-cash"
 	            }
-            ],
+            ]
         },
         {
             "id": "quantumbitcoin",
             "name": "Quantum Bitcoin",
             "shortName": "QBTC",
-            "link": "NOT_FOUND"
               "links": [
 	            {
 	            	"type": "website",
 	            	"url": "https://www.bitcoincash.org/"
-	            },
-	            {
-	            	"type": "coinmarketcap",
-	            	"url": "https://coinmarketcap.com/currencies/bitcoin-cash"
 	            }
-            ],
+            ]
         },
         {
             "id": "bitcoinprivate",
             "name": "Bitcoin Private",
             "shortName": "BTCP",
-            "link": "https://coinmarketcap.com/currencies/bitcoin-private/"
               "links": [
 	            {
 	            	"type": "website",
@@ -690,57 +601,43 @@ const data = {
 	            },
 	            {
 	            	"type": "coinmarketcap",
-	            	"url": "https://coinmarketcap.com/currencies/bitcoin-cash"
+	            	"url": "https://coinmarketcap.com/currencies/bitcoin-private/"
 	            }
-            ],
+            ]
         },
         {
             "id": "abitcoin",
             "name": "ABitcoin ",
             "shortName": "ABTC",
-            "link": "https://www.abitcoin.one/"
               "links": [
 	            {
 	            	"type": "website",
-	            	"url": "https://www.bitcoincash.org/"
-	            },
-	            {
-	            	"type": "coinmarketcap",
-	            	"url": "https://coinmarketcap.com/currencies/bitcoin-cash"
+	            	"url": "https://www.abitcoin.one/"
 	            }
-            ],
+            ]
         },
         {
             "id": "bitcoinhot",
             "name": "Bitcoin Hot ",
             "shortName": "BTH",
-            "link": "https://bithot.org/"
               "links": [
 	            {
 	            	"type": "website",
-	            	"url": "https://www.bitcoincash.org/"
-	            },
-	            {
-	            	"type": "coinmarketcap",
-	            	"url": "https://coinmarketcap.com/currencies/bitcoin-cash"
+	            	"url": "https://bithot.org/"
 	            }
-            ],
+            ]
         },
         {
             "id": "bitethereum",
             "name": "BitEthereum",
             "shortName": "BITE",
-            "link": "https://www.bitethereum.io/"
+            "link": 
               "links": [
 	            {
 	            	"type": "website",
-	            	"url": "https://www.bitcoincash.org/"
-	            },
-	            {
-	            	"type": "coinmarketcap",
-	            	"url": "https://coinmarketcap.com/currencies/bitcoin-cash"
+	            	"url": "https://www.bitethereum.io/"
 	            }
-            ],
+            ]
         },
         {
             "id": "bitcoinrhodium",
@@ -751,7 +648,7 @@ const data = {
 	            	"type": "website",
 	            	"url": "https://www.bitcoinrh.org/"
 	            }
-            ],
+            ]
         },
         {
             "id": "bitcoinplatinum",
@@ -761,14 +658,11 @@ const data = {
             "link": ""
               "links": [
 	            {
-	            	"type": "website",
+	            	"type": "news",
 	            	"url": "https://cointelegraph.com/news/bitcoin-platinum-created-by-south-korean-teenager-as-a-scam-local-market-erupts"
 	            }
-            ],
+            ]
         },
-
-
-
         {
             "id": "bitcoinclean",
             "name": "BitcoinClean",
@@ -778,42 +672,13 @@ const data = {
 	            	"type": "website",
 	            	"url": "https://www.bitcoinclean.org/"
 	            }
-            ],
+            ]
         },
-        {
-            "id": "ethc",
-            "name": "XXEthereum Cash",
-            "shortName": "XXETHC",
-              "links": [
-	            {
-	            	"type": "website",
-	            	"url": "XXhttps://www.bitcoincash.org/"
-	            },
-	            {
-	            	"type": "coinmarketcap",
-	            	"url": "XXhttps://coinmarketcap.com/currencies/bitcoin-cash"
-	            }
-            ],
-        },
-        {
-            "id": "bcsch",
-            "name": "XXX Bitcoin Cash Super Cash",
-            "shortName": "XXX",
-              "links": [
-	            {
-	            	"type": "website",
-	            	"url": "XXX https://www.bitcoincash.org/"
-	            },
-	            {
-	            	"type": "coinmarketcap",
-	            	"url": "XXX https://coinmarketcap.com/currencies/bitcoin-cash"
-	            }
-            ],
-        },
+        
         {
             "id": "ethereum",
             "name": "Ethereum",
-            "shortName": "eth",
+            "shortName": "ETH",
             "forks": [
                 {
                     "id": "ethc",
@@ -825,11 +690,38 @@ const data = {
               "links": [
 	            {
 	            	"type": "website",
-	            	"url": "https://www.bitcoincash.org/"
+	            	"url": "https://www.ethereum.org/"
 	            },
 	            {
 	            	"type": "coinmarketcap",
-	            	"url": "https://coinmarketcap.com/currencies/bitcoin-cash"
+	            	"url": "https://coinmarketcap.com/currencies/ethereum/"
+	            }
+            ],
+        },
+        {
+            "id": "litecoin",
+            "name": "Litecoin",
+            "shortName": "LTC",
+            "forks": [
+                {
+                    "id": "ethc",
+                    "ratio": 1,
+                    "block": "478558",
+                    "date": "01.08.2017",
+                }
+            ],
+              "links": [
+	            {
+	            	"type": "website",
+	            	"url": "https://litecoin.com/"
+	            },
+ 				{
+	            	"type": "website",
+	            	"url": "https://litecoin.org/"
+	            },
+	            {
+	            	"type": "coinmarketcap",
+	            	"url": "https://coinmarketcap.com/currencies/litecoin/"
 	            }
             ],
         }
@@ -839,26 +731,42 @@ const data = {
 /*
 forks.net
 
--> BitcoinBoy
-Bitcoin Zero
-ClassicBitcoin
-BitVote
-Bitcoin Smart
-Bitcoin All
-Quantum Bitcoin
-Bitcoin New
-Bitcoin Nano
-Bitcore
-Bytether
-Bitcoin Clashic
+-> 
+
+BitcoinBoy BCB 501888 31.12.2017 R:100
+Bitcoin Zero BZX 30.09.2018 R:1
+ClassicBitcoin CBTC 516095 R:10000
+BitVote BTV 505050  21.01.2018 R:1
+Bitcoin Smart 505050 21.01.2018 R:100
+Bitcoin All BTA R:1
+Quantum Bitcoin 25.12.2017 501000 R:1
+Bitcoin New BTN 25.12.2017 501000 R:1
+Bitcoin Nano BTN 501888 R:1000
+Bitcore BTX  R:0.5
+Bytether BTH 01.08.2017 478558 R:1
+Bitcoin Clashic 01.08.2017 BCHC / B  478558 R:1
 
 findmycoins.ninja
 
-Bitcoin payment
-Bitclassic Coin
-Bitcoin Eco
-Fast Bitcoin
-Bitcoin Community
+Bitcoin pay BTP 15.12.2017 499345 R:10
+Bitclassic Coin BICC 18.12.2017 499888 R:1
+Bitcoin Eco PENDING  BEC R:10000 18.12.2017 50000
+Fast Bitcoin FBTC 501225 R:1
+Bitcoin Community BTSQ R:10000 506066
+
+
+eth-forks
+
+Ether Inc ETI 5078585 12.03.2018 R:1
+EtherZero ETZ 4936270 19.01.2018 R:1
+EthereumFog ETF 4730999 01.01.2018 R:1
+Ethereum Modification EMO 4730666 15.12.2017 R:1
+EtherGold ETG 4730666 14.12.2017
+
+litecoin-forks
+
+Litecoin Cash LCC 1371111 18.02.2018 R:1
+Super Litecoin SLTC 17.01.2018 R:1
 
 
 asd
