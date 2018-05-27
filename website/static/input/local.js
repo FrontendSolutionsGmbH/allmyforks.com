@@ -311,7 +311,7 @@ const data = {
               "links": [
 	            {
 	            	"type": "website",
-	            	"url": "https://www.bitcoincash.org/"
+	            	"url": "http://supersmartbitcoin.com/"
 	            },
 	            {
 	            	"type": "coinmarketcap",
@@ -326,7 +326,7 @@ const data = {
               "links": [
 	            {
 	            	"type": "website",
-	            	"url": "https://www.bitcoincash.org/"
+	            	"url": "http://www.bitcoinx.com/"
 	            },
 	            {
 	            	"type": "coinmarketcap",
@@ -341,7 +341,7 @@ const data = {
               "links": [
 	            {
 	            	"type": "website",
-	            	"url": "https://www.bitcoincash.org/"
+	            	"url": "http://lightningbitcoin.io/"
 	            },
 	            {
 	            	"type": "coinmarketcap",
@@ -356,7 +356,7 @@ const data = {
   "links": [
 	            {
 	            	"type": "website",
-	            	"url": "https://www.bitcoincash.org/"
+	            	"url": "https://www.bitcoingod.org/"
 	            },
 	            {
 	            	"type": "coinmarketcap",
@@ -394,7 +394,7 @@ const data = {
               "links": [
 	            {
 	            	"type": "website",
-	            	"url": "https://www.bitcoincash.org/"
+	            	"url": "https://bitcoinatom.io/"
 	            },
 	            {
 	            	"type": "coinmarketcap",
@@ -409,7 +409,11 @@ const data = {
               "links": [
 	            {
 	            	"type": "website",
-	            	"url": "https://www.bitcoincash.org/"
+	            	"url": "https://bitcoinsilver.io/"
+	            },
+	            {
+	            	"type": "coinmarketcap",
+	            	"url": "https://coinmarketcap.com/de/currencies/bitcoin-silver/"
 	            }
             ]
         },
@@ -420,7 +424,7 @@ const data = {
               "links": [
 	            {
 	            	"type": "website",
-	            	"url": "https://www.bitcoincash.org/"
+	            	"url": "https://www.ub.com/"
 	            },
 	            {
 	            	"type": "coinmarketcap",
@@ -435,7 +439,7 @@ const data = {
               "links": [
 	            {
 	            	"type": "website",
-	            	"url": "https://www.bitcoincash.org/"
+	            	"url": "http://btcd.io/"
 	            },
 	            {
 	            	"type": "coinmarketcap",
@@ -448,10 +452,7 @@ const data = {
             "name": "Bitcoin Oil ",
             "shortName": "OBTC",
               "links": [
-	            {
-	            	"type": "website",
-	            	"url": "https://www.bitcoincash.org/"
-	            }
+	           
             ]
         },
         {
@@ -461,7 +462,7 @@ const data = {
               "links": [
 	            {
 	            	"type": "website",
-	            	"url": "https://www.bitcoincash.org/"
+	            	"url": "https://www.btw.one/"
 	            }
             ]
         },
@@ -472,7 +473,7 @@ const data = {
               "links": [
 	            {
 	            	"type": "website",
-	            	"url": "https://www.bitcoincash.org/"
+	            	"url": "https://bitcoinstake.net/"
 	            }
             ]
         },
@@ -483,7 +484,7 @@ const data = {
               "links": [
 	            {
 	            	"type": "website",
-	            	"url": "https://www.bitcoincash.org/"
+	            	"url": "http://bitcoinfaith.org/"
 	            }
             ]
         },
@@ -494,7 +495,7 @@ const data = {
               "links": [
 	            {
 	            	"type": "website",
-	            	"url": "https://www.bitcoincash.org/"
+	            	"url": "https://www.bitcointop.org/"
 	            }
             ]
         },
@@ -505,7 +506,7 @@ const data = {
               "links": [
 	            {
 	            	"type": "website",
-	            	"url": "https://www.bitcoincash.org/"
+	            	"url": "https://www.bitcoinfile.org"
 	            }
             ]
         },
@@ -516,7 +517,7 @@ const data = {
               "links": [
 	            {
 	            	"type": "website",
-	            	"url": "https://www.bitcoincash.org/"
+	            	"url": "https://b2x-segwit.io/"
 	            },
 	            {
 	            	"type": "coinmarketcap",
@@ -531,7 +532,7 @@ const data = {
               "links": [
 	            {
 	            	"type": "website",
-	            	"url": "https://www.bitcoincash.org/"
+	            	"url": "http://www.p.top/"
 	            }
             ]
         },
@@ -539,10 +540,11 @@ const data = {
             "id": "bitcoinsmart",
             "name": "Bitcoin Smart",
             "shortName": "BCS",
+            "status": "pending",
               "links": [
 	            {
 	            	"type": "website",
-	            	"url": "https://www.bitcoincash.org/"
+	            	"url": "http://bcs.info/"
 	            }
             ]
         },
@@ -553,7 +555,7 @@ const data = {
               "links": [
 	            {
 	            	"type": "website",
-	            	"url": "https://www.bitcoincash.org/"
+	            	"url": "http://www.bitcoinore.org/"
 	            }
             ]
         },
@@ -564,7 +566,7 @@ const data = {
               "links": [
 	            {
 	            	"type": "website",
-	            	"url": "https://www.bitcoincash.org/"
+	            	"url": "http://www.bitcoinlite.us/"
 	            }
             ]
         },
@@ -575,7 +577,7 @@ const data = {
               "links": [
 	            {
 	            	"type": "website",
-	            	"url": "https://www.bitcoincash.org/"
+	            	"url": "https://www.bitcoininterest.io/"
 	            }
             ]
         },
@@ -586,7 +588,7 @@ const data = {
               "links": [
 	            {
 	            	"type": "website",
-	            	"url": "https://www.bitcoincash.org/"
+	            	"url": "http://www.quantumbitcoin.top/"
 	            }
             ]
         },
@@ -597,7 +599,7 @@ const data = {
               "links": [
 	            {
 	            	"type": "website",
-	            	"url": "https://www.bitcoincash.org/"
+	            	"url": "https://bitcoinpvt.org/"
 	            },
 	            {
 	            	"type": "coinmarketcap",
@@ -674,7 +676,6 @@ const data = {
 	            }
             ]
         },
-        
         {
             "id": "ethereum",
             "name": "Ethereum",
@@ -734,10 +735,10 @@ forks.net
 -> 
 
 BitcoinBoy BCB 501888 31.12.2017 R:100
-Bitcoin Zero BZX 30.09.2018 R:1
-ClassicBitcoin CBTC 516095 R:10000
+Bitcoin Zero BZX 30.09.2018 R:1  "status": "unforked",
+ClassicBitcoin CBTC 516095 R:10000  "status": "pending",
 BitVote BTV 505050  21.01.2018 R:1
-Bitcoin Smart 505050 21.01.2018 R:100
+Bitcoin Smart 505050 21.01.2018 R:100  "status": "pending",
 Bitcoin All BTA R:1
 Quantum Bitcoin 25.12.2017 501000 R:1
 Bitcoin New BTN 25.12.2017 501000 R:1
@@ -750,7 +751,7 @@ findmycoins.ninja
 
 Bitcoin pay BTP 15.12.2017 499345 R:10
 Bitclassic Coin BICC 18.12.2017 499888 R:1
-Bitcoin Eco PENDING  BEC R:10000 18.12.2017 50000
+Bitcoin Eco  BEC R:10000 18.12.2017 50000  "status": "pending",
 Fast Bitcoin FBTC 501225 R:1
 Bitcoin Community BTSQ R:10000 506066
 
