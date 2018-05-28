@@ -44,11 +44,16 @@
     <span class="w3-bar-item w3-button w3-right"></span>
   <span class="w3-bar-item w3-right"><select style="width:auto" name="option" id="select-languages"
                                              onchange="location = this.value;">
-      {{{selectLanguages}}}
+      {{#each selectLanguages}}
+        <option value="{{value}}" {{selected}}>{{title}}</option>
+      {{/each}}
+
   </select></span></span>
   <span class="w3-bar-item w3-right"><select style="width:auto" name="option" id="select-currencies"
                                              onchange="location = this.value;">
-      {{{selectFiats}}}
+         {{#each selectFiats}}
+        <option value="{{value}}" {{selected}}>{{title}}</option>
+      {{/each}}
   </select></span>
 
 </div>
@@ -57,8 +62,10 @@
 <div class="w3-container w3-content">
     {{coin.Name}}
     <h2>Forks for <select class="w3-select" style="width:auto" name="option" id="select-forks"
-                          onchange="location = this.value;">
-        {{{selectCoins}}}
+                          onchange="location = this.value;">            
+         {{#each selectCoins}}
+        <option value="{{value}}" {{selected}}>{{title}}</option>
+      {{/each}}
     </select></h2>14.05.2018 14:45 MEZ
 </div>
 

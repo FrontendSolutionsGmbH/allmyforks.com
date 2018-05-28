@@ -45,11 +45,29 @@ var getListUrl = function (coin, fiat, language) {
 
 var getSelectorsLangFiatCoins = function (data) {
 
-
+   
     return {
-        selectLanguages: data.languages.map(e => '<option value="' + getListUrl(data.coin, data.fiat, e) + '" ' + (data.language.id === e.id ? 'selected' : '' ) + '>' + e.name + '</option>'),
-        selectFiats: data.fiats.map(e => '<option value="' + getListUrl(data.coin, e, data.language) + '" ' + (data.fiat.id === e.id ? 'selected' : '' ) + '>' + e.name + '</option>'),
-        selectCoins: data.coinsWithForks.map(e => '<option value="' + getListUrl(e, data.fiat, data.language) + '" ' + (data.coin.id === e.id ? 'selected' : '' ) + '>' + e.name + '</option>')
+
+        selectLanguages: data.languages.map((e) => {
+            return {
+            value: getListUrl(data.coin, data.fiat, e),
+            selected: (data.language.id === e.id ? 'selected' : ''), 
+            title: e.name
+        }}),
+
+        selectFiats: data.fiats.map((e) => {
+            return {
+            value: getListUrl(data.coin, data.fiat, e),
+            selected: (data.fiat.id === e.id ? 'selected' : ''), 
+            title: e.name
+        }}),
+
+         selectCoins: data.coinsWithForks.map((e) => {
+            return {
+            value: getListUrl(data.coin, data.fiat, e),
+            selected: (data.coin.id === e.id ? 'selected' : ''), 
+            title: e.name
+        }}),
     }
 }
 
