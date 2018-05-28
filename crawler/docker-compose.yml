@@ -50,6 +50,43 @@ services:
        - ./output/coinmarketcap.com.all:/output
     restart: always
 
+  crawl_simple:
+    image: froso/bitcoin-forks-crawler-simple
+    build:
+      context: ./simple/
+    environment:
+     - "CFG_JOB_0_URL=https://api.coinmarketcap.com/v1/ticker/?convert=EUR&limit=1000"
+     - "CFG_JOB_0_DIR=/cmc_api/"
+     - "CFG_JOB_0_SUFFIX=.json"
+     - "CFG_JOB_0_CRON=0 0 * * * *"
+     - "CFG_JOB_1_URL=https://coinmarketcap.com/currencies/bitcoin/#markets"
+     - "CFG_JOB_1_DIR=/cmc_markets/"
+     - "CFG_JOB_1_SUFFIX=.html"
+     - "CFG_JOB_1_CRON=0 0 * * * *"
+     - "CFG_JOB_2_URL=https://www.bitcoin.de/de/btceur/market"
+     - "CFG_JOB_2_DIR=/bitcoin/"
+     - "CFG_JOB_2_SUFFIX=.html"
+     - "CFG_JOB_2_CRON=0 0 * * * *"
+    volumes:
+     - ./output/simple/cmc_api:/cmc_api
+     - ./output/simple/cmc_markets:/cmc_markets
+     - ./output/simple/bitcoin:/bitcoin
+    restart: always
+
+  crawl_cnmarketcap_all_db:
+    image: rainu/cryptotrack-course-ng
+    environment:
+      - CFG_MONGO_HOST=db
+    restart: always
+    depends_on:
+      - db
+
+  db:
+    image: mongo
+    volumes:
+      - ./db:/data/db
+    restart: always
+
   webserver_crawler:
     restart: always
     image: halverneus/static-file-server
