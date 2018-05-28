@@ -41,13 +41,6 @@
     </div>
 
     <span class="w3-bar-item w3-button">allmyforks.com</span>
-
-{{#each coinsWithForks}}
-
-<span class="w3-bar-item w3-border">1 {{shortName}}= Σ {{{fiatWithCurrency priceSumForks ../fiat ../language}}}</span>
-{{/each}}
-
-
     <span class="w3-bar-item w3-button w3-right"></span>
   <span class="w3-bar-item w3-right"><select style="width:auto" name="option" id="select-languages"
                                              onchange="location = this.value;">
@@ -67,13 +60,28 @@
 
 
 <div class="w3-container w3-content">
+
+  <table class=" w3-table w3-centered">
+    <tr>
+  {{#each coinsWithForks}}
+
+      <td><b>1 {{shortName}}= Σ {{{fiatWithCurrency priceSumForks ../fiat ../language}}}</b></td>
+  {{/each}}
+
+</tr>
+</table>
+
+</div>
+
+
+<div class="w3-container w3-content">
     {{coin.Name}}
     <h2>Forks for <select class="w3-select" style="width:auto" name="option" id="select-forks"
                           onchange="location = this.value;">            
          {{#each selectCoins}}
         <option value="{{value}}" {{selected}}>{{title}}</option>
       {{/each}}
-    </select></h2>14.05.2018 14:45 MEZ
+    </select></h2>{{prettifyDate timestamp}}
 </div>
 
 

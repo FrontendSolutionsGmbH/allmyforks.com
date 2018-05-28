@@ -22,6 +22,9 @@ mergedData.languages.map((lang) => {
 })
 
 Handlebars.registerHelper('fiatWithCurrency', helper.fiatWithCurrency);
+Handlebars.registerHelper("prettifyDate", function(timestamp) {
+    return new Date(timestamp).toString('yyyy-MM-dd hh:mm:ss')
+});
 
 var template = Handlebars.compile(source)
 
