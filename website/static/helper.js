@@ -4,21 +4,17 @@ var fiatWithCurrency = function (value, currentFiat, currentLanguage) {
         return '-' + '&nbsp;' + currentFiat.shortName
     }
 
+/* fiatWithCurrency(e.price, currentFiat, currentLanguage) */
 
     return (value * currentFiat.ratio).toFixed(2).replace('.', currentLanguage.decimalSeparator) + '&nbsp;' + currentFiat.shortName
 }
 
-var getTableForksAndSumValue = function (currentCoin, currentFiat, currentLanguage) {
-    var htmlToAdd = '<table class="w3-table sortable" id="table-forks"><tr><th>#</th><th>Name</th><th class="w3-hide-small">Fork date</th><th class="w3-hide-small">Fork Block</th><th class="w3-hide-small">Price</th><th class="w3-hide-small">1 ' + currentCoin.shortName + '=</th><th>1 ' + currentCoin.shortName + '=</th><th>Change (24h)</th><th>Price Graph (7d)</th></tr>'
-
-
+var enrichWithCalculations = function (currentCoin, currentFiat, currentLanguage) {
     var sumValues = 0
 
     currentCoin.forks.map((e, index) => {
         var priceTimesRatio = e.price * e.ratio
         sumValues += priceTimesRatio
-
-        var graph = ''
 
         if (!e.priceHistory) {
             e.priceHistory = [Math.random(), Math.random(), Math.random(), Math.random(), Math.random(), Math.random(), Math.random(), Math.random(), Math.random(),]
@@ -30,25 +26,17 @@ var getTableForksAndSumValue = function (currentCoin, currentFiat, currentLangua
             var height = 32
             var fx = width / (e.priceHistory.length - 1)
             var fy = height / (max - min)
-
-            var values = e.priceHistory.reduce((t, e, i) => (t ? t + 'L ' : 'M') + '' + i * fx + ' ' + (e - min) * fy, '')
-            graph = '<svg xmlns="http://www.w3.org/2000/svg" version="1" width="' + width + '" height="' + height + '">'
-
-
-            graph += '<path stroke="#f7931a" stroke-width="2" fill="transparent" stroke-linecap="square" d="' + values + '"/>'
-            graph += '</svg>'
+            e.priceGraphData = {
+                 width: width,
+                height: height,
+                 data: e.priceHistory.reduce((t, e, i) => (t ? t + 'L ' : 'M') + '' + i * fx + ' ' + (e - min) * fy, '')
+            }
         }
 
-
-        htmlToAdd += '<tr><td sorttable_customkey="' + index + '">#' + (index + 1) + '</td><td><a href="' + e.link + '">' + e.name + '</a></td><td class="w3-hide-small">' + e.date + '</td><td class="w3-hide-small">' + e.block + '</td><td class="w3-hide-small" sorttable_customkey="' + e.price + '">' + fiatWithCurrency(e.price, currentFiat, currentLanguage) + '</td><td class="w3-hide-small">' + e.ratio + ' ' + e.shortName + '</td><td sorttable_customkey="' + priceTimesRatio + '">' + fiatWithCurrency(priceTimesRatio, currentFiat, currentLanguage) + '</td><td>+ 2%</td><td>' + graph + '</td></tr>'
+        e.priceTimesForkRatio = priceTimesRatio
     })
 
-    htmlToAdd += '</table>'
-
-    return {
-        htmlTable: htmlToAdd,
-        htmlSum: fiatWithCurrency(sumValues, currentFiat, currentLanguage)
-    }
+    currentCoin.priceSumForks = sumValues
 }
 
 var getListUrl = function (coin, fiat, language) {
@@ -99,7 +87,7 @@ var mergeData = function (localData, crawledData) {
 }
 module.exports = {
     fiatWithCurrency: fiatWithCurrency,
-    getTableForksAndSumValue: getTableForksAndSumValue,
+    enrichWithCalculations: enrichWithCalculations,
     getSelectorsLangFiatCoins: getSelectorsLangFiatCoins,
     mergeData: mergeData
 }

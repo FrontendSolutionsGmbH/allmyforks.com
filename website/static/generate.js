@@ -13,15 +13,22 @@ const crawledData = require('./input/crawl.json')
 const localData = require('./input/local.js')
 
 var mergedData = helper.mergeData(localData, crawledData)
+mergedData.languages.map((lang) => {
+    mergedData.coins.filter(f => f.forks).map((coin) => {
+        mergedData.fiats.map((fiat) => {
+           helper.enrichWithCalculations(coin, fiat, lang)
+        })
+    })
+})
 
+Handlebars.registerHelper('fiatWithCurrency', helper.fiatWithCurrency);
 
 var template = Handlebars.compile(source)
 
 
 var generateListHTML = function (currentCoin, currentLanguage, currentFiat) {
 
-    var tableAndSum = helper.getTableForksAndSumValue(currentCoin, currentFiat, currentLanguage)
-
+    
     var data = {
         donations: mergedData.donations,
         languages: mergedData.languages,
@@ -32,10 +39,6 @@ var generateListHTML = function (currentCoin, currentLanguage, currentFiat) {
         coin: currentCoin,
         language: currentLanguage,
         fiat: currentFiat,
-
-        tableForks: tableAndSum.htmlTable,
-        sumForks: tableAndSum.htmlSum,
-
 
         timestamp: Date.now()
     }

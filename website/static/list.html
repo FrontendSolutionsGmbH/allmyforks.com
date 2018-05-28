@@ -66,9 +66,10 @@
 <div class="w3-container w3-content">
 
     <div class="w3-right" id="sum-forks-top">
-        <b>1 {{coin.shortName}}= Σ {{{sumForks}}}</b>
+        <b>1 {{coin.shortName}}= Σ {{{fiatWithCurrency coin.priceSumForks fiat language}}}</b>
     </div>
 </div>
+
 
 
 <!--<div class="w3-container w3-content">
@@ -77,13 +78,34 @@
 
 <div class="w3-container w3-content">
     <div id="table-forks-outer">
-        {{{tableForks}}}
+
+      <table class="w3-table sortable" id="table-forks"><tr><th>#</th><th>Name</th><th class="w3-hide-small">Fork date</th><th class="w3-hide-small">Fork Block</th><th class="w3-hide-small">Price</th><th class="w3-hide-small">1 {{coin.shortName}}=</th><th>1 {{coin.shortName}}=</th><th>Change (24h)</th><th>Price Graph (7d)</th></tr>
+        {{#each coin.forks}}
+          <tr>
+            <td sorttable_customkey="{{@index}}">#{{@index}}</td>
+            <td><a href="{{link}}">{{name}}</a></td>
+            <td class="w3-hide-small">{{date}}</td>
+            <td class="w3-hide-small">{{block}}</td>
+            <td class="w3-hide-small" sorttable_customkey="{{price}}">{{{fiatWithCurrency price ../fiat ../language}}}</td>
+            <td class="w3-hide-small">{{ratio}} {{shortName}}</td>
+            <td sorttable_customkey="{{priceTimesForkRatio}}">{{{fiatWithCurrency priceTimesForkRatio ../fiat ../language}}}</td>
+            <td>+ 2%</td>
+            <td>
+                {{#with priceGraphData}}
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1" width="{{width}}" height="{{height}}">
+                        <path stroke="#f7931a" stroke-width="2" fill="transparent" stroke-linecap="square" d="{{data}}"/>
+                    </svg>
+                {{/with}}
+            </td>
+          </tr>
+        {{/each}}
+      </table>
     </div>
 </div>
 
 <div class="w3-container w3-content">
     <div class="w3-right" id="sum-forks">
-        <b>1 {{coin.shortName}}= Σ {{{sumForks}}}</b>
+        <b>1 {{coin.shortName}}= Σ {{{fiatWithCurrency coin.priceSumForks fiat language}}}</b>
     </div>
 </div>
 
