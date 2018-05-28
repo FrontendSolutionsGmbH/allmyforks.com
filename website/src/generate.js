@@ -2,9 +2,9 @@ var Handlebars = require('handlebars');
 var fs = require('fs-extra');
 const helper = require('./helper.js')
 
-var source = fs.readFileSync('static/list.html', 'utf8')
-var sortableJS = fs.readFileSync('static/res/sortable.js')
-var w3proCss = fs.readFileSync('static/res/w3pro.css')
+var source = fs.readFileSync('./src/list.html', 'utf8')
+var sortableJS = fs.readFileSync('./src/res/sortable.js')
+var w3proCss = fs.readFileSync('./src/res/w3pro.css')
 source = source.replace('{{{styles}}}', '<style>' + w3proCss + '</style>')
 source = source.replace('{{{javascript}}}', '<script type="text/javascript">' + sortableJS + '</script>')
 
@@ -56,15 +56,15 @@ var generateListHTML = function (currentCoin, currentLanguage, currentFiat) {
 }
 
 
-fs.removeSync('static/dist')
-fs.mkdirSync('static/dist')
+fs.removeSync('./dist')
+fs.mkdirSync('./dist')
 mergedData.languages.map((lang) => {
-    fs.mkdirSync('static/dist/' + lang.id)
+    fs.mkdirSync('./dist/' + lang.id)
     mergedData.coins.filter(f => f.forks).map((coin) => {
 
-        fs.mkdirSync('static/dist/' + lang.id + '/' + coin.id)
+        fs.mkdirSync('./dist/' + lang.id + '/' + coin.id)
         mergedData.fiats.map((fiat) => {
-            var dir = 'static/dist/' + lang.id + '/' + coin.id + '/' + fiat.id
+            var dir = './dist/' + lang.id + '/' + coin.id + '/' + fiat.id
             fs.mkdirSync(dir)
 
             var result = generateListHTML(coin, lang, fiat)
@@ -74,14 +74,14 @@ mergedData.languages.map((lang) => {
     })
 
 })
-fs.copySync('static/dist/en/bitcoin/dollar/index.html', 'static/dist/index.html')
-
+fs.copySync('./dist/en/bitcoin/dollar/index.html', './dist/index.html')
+fs.copySync('./src/static', './dist/')
 
 /*
  var currentCoin = mergedData.coins[0]
  var currentLanguage = languages[0]
  var currentFiat = fiats[0]
  var result = generateListHTML(currentCoin, currentLanguage, currentFiat)
- console.log(result)
- fs.writeFileSync('static/output.html', result)
+ console.log(result)a
+ fs.writeFileSync('static/output.html', result)aaa
  */

@@ -1,0 +1,229 @@
+
+
+# turns cache on for 1 month
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType text/html "access plus 1 minute"
+ExpiresByType text/css "access plus 1 year"
+ExpiresByType text/javascript "access plus 1 year"
+ExpiresByType application/javascript "access plus 1 year"
+ExpiresByType image/gif "access plus 1 year"
+ExpiresByType image/jpeg "access plus 1 year"
+ExpiresByType image/png "access plus 1 year"
+ExpiresByType image/x-icon "access plus 1 year"
+ExpiresByType image/svg+xml "access plus 1 year"
+ExpiresByType application/json "access plus 1 year"
+ExpiresByType application/xml "access plus 1 year"
+</IfModule>
+
+<ifmodule mod_headers.c>
+<filesmatch "\.(ico|jpe?g|png|gif|swf|webp|css|js|svg)$">
+Header set Cache-Control "max-age=31536000, public"
+</filesmatch>
+<filesmatch "\.(html|htm)$">
+Header set Cache-Control "max-age=86400, public"
+</filesmatch>
+</ifmodule>
+
+AddType image/webp .webp
+FileETag None
+
+<Files *.js.gz>
+    AddType "text/javascript" .gz
+    AddEncoding gzip .gz
+</Files>
+<Files *.js.br>
+    AddType "text/javascript" .br
+    AddEncoding br .br
+</Files>
+<Files *.css.gz>
+    AddType "text/css" .gz
+    AddEncoding gzip .gz
+</Files>
+<Files *.css.br>
+    AddType "text/css" .br
+    AddEncoding br .br
+</Files>
+<Files *.htm.gz>
+    AddType "text/htm" .gz
+    AddEncoding gzip .gz
+</Files>
+<Files *.htm.br>
+    AddType "text/htm" .br
+    AddEncoding br .br
+</Files>
+<Files *.html.gz>
+    AddType "text/html" .gz
+    AddEncoding gzip .gz
+</Files>
+<Files *.html.br>
+    AddType "text/html" .br
+    AddEncoding br .br
+</Files>
+<Files *.svg.gz>
+    AddType "image/svg+xml" .gz
+    AddEncoding gzip .gz
+</Files>
+<Files *.svg.br>
+    AddType "image/svg+xml" .br
+    AddEncoding br .br
+</Files>
+<Files *.json.gz>
+    AddType "application/json" .gz
+    AddEncoding gzip .gz
+</Files>
+<Files *.json.br>
+    AddType "application/json" .br
+    AddEncoding br .br
+</Files>
+<Files *.xml.gz>
+    AddType "application/xml" .gz
+    AddEncoding gzip .gz
+</Files>
+<Files *.xml.br>
+    AddType "application/xml" .br
+    AddEncoding br .br
+</Files>
+<Files *.webp.gz>
+    AddType "image/webp" .gz
+    AddEncoding gzip .gz
+</Files>
+<Files *.webp.br>
+    AddType "image/webp" .br
+    AddEncoding br .br
+</Files>
+<Files *.jpeg.gz>
+    AddType "image/jpeg" .gz
+    AddEncoding gzip .gz
+</Files>
+<Files *.jpeg.br>
+    AddType "image/jpeg" .br
+    AddEncoding br .br
+</Files>
+<Files *.jpg.gz>
+    AddType "image/jpeg" .gz
+    AddEncoding gzip .gz
+</Files>
+<Files *.jpg.br>
+    AddType "image/jpeg" .br
+    AddEncoding br .br
+</Files>
+<Files *.gif.gz>
+    AddType "image/gif" .gz
+    AddEncoding gzip .gz
+</Files>
+<Files *.gif.br>
+    AddType "image/gif" .br
+    AddEncoding br .br
+</Files>
+<Files *.png.gz>
+    AddType "image/png" .gz
+    AddEncoding gzip .gz
+</Files>
+<Files *.png.br>
+    AddType "image/png" .br
+    AddEncoding br .br
+</Files>
+<Files *.ttf.gz>
+    AddType "application/x-font-ttf" .gz
+    AddEncoding gzip .gz
+</Files>
+<Files *.ttf.br>
+    AddType "application/x-font-ttf" .br
+    AddEncoding br .br
+</Files>
+<Files *.otf.gz>
+    AddType "application/x-font-opentype" .gz
+    AddEncoding gzip .gz
+</Files>
+<Files *.otf.br>
+    AddType "application/x-font-opentype" .br
+    AddEncoding br .br
+</Files>
+<Files *.woff.gz>
+    AddType "application/font-woff" .gz
+    AddEncoding gzip .gz
+</Files>
+<Files *.woff.br>
+    AddType "application/font-woff" .br
+    AddEncoding br .br
+</Files>
+<Files *.woff2.gz>
+    AddType "application/font-woff2" .gz
+    AddEncoding gzip .gz
+</Files>
+<Files *.woff2.br>
+    AddType "application/font-woff2" .br
+    AddEncoding br .br
+</Files>
+<Files *.eot.gz>
+    AddType "application/vnd.ms-fontobject" .gz
+    AddEncoding gzip .gz
+</Files>
+<Files *.eot.br>
+    AddType "application/vnd.ms-fontobject" .br
+    AddEncoding br .br
+</Files>
+<Files *.sfnt.gz>
+    AddType "application/font-sfnt" .gz
+    AddEncoding gzip .gz
+</Files>
+<Files *.sfnt.br>
+    AddType "application/font-sfnt" .br
+    AddEncoding br .br
+</Files>
+
+RewriteEngine On
+
+RewriteCond %{HTTP_ACCEPT} image/webp
+RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1]
+<IfModule mod_headers.c>
+Header append Vary Accept env=REDIRECT_accept
+</IfModule>
+
+RewriteCond %{HTTP:Accept-Encoding} br
+RewriteCond %{REQUEST_FILENAME}.br -f
+RewriteRule ^(.*)$ $1.br [L]
+
+RewriteCond %{HTTP:Accept-Encoding} gzip
+RewriteCond %{REQUEST_FILENAME}.gz -f
+RewriteRule ^(.*)$ $1.gz [L]
+
+# Serve correct content types, and prevent mod_deflate double br.
+RewriteRule \.js\.br$ - [T=text/javascript,E=no-gzip:1]
+RewriteRule \.js\.gz$ - [T=text/javascript,E=no-gzip:1]
+RewriteRule \.css\.br$ - [T=text/css,E=no-gzip:1]
+RewriteRule \.css\.gz$ - [T=text/css,E=no-gzip:1]
+RewriteRule \.htm\.br$ - [T=text/htm,E=no-gzip:1]
+RewriteRule \.htm\.gz$ - [T=text/htm,E=no-gzip:1]
+RewriteRule \.html\.br$ - [T=text/html,E=no-gzip:1]
+RewriteRule \.html\.gz$ - [T=text/html,E=no-gzip:1]
+RewriteRule \.svg\.br$ - [T=image/svg+xml,E=no-gzip:1]
+RewriteRule \.svg\.gz$ - [T=image/svg+xml,E=no-gzip:1]
+RewriteRule \.json\.br$ - [T=application/json,E=no-gzip:1]
+RewriteRule \.json\.gz$ - [T=application/json,E=no-gzip:1]
+RewriteRule \.xml\.br$ - [T=application/xml,E=no-gzip:1]
+RewriteRule \.xml\.gz$ - [T=application/xml,E=no-gzip:1]
+RewriteRule \.webp\.br$ - [T=image/webp,E=no-gzip:1]
+RewriteRule \.webp\.gz$ - [T=image/webp,E=no-gzip:1]
+RewriteRule \.jpeg\.br$ - [T=image/jpeg,E=no-gzip:1]
+RewriteRule \.jpeg\.gz$ - [T=image/jpeg,E=no-gzip:1]
+RewriteRule \.jpg\.br$ - [T=image/jpeg,E=no-gzip:1]
+RewriteRule \.jpg\.gz$ - [T=image/jpeg,E=no-gzip:1]
+RewriteRule \.gif\.br$ - [T=image/gif,E=no-gzip:1]
+RewriteRule \.gif\.gz$ - [T=image/gif,E=no-gzip:1]
+RewriteRule \.png\.br$ - [T=image/png,E=no-gzip:1]
+RewriteRule \.png\.gz$ - [T=image/png,E=no-gzip:1]
+RewriteRule \.ttf\.br$ - [T=application/x-font-ttf,E=no-gzip:1]
+RewriteRule \.ttf\.gz$ - [T=application/x-font-ttf,E=no-gzip:1]
+RewriteRule \.otf\.br$ - [T=application/x-font-opentype,E=no-gzip:1]
+RewriteRule \.otf\.gz$ - [T=application/x-font-opentype,E=no-gzip:1]
+RewriteRule \.woff\.br$ - [T=application/font-woff,E=no-gzip:1]
+RewriteRule \.woff\.gz$ - [T=application/font-woff,E=no-gzip:1]
+RewriteRule \.woff2\.br$ - [T=application/font-woff2,E=no-gzip:1]
+RewriteRule \.woff2\.gz$ - [T=application/font-woff2,E=no-gzip:1]
+RewriteRule \.eot\.br$ - [T=application/vnd.ms-fontobject,E=no-gzip:1]
+RewriteRule \.eot\.gz$ - [T=application/vnd.ms-fontobject,E=no-gzip:1]
+RewriteRule \.sfnt\.br$ - [T=application/font-sfnt,E=no-gzip:1]
+RewriteRule \.sfnt\.gz$ - [T=application/font-sfnt,E=no-gzip:1]
+
