@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>BTC-Forks 1403,02 $</title>
+    <title>1 {{coin.shortName}}= Σ {{{fiatWithCurrency coin.priceSumForks fiat language}}}</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
     <link rel="shortcut icon" href="favicon.ico">
@@ -40,7 +40,14 @@
         </div>
     </div>
 
-    <span class="w3-bar-item w3-button">Bitcoin-Forks.com</span>
+    <span class="w3-bar-item w3-button">allmyforks.com</span>
+
+{{#each coinsWithForks}}
+
+<span class="w3-bar-item w3-border">1 {{shortName}}= Σ {{{fiatWithCurrency priceSumForks ../fiat ../language}}}</span>
+{{/each}}
+
+
     <span class="w3-bar-item w3-button w3-right"></span>
   <span class="w3-bar-item w3-right"><select style="width:auto" name="option" id="select-languages"
                                              onchange="location = this.value;">

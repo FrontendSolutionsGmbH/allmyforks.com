@@ -16,6 +16,9 @@ var enrichWithCalculations = function (currentCoin, currentFiat, currentLanguage
         var priceTimesRatio = e.price * e.ratio
         sumValues += priceTimesRatio
 
+        if (!e.price) {
+            e.price = Math.random()
+        }
         if (!e.priceHistory) {
             e.priceHistory = [Math.random(), Math.random(), Math.random(), Math.random(), Math.random(), Math.random(), Math.random(), Math.random(), Math.random(),]
         }
