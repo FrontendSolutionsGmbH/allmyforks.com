@@ -4,7 +4,7 @@
  https://bitinfocharts.com/de/bitcoin%20uranium/
  https://yobit.net/en/trade/BUM/BTC
  a
- https://forkdrop.io/
+
  */
 
 const data = {
@@ -14,12 +14,15 @@ const data = {
     },
     "links": [
         {
-            "url": "http://forks.net/list/Bitcoin",
+            "url": "https://coinmarketcap.com",
 
         },
         {
-            "url": "http://www.findmycoins.ninja/",
+            "url": "https://www.findmycoins.ninja/",
 
+        },
+        {
+            "url": " https://forkdrop.io/",
         }
     ],
     "fiats": [

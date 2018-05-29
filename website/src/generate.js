@@ -6,6 +6,8 @@ const aggregator = require('./aggregator.js')
 var sourceList = fs.readFileSync('./src/list.html', 'utf8')
 var sourceImprint = fs.readFileSync('./src/imprint.html', 'utf8')
 var sourcePrivacy = fs.readFileSync('./src/privacy.html', 'utf8')
+var sourceHowTo = fs.readFileSync('./src/howto.html', 'utf8')
+var sourceLinks = fs.readFileSync('./src/links.html', 'utf8')
 var sourceDetails = fs.readFileSync('./src/details.html', 'utf8')
 var javascriptAsString = fs.readFileSync('./src/inc/sortable.js', 'utf8')
 var stylesAsString = fs.readFileSync('./src/inc/w3pro.css', 'utf8')
@@ -19,6 +21,8 @@ var mergedData = aggregator.mergeData(localData, crawledData)
 
 
 Handlebars.registerHelper('fiatWithCurrency', helper.fiatWithCurrency);
+Handlebars.registerHelper("math", helper.mathHelper);
+
 Handlebars.registerHelper("prettifyDate", function (timestamp) {
     return new Date(timestamp).toString('yyyy-MM-dd hh:mm:ss')
 });
@@ -27,7 +31,8 @@ var template = Handlebars.compile(sourceList)
 var templateImprint = Handlebars.compile(sourceImprint)
 var templatePrivacy = Handlebars.compile(sourcePrivacy)
 var templateDetails = Handlebars.compile(sourceDetails)
-
+var templateHowTo = Handlebars.compile(sourceHowTo)
+var templateLinks = Handlebars.compile(sourceLinks)
 
 Handlebars.registerPartial('header-static', fs.readFileSync('./src/inc/header-static.html', 'utf8'))
 Handlebars.registerPartial('header-list', fs.readFileSync('./src/inc/header-list.html', 'utf8'))
@@ -62,6 +67,13 @@ var generateStaticGeneralSites = function (data, dir) {
     console.log('generate', dir + '/privacy.html')
     fs.writeFileSync(dir + '/privacy.html', templatePrivacy(data))
 
+
+    console.log('generate', dir + '/howto.html')
+    fs.writeFileSync(dir + '/howto.html', templateHowTo(data))
+
+
+    console.log('generate', dir + '/links.html')
+    fs.writeFileSync(dir + '/links.html', templateLinks(data))
 }
 
 fs.removeSync('./dist')

@@ -1,16 +1,19 @@
 {{> header-list}}
 
+<div class="w3-cell-row">
+    <div class="w3-container w3-cell">
 
-<div class="w3-container w3-content">
-
-    <h1>{{coin.name}}</h1>
+        <h1>{{coin.name}}</h1>
+    </div>
 </div>
 
+<div class="w3-cell-row">
+    {{#with coin}}
+    <div class="w3-container w3-cell">
 
-<div class="w3-container w3-content">
-    <div id="table-forks-outer">
 
-        {{#with coin}}
+        <h2>Details</h2>
+
         <ul>
             <li>Name: {{name}}</li>
             <li>Fork date: {{date}}</li>
@@ -20,18 +23,42 @@
             <li>1 {{coin.shortName}}= {{{fiatWithCurrency priceTimesForkRatio ../fiat ../language}}}</li>
             <li>Change (24h): + 2%</li>
         </ul>
+    </div>
 
+
+    <div class="w3-container w3-cell">
+        <h2>Parent Forks</h2>
+        <ul>
+            {{#each parents}}
+            <li>{{name}}</li>
+            {{/each}}
+        </ul>
+    </div>
+
+    <div class="w3-container w3-cell">
         <h2>Price Graph (7d)</h2>
         {{#with priceGraphData}}
-        <svg xmlns="http://www.w3.org/2000/svg" version="1" width="{{width}}" height="{{height}}">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1" width="{{width}}" height="{{height}}"
+             viewBox="0 0 300 auto">
             <path stroke="#f7931a" stroke-width="2" fill="transparent" stroke-linecap="square"
                   d="{{data}}"/>
         </svg>
         {{/with}}
-
-
-        {{/with}}
     </div>
-</div>
 
+</div>
+<div class="w3-cell-row">
+
+    <div class="w3-container w3-cell">
+        <h2>Markets</h2>
+        TODO
+    </div>
+    <div class="w3-container w3-cell">
+        <h2>How do i get my fork-money</h2>
+        <a href="/{{../language.id}}/howto.html">Click here</a>
+    </div>
+
+
+    {{/with}}
+</div>
 {{> footer}}

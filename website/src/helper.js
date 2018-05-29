@@ -46,7 +46,21 @@ var getSelectorsLangFiatCoins = function (data) {
 }
 
 
+var mathHelper = function (lvalue, operator, rvalue, options) {
+    lvalue = parseFloat(lvalue);
+    rvalue = parseFloat(rvalue);
+
+    return {
+        "+": lvalue + rvalue,
+        "-": lvalue - rvalue,
+        "*": lvalue * rvalue,
+        "/": lvalue / rvalue,
+        "%": lvalue % rvalue
+    }[operator];
+}
+
 module.exports = {
     fiatWithCurrency: fiatWithCurrency,
     getSelectorsLangFiatCoins: getSelectorsLangFiatCoins,
+    mathHelper: mathHelper
 }

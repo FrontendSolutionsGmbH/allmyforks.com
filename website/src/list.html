@@ -56,7 +56,7 @@
             </tr>
             {{#each coin.forks}}
             <tr>
-                <td sorttable_customkey="{{@index}}">#{{@index}}</td>
+                <td sorttable_customkey="{{math @index '+' 1}}">#{{math @index '+' 1}}</td>
                 <td><a href="/{{../language.id}}/{{id}}/{{../fiat.id}}/details.html">{{name}}</a></td>
                 <td class="w3-hide-small">{{date}}</td>
                 <td class="w3-hide-small">{{block}}</td>

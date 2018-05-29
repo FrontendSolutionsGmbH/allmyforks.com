@@ -41,7 +41,8 @@ var mergeData = function (localData, crawledData) {
         donations: localData.donations,
         languages: localData.languages,
         coins: localData.coins,
-        header: localData.header
+        header: localData.header,
+        links: localData.links
     }
 
     // merge fiat crawled and local information
@@ -70,6 +71,7 @@ var mergeData = function (localData, crawledData) {
         return d
     })
 
+    // we need to call it twice to make sure everything gets all information, aargh :)
     for (i = 0; i < 2; i++) {
         // add information
         data.coins = data.coins.map((d) => {
@@ -78,7 +80,6 @@ var mergeData = function (localData, crawledData) {
         })
 
         //add information also to forks
-        // add information also to fork objects
         data.coins = data.coins.map((d) => {
             if (d.forks) {
 
@@ -92,6 +93,27 @@ var mergeData = function (localData, crawledData) {
         })
     }
 
+
+    // add parent information
+    data.coins = data.coins.map((d) => {
+
+
+        // add information also to fork objects
+        data.coins.map((other) => {
+
+            if (other.forks && other.forks.find(cf => cf.id === d.id)) {
+                if (d.parents === undefined) {
+                    d.parents = []
+                }
+
+                d.parents.push(other)
+            }
+
+            return d
+        })
+
+        return d
+    })
 
     return data
 }
