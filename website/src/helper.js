@@ -4,7 +4,7 @@ var fiatWithCurrency = function (value, currentFiat, currentLanguage) {
         return '-' + '&nbsp;' + currentFiat.shortName
     }
 
-/* fiatWithCurrency(e.price, currentFiat, currentLanguage) */
+    /* fiatWithCurrency(e.price, currentFiat, currentLanguage) */
 
     return (value * currentFiat.ratio).toFixed(2).replace('.', currentLanguage.decimalSeparator) + '&nbsp;' + currentFiat.shortName
 }
@@ -30,9 +30,9 @@ var enrichWithCalculations = function (currentCoin, currentFiat, currentLanguage
             var fx = width / (e.priceHistory.length - 1)
             var fy = height / (max - min)
             e.priceGraphData = {
-                 width: width,
+                width: width,
                 height: height,
-                 data: e.priceHistory.reduce((t, e, i) => (t ? t + 'L ' : 'M') + '' + i * fx + ' ' + (e - min) * fy, '')
+                data: e.priceHistory.reduce((t, e, i) => (t ? t + 'L ' : 'M') + '' + i * fx + ' ' + (e - min) * fy, '')
             }
         }
 
@@ -48,29 +48,32 @@ var getListUrl = function (coin, fiat, language) {
 
 var getSelectorsLangFiatCoins = function (data) {
 
-   
+
     return {
 
         selectLanguages: data.languages.map((e) => {
             return {
-            value: getListUrl(data.coin, data.fiat, e),
-            selected: (data.language.id === e.id ? 'selected' : ''), 
-            title: e.name
-        }}),
+                value: getListUrl(data.coin, data.fiat, e),
+                selected: (data.language.id === e.id ? 'selected' : ''),
+                title: e.name
+            }
+        }),
 
         selectFiats: data.fiats.map((e) => {
             return {
-            value: getListUrl(data.coin, e, data.language),
-            selected: (data.fiat.id === e.id ? 'selected' : ''), 
-            title: e.name
-        }}),
+                value: getListUrl(data.coin, e, data.language),
+                selected: (data.fiat.id === e.id ? 'selected' : ''),
+                title: e.name
+            }
+        }),
 
-         selectCoins: data.coinsWithForks.map((e) => {
+        selectCoins: data.coinsWithForks.map((e) => {
             return {
-            value: getListUrl(e, data.fiat, data.language),
-            selected: (data.coin.id === e.id ? 'selected' : ''), 
-            title: e.name
-        }}),
+                value: getListUrl(e, data.fiat, data.language),
+                selected: (data.coin.id === e.id ? 'selected' : ''),
+                title: e.name
+            }
+        }),
     }
 }
 
@@ -80,7 +83,8 @@ var mergeData = function (localData, crawledData) {
         fiats: localData.fiats,
         donations: localData.donations,
         languages: localData.languages,
-        coins: localData.coins
+        coins: localData.coins,
+        header: localData.header
     }
 
     data.fiats = data.fiats.map((f) => {
