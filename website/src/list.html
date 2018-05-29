@@ -51,8 +51,8 @@
                 <th class="w3-hide-small">Price</th>
                 <th class="w3-hide-small">1 {{coin.shortName}}=</th>
                 <th>1 {{coin.shortName}}=</th>
-                <th>Change (24h)</th>
-                <th>Price Graph (7d)</th>
+                <th class="w3-hide-small">Change (24h)</th>
+                <th class="w3-hide-small">Price Graph (7d)</th>
             </tr>
             {{#each coin.forks}}
             <tr>
@@ -67,8 +67,8 @@
                 <td sorttable_customkey="{{priceTimesForkRatio}}">{{{fiatWithCurrency priceTimesForkRatio ../fiat
                     ../language}}}
                 </td>
-                <td>+ 2%</td>
-                <td>
+                <td class="w3-hide-small">+ 2%</td>
+                <td class="w3-hide-small">
                     {{#with priceGraphData}}
                     <svg xmlns="http://www.w3.org/2000/svg" version="1" width="{{width}}" height="{{height}}">
                         <path stroke="#f7931a" stroke-width="2" fill="transparent" stroke-linecap="square"
@@ -89,11 +89,8 @@
 </div>
 
 <div class="w3-container w3-content">
-    If you like this project, feel free to <a>support us</a> !
-
-    <table class="w3-table" id="table-donations">
-    </table>
-
+    If you like this project and that it is "ad-free", feel free to <a href="/{{language.id}}/supportus.html">support
+    us</a> !
 </div>
 
 {{> footer}}

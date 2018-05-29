@@ -7,6 +7,7 @@ var sourceList = fs.readFileSync('./src/list.html', 'utf8')
 var sourceImprint = fs.readFileSync('./src/imprint.html', 'utf8')
 var sourcePrivacy = fs.readFileSync('./src/privacy.html', 'utf8')
 var sourceHowTo = fs.readFileSync('./src/howto.html', 'utf8')
+var sourceSupportUs = fs.readFileSync('./src/supportus.html', 'utf8')
 var sourceLinks = fs.readFileSync('./src/links.html', 'utf8')
 var sourceDetails = fs.readFileSync('./src/details.html', 'utf8')
 var javascriptAsString = fs.readFileSync('./src/inc/sortable.js', 'utf8')
@@ -33,6 +34,7 @@ var templatePrivacy = Handlebars.compile(sourcePrivacy)
 var templateDetails = Handlebars.compile(sourceDetails)
 var templateHowTo = Handlebars.compile(sourceHowTo)
 var templateLinks = Handlebars.compile(sourceLinks)
+var templateSupportUs = Handlebars.compile(sourceSupportUs)
 
 Handlebars.registerPartial('header-static', fs.readFileSync('./src/inc/header-static.html', 'utf8'))
 Handlebars.registerPartial('header-list', fs.readFileSync('./src/inc/header-list.html', 'utf8'))
@@ -74,6 +76,10 @@ var generateStaticGeneralSites = function (data, dir) {
 
     console.log('generate', dir + '/links.html')
     fs.writeFileSync(dir + '/links.html', templateLinks(data))
+
+
+    console.log('generate', dir + '/supportus.html')
+    fs.writeFileSync(dir + '/supportus.html', templateSupportUs(data))
 }
 
 fs.removeSync('./dist')
