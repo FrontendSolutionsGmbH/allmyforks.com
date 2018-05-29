@@ -3,10 +3,10 @@ var fs = require('fs-extra');
 const helper = require('./helper.js')
 
 var source = fs.readFileSync('./src/list.html', 'utf8')
-var sortableJS = fs.readFileSync('./src/res/sortable.js')
-var w3proCss = fs.readFileSync('./src/res/w3pro.css')
-source = source.replace('{{{styles}}}', '<style>' + w3proCss + '</style>')
-source = source.replace('{{{javascript}}}', '<script type="text/javascript">' + sortableJS + '</script>')
+var sortableJS = fs.readFileSync('./src/inc/sortable.js', 'utf8')
+var w3proCss = fs.readFileSync('./src/inc/w3pro.css', 'utf8')
+var sourceHeader = fs.readFileSync('./src/inc/header.html', 'utf8')
+var sourceFooter = fs.readFileSync('./src/inc/footer.html', 'utf8')
 
 
 const crawledData = require('./input/crawl.json')
@@ -16,22 +16,27 @@ var mergedData = helper.mergeData(localData, crawledData)
 mergedData.languages.map((lang) => {
     mergedData.coins.filter(f => f.forks).map((coin) => {
         mergedData.fiats.map((fiat) => {
-           helper.enrichWithCalculations(coin, fiat, lang)
+            helper.enrichWithCalculations(coin, fiat, lang)
         })
     })
 })
 
 Handlebars.registerHelper('fiatWithCurrency', helper.fiatWithCurrency);
-Handlebars.registerHelper("prettifyDate", function(timestamp) {
+Handlebars.registerHelper("prettifyDate", function (timestamp) {
     return new Date(timestamp).toString('yyyy-MM-dd hh:mm:ss')
 });
 
 var template = Handlebars.compile(source)
-
+var templateHeader = Handlebars.compile(sourceHeader)
+var templateFooter = Handlebars.compile(sourceFooter)
+Handlebars.registerPartial('header', sourceHeader)
+Handlebars.registerPartial('footer', sourceFooter)
+Handlebars.registerPartial('javascript', '<script type="text/javascript">' + sortableJS + '</script>')
+Handlebars.registerPartial('styles', '<style>' + w3proCss + '</style>')
 
 var generateListHTML = function (currentCoin, currentLanguage, currentFiat) {
 
-    
+
     var data = {
         donations: mergedData.donations,
         languages: mergedData.languages,
