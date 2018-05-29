@@ -1,9 +1,12 @@
 var Handlebars = require('handlebars');
 var fs = require('fs-extra');
 const helper = require('./helper.js')
+const aggregator = require('./aggregator.js')
 
 var sourceList = fs.readFileSync('./src/list.html', 'utf8')
 var sourceImprint = fs.readFileSync('./src/imprint.html', 'utf8')
+var sourcePrivacy = fs.readFileSync('./src/privacy.html', 'utf8')
+var sourceDetails = fs.readFileSync('./src/details.html', 'utf8')
 var javascriptAsString = fs.readFileSync('./src/inc/sortable.js', 'utf8')
 var stylesAsString = fs.readFileSync('./src/inc/w3pro.css', 'utf8')
 var sourceFooter = fs.readFileSync('./src/inc/footer.html', 'utf8')
@@ -12,14 +15,8 @@ var sourceFooter = fs.readFileSync('./src/inc/footer.html', 'utf8')
 const crawledData = require('./input/crawl.json')
 const localData = require('./input/local.js')
 
-var mergedData = helper.mergeData(localData, crawledData)
-mergedData.languages.map((lang) => {
-    mergedData.coins.filter(f => f.forks).map((coin) => {
-        mergedData.fiats.map((fiat) => {
-            helper.enrichWithCalculations(coin, fiat, lang)
-        })
-    })
-})
+var mergedData = aggregator.mergeData(localData, crawledData)
+
 
 Handlebars.registerHelper('fiatWithCurrency', helper.fiatWithCurrency);
 Handlebars.registerHelper("prettifyDate", function (timestamp) {
@@ -28,6 +25,9 @@ Handlebars.registerHelper("prettifyDate", function (timestamp) {
 
 var template = Handlebars.compile(sourceList)
 var templateImprint = Handlebars.compile(sourceImprint)
+var templatePrivacy = Handlebars.compile(sourcePrivacy)
+var templateDetails = Handlebars.compile(sourceDetails)
+
 
 Handlebars.registerPartial('header-static', fs.readFileSync('./src/inc/header-static.html', 'utf8'))
 Handlebars.registerPartial('header-list', fs.readFileSync('./src/inc/header-list.html', 'utf8'))
@@ -36,12 +36,7 @@ Handlebars.registerPartial('javascript', '<script type="text/javascript">' + jav
 Handlebars.registerPartial('styles', '<style>' + stylesAsString + '</style>')
 
 var generateListHTMLSite = function (data, dir) {
-    var selectors = helper.getSelectorsLangFiatCoins(data)
 
-    data.selectLanguages = selectors.selectLanguages
-    data.selectFiats = selectors.selectFiats
-    data.selectCoins = selectors.selectCoins
-    data.header.title = ''
     var result = template(data)
 
     console.log('generate', dir + '/index.html')
@@ -49,10 +44,24 @@ var generateListHTMLSite = function (data, dir) {
 
 }
 
+var generateDetailsHTMLSite = function (data, dir) {
+
+    var result = templateDetails(data)
+
+    console.log('generate', dir + '/details.html')
+    fs.writeFileSync(dir + '/details.html', result)
+
+}
+
 var generateStaticGeneralSites = function (data, dir) {
 
     console.log('generate', dir + '/imprint.html')
     fs.writeFileSync(dir + '/imprint.html', templateImprint(data))
+
+
+    console.log('generate', dir + '/privacy.html')
+    fs.writeFileSync(dir + '/privacy.html', templatePrivacy(data))
+
 }
 
 fs.removeSync('./dist')
@@ -82,26 +91,38 @@ mergedData.languages.map((lang) => {
         data.header.title = 'bla'
     generateStaticGeneralSites(data, dir)
 
-    mergedData.coins.filter(f => f.forks).map((coin) => {
-        data.coin = coin
+    mergedData.coins.map((coin) => {
+        data.coin = coin;
 
         dir = './dist/' + lang.id + '/' + coin.id
         fs.mkdirSync(dir)
 
         mergedData.fiats.map((fiat) => {
             data.fiat = fiat
+            var selectors = helper.getSelectorsLangFiatCoins(data)
+
+            data.selectLanguages = selectors.selectLanguages
+            data.selectFiats = selectors.selectFiats
+            data.selectCoins = selectors.selectCoins
+
             dir = './dist/' + lang.id + '/' + coin.id + '/' + fiat.id
             fs.mkdirSync(dir)
 
-            generateListHTMLSite(data, dir)
+            if (coin.forks && coin.forks.length > 0) {
+                generateListHTMLSite(data, dir)
+            }
+
+
+            generateDetailsHTMLSite(data, dir)
         })
     })
+
 
 })
 fs.copySync('./dist/en/bitcoin/dollar/index.html', './dist/index.html')
 fs.copySync('./src/static', './dist/')
 
-/*
+/*aaa
  var currentCoin = mergedData.coins[0]
  var currentLanguage = languages[0]
  var currentFiat = fiats[0]

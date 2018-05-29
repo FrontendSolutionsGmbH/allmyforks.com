@@ -1,5 +1,5 @@
 var childProcess = require('child_process');
-
+var processCounter = 0
 function runScript(scriptPath, callback) {
 
     // keep track of whether callback has been invoked to prevent multiple invocations
@@ -25,16 +25,19 @@ function runScript(scriptPath, callback) {
 }
 
 var rebuild = function () {
-   runScript('./src/generate.js', function (err) {
-	    if (err) console.error(err);
-	    console.log('./src/generate.js');
-	});
+    runScript('./src/generate.js', function (err) {
+        if (err) console.error(err);
+        console.log('./src/generate.js completed');
+        processCounter = 0
+    });
 }
 
 var watch = require('node-watch');
- 
-watch('./src', { recursive: true }, function(evt, name) {
-  console.log('%s changed.', name);
-	rebuild()
+
+watch('./src', {recursive: true}, function (evt, name) {
+    if (processCounter === 0) {
+        processCounter = 1
+        rebuild()
+    }
 });
 rebuild()

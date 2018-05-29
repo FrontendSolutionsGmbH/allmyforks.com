@@ -1,0 +1,37 @@
+{{> header-list}}
+
+
+<div class="w3-container w3-content">
+
+    <h1>This is the detail page for {{coin.name}}</h1>
+</div>
+
+
+<div class="w3-container w3-content">
+    <div id="table-forks-outer">
+
+        {{#with coin}}
+        <ul>
+            <li>Name: {{name}}</li>
+            <li>Fork date: {{date}}</li>
+            <li>Fork Block: {{block}}</li>
+            <li>Price: {{{fiatWithCurrency price ../fiat ../language}}}</li>
+            <li>1 {{coin.shortName}}= {{ratio}} {{shortName}}</li>
+            <li>1 {{coin.shortName}}= {{{fiatWithCurrency priceTimesForkRatio ../fiat ../language}}}</li>
+            <li>Change (24h): + 2%</li>
+        </ul>
+
+        <h2>Price Graph (7d)</h2>
+        {{#with priceGraphData}}
+        <svg xmlns="http://www.w3.org/2000/svg" version="1" width="{{width}}" height="{{height}}">
+            <path stroke="#f7931a" stroke-width="2" fill="transparent" stroke-linecap="square"
+                  d="{{data}}"/>
+        </svg>
+        {{/with}}
+
+
+        {{/with}}
+    </div>
+</div>
+
+{{> footer}}
