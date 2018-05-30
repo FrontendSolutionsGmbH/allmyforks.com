@@ -1,6 +1,6 @@
-const log = require('./log');
-const config = require('./config');
-const crawler = require('./crawler');
+const log = require('./common/log');
+const config = require('./simple/config');
+const crawler = require('./simple/crawler');
 const cron = require('cron');
 
 function checkJob(job){

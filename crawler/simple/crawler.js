@@ -1,7 +1,7 @@
 "use strict";
 
-const log = require('./log');
-const request = require('./request_repeater');
+const log = require('./src/log');
+const request = require('./src/request_repeater');
 const fs = require("fs");
 
 
