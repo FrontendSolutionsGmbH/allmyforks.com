@@ -6,12 +6,14 @@ var fiatWithCurrency = function (value, currentFiat, currentLanguage) {
 
     /* fiatWithCurrency(e.price, currentFiat, currentLanguage) */
 
-    return (value * currentFiat.ratio).toFixed(2).replace('.', currentLanguage.decimalSeparator) + '&nbsp;' + currentFiat.shortName
+    return (value * currentFiat.ratio).toFixed(2).replace('.', currentLanguage.decimalSeparator) + '&nbsp;' + currentFiat.shortName 
 }
 
-
+var fiatWithCurrencyInSpan =function (value, currentFiat, currentLanguage) {
+    return '<span data-curr="'+value+'">' + fiatWithCurrency(value,currentFiat, currentLanguage) + '</span>'
+}
 var getListUrl = function (coin, fiat, language) {
-    return '/' + language.id + '/' + coin.id + '/' + fiat.id + '/'
+    return '/' + language.id + (coin.id === 'bitcoin' ? '' : '/list/' + coin.id) + ((fiat && fiat.id !== 'dollar') ?  '?fiat=' + fiat.id : '')
 }
 
 var getSelectorsLangFiatCoins = function (data) {
@@ -21,15 +23,17 @@ var getSelectorsLangFiatCoins = function (data) {
 
         selectLanguages: data.languages.map((e) => {
             return {
-                value: getListUrl(data.coin, data.fiat, e),
-                selected: (data.language.id === e.id ? 'selected' : ''),
+                id: e.id,
+                value: getListUrl(data.coin, null, e),
+                selected: data.language.id === e.id ? 'selected' : '',
                 title: e.name
             }
         }),
 
         selectFiats: data.fiats.map((e) => {
             return {
-                value: getListUrl(data.coin, e, data.language),
+                id: e.id,
+                value: '?fiat=' + e.id,
                 selected: (data.fiat.id === e.id ? 'selected' : ''),
                 title: e.name
             }
@@ -37,7 +41,8 @@ var getSelectorsLangFiatCoins = function (data) {
 
         selectCoins: data.coinsWithForks.map((e) => {
             return {
-                value: getListUrl(e, data.fiat, data.language),
+                id: e.id,
+                value: getListUrl(e, null, data.language),
                 selected: (data.coin.id === e.id ? 'selected' : ''),
                 title: e.name
             }
@@ -61,6 +66,7 @@ var mathHelper = function (lvalue, operator, rvalue, options) {
 
 module.exports = {
     fiatWithCurrency: fiatWithCurrency,
+    fiatWithCurrencyInSpan: fiatWithCurrencyInSpan,
     getSelectorsLangFiatCoins: getSelectorsLangFiatCoins,
     mathHelper: mathHelper
 }

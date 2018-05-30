@@ -62,11 +62,13 @@ const data = {
     "markets": [
         {
             "id": "okex",
-            "name": "OKEx"
+            "name": "OKEx",
+            "url": "https://www.okex.com/"
         },
         {
             "id": "binance",
-            "name": "Binance"
+            "name": "Binance",
+            "url": "https://www.binance.com/"
         }
     ],
     "coins": [

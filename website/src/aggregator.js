@@ -42,7 +42,8 @@ var mergeData = function (localData, crawledData) {
         languages: localData.languages,
         coins: localData.coins,
         header: localData.header,
-        links: localData.links
+        links: localData.links,
+        markets: localData.markets
     }
 
     // merge fiat crawled and local information

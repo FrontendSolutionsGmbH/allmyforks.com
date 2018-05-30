@@ -18,10 +18,19 @@
             <li>Name: {{name}}</li>
             <li>Fork date: {{date}}</li>
             <li>Fork Block: {{block}}</li>
-            <li>Price: {{{fiatWithCurrency price ../fiat ../language}}}</li>
+            <li>Price: {{{fiatWithCurrencyInSpan price ../fiat ../language}}}</li>
             <li>1 {{coin.shortName}}= {{ratio}} {{shortName}}</li>
-            <li>1 {{coin.shortName}}= {{{fiatWithCurrency priceTimesForkRatio ../fiat ../language}}}</li>
+            <li>1 {{coin.shortName}}= {{{fiatWithCurrencyInSpan priceTimesForkRatio ../fiat ../language}}}</li>
             <li>Change (24h): + 2%</li>
+        </ul>
+    </div>
+
+ <div class="w3-container w3-cell">
+        <h2>Links</h2>
+        <ul>
+            {{#each links}}
+            <li><a href="{{url}}" target="link-{{id}}">{{type}}</a></li>
+            {{/each}}
         </ul>
     </div>
 
@@ -30,7 +39,7 @@
         <h2>Parent Forks</h2>
         <ul>
             {{#each parents}}
-            <li>{{name}}</li>
+            <li><a href="/{{../../language.id}}/{{id}}/">{{name}}</a></li>
             {{/each}}
         </ul>
     </div>
@@ -39,7 +48,7 @@
         <h2>Price Graph (7d)</h2>
         {{#with priceGraphData}}
         <svg xmlns="http://www.w3.org/2000/svg" version="1" width="{{width}}" height="{{height}}"
-             viewBox="0 0 300 auto">
+             >
             <path stroke="#f7931a" stroke-width="2" fill="transparent" stroke-linecap="square"
                   d="{{data}}"/>
         </svg>
@@ -51,9 +60,11 @@
 
     <div class="w3-container w3-cell">
         <h2>Markets</h2>
-        TODO
+         {{#each ../markets}}
+            <li><a href="{{url}}" target="market-{{id}}">{{name}}</a></li>
+            {{/each}}
     </div>
-    <div class="w3-container w3-cell">
+    <div class="w3-container w3-cell w3-hide-small">
         <h2>How do i get my fork-money</h2>
         <a href="/{{../language.id}}/howto.html">Click here</a>
     </div>
