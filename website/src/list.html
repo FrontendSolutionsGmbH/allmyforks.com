@@ -2,11 +2,11 @@
 
 <div class="w3-container w3-content">
 
-    <table class=" w3-table w3-centered">
+    <table class="w3-table w3-centered">
         <tr>
             {{#each coinsWithForks}}
 
-            <td><b>1 {{shortName}}= Σ {{{fiatWithCurrencyInSpan priceSumForks ../fiat ../language}}}</b></td>
+            <td><b>1 {{shortName}}=<br/> Σ {{{fiatWithCurrencyInSpan priceSumForks ../fiat ../language}}}</b></td>
             {{/each}}
 
         </tr>
@@ -30,7 +30,7 @@
 <div class="w3-container w3-content">
 
     <div class="w3-right" id="sum-forks-top">
-        <b>1 {{coin.shortName}}= Σ {{{fiatWithCurrencyInSpan coin.priceSumForks fiat language}}}</b>
+        <b>1 {{coin.shortName}}= {{{fiatWithCurrencyInSpan coin.price fiat language}}} + <span style="text-decoration: underline double;">{{{fiatWithCurrencyInSpan coin.priceSumForks fiat language}}}</span></b>
     </div>
 </div>
 
