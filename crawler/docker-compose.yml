@@ -100,6 +100,20 @@ services:
     depends_on:
       - db
 
+  crawler_bitfinex:
+    image: rainu/cryptocrawler
+    build:
+      context: ./
+    environment:
+      - CFG_MONGO_HOST=db
+      - CFG_MONGO_DB=bitfinex
+      - CFG_JOB_0_SYMBOL=BTC
+      - CFG_JOB_0_CRON=0 0 */12 * * *
+    command: "bitfinex.js"
+    restart: always
+    depends_on:
+      - db
+
   crawler_coinbase:
     image: rainu/cryptocrawler
     build:
