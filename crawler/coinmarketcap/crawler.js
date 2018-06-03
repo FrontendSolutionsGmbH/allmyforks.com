@@ -12,7 +12,16 @@ const MIN_DATE = moment('2009-01-01');
 
 const determineStartDate = function(symbol, fiat, defaultStartDate) {
   return new Promise((resolve, reject) => {
-    HistoricalCourse.find({ symbol: symbol, fiat: fiat })
+    HistoricalCourse.find({
+      from: {
+        symbol: symbol,
+        type: 'crypto'
+      },
+      to: {
+        symbol: fiat,
+        type: 'fiat'
+      }
+    })
     .limit(1)
     .sort({ date: 'desc' })
     .select({ date: 1})
@@ -47,7 +56,10 @@ const parse = function(content) {
 
     const data = {
       date: moment(rawDate, "MMM DD, YYYY").hour(0).minute(0).toDate(),
-      fiat: 'USD',
+      to: {
+        symbol: 'USD',
+        type: 'fiat'
+      },
       open: saveParseFloat(cells.eq(1).data('format-value')),
       high: saveParseFloat(cells.eq(2).data('format-value')),
       low: saveParseFloat(cells.eq(3).data('format-value')),
@@ -66,7 +78,7 @@ const saveCourses = function(courses){
   let operationCount = 0;
 
   for(let curCourse of courses){
-    let where = { symbol: curCourse.symbol, fiat: curCourse.fiat, date: curCourse.date }
+    let where = { from: curCourse.from, to: curCourse.to, date: curCourse.date }
 
     //add bulk operation
     bulk.find(where).upsert().updateOne(curCourse);
@@ -84,7 +96,10 @@ const saveCourses = function(courses){
 const parseCourses = function(coin, body) {
   return parse(body).map(curCourse => {
     return {
-      symbol: coin.symbol,
+      from: {
+        symbol: coin.symbol,
+        type: 'crypto'
+      },
       ...curCourse,
     }
   })

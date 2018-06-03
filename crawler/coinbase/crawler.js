@@ -15,13 +15,19 @@ const processEachCourse = function(body){
 
   for(let price of data.data.prices){
     let entity = {
-      symbol: symbol,
-      fiat: fiat,
+      from: {
+        symbol: symbol,
+        type: 'crypto'
+      },
+      to: {
+        symbol: fiat,
+        type: 'fiat'
+      },
       date: price.time,
       close: Number.parseFloat(price.price)
     };
 
-    let where = { symbol: entity.symbol, fiat: entity.fiat, date: entity.date };
+    let where = { from: entity.from, to: entity.to, date: entity.date };
     bulk.find(where).upsert().updateOne(entity);
     operationCount++;
   }

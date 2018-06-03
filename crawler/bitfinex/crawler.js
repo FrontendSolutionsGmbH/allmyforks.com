@@ -11,7 +11,16 @@ const PAGE_SIZE = 500;
 
 const determineStartDate = function(symbol, fiat, defaultStartDate) {
   return new Promise((resolve, reject) => {
-    HistoricalCourse.find({ symbol: symbol, fiat: fiat })
+    HistoricalCourse.find({
+      from: {
+        symbol: symbol,
+        type: 'crypto'
+      },
+      to: {
+        symbol: fiat,
+        type: 'fiat'
+      }
+    })
     .limit(1)
     .sort({ date: 'desc' })
     .select({ date: 1})
@@ -49,8 +58,14 @@ const processEachCourse = function(symbol, fiat, body){
 
   for(let curEntity of data){
     let entity = {
-      symbol: symbol,
-      fiat: fiat,
+      from: {
+        symbol: symbol,
+        type: 'crypto'
+      },
+      to: {
+        symbol: fiat,
+        type: 'fiat'
+      },
       date: moment(curEntity[0]).toDate(),
       open: curEntity[1],
       close: curEntity[2],
@@ -59,7 +74,7 @@ const processEachCourse = function(symbol, fiat, body){
       volume: curEntity[5],
     };
 
-    let where = { symbol: entity.symbol, fiat: entity.fiat, date: entity.date };
+    let where = { from: entity.from, to: entity.to, date: entity.date };
     bulk.find(where).upsert().updateOne(entity);
     operationCount++;
   }
