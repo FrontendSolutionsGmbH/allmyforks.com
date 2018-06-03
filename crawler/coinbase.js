@@ -21,7 +21,7 @@ for(let job of config.job) {
   log.info("Spawn job " + JSON.stringify(job));
   new cron.CronJob(job.cron, () => {
     log.info("Start crawling '" + job.symbol + "'");
-    crawler.get("BTC").then(() => {
+    crawler.get(job.symbol).then(() => {
       log.info("Finishing crawling '" + job.symbol + "'");
     }).catch(err => {
       log.error("Error while crawling crawling '" + job.symbol + "'", err);
