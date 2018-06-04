@@ -123,6 +123,21 @@ const crawl = function(coin, from = MIN_DATE){
     .then((startDate) => processCourse(coin, startDate))
 };
 
+const list = function() {
+  const url = 'https://api.coinmarketcap.com/v2/listings/'
+  return request(url)
+    .then(({body}) => {
+      const data = JSON.parse(body);
+
+      return data.data.map(entity => {
+        return {
+          symbol: entity.symbol,
+          slug: entity.website_slug,
+        }
+      })
+    })
+}
+
 module.exports = {
-  crawl
+  crawl, list
 };

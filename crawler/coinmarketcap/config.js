@@ -12,7 +12,8 @@ const defaults = {
     host: "localhost",
     port: 27017,
     db: "coinmarketcap"
-  }
+  },
+  cron: '0 0 */12 * * *'
 };
 
 module.exports = {
