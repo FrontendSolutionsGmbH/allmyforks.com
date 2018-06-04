@@ -2,11 +2,17 @@
 
 <div class="w3-container w3-content">
 
+
     <table class="w3-table w3-centered">
         <tr>
             {{#each coinsWithForks}}
 
-            <td><b>1 {{shortName}}=<br/> Σ {{{fiatWithCurrencyInSpan priceSumForks ../fiat ../language}}}</b></td>
+            <td><b><!--asd {{formatNumber priceSumForks style="currency" currency="USD"}}<br/>-->
+
+
+                1 {{shortName}}=<br/> Σ {{{fiatWithCurrencyInSpan priceSumForks ../fiat ../language}}}</b></td>
+
+
             {{/each}}
 
         </tr>
@@ -17,8 +23,8 @@
 
 <div class="w3-container w3-content">
     {{coin.Name}}
-    <h2>Forks for <select class="w3-select" style="width:auto" name="option" id="select-forks"
-                          onchange="location = this.value;">
+    <h2>{{intlGet "list_forks_for"}} <select class="w3-select" style="width:auto" name="option" id="select-forks"
+                                             onchange="location = this.value;">
         {{#each selectCoins}}
         <option value="{{value}}" {{selected}}>{{title}}</option>
         {{/each}}
@@ -30,7 +36,8 @@
 <div class="w3-container w3-content">
 
     <div class="w3-right" id="sum-forks-top">
-        <b>1 {{coin.shortName}}= {{{fiatWithCurrencyInSpan coin.price fiat language}}} + <span style="text-decoration: underline double;">{{{fiatWithCurrencyInSpan coin.priceSumForks fiat language}}}</span></b>
+        <b>1 {{coin.shortName}}= {{{fiatWithCurrencyInSpan coin.price fiat language}}} + <span
+                style="text-decoration: underline double;">{{{fiatWithCurrencyInSpan coin.priceSumForks fiat language}}}</span></b>
     </div>
 </div>
 

@@ -1,4 +1,6 @@
 var Handlebars = require('handlebars');
+var HandlebarsIntl = require('handlebars-intl');
+
 var fs = require('fs-extra');
 const helper = require('./helper.js')
 const aggregator = require('./aggregator.js')
@@ -14,13 +16,12 @@ var javascriptAsString = fs.readFileSync('./src/inc/general.js', 'utf8') + '\r\n
 var stylesAsString = fs.readFileSync('./src/inc/w3pro.css', 'utf8')
 var sourceFooter = fs.readFileSync('./src/inc/footer.html', 'utf8')
 
-
 const crawledData = require('./input/crawl.json')
 const localData = require('./input/local.js')
 
 var mergedData = aggregator.mergeData(localData, crawledData)
 
-
+HandlebarsIntl.registerWith(Handlebars);
 Handlebars.registerHelper('fiatWithCurrency', helper.fiatWithCurrency);
 Handlebars.registerHelper('fiatWithCurrencyInSpan', helper.fiatWithCurrencyInSpan);
 Handlebars.registerHelper("math", helper.mathHelper);
@@ -59,7 +60,9 @@ var generatePage = function (data, directoryFromRoot, templateFunc, pageId) {
 
     data.title = Handlebars.compile(data.pages[data.pageId].title)(data)
 
-    fs.writeFileSync(filename, templateFunc(data))
+    fs.writeFileSync(filename, templateFunc(data, {
+        data: data,
+    }))
 }
 
 
@@ -79,19 +82,22 @@ fs.mkdirSync('./dist')
 
 var data = mergedData;
 
-data.coinsWithForks = mergedData.coins.filter(f => f.forks)
+data.coinsWithForks = data.coins.filter(f => f.forks)
 data.timestamp = Date.now()
 
 
-data.fiat = mergedData.fiats[0]
-data.coin = mergedData.coins[0]
-data.language = mergedData.languages[0]
+data.fiat = data.fiats[0]
+data.coin = data.coins[0]
+data.language = data.languages[0]
 
-mergedData.languages.map((lang) => {
+
+data.languages.map((lang) => {
     data.language = lang
+
+    data.intl = lang.messages
     var dir = lang.id
 
-    Handlebars.registerPartial('javascript', '<script type="text/javascript">' + templateJavascript(mergedData) + '</script>')
+    Handlebars.registerPartial('javascript', '<script type="text/javascript">' + templateJavascript(data) + '</script>')
     data.selectLanguages = data.languages.map((e) => {
         return {
             id: e.id,
@@ -103,7 +109,7 @@ mergedData.languages.map((lang) => {
 
     generateStaticGeneralSites(data, dir)
 
-    mergedData.coins.map((coin) => {
+    data.coins.map((coin) => {
         data.coin = coin;
         dir = lang.id + '/list/' + coin.id
 
@@ -120,19 +126,10 @@ mergedData.languages.map((lang) => {
 })
 
 
-mergedData.languages.map((lang) => {
+data.languages.map((lang) => {
     fs.copySync('./dist/' + lang.id + '/list/bitcoin/index.html', './dist/' + lang.id + '/index.html')
     console.log('copied', './dist/' + lang.id + '/list/bitcoin/index.html', './dist/' + lang.id + '/index.html')
 })
 fs.copySync('./dist/en/index.html', './dist/index.html')
 fs.copySync('./src/static', './dist/')
 console.log('copied', './dist/en/index.html', './dist/index.html')
-
-/*aaa
- var currentCoin = mergedData.coins[0]
- var currentLanguage = languages[0]
- var currentFiat = fiats[0]
- var result = generateListHTML(currentCoin, currentLanguage, currentFiat)
- console.log(result)a
- fs.writeFileSync('static/output.html', result)aaa
- */

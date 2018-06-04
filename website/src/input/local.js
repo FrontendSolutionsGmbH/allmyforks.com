@@ -73,13 +73,15 @@ const data = {
             "id": "en",
             "name": "English",
             "shortName": "en",
-            "decimalSeparator": "."
+            "decimalSeparator": ".",
+            "messages": require('./intl/en.json')
         },
         {
             "id": "de",
             "name": "Deutsch",
             "shortName": "de",
-            "decimalSeparator": ","
+            "decimalSeparator": ",",
+            "messages": require('./intl/de.json')
         }
     ],
     "markets": [
