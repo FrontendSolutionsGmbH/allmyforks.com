@@ -108,36 +108,21 @@ const parseCourses = function(coin, body) {
 const processCourse = function(coin, startDate){
   const start = startDate.format('YYYYMMDD');
   const end = moment().add(-1, 'days').format('YYYYMMDD');
-  const url = `https://coinmarketcap.com/currencies/${coin.website_slug}/historical-data/?start=${start}&end=${end}`;
+  const url = `https://coinmarketcap.com/currencies/${coin.slug}/historical-data/?start=${start}&end=${end}`;
 
   //crawl the coin
   return request(url)
-  .then(({body}) => parseCourses(coin, body))
-  .then(saveCourses)
-  .catch(err => log.error(`[DONE] Historical course of ${coin.symbol} with error`, err))
-  .then(() => log.info(`[DONE] Historical course of ${coin.symbol}`))
+    .then(({body}) => parseCourses(coin, body))
+    .then(saveCourses)
+    .catch(err => log.error(`[DONE] Historical course of ${coin.symbol} with error`, err))
+    .then(() => log.info(`[DONE] Historical course of ${coin.symbol}`))
 }
 
-const processEachCourse = function(body, minStartDate) {
-  let requestPromises = [];
-  let jsonBody = JSON.parse(body);
-
-  //now we can crawl each coin
-  for(let coin of jsonBody.data) {
-    let p = determineStartDate(coin.symbol, 'USD', minStartDate)
+const crawl = function(coin, from = MIN_DATE){
+  return determineStartDate(coin.symbol, 'USD', from)
     .then((startDate) => processCourse(coin, startDate))
-
-    requestPromises.push(p);
-  }
-
-  //wait for all requests
-  return Promise.all(requestPromises)
-}
-
-const crawl = function(from = MIN_DATE){
-  //first we need to know which coins ar listed
-  return request("https://api.coinmarketcap.com/v2/listings/")
-  .then(({body}) => processEachCourse(body, from))
 };
 
-module.exports = crawl;
+module.exports = {
+  crawl
+};
