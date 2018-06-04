@@ -1,6 +1,6 @@
-#Crawler
+# Crawler
 
-#General Usage
+# General Usage
 
 Example docker-compose for simple-crawler
 ```yml
@@ -43,7 +43,7 @@ So we have to set this env-variables:
 * CFG_JOB_*0*_**SUFFIX**=.json
 * CFG_JOB_*0*_**CRON**=*/30 * * * * *
 
-#Simple: Environment in detail
+# Simple: Environment in detail
 
 | Variable      | Default-Value | required | Description  |
 | ------------- |:-------------:|:-------------:| ------------|
@@ -56,7 +56,7 @@ So we have to set this env-variables:
 | CFG_JOB_*N*_CRON        |  | true | The cron string. See [Cron-Syntax](https://github.com/kelektiv/node-cron#available-cron-patterns) |
 | CFG_JOB_*N*_SUFFIX      | .html | false | The suffix for output content |
 
-#Binance: Environment in detail
+# Binance: Environment in detail
 
 | Variable      | Default-Value | required | Description  |
 | ------------- |:-------------:|:-------------:| ------------|
@@ -73,7 +73,7 @@ So we have to set this env-variables:
 
 If no JOB is configured, ALL symbols from binance will be crawled!
 
-#Coinmarketcap: Environment in detail
+# Coinmarketcap: Environment in detail
 
 | Variable      | Default-Value | required | Description  |
 | ------------- |:-------------:|:-------------:| ------------|
