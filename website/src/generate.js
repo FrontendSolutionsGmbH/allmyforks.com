@@ -29,7 +29,7 @@ Handlebars.registerHelper("prettifyDate", function (timestamp) {
     return new Date(timestamp).toString('yyyy-MM-dd hh:mm:ss')
 });
 
-var template = Handlebars.compile(sourceList)
+var templateList = Handlebars.compile(sourceList)
 var templateImprint = Handlebars.compile(sourceImprint)
 var templatePrivacy = Handlebars.compile(sourcePrivacy)
 var templateDetails = Handlebars.compile(sourceDetails)
@@ -38,46 +38,37 @@ var templateLinks = Handlebars.compile(sourceLinks)
 var templateSupportUs = Handlebars.compile(sourceSupportUs)
 var templateJavascript = Handlebars.compile(javascriptAsString)
 
-Handlebars.registerPartial('header-static', fs.readFileSync('./src/inc/header-static.html', 'utf8'))
+Handlebars.registerPartial('header-static', fs.readFileSync('./src/inc/header-list.html', 'utf8'))
 Handlebars.registerPartial('header-list', fs.readFileSync('./src/inc/header-list.html', 'utf8'))
 Handlebars.registerPartial('footer', sourceFooter)
 Handlebars.registerPartial('styles', '<style>' + stylesAsString + '</style>')
 
-var generateListHTMLSite = function (data, dir) {
-    var result = template(data)
-    console.log('generate', dir + '/index.html')
-    fs.writeFileSync(dir + '/index.html', result)
+var generatePage = function (data, directoryFromRoot, templateFunc) {
+    var directory = './dist/' + directoryFromRoot
+    var filename = directory + '/' + 'index.html'
+    fs.ensureDirSync(directory)
+    console.log('generate', filename)
+    data.url = '/' + directoryFromRoot
+
+    var selectors = helper.getSelectorsLangFiatCoins(data)
+
+    data.selectLanguages = selectors.selectLanguages
+    data.selectFiats = selectors.selectFiats
+    data.selectCoins = selectors.selectCoins
+
+
+    fs.writeFileSync(filename, templateFunc(data))
 }
 
-var generateDetailsHTMLSite = function (data, dir) {
-
-    var result = templateDetails(data)
-
-    console.log('generate', dir + '/index.html')
-    fs.writeFileSync(dir + '/index.html', result)
-
-}
 
 var generateStaticGeneralSites = function (data, dir) {
 
-    console.log('generate', dir + '/imprint.html')
-    fs.writeFileSync(dir + '/imprint.html', templateImprint(data))
+    generatePage(data, dir + '/imprint', templateImprint)
+    generatePage(data, dir + '/privacy', templatePrivacy)
+    generatePage(data, dir + '/howto', templateHowTo)
+    generatePage(data, dir + '/links', templateLinks)
+    generatePage(data, dir + '/supportus', templateSupportUs)
 
-
-    console.log('generate', dir + '/privacy.html')
-    fs.writeFileSync(dir + '/privacy.html', templatePrivacy(data))
-
-
-    console.log('generate', dir + '/howto.html')
-    fs.writeFileSync(dir + '/howto.html', templateHowTo(data))
-
-
-    console.log('generate', dir + '/links.html')
-    fs.writeFileSync(dir + '/links.html', templateLinks(data))
-
-
-    console.log('generate', dir + '/supportus.html')
-    fs.writeFileSync(dir + '/supportus.html', templateSupportUs(data))
 }
 
 fs.removeSync('./dist')
@@ -90,15 +81,15 @@ data.coinsWithForks = mergedData.coins.filter(f => f.forks)
 data.timestamp = Date.now()
 
 
+data.fiat = mergedData.fiats[0]
+data.coin = mergedData.coins[0]
+data.language = mergedData.languages[0]
+
 mergedData.languages.map((lang) => {
     data.language = lang
-    var dir = './dist/' + lang.id
-    fs.mkdirSync(dir)
-
+    var dir = lang.id
 
     Handlebars.registerPartial('javascript', '<script type="text/javascript">' + templateJavascript(mergedData) + '</script>')
-
-
     data.selectLanguages = data.languages.map((e) => {
         return {
             id: e.id,
@@ -108,34 +99,19 @@ mergedData.languages.map((lang) => {
         }
     })
 
-    data.header.title = 'bla'
     generateStaticGeneralSites(data, dir)
 
-    fs.mkdirSync(dir + '/list')
-    fs.mkdirSync(dir + '/details')
     mergedData.coins.map((coin) => {
         data.coin = coin;
+        dir = lang.id + '/list/' + coin.id
 
-        
-        dir = './dist/' + lang.id + '/list/' + coin.id
-        fs.mkdirSync(dir)
-
-
-        data.fiat =  mergedData.fiats[0]
-        var selectors = helper.getSelectorsLangFiatCoins(data)
-
-        data.selectLanguages = selectors.selectLanguages
-        data.selectFiats = selectors.selectFiats
-        data.selectCoins = selectors.selectCoins
 
         if (coin.forks && coin.forks.length > 0) {
-            generateListHTMLSite(data, dir)
+            generatePage(data, dir, templateList)
         }
 
-        dir = './dist/' + lang.id + '/details/' + coin.id
-        fs.mkdirSync(dir)
-
-        generateDetailsHTMLSite(data, dir)
+        dir = lang.id + '/details/' + coin.id
+        generatePage(data, dir, templateDetails)
     })
 
 
@@ -143,8 +119,8 @@ mergedData.languages.map((lang) => {
 
 
 mergedData.languages.map((lang) => {
-    fs.copySync('./dist/'+lang.id+'/list/bitcoin/index.html', './dist/'+lang.id+'/index.html')
-    console.log('copied', './dist/'+lang.id+'/list/bitcoin/index.html', './dist/'+lang.id+'/index.html')
+    fs.copySync('./dist/' + lang.id + '/list/bitcoin/index.html', './dist/' + lang.id + '/index.html')
+    console.log('copied', './dist/' + lang.id + '/list/bitcoin/index.html', './dist/' + lang.id + '/index.html')
 })
 fs.copySync('./dist/en/index.html', './dist/index.html')
 fs.copySync('./src/static', './dist/')

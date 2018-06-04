@@ -29,9 +29,10 @@ if (currentFiatId !== 'dollar' && fiats[currentFiatId]) {
 	    currElems[i].innerHTML =  fiatWithCurrency(currElems[i].dataset.curr, fiats[currentFiatId], lang)
 	}
 
-	window.localStorage && window.localStorage.setItem('fiat', currentFiatId);
 
 	document.querySelector('[data-fiat-option="'+currentFiatId+'"]').selected = true;
 }
+
+window.localStorage && window.localStorage.setItem('fiat', currentFiatId);
 
 

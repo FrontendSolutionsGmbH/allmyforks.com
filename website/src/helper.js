@@ -6,14 +6,33 @@ var fiatWithCurrency = function (value, currentFiat, currentLanguage) {
 
     /* fiatWithCurrency(e.price, currentFiat, currentLanguage) */
 
-    return (value * currentFiat.ratio).toFixed(2).replace('.', currentLanguage.decimalSeparator) + '&nbsp;' + currentFiat.shortName 
+    return (value * currentFiat.ratio).toFixed(2).replace('.', currentLanguage.decimalSeparator) + '&nbsp;' + currentFiat.shortName
 }
 
-var fiatWithCurrencyInSpan =function (value, currentFiat, currentLanguage) {
-    return '<span data-curr="'+value+'">' + fiatWithCurrency(value,currentFiat, currentLanguage) + '</span>'
+var fiatWithCurrencyInSpan = function (value, currentFiat, currentLanguage) {
+    return '<span data-curr="' + value + '">' + fiatWithCurrency(value, currentFiat, currentLanguage) + '</span>'
 }
 var getListUrl = function (coin, fiat, language) {
-    return '/' + language.id + (coin.id === 'bitcoin' ? '' : '/list/' + coin.id) + ((fiat && fiat.id !== 'dollar') ?  '?fiat=' + fiat.id : '')
+    return '/' + language.id + (coin.id === 'bitcoin' ? '' : '/list/' + coin.id) + ((fiat && fiat.id !== 'dollar') ? '?fiat=' + fiat.id : '')
+}
+
+var getSameUrl = function (data, coin, language) {
+    var newUrl = data.url
+
+    if (data.language.id === 'en') {
+        if (newUrl === '/') {
+            newUrl = '/' + data.language.id + '/list/' + coin.id
+        }
+    }
+    newUrl = newUrl.replace('/' + data.coin.id, '/' + coin.id)
+    newUrl = newUrl.replace('/' + data.language.id, '/' + language.id)
+
+    if (newUrl === '/en/list/bitcoin') {
+        newUrl = '/'
+    } else if (newUrl.endsWith('/list/bitcoin')) {
+        newUrl = newUrl.replace('/list/bitcoin', '')
+    }
+    return newUrl
 }
 
 var getSelectorsLangFiatCoins = function (data) {
@@ -24,7 +43,7 @@ var getSelectorsLangFiatCoins = function (data) {
         selectLanguages: data.languages.map((e) => {
             return {
                 id: e.id,
-                value: getListUrl(data.coin, null, e),
+                value: getSameUrl(data, data.coin, e),
                 selected: data.language.id === e.id ? 'selected' : '',
                 title: e.name
             }
@@ -42,11 +61,11 @@ var getSelectorsLangFiatCoins = function (data) {
         selectCoins: data.coinsWithForks.map((e) => {
             return {
                 id: e.id,
-                value: getListUrl(e, null, data.language),
+                value: getSameUrl(data, e, data.language),
                 selected: (data.coin.id === e.id ? 'selected' : ''),
                 title: e.name
             }
-        }),
+        })
     }
 }
 
