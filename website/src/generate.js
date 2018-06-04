@@ -38,17 +38,18 @@ var templateLinks = Handlebars.compile(sourceLinks)
 var templateSupportUs = Handlebars.compile(sourceSupportUs)
 var templateJavascript = Handlebars.compile(javascriptAsString)
 
-Handlebars.registerPartial('header-static', fs.readFileSync('./src/inc/header-list.html', 'utf8'))
-Handlebars.registerPartial('header-list', fs.readFileSync('./src/inc/header-list.html', 'utf8'))
+Handlebars.registerPartial('header-static', fs.readFileSync('./src/inc/header.html', 'utf8'))
+Handlebars.registerPartial('header-list', fs.readFileSync('./src/inc/header.html', 'utf8'))
 Handlebars.registerPartial('footer', sourceFooter)
 Handlebars.registerPartial('styles', '<style>' + stylesAsString + '</style>')
 
-var generatePage = function (data, directoryFromRoot, templateFunc) {
+var generatePage = function (data, directoryFromRoot, templateFunc, pageId) {
     var directory = './dist/' + directoryFromRoot
     var filename = directory + '/' + 'index.html'
     fs.ensureDirSync(directory)
     console.log('generate', filename)
     data.url = '/' + directoryFromRoot
+    data.pageId = pageId || 'default'
 
     var selectors = helper.getSelectorsLangFiatCoins(data)
 
@@ -56,6 +57,7 @@ var generatePage = function (data, directoryFromRoot, templateFunc) {
     data.selectFiats = selectors.selectFiats
     data.selectCoins = selectors.selectCoins
 
+    data.title = Handlebars.compile(data.pages[data.pageId].title)(data)
 
     fs.writeFileSync(filename, templateFunc(data))
 }
@@ -63,11 +65,11 @@ var generatePage = function (data, directoryFromRoot, templateFunc) {
 
 var generateStaticGeneralSites = function (data, dir) {
 
-    generatePage(data, dir + '/imprint', templateImprint)
-    generatePage(data, dir + '/privacy', templatePrivacy)
-    generatePage(data, dir + '/howto', templateHowTo)
-    generatePage(data, dir + '/links', templateLinks)
-    generatePage(data, dir + '/supportus', templateSupportUs)
+    generatePage(data, dir + '/imprint', templateImprint, 'imprint')
+    generatePage(data, dir + '/privacy', templatePrivacy, 'privacy')
+    generatePage(data, dir + '/howto', templateHowTo, 'howto')
+    generatePage(data, dir + '/links', templateLinks, 'links')
+    generatePage(data, dir + '/supportus', templateSupportUs, 'supportus')
 
 }
 
@@ -107,11 +109,11 @@ mergedData.languages.map((lang) => {
 
 
         if (coin.forks && coin.forks.length > 0) {
-            generatePage(data, dir, templateList)
+            generatePage(data, dir, templateList, 'list')
         }
 
         dir = lang.id + '/details/' + coin.id
-        generatePage(data, dir, templateDetails)
+        generatePage(data, dir, templateDetails, 'details')
     })
 
 

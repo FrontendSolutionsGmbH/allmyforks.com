@@ -41,7 +41,7 @@ var mergeData = function (localData, crawledData) {
         donations: localData.donations,
         languages: localData.languages,
         coins: localData.coins,
-        header: localData.header,
+        pages: localData.pages,
         links: localData.links,
         markets: localData.markets
     }

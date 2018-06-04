@@ -35,6 +35,7 @@ var getSameUrl = function (data, coin, language) {
     return newUrl
 }
 
+
 var getSelectorsLangFiatCoins = function (data) {
 
 

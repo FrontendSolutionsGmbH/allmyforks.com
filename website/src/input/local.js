@@ -9,8 +9,31 @@
 
 const data = {
 
-    "header": {
-        "title": "allmyforks"
+    "pages": {
+        "default": {
+            "title": "allmyforks.com"
+        },
+        "imprint": {
+            "title": "Imprint"
+        },
+        "howto": {
+            "title": "How to"
+        },
+        "links": {
+            "title": "Links"
+        },
+        "privacy": {
+            "title": "Privacy Policy"
+        },
+        "supportus": {
+            "title": "Support us"
+        },
+        "list": {
+            "title": "1 {{coin.shortName}}= Σ {{{fiatWithCurrency coin.priceSumForks fiat language}}}"
+        },
+        "details": {
+            "title": "{{coin.shortName}} fork details"
+        }
     },
     "links": [
         {
