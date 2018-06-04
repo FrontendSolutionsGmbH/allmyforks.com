@@ -17,10 +17,10 @@ const data = {
             "title": "Imprint"
         },
         "howto": {
-            "title": "How to"
+            "title": "How to get fork money"
         },
-        "links": {
-            "title": "Links"
+        "whatareforks": {
+            "title": "What are Forks"
         },
         "privacy": {
             "title": "Privacy Policy"

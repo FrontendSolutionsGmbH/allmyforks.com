@@ -22,29 +22,12 @@
             <li>1 {{coin.shortName}}= {{ratio}} {{shortName}}</li>
             <li>1 {{coin.shortName}}= {{{fiatWithCurrencyInSpan priceTimesForkRatio ../fiat ../language}}}</li>
             <li>Change (24h): + 2%</li>
-        </ul>
-    </div>
 
-    <div class="w3-container w3-cell">
-        <h2>Links</h2>
-        <ul>
-            {{#each links}}
-            <li><a href="{{url}}" target="link-{{id}}">{{type}}</a></li>
-            {{/each}}
-        </ul>
-    </div>
-
-
-    <div class="w3-container w3-cell">
-        <h2>Parent Forks</h2>
-        <ul>
             {{#each parents}}
-            <li><a href="/{{../../language.id}}/{{id}}/">{{name}}</a></li>
+            <li>Forked from: <a href="/{{../../language.id}}/{{id}}/">{{name}}</a></li>
             {{/each}}
         </ul>
-    </div>
 
-    <div class="w3-container w3-cell">
         <h2>Price Graph (7d)</h2>
         {{#with priceGraphData}}
         <svg xmlns="http://www.w3.org/2000/svg" version="1" width="{{width}}" height="{{height}}"
@@ -55,18 +38,36 @@
         {{/with}}
     </div>
 
-</div>
-<div class="w3-cell-row">
-
-    <div class="w3-container w3-cell">
-        <h2>Markets</h2>
-        {{#each ../markets}}
-        <li><a href="{{url}}" target="market-{{id}}">{{name}}</a></li>
-        {{/each}}
-    </div>
     <div class="w3-container w3-cell w3-hide-small">
-        <h2>How do i get my fork-money</h2>
-        <a href="/{{../language.id}}/howto/">Click here</a>
+        <h2>How do i claim my
+            forked {{name}} coins.
+        </h2>
+
+        <ol>
+            <li>Read our general introduction on <a href="/{{../language.id}}/how/to/claim/forked/coins/">how to claim
+                forked coins</a></li>
+            <li>Go to the website of {{name}} linked below and download the Wallet. Also make sure what you wanna do
+                with the
+                coin and checkout some of the following links
+
+
+                <ul>
+                    {{#each links}}
+                    <li><a href="{{url}}" target="link-{{id}}">{{type}}</a></li>
+                    {{/each}}
+                </ul>
+            </li>
+            <li>Sell your coin on any of the following markets
+
+                <ul>
+                    {{#each ../markets}}
+                    <li><a href="{{url}}" target="market-{{id}}">{{name}}</a></li>
+                    {{/each}}
+                    </li>
+                </ul>
+
+        </ol>
+
     </div>
 
 

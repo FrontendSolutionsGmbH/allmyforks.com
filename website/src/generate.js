@@ -5,12 +5,12 @@ var fs = require('fs-extra');
 const helper = require('./helper.js')
 const aggregator = require('./aggregator.js')
 
-var sourceList = fs.readFileSync('./src/list.html', 'utf8')
+var sourceList = fs.readFileSync('./src/forklist.html', 'utf8')
 var sourceImprint = fs.readFileSync('./src/imprint.html', 'utf8')
 var sourcePrivacy = fs.readFileSync('./src/privacy.html', 'utf8')
-var sourceHowTo = fs.readFileSync('./src/howto.html', 'utf8')
+var sourceHowTo = fs.readFileSync('./src/howtoclaimforkedcoins.html', 'utf8')
 var sourceSupportUs = fs.readFileSync('./src/supportus.html', 'utf8')
-var sourceLinks = fs.readFileSync('./src/links.html', 'utf8')
+var sourceWhatAreForks = fs.readFileSync('./src/whatisafork.html', 'utf8')
 var sourceDetails = fs.readFileSync('./src/details.html', 'utf8')
 var javascriptAsString = fs.readFileSync('./src/inc/general.js', 'utf8') + '\r\n' + fs.readFileSync('./src/inc/sortable.js', 'utf8')
 var stylesAsString = fs.readFileSync('./src/inc/w3pro.css', 'utf8')
@@ -35,7 +35,7 @@ var templateImprint = Handlebars.compile(sourceImprint)
 var templatePrivacy = Handlebars.compile(sourcePrivacy)
 var templateDetails = Handlebars.compile(sourceDetails)
 var templateHowTo = Handlebars.compile(sourceHowTo)
-var templateLinks = Handlebars.compile(sourceLinks)
+var templateWhatAreForks = Handlebars.compile(sourceWhatAreForks)
 var templateSupportUs = Handlebars.compile(sourceSupportUs)
 var templateJavascript = Handlebars.compile(javascriptAsString)
 
@@ -70,9 +70,9 @@ var generateStaticGeneralSites = function (data, dir) {
 
     generatePage(data, dir + '/imprint', templateImprint, 'imprint')
     generatePage(data, dir + '/privacy', templatePrivacy, 'privacy')
-    generatePage(data, dir + '/howto', templateHowTo, 'howto')
-    generatePage(data, dir + '/links', templateLinks, 'links')
-    generatePage(data, dir + '/supportus', templateSupportUs, 'supportus')
+    generatePage(data, dir + '/how/to/claim/forked/coins', templateHowTo, 'howto')
+    generatePage(data, dir + '/what/is/a/fork', templateWhatAreForks, 'whatareforks')
+    generatePage(data, dir + '/support/us', templateSupportUs, 'supportus')
 
 }
 
