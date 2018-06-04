@@ -5,21 +5,16 @@ const config = require('./config');
 const RequestRepeater = require('../common/request_repeater');
 const { request } = RequestRepeater(config);
 const moment = require("moment");
+const currencyHelper = require('../common/currency_helper')
 
 const MIN_DATE = moment('2009-01-01'); //before BTC-Birthday
 const PAGE_SIZE = 500;
 
-const determineStartDate = function(symbol, defaultStartDate) {
+const determineStartDate = function(source, target, defaultStartDate) {
   return new Promise((resolve, reject) => {
     HistoricalCourse.find({
-      from: {
-        symbol: symbol,
-        type: 'crypto'
-      },
-      to: {
-        symbol: "USDT",
-        type: 'crypto'
-      }
+      from: source,
+      to: target
     })
     .limit(1)
     .sort({ date: 'desc' })
@@ -35,7 +30,7 @@ const determineStartDate = function(symbol, defaultStartDate) {
   });
 };
 
-const processEachCourse = function(symbol, body){
+const processEachCourse = function(source, target, body){
   const data = JSON.parse(body);
 
   /*
@@ -64,14 +59,8 @@ const processEachCourse = function(symbol, body){
 
   for(let curEntity of data){
     let entity = {
-      from: {
-        symbol: symbol,
-        type: 'crypto'
-      },
-      to: {
-        symbol: "USDT",
-        type: 'crypto'
-      },
+      from: source,
+      to: target,
       date: moment(curEntity[0]).toDate(),
       open: Number.parseFloat(curEntity[1]),
       high: Number.parseFloat(curEntity[2]),
@@ -93,21 +82,21 @@ const processEachCourse = function(symbol, body){
   return Promise.resolve();
 };
 
-const get = function(symbol, from) {
-  const url = `https://api.binance.com/api/v1/klines?symbol=${symbol}USDT&interval=1d&startTime=${from.unix()}000&limit=${PAGE_SIZE}`;
+const get = function(source, target, from) {
+  const url = `https://api.binance.com/api/v1/klines?symbol=${source.name}${target.name}&interval=1d&startTime=${from.unix()}000&limit=${PAGE_SIZE}`;
   return request(url)
-    .then(({body}) => processEachCourse(symbol, body))
+    .then(({body}) => processEachCourse(source, target, body))
 };
 
-const crawl = function(symbol, from = MIN_DATE){
-  return determineStartDate(symbol, from)
+const crawl = function(source, target = {name: "USDT", type: "crypto"}, from = MIN_DATE){
+  return determineStartDate(source, target, from)
     .then(startDate => {
       const p = [];
       const today = moment();
       let curDate = moment(startDate);
 
       while(curDate.isBefore(today)){
-        p.push(get(symbol, curDate));
+        p.push(get(source, target, curDate));
 
         //next page
         curDate = curDate.clone().add(PAGE_SIZE, "days")
@@ -117,6 +106,22 @@ const crawl = function(symbol, from = MIN_DATE){
     });
 };
 
+const list = function() {
+  const url = 'https://api.binance.com/api/v1/exchangeInfo'
+  return request(url)
+    .then(({body}) => {
+      const data = JSON.parse(body);
+
+      return data.symbols.map(entity => {
+        return {
+          symbol: entity.symbol,
+          source: currencyHelper.toCurrency(entity.baseAsset),
+          target: currencyHelper.toCurrency(entity.quoteAsset),
+        }
+      })
+    })
+}
+
 module.exports = {
-  crawl
+  crawl, list
 };

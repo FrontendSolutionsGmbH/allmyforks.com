@@ -121,8 +121,7 @@ services:
     environment:
       - CFG_MONGO_HOST=db
       - CFG_MONGO_DB=binance
-      - CFG_JOB_0_SYMBOL=BTC
-      - CFG_JOB_0_CRON=0 0 */12 * * *
+      - CFG_CRON=0 0 */12 * * *
     command: "binance.js"
     restart: always
     depends_on:

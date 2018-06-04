@@ -21,18 +21,23 @@ const RequestRepeater = function(config){
       request({uri: uri, timeout: REQUEST_TIMEOUT}, (err, resp, body) => {
         log.info("[CALL][DONE] " + uri);
 
-        if (err || resp.statusCode === HttpStatus.TOO_MANY_REQUESTS) {
-          log.debug("Request error or too many requests. Retry: " + uri);
+        if (err || resp.statusCode !== HttpStatus.OK) {
+          const statusCode = resp ? resp.statusCode : -1
+          switch(statusCode) {
+            case HttpStatus.TOO_MANY_REQUESTS:
+            case HttpStatus.IM_A_TEAPOT:
+              log.debug("Request error or too many requests. Retry: " + uri);
 
-          //retry in <WAIT_IN_MS>ms
-          setTimeout(() => {
-            doRequest(uri, curTry + 1, maxTry, err)
-            .then((resolved) => {
-              resolve(resolved);
-            }, (err) => {
-              reject(err);
-            });
-          }, WAIT_IN_MS);
+              //retry in <WAIT_IN_MS>ms
+              setTimeout(() => {
+                doRequest(uri, curTry + 1, maxTry, err)
+                .then((resolved) => {
+                  resolve(resolved);
+                }, (err) => {
+                  reject(err);
+                });
+              }, WAIT_IN_MS);
+          }
 
           return;
         }
