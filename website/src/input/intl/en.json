@@ -1,3 +1,11 @@
 {
-  "list_forks_for": "Forks for"
+  "list_forks_for": "Forks for",
+  "name": "Name",
+  "fork_date": "Fork date",
+  "fork_block": "Fork Block",
+  "price": "Price",
+  "change": "Change",
+  "24hours": "24h",
+  "7days": "7d",
+  "price_graph": "Price Graph"
 }

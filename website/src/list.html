@@ -52,14 +52,14 @@
         <table class="w3-table sortable" id="table-forks">
             <tr>
                 <th>#</th>
-                <th>Name</th>
-                <th class="w3-hide-small">Fork date</th>
-                <th class="w3-hide-small">Fork Block</th>
-                <th class="w3-hide-small">Price</th>
+                <th>{{intlGet "name"}}</th>
+                <th class="w3-hide-small">{{intlGet "fork_date"}}</th>
+                <th class="w3-hide-small">{{intlGet "fork_block"}}</th>
+                <th class="w3-hide-small">{{intlGet "price"}}</th>
                 <th class="w3-hide-small">1 {{coin.shortName}}=</th>
                 <th>1 {{coin.shortName}}=</th>
-                <th class="w3-hide-small">Change (24h)</th>
-                <th class="w3-hide-small">Price Graph (7d)</th>
+                <th class="w3-hide-small">{{intlGet "change"}} ({{intlGet "24hours"}})</th>
+                <th class="w3-hide-small">{{intlGet "price_graph"}} ({{intlGet "7days"}})</th>
             </tr>
             {{#each coin.forks}}
             <tr>
