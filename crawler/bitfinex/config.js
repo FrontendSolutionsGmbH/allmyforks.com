@@ -5,7 +5,7 @@ const envParser = require('rainu-env-parser');
 const defaults = {
   request: {
     timeout: 60000,
-    repeatsleep: 1000,
+    repeatsleep: 60000,
     maxretry: 10
   },
   mongo: {

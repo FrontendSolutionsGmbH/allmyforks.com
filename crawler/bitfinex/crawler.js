@@ -5,21 +5,16 @@ const config = require('./config');
 const RequestRepeater = require('../common/request_repeater');
 const { request } = RequestRepeater(config);
 const moment = require("moment");
+const currencyHelper = require('../common/currency_helper');
 
 const MIN_DATE = moment('2009-01-01'); //before BTC-Birthday
 const PAGE_SIZE = 500;
 
-const determineStartDate = function(symbol, fiat, defaultStartDate) {
+const determineStartDate = function(source, target, defaultStartDate) {
   return new Promise((resolve, reject) => {
     HistoricalCourse.find({
-      from: {
-        symbol: symbol,
-        type: 'crypto'
-      },
-      to: {
-        symbol: fiat,
-        type: 'fiat'
-      }
+      from: source,
+      to: target
     })
     .limit(1)
     .sort({ date: 'desc' })
@@ -35,7 +30,7 @@ const determineStartDate = function(symbol, fiat, defaultStartDate) {
   });
 };
 
-const processEachCourse = function(symbol, fiat, body){
+const processEachCourse = function(source, target, body){
   const data = JSON.parse(body);
 
   /*
@@ -58,14 +53,8 @@ const processEachCourse = function(symbol, fiat, body){
 
   for(let curEntity of data){
     let entity = {
-      from: {
-        symbol: symbol,
-        type: 'crypto'
-      },
-      to: {
-        symbol: fiat,
-        type: 'fiat'
-      },
+      from: source,
+      to: target,
       date: moment(curEntity[0]).toDate(),
       open: curEntity[1],
       close: curEntity[2],
@@ -87,22 +76,21 @@ const processEachCourse = function(symbol, fiat, body){
   return Promise.resolve();
 };
 
-const get = function(symbol, from) {
-  const fiat = "USD";
-  const url = `https://api.bitfinex.com/v2/candles/trade:1D:t${symbol}${fiat}/hist?start=${from.unix()}000&limit=${PAGE_SIZE}&sort=1`;
+const get = function(source, target, from) {
+  const url = `https://api.bitfinex.com/v2/candles/trade:1D:t${source.name}${target.name}/hist?start=${from.unix()}000&limit=${PAGE_SIZE}&sort=1`;
   return request(url)
-    .then(({body}) => processEachCourse(symbol, fiat, body))
+    .then(({body}) => processEachCourse(source, target, body))
 };
 
-const crawl = function(symbol, from = MIN_DATE){
-  return determineStartDate(symbol, "USD", from)
+const crawl = function(source, target = { name: 'USD', type: 'fiat' }, from = MIN_DATE){
+  return determineStartDate(source, target, from)
     .then(startDate => {
       const p = [];
       const today = moment();
       let curDate = moment(startDate);
 
       while(curDate.isBefore(today)){
-        p.push(get(symbol, curDate));
+        p.push(get(source, target, curDate));
 
         //next page
         curDate = curDate.clone().add(PAGE_SIZE, "days")
@@ -112,6 +100,29 @@ const crawl = function(symbol, from = MIN_DATE){
     });
 };
 
+const list = function() {
+  const url = 'https://api.bitfinex.com/v1/symbols';
+  return request(url)
+    .then(({body}) => {
+      let data = JSON.parse(body);
+
+      return data.map(symbol => symbol.toUpperCase())
+    })
+    .then(symbols => symbols.map(symbol => {
+      //symbol has always 6chars
+      // ... the first 3 are the source symbol
+      // ... the last 3 are the target symbol
+      const sourceSymbol = symbol.substr(0, 3);
+      const targetSymbol = symbol.substr(3);
+
+      return {
+        symbol: symbol,
+        source: currencyHelper.toCurrency(sourceSymbol),
+        target: currencyHelper.toCurrency(targetSymbol),
+      }
+    }))
+};
+
 module.exports = {
-  crawl
+  crawl, list
 };
