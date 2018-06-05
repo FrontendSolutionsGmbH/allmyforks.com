@@ -136,6 +136,12 @@ services:
       - CFG_MONGO_DB=coinbase
       - CFG_JOB_0_SYMBOL=BTC
       - CFG_JOB_0_CRON=0 0 */12 * * *
+      - CFG_JOB_1_SYMBOL=BCH
+      - CFG_JOB_1_CRON=0 0 */12 * * *
+      - CFG_JOB_2_SYMBOL=ETH
+      - CFG_JOB_2_CRON=0 0 */12 * * *
+      - CFG_JOB_3_SYMBOL=LTC
+      - CFG_JOB_3_CRON=0 0 */12 * * *
     command: "coinbase.js"
     restart: always
     depends_on:
