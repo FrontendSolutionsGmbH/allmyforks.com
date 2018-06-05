@@ -62,7 +62,7 @@ So we have to set this env-variables:
 | ------------- |:-------------:|:-------------:| ------------|
 | LOG_LEVEL               | info | false | The log level |
 | CFG_REQUEST_TIMEOUT     | 60000 | false | The timeout of one request in ms |
-| CFG_REQUEST_REPEATSLEEP | 60000 | false | The sleep time (in ms) between repeating of failing download |
+| CFG_REQUEST_REPEATSLEEP | 65000 | false | The sleep time (in ms) between repeating of failing download |
 | CFG_REQUEST_MAXRETRY    | 10 | false | Maximal count of retries |
 | CFG_JOB_*N*_CRON        |  | true | The cron string. See [Cron-Syntax](https://github.com/kelektiv/node-cron#available-cron-patterns) |
 | CFG_JOB_*N*_FROM_NAME   |  | true | The symbol name of the source coin |
@@ -79,7 +79,7 @@ If no JOB is configured, ALL symbols from binance will be crawled!
 | ------------- |:-------------:|:-------------:| ------------|
 | LOG_LEVEL               | info | false | The log level |
 | CFG_REQUEST_TIMEOUT     | 60000 | false | The timeout of one request in ms |
-| CFG_REQUEST_REPEATSLEEP | 60000 | false | The sleep time (in ms) between repeating of failing download |
+| CFG_REQUEST_REPEATSLEEP | 60000 | false | The sleep time (in ms) between repeating of failing download. This will only used if no 'retry-after'-HEADER was sent. |
 | CFG_REQUEST_MAXRETRY    | 10 | false | Maximal count of retries |
 | CFG_JOB_*N*_CRON        |  | true | The cron string. See [Cron-Syntax](https://github.com/kelektiv/node-cron#available-cron-patterns) |
 | CFG_JOB_*N*_FROM_NAME   |  | true | The symbol name of the source coin |

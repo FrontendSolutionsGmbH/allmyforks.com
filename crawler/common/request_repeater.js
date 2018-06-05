@@ -5,11 +5,14 @@ const HttpStatus = require('http-status-codes');
 const request = require('request');
 
 const RequestRepeater = function(config){
-  const WAIT_IN_MS = config.request.repeatsleep;
   const REQUEST_TIMEOUT = config.request.timeout;
   const MAX_RETRY = config.request.maxretry;
 
-  const doRequest = function(uri, curTry, maxTry, lastError){
+  const confgTime = function(response) {
+    return config.request.repeatsleep
+  };
+
+  const doRequest = function(uri, determineSleepTime, curTry, maxTry, lastError){
     return new Promise((resolve, reject) => {
       if (curTry >= maxTry) {
         log.warn("Request can not be completed. Max retry reached: " + uri);
@@ -36,7 +39,7 @@ const RequestRepeater = function(config){
                 }, (err) => {
                   reject(err);
                 });
-              }, WAIT_IN_MS);
+              }, determineSleepTime(resp));
           }
 
           return;
@@ -51,8 +54,8 @@ const RequestRepeater = function(config){
     });
   };
 
-  const repeatRequest = function (uri, maxRepeat = MAX_RETRY) {
-    return doRequest(uri, 0, maxRepeat);
+  const repeatRequest = function (uri, determineSleepTime = confgTime, maxRepeat = MAX_RETRY) {
+    return doRequest(uri, determineSleepTime, 0, maxRepeat);
   };
 
   return {

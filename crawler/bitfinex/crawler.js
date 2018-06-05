@@ -10,6 +10,15 @@ const currencyHelper = require('../common/currency_helper');
 const MIN_DATE = moment('2009-01-01'); //before BTC-Birthday
 const PAGE_SIZE = 500;
 
+const determineSleepTime = function(response){
+  if(response.headers['retry-after']) {
+    //in this header the seconds will be given when we should try again
+    return Number.parseInt(response.headers['retry-after']) * 1000 + 1000
+  }
+
+  return config.request.repeatsleep
+}
+
 const determineStartDate = function(source, target, defaultStartDate) {
   return new Promise((resolve, reject) => {
     HistoricalCourse.find({
@@ -78,7 +87,7 @@ const processEachCourse = function(source, target, body){
 
 const get = function(source, target, from) {
   const url = `https://api.bitfinex.com/v2/candles/trade:1D:t${source.name}${target.name}/hist?start=${from.unix()}000&limit=${PAGE_SIZE}&sort=1`;
-  return request(url)
+  return request(url, determineSleepTime)
     .then(({body}) => processEachCourse(source, target, body))
 };
 
@@ -102,7 +111,7 @@ const crawl = function(source, target = { name: 'USD', type: 'fiat' }, from = MI
 
 const list = function() {
   const url = 'https://api.bitfinex.com/v1/symbols';
-  return request(url)
+  return request(url, determineSleepTime)
     .then(({body}) => {
       let data = JSON.parse(body);
 
