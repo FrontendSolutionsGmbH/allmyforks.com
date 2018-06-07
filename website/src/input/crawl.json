@@ -14,6 +14,7 @@
       "id": "bitcoincash",
       "price": "1024",
       "timestamp": "1527264625827",
+      "source": "https://coinmarketcap.com",
       "priceHistory": [
         1024,
         1000,

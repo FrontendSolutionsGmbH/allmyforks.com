@@ -123,7 +123,7 @@ const data = {
                     "id": "bitcoincash",
                     "ratio": 1,
                     "block": "478558",
-                    "date": "01.08.2017"
+                    "date": "1533124800000"
                 },
                 {
                     "id": "superbitcoin",

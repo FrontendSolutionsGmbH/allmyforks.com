@@ -27,8 +27,10 @@ Handlebars.registerHelper('fiatWithCurrencyInSpan', helper.fiatWithCurrencyInSpa
 Handlebars.registerHelper("math", helper.mathHelper);
 
 Handlebars.registerHelper("prettifyDate", function (timestamp) {
-    return new Date(timestamp).toString('yyyy-MM-dd hh:mm:ss')
-});
+    //console.log('Handlebars', Handlebars.helpers.formatTime(timestamp, "datetime"))
+
+    return Handlebars.helpers.formatTime(timestamp, "datetime")
+})
 
 var templateList = Handlebars.compile(sourceList)
 var templateImprint = Handlebars.compile(sourceImprint)
@@ -98,13 +100,19 @@ data.languages.map((lang) => {
     data.intl.locales = lang.id
     data.intl.formats = {
         "time": {
-            "short": {
+            "datetime": {
                 "day": "2-digit",
                 "month": "2-digit",
                 "year": "numeric",
                   "hour": "numeric",
                 "minute": "numeric",
                 "second": "numeric"
+            },
+
+            "day": {
+                "day": "2-digit",
+                "month": "2-digit",
+                "year": "numeric"
             }
         }
     }
