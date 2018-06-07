@@ -7,12 +7,8 @@
         <tr>
             {{#each coinsWithForks}}
 
-            <td><b><!--asd {{formatNumber priceSumForks style="currency" currency="USD"}}<br/>-->
-
-
-                1 {{shortName}}=<br/> Σ {{{fiatWithCurrencyInSpan priceSumForks ../fiat ../language}}}</b></td>
-
-
+            <td><!--{{formatNumber priceSumForks style="currency" currency="EUR"}}<br/>-->
+               <b> {{shortName}}-Forks<br/>{{{fiatWithCurrencyInSpan priceSumForks ../fiat ../language}}}</b></td>
             {{/each}}
 
         </tr>
@@ -29,14 +25,16 @@
         <option value="{{value}}" {{selected}}>{{title}}</option>
         {{/each}}
     </select></h2>
-    {{prettifyDate timestamp}}
+    <!--{{prettifyDate timestamp}}-->
+
+    <small>{{intlGet "last_update"}}: {{formatTime timestamp "short" }}</small>
 </div>
 
 
 <div class="w3-container w3-content">
 
     <div class="w3-right" id="sum-forks-top">
-        <b>1 {{coin.shortName}}= {{{fiatWithCurrencyInSpan coin.price fiat language}}} + <span
+        <b>1 {{coin.name}}= {{{fiatWithCurrencyInSpan coin.price fiat language}}} + Forks <span
                 style="text-decoration: underline double;">{{{fiatWithCurrencyInSpan coin.priceSumForks fiat language}}}</span></b>
     </div>
 </div>

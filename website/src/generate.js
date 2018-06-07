@@ -83,7 +83,7 @@ fs.mkdirSync('./dist')
 var data = mergedData;
 
 data.coinsWithForks = data.coins.filter(f => f.forks)
-data.timestamp = Date.now()
+data.timestamp = new Date()
 
 
 data.fiat = data.fiats[0]
@@ -95,6 +95,20 @@ data.languages.map((lang) => {
     data.language = lang
 
     data.intl = lang.messages
+    data.intl.locales = lang.id
+    data.intl.formats = {
+        "time": {
+            "short": {
+                "day": "2-digit",
+                "month": "2-digit",
+                "year": "numeric",
+                  "hour": "numeric",
+                "minute": "numeric",
+                "second": "numeric"
+            }
+        }
+    }
+
     var dir = lang.id
 
     Handlebars.registerPartial('javascript', '<script type="text/javascript">' + templateJavascript(data) + '</script>')
