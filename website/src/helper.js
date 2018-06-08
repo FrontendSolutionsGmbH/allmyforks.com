@@ -84,12 +84,12 @@ var getSelectorsLangFiatCoins = function (data) {
         }),
 
         selectCoins: data.coinsWithForks.map((e) => {
-            return {
+            return Object.assign(e, {
                 id: e.id,
-                value: getSameUrl(data, e, data.language),
+                url: getSameUrl(data, e, data.language),
                 selected: (data.coin.id === e.id ? 'selected' : ''),
                 title: e.name
-            }
+            })
         })
     }
 }

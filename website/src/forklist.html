@@ -5,10 +5,10 @@
 
     <table class="w3-table w3-centered">
         <tr>
-            {{#each coinsWithForks}}
+            {{#each selectCoins}}
 
-            <td><!--{{formatNumber priceSumForks style="currency" currency="EUR"}}<br/>-->
-                <b> {{shortName}}-Forks<br/>{{{fiatWithCurrencyInSpan priceSumForks ../fiat ../language}}}</b></td>
+            <td><a style="text-decoration: none" href="{{url}}">
+                <b> {{shortName}}-Forks<br/>{{{fiatWithCurrencyInSpan priceSumForks ../fiat ../language}}}</b></a></td>
             {{/each}}
 
         </tr>
@@ -22,7 +22,7 @@
     <h2>{{intlGet "list_forks_for"}} <select class="w3-select" style="width:auto" name="option" id="select-forks"
                                              onchange="location = this.value;">
         {{#each selectCoins}}
-        <option value="{{value}}" {{selected}}>{{title}}</option>
+        <option value="{{url}}" {{selected}}>{{title}}</option>
         {{/each}}
     </select>
         <!-- <table>
@@ -50,7 +50,7 @@
     <div class="left" id="sum-forks-top-left">
 
         1 {{coin.name}}={{{fiatWithCurrencyInSpan coin.priceSumForksPlusOwnPrice fiat language}}}
-        (Price: {{{fiatWithCurrencyInSpan coin.price fiat language}}}+ Forks: {{{fiatWithCurrencyInSpan
+        (Price: {{{fiatWithCurrencyInSpan coin.price fiat language}}} + Forks: {{{fiatWithCurrencyInSpan
         coin.priceSumForks fiat
         language}}})
     </div>
