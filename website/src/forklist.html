@@ -8,7 +8,7 @@
             {{#each coinsWithForks}}
 
             <td><!--{{formatNumber priceSumForks style="currency" currency="EUR"}}<br/>-->
-               <b> {{shortName}}-Forks<br/>{{{fiatWithCurrencyInSpan priceSumForks ../fiat ../language}}}</b></td>
+                <b> {{shortName}}-Forks<br/>{{{fiatWithCurrencyInSpan priceSumForks ../fiat ../language}}}</b></td>
             {{/each}}
 
         </tr>
@@ -27,7 +27,7 @@
     </select></h2>
     <!--{{prettifyDate timestamp}}-->
 
-    <small>{{intlGet "last_update"}}: {{prettifyDate timestamp }} {{formatTime timestamp "datetime" }}</small>
+    <small>{{intlGet "last_update"}}: {{{localDateInSpan dateTime "datetime"}}}</small>
 </div>
 
 
@@ -54,22 +54,21 @@
                 <th class="w3-hide-small">{{intlGet "fork_date"}}</th>
                 <th class="w3-hide-small">{{intlGet "fork_block"}}</th>
                 <th class="w3-hide-small">{{intlGet "price"}}</th>
-                <th class="w3-hide-small">1 {{coin.shortName}}=</th>
-                <th>1 {{coin.shortName}}=</th>
                 <th class="w3-hide-small">{{intlGet "change"}} ({{intlGet "24hours"}})</th>
                 <th class="w3-hide-small">{{intlGet "price_graph"}} ({{intlGet "7days"}})</th>
+                <th class="w3-hide-small">1 {{coin.shortName}}=</th>
+                <th>1 {{coin.shortName}}=</th>
             </tr>
             {{#each coin.forks}}
             <tr>
                 <td sorttable_customkey="{{math @index '+' 1}}">#{{math @index '+' 1}}</td>
                 <td><a href="/{{../language.id}}/details/{{id}}/">{{name}}</a></td>
-                <td class="w3-hide-small">{{date}}</td>
-                <td class="w3-hide-small">{{block}}</td>
-                <td class="w3-hide-small" sorttable_customkey="{{price}}">{{{fiatWithCurrencyInSpan price ../fiat
-                    ../language}}}
+                <td class="w3-hide-small">{{{localDateInSpan date "date"}}}
                 </td>
-                <td class="w3-hide-small">{{ratio}} {{shortName}}</td>
-                <td sorttable_customkey="{{priceTimesForkRatio}}">{{{fiatWithCurrencyInSpan priceTimesForkRatio ../fiat
+
+                <td class="w3-hide-small">{{block}}</td>
+
+                <td class="w3-hide-small" sorttable_customkey="{{price}}">{{{fiatWithCurrencyInSpan price ../fiat
                     ../language}}}
                 </td>
                 <td class="w3-hide-small">+ 2%</td>
@@ -80,6 +79,10 @@
                               d="{{data}}"/>
                     </svg>
                     {{/with}}
+                </td>
+                <td class="w3-hide-small">{{ratio}} {{shortName}}</td>
+                <td sorttable_customkey="{{priceTimesForkRatio}}">{{{fiatWithCurrencyInSpan priceTimesForkRatio ../fiat
+                    ../language}}}
                 </td>
             </tr>
             {{/each}}

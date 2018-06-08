@@ -12,6 +12,26 @@ var fiatWithCurrency = function (value, currentFiat, currentLanguage) {
 var fiatWithCurrencyInSpan = function (value, currentFiat, currentLanguage) {
     return '<span data-curr="' + value + '">' + fiatWithCurrency(value, currentFiat, currentLanguage) + '</span>'
 }
+
+var localDate = function (valueUTC, format, defaultValue, currentLanguage) {
+    var date = new Date(valueUTC)
+
+    if (date.getMonth) {
+        if (format === 'datetime') {
+            return date.toLocaleString(currentLanguage.id)
+        } else if (format === 'date') {
+            return date.toLocaleDateString(currentLanguage.id)
+        } else if (format === 'time') {
+            return date.toLocaleTimeString(currentLanguage.id)
+        }
+    }
+
+    return defaultValue
+}
+
+var localDateInSpan = function (valueUTC, format, currentLanguage) {
+    return '<span data-date-utc="' + valueUTC + '" data-date-format="' + format + '">' + localDate(valueUTC, format, valueUTC, currentLanguage) + '</span>'
+}
 var getListUrl = function (coin, fiat, language) {
     return '/' + language.id + (coin.id === 'bitcoin' ? '' : '/list/' + coin.id) + ((fiat && fiat.id !== 'dollar') ? '?fiat=' + fiat.id : '')
 }
@@ -88,5 +108,6 @@ module.exports = {
     fiatWithCurrency: fiatWithCurrency,
     fiatWithCurrencyInSpan: fiatWithCurrencyInSpan,
     getSelectorsLangFiatCoins: getSelectorsLangFiatCoins,
-    mathHelper: mathHelper
+    mathHelper: mathHelper,
+    localDateInSpan: localDateInSpan
 }

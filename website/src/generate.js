@@ -25,12 +25,26 @@ HandlebarsIntl.registerWith(Handlebars);
 Handlebars.registerHelper('fiatWithCurrency', helper.fiatWithCurrency);
 Handlebars.registerHelper('fiatWithCurrencyInSpan', helper.fiatWithCurrencyInSpan);
 Handlebars.registerHelper("math", helper.mathHelper);
+Handlebars.registerHelper("localDateInSpan", helper.localDateInSpan);
+
 
 Handlebars.registerHelper("prettifyDate", function (timestamp) {
     //console.log('Handlebars', Handlebars.helpers.formatTime(timestamp, "datetime"))
 
-    return Handlebars.helpers.formatTime(timestamp, "datetime")
+    //return Handlebars.helpers.formatTime(timestamp, "datetime")
+    timestamp
 })
+
+Handlebars.registerHelper("ifNumber", function (n, defaultText, options) {
+    var isNumber = !isNaN(parseFloat(n)) && !isNaN(n - 0)
+
+    if (isNumber) {
+        return options.fn(this);
+    } else {
+        return defaultText
+    }
+})
+
 
 var templateList = Handlebars.compile(sourceList)
 var templateImprint = Handlebars.compile(sourceImprint)
@@ -45,6 +59,8 @@ Handlebars.registerPartial('header-static', fs.readFileSync('./src/inc/header.ht
 Handlebars.registerPartial('header-list', fs.readFileSync('./src/inc/header.html', 'utf8'))
 Handlebars.registerPartial('footer', sourceFooter)
 Handlebars.registerPartial('styles', '<style>' + stylesAsString + '</style>')
+//Handlebars.registerPartial('prettifyDate', sourceFooter)
+
 
 var generatePage = function (data, directoryFromRoot, templateFunc, pageId) {
     var directory = './dist/' + directoryFromRoot
@@ -85,7 +101,8 @@ fs.mkdirSync('./dist')
 var data = mergedData;
 
 data.coinsWithForks = data.coins.filter(f => f.forks)
-data.timestamp = new Date()
+data.timestamp = Date.now()
+data.dateTime = (new Date()).toUTCString()
 
 
 data.fiat = data.fiats[0]
@@ -104,7 +121,7 @@ data.languages.map((lang) => {
                 "day": "2-digit",
                 "month": "2-digit",
                 "year": "numeric",
-                  "hour": "numeric",
+                "hour": "numeric",
                 "minute": "numeric",
                 "second": "numeric"
             },
