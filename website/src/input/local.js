@@ -26,10 +26,10 @@ const data = {
             "title": "Privacy Policy"
         },
         "supportus": {
-            "title": "Support us"
+            "title": "Support allmyforks.com"
         },
         "list": {
-            "title": "1 {{coin.shortName}}= Σ {{{fiatWithCurrency coin.priceSumForks fiat language}}}"
+            "title": "{{coin.shortName}}-Forks {{{fiatWithCurrency coin.priceSumForks fiat language}}}"
         },
         "details": {
             "title": "{{coin.shortName}} fork details"
@@ -37,15 +37,16 @@ const data = {
     },
     "links": [
         {
-            "url": "https://coinmarketcap.com",
-
+            "url": "https://www.findmycoins.ninja/"
         },
         {
-            "url": "https://www.findmycoins.ninja/",
-
+            "url": " https://forkdrop.io/"
         },
         {
-            "url": " https://forkdrop.io/",
+            "url": " https://forks.net/"
+        },
+        {
+            "url": "https://coinmarketcap.com"
         }
     ],
     "fiats": [
@@ -123,59 +124,62 @@ const data = {
                     "id": "bitcoincash",
                     "ratio": 1,
                     "block": "478558",
-                    "date": "1533124800000"
+                    "date": "2017-08-01T11:16:14Z"
                 },
                 {
                     "id": "superbitcoin",
                     "ratio": 1,
                     "block": "498888",
-                    "date": "12.12.2017"
+                    "date": "2017-12-12T09:29:53Z"
                 },
                 {
                     "id": "bitcoinx",
                     "ratio": 10000,
                     "price": "0.02",
                     "block": "498888",
-                    "date": "12.12.2017"
+                    "date": "2017-12-12T09:29:53Z"
                 },
                 {
                     "id": "bitcoinlightning",
                     "ratio": 1,
                     "price": "101.13",
                     "block": "499999",
-                    "date": "18.12.2017"
+                    "date": "2017-12-18T17:34:47Z"
                 },
                 {
                     "id": "bitcoingod",
                     "ratio": 1,
                     "price": "44.68",
-                    "block": "5012225",
-                    "date": "25.12.2017"
+                    "block": "501225",
+                    "date": "2017-12-27T05:55:44Z"
                 },
                 {
                     "id": "bitcoincashplus",
                     "ratio": 1,
                     "block": "501407",
-                    "date": "02.01.2018"
+                    "date": "2017-12-28T09:52:58Z"
                 },
                 {
                     "id": "bitcoinuranium",
                     "ratio": 1,
-                    "block": "XXX",
-                    "date": "31.12.2017"
+                    "block": "~501407",
+                    "date": "2017-12-28T09:52:58Z",
+                    "dateFormat": "monthAndYear",
                 },
                 {
                     "id": "bitcoinatom",
                     "ratio": 1,
                     "price": "0.82",
                     "block": "505888",
-                    "date": "January 2018"
+                    "date": "2018-01-24T13:26:41Z",
+                    "dateFormat": "monthAndYear"
                 },
                 {
                     "id": "bitcoinsilver",
                     "ratio": 1,
-                    "block": "XXX",
-                    "date": "December 2017"
+                    "block": "TODO",
+                    "date": "2017-12-28T09:52:58Z",
+                    "dateFormat": "monthAndYear"
                 },
                 {
                     "id": "unitedbitcoin",
@@ -281,13 +285,13 @@ const data = {
                     "id": "abitcoin",
                     "ratio": 1,
                     "block": "498888",
-                    "date": ""
+                    "date": "-"
                 },
                 {
                     "id": "bitcoinhot",
                     "ratio": 1,
                     "block": "498848",
-                    "date": ""
+                    "date": "-"
                 },
                 {
                     "id": "bitethereum",

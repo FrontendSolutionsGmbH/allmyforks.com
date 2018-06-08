@@ -24,18 +24,43 @@
         {{#each selectCoins}}
         <option value="{{value}}" {{selected}}>{{title}}</option>
         {{/each}}
-    </select></h2>
+    </select>
+        <!-- <table>
+             <tr>
+                 <td>
+                     <small style="font-size: 13px;"><a href="/{{language.id}}/what-is-a-fork/">{{intlGet
+                         "whatisafork"}}</a></small>
+                 </td>
+             </tr>
+             <tr>
+                 <td>
+                     <small style="font-size: 13px;"><a href="/{{language.id}}/how-to-claim-forked-coins">{{intlGet
+                         "howtoclaimmyforkedcoins"}}</a></small>
+                 </td>
+             </tr>
+         </table>-->
+    </h2>
     <!--{{prettifyDate timestamp}}-->
 
     <small>{{intlGet "last_update"}}: {{{localDateInSpan dateTime "datetime"}}}</small>
 </div>
 
+<div class="w3-container w3-content">
+
+    <div class="left" id="sum-forks-top-left">
+
+        1 {{coin.name}}={{{fiatWithCurrencyInSpan coin.priceSumForksPlusOwnPrice fiat language}}}
+        (Price: {{{fiatWithCurrencyInSpan coin.price fiat language}}}+ Forks: {{{fiatWithCurrencyInSpan
+        coin.priceSumForks fiat
+        language}}})
+    </div>
+</div>
 
 <div class="w3-container w3-content">
 
     <div class="w3-right" id="sum-forks-top">
-        <b>1 {{coin.name}}= {{{fiatWithCurrencyInSpan coin.price fiat language}}} + Forks <span
-                style="text-decoration: underline double;">{{{fiatWithCurrencyInSpan coin.priceSumForks fiat language}}}</span></b>
+
+        <b>{{coin.shortName}}-Forks = {{{fiatWithCurrencyInSpan coin.priceSumForks fiat language}}}</b>
     </div>
 </div>
 
@@ -63,12 +88,13 @@
             <tr>
                 <td sorttable_customkey="{{math @index '+' 1}}">#{{math @index '+' 1}}</td>
                 <td><a href="/{{../language.id}}/details/{{id}}/">{{name}}</a></td>
-                <td class="w3-hide-small">{{{localDateInSpan date "date"}}}
+                <td class="w3-hide-small">{{{localDateInSpan date dateFormat}}}
                 </td>
 
                 <td class="w3-hide-small">{{block}}</td>
 
-                <td class="w3-hide-small" sorttable_customkey="{{price}}">{{{fiatWithCurrencyInSpan price ../fiat
+                <td class="w3-hide-small w3-right" sorttable_customkey="{{price}}">{{{fiatWithCurrencyInSpan price
+                    ../fiat
                     ../language}}}
                 </td>
                 <td class="w3-hide-small">+ 2%</td>
@@ -81,7 +107,8 @@
                     {{/with}}
                 </td>
                 <td class="w3-hide-small">{{ratio}} {{shortName}}</td>
-                <td sorttable_customkey="{{priceTimesForkRatio}}">{{{fiatWithCurrencyInSpan priceTimesForkRatio ../fiat
+                <td class="w3-right" sorttable_customkey="{{priceTimesForkRatio}}">{{{fiatWithCurrencyInSpan
+                    priceTimesForkRatio ../fiat
                     ../language}}}
                 </td>
             </tr>
@@ -92,12 +119,12 @@
 
 <div class="w3-container w3-content">
     <div class="w3-right" id="sum-forks">
-        <b>1 {{coin.shortName}}= Σ {{{fiatWithCurrencyInSpan coin.priceSumForks fiat language}}}</b>
+        <b>{{coin.shortName}}-Forks = {{{fiatWithCurrencyInSpan coin.priceSumForks fiat language}}}</b>
     </div>
 </div>
 
 <div class="w3-container w3-content">
-    If you like this project, <a href="/{{language.id}}/supportus/">support
+    If you like this project, <a href="/{{language.id}}/support-allmyforks/">support
     us</a> !
 </div>
 

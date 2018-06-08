@@ -28,23 +28,23 @@
     },
     {
       "id": "superbitcoin",
-      "price": "16.64"
+      "price": 16.64
     },
     {
       "id": "bitcoin",
-      "price": "6000"
+      "price": 6000
     },
     {
       "id": "bitcoinx",
-      "price": "0.02"
+      "price": 0.02
     },
     {
       "id": "bitcoinlightning",
-      "price": "101.13"
+      "price": 101.13
     },
     {
       "id": "bitcoingod",
-      "price": "44.68"
+      "price": 44.68
     },
     {
       "id": "bitcoincashplus",
@@ -56,7 +56,7 @@
     },
     {
       "id": "bitcoinatom",
-      "price": "0.82"
+      "price": 0.82
     },
     {
       "id": "bitcoinsilver",
@@ -64,11 +64,11 @@
     },
     {
       "id": "unitedbitcoin",
-      "price": "10.63"
+      "price": 10.63
     },
     {
       "id": "bitcoindiamond",
-      "price": "4.61"
+      "price": 4.61
     },
     {
       "id": "bitcoinoil",
@@ -96,7 +96,7 @@
     },
     {
       "id": "bitcoinsegwit",
-      "price": "0.85"
+      "price": 0.85
     },
     {
       "id": "bitcoinpizza",
@@ -124,7 +124,7 @@
     },
     {
       "id": "bitcoinprivate",
-      "price": "18.97"
+      "price": 18.97
     },
     {
       "id": "abitcoin",

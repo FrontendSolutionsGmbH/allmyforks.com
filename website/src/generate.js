@@ -88,9 +88,9 @@ var generateStaticGeneralSites = function (data, dir) {
 
     generatePage(data, dir + '/imprint', templateImprint, 'imprint')
     generatePage(data, dir + '/privacy', templatePrivacy, 'privacy')
-    generatePage(data, dir + '/how/to/claim/forked/coins', templateHowTo, 'howto')
-    generatePage(data, dir + '/what/is/a/fork', templateWhatAreForks, 'whatareforks')
-    generatePage(data, dir + '/support/us', templateSupportUs, 'supportus')
+    generatePage(data, dir + '/how-to-claim-forked-coins', templateHowTo, 'howto')
+    generatePage(data, dir + '/what-is-a-fork', templateWhatAreForks, 'whatareforks')
+    generatePage(data, dir + '/support-allmyforks', templateSupportUs, 'supportus')
 
 }
 

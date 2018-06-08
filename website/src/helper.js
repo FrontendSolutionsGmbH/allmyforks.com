@@ -14,19 +14,23 @@ var fiatWithCurrencyInSpan = function (value, currentFiat, currentLanguage) {
 }
 
 var localDate = function (valueUTC, format, defaultValue, currentLanguage) {
-    var date = new Date(valueUTC)
+    if (valueUTC && (valueUTC.indexOf('GMT') > 0 || valueUTC.indexOf('Z') === valueUTC.length - 1)) {
+        var date = new Date(valueUTC)
 
-    if (date.getMonth) {
-        if (format === 'datetime') {
-            return date.toLocaleString(currentLanguage.id)
-        } else if (format === 'date') {
-            return date.toLocaleDateString(currentLanguage.id)
-        } else if (format === 'time') {
-            return date.toLocaleTimeString(currentLanguage.id)
+        if (date instanceof Date && !isNaN(date)) {
+            if (format === 'datetime') {
+                return date.toLocaleString(currentLanguage.id)
+            } else if (format === 'date') {
+                return date.toLocaleDateString(currentLanguage.id)
+            } else if (format === 'time') {
+                return date.toLocaleTimeString(currentLanguage.id)
+            } else if (format === 'monthAndYear') {
+                return date.toLocaleString(currentLanguage.id, {month: "long", year: "numeric"})
+            } else if (format === 'year') {
+                return date.toLocaleString(currentLanguage.id, {year: "numeric"})
+            }
         }
     }
-
-    return defaultValue
 }
 
 var localDateInSpan = function (valueUTC, format, currentLanguage) {

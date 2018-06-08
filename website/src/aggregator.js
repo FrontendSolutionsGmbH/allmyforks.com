@@ -1,37 +1,47 @@
+function isNumeric(n) {
+    return !isNaN(parseFloat(n)) && isFinite(n);
+}
+
 var enrichWithCalculations = function (currentCoin) {
     var sumValues = 0
 
     if (currentCoin.forks && currentCoin.forks.length > 0) {
         currentCoin.forks.map((e, index) => {
-            var priceTimesRatio = e.price * e.ratio
-            sumValues += priceTimesRatio
 
-            if (!e.price) {
-                e.price = 31 / e.ratio
-            }
-            if (!e.priceHistory) {
-                e.priceHistory = [Math.random(), Math.random(), Math.random(), Math.random(), Math.random(), Math.random(), Math.random(), Math.random(), Math.random(),]
-            }
-            if (e.priceHistory) {
-                var max = Math.max(...e.priceHistory)
-                var min = Math.min(...e.priceHistory)
-                var width = 128
-                var height = 32
-                var fx = width / (e.priceHistory.length - 1)
-                var fy = height / (max - min)
-                e.priceGraphData = {
-                    width: width,
-                    height: height,
-                    data: e.priceHistory.reduce((t, e, i) => (t ? t + 'L ' : 'M') + '' + i * fx + ' ' + (e - min) * fy, '')
+            if (isNumeric(e.price)) {
+                e.priceTimesForkRatio = e.price * e.ratio
+
+                sumValues += e.priceTimesForkRatio
+
+
+                if (!e.priceHistory) {
+                    e.priceHistory = [Math.random(), Math.random(), Math.random(), Math.random(), Math.random(), Math.random(), Math.random(), Math.random(), Math.random(),]
                 }
+                if (e.priceHistory) {
+                    var max = Math.max(...e.priceHistory)
+                    var min = Math.min(...e.priceHistory)
+                    var width = 128
+                    var height = 32
+                    var fx = width / (e.priceHistory.length - 1)
+                    var fy = height / (max - min)
+                    e.priceGraphData = {
+                        width: width,
+                        height: height,
+                        data: e.priceHistory.reduce((t, e, i) => (t ? t + 'L ' : 'M') + '' + i * fx + ' ' + (e - min) * fy, '')
+                    }
+                }
+
+            } else {
+                e.priceTimesForkRatio = ''
             }
 
-            e.priceTimesForkRatio = priceTimesRatio
+
         })
     }
 
 
     currentCoin.priceSumForks = sumValues
+    currentCoin.priceSumForksPlusOwnPrice = currentCoin.price + sumValues
 }
 
 
@@ -52,10 +62,21 @@ var mergeData = function (localData, crawledData) {
         return Object.assign(f, crawledFiat)
     })
 
-    // merge only raw in formation per coin
+    // merge only raw information per coin
     data.coins = data.coins.map((d) => {
         var crawledCoin = crawledData.coins.find(cf => cf.id === d.id)
         var mergedCoin = Object.assign(d, crawledCoin)
+
+
+        /* if (!mergedCoin.price) {
+         mergedCoin.price = 31 / e.ratio
+         }*/
+
+        if (isNumeric(mergedCoin.price)) {
+            mergedCoin.price = parseFloat(mergedCoin.price)
+        }
+
+
         return mergedCoin
     })
 
@@ -65,7 +86,14 @@ var mergeData = function (localData, crawledData) {
 
             d.forks = d.forks.map((ff) => {
                 var mergedCoin = data.coins.find(cf => cf.id === ff.id)
-                return Object.assign(ff, mergedCoin)
+                var newMergedCoin = Object.assign(ff, mergedCoin)
+
+
+                if (!newMergedCoin.dateFormat) {
+                    newMergedCoin.dateFormat = "date"
+                }
+
+                return newMergedCoin
             })
         }
 
@@ -115,6 +143,21 @@ var mergeData = function (localData, crawledData) {
 
         return d
     })
+
+
+    // sort forks by highest price*ratio
+    // add parent information
+    data.coins = data.coins.map((d) => {
+        if (d.forks) {
+            d.forks.sort((a, b) => {
+                return b.priceTimesForkRatio - a.priceTimesForkRatio
+            })
+
+        }
+
+        return d
+    })
+
 
     return data
 }
