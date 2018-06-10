@@ -108,10 +108,39 @@ var mathHelper = function (lvalue, operator, rvalue, options) {
     }[operator];
 }
 
+var ifConditionHelper = function (v1, operator, v2, options) {
+
+    switch (operator) {
+        case '==':
+            return (v1 == v2) ? options.fn(this) : options.inverse(this);
+        case '===':
+            return (v1 === v2) ? options.fn(this) : options.inverse(this);
+        case '!=':
+            return (v1 != v2) ? options.fn(this) : options.inverse(this);
+        case '!==':
+            return (v1 !== v2) ? options.fn(this) : options.inverse(this);
+        case '<':
+            return (v1 < v2) ? options.fn(this) : options.inverse(this);
+        case '<=':
+            return (v1 <= v2) ? options.fn(this) : options.inverse(this);
+        case '>':
+            return (v1 > v2) ? options.fn(this) : options.inverse(this);
+        case '>=':
+            return (v1 >= v2) ? options.fn(this) : options.inverse(this);
+        case '&&':
+            return (v1 && v2) ? options.fn(this) : options.inverse(this);
+        case '||':
+            return (v1 || v2) ? options.fn(this) : options.inverse(this);
+        default:
+            return options.inverse(this);
+    }
+};
+
 module.exports = {
     fiatWithCurrency: fiatWithCurrency,
     fiatWithCurrencyInSpan: fiatWithCurrencyInSpan,
     getSelectorsLangFiatCoins: getSelectorsLangFiatCoins,
     mathHelper: mathHelper,
-    localDateInSpan: localDateInSpan
+    localDateInSpan: localDateInSpan,
+    ifConditionHelper: ifConditionHelper
 }
