@@ -6,7 +6,8 @@ stages:
 
 aggregator-test:
   image: node:alpine
-  scripts:
+  stage: test
+  script:
     - apk --update add git
     - cd aggregator/course
     - npm install
