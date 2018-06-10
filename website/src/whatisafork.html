@@ -1,0 +1,30 @@
+{{> header-static}}
+
+
+<div class="w3-container w3-content">
+
+    <h1>What are forks</h1>
+
+	<ul>
+		<li>TODO: Short description</li>
+		<li>TODO: "Hard Forks" vs "Soft Forks" vs "User actived Forks"</li>
+		<li>TODO: Graphic demonstrating split and money calculation</li>
+		<li>Read: <a href="/{{language.id}}/how-to-claim-forked-coins">
+        {{formatMessage (intlGet "howtoclaimmyforkedcoin") name="_____"}}</a></li>
+	</ul>
+
+
+	
+    <h2>More to read</h2>
+
+    <ul>
+        {{#each links}}
+
+        <li><a href="{{url}}" target="link-{{url}}">{{title}}</a> - {{intlGet description}}</li>
+
+        {{/each}}
+
+    </ul>
+
+</div>
+{{> footer}}

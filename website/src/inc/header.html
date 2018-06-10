@@ -1,0 +1,82 @@
+<html>
+
+<head>
+    <title>{{{title}}}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+
+
+    <meta property="og:title" content="{{title}}" />
+    <meta name="description" content="{{description}}" />
+
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="splash_600x315.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="600">
+    <meta property="og:image:height" content="315">
+
+{{#each selectLanguages}}
+  {{#ifCond id '==' ../language.id}}
+    <meta property="og:url" content="https://allmyforks.com{{value}}">
+   {{/ifCond}}
+{{/each}}
+
+
+{{#each selectLanguages}}
+  {{#ifCond id '!=' ../language.id}}
+  <link rel="alternate" href="https://allmyforks.com{{value}}" hreflang="{{id}}">
+  {{/ifCond}}
+{{/each}}
+
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    {{> styles}}
+
+    <style>
+
+        table.sortable thead {
+            background-color: #eee;
+            color: #666666;
+            font-weight: bold;
+            cursor: default;
+        }
+
+    </style>
+
+
+</head>
+
+<body class="w3-theme-l3">
+
+<div class="w3-bar w3-theme-d4">
+
+    <div class="w3-bar-item">
+        <div style="width:22px">
+            <a href="/">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0, 0, 64, 64">
+                    <path fill="#f7931a" d="M63 40A32 32 0 1 1 1 24a32 32 0 0 1 62 16z"/>
+                    <path fill="#FFF"
+                          d="M46 27c1-4-2-6-7-8l2-5-4-1-1 5h-3l1-6-3-1-2 6-2-1-5-1-1 4 3 1 1 2-1 6-3 9-1 1h-3l-1 4 4 1h3l-2 6 4 1 1-6 3 1-1 6 3 1 1-6c6 1 11 1 13-5 1-4 0-7-3-8 2-1 4-2 4-6zm-8 12c-1 4-8 2-11 1l2-8c3 1 10 2 9 7zm1-12c-1 4-7 2-9 2l2-7c2 0 8 1 7 5z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <a class="w3-bar-item w3-button" href="/">allmyforks.com</a>
+  <span class="w3-bar-item w3-right"><select style="width:auto" name="option" id="select-languages"
+                                             onchange="location = this.value;">
+      {{#each selectLanguages}}
+        <option value="{{value}}" {{selected}}>{{title}}</option>
+      {{/each}}
+
+  </select></span>
+  
+  
+  <span class="w3-bar-item w3-right"><select style="width:auto" name="option" id="select-currencies"
+                                             onchange="location = this.value;">
+         {{#each selectFiats}}
+        <option value="{{value}}" {{selected}} data-fiat-option="{{id}}">{{title}}</option>
+      {{/each}}
+  </select></span>
+
+</div>

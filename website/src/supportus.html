@@ -1,0 +1,45 @@
+{{> header-static}}
+
+
+<div class="w3-container w3-content">
+
+    <h1>Support allmyforks.com</h1>
+
+    There are several ways to support us.
+
+    <ul>
+        <li>
+            Donations
+        </li>
+        <li>
+            Referal links for markets. Register and we receive a small provision
+        </li>
+        <li>
+            Translations. Help us translating this page to any language on the world :-)
+        </li>
+        <li>
+            Bugfixes. We made this project open source. If you are a programmer we are more then happy if you tell us
+            about.
+        </li>
+    </ul>
+
+    <a class="w3-bar-item w3-button w3-right" href="https://froso.de" target="new">Frontend Solutions
+        GmbH</a>
+
+    <a class="w3-bar-item w3-button w3-right" href="https://github.com/FrontendSolutionsGmbH/bitcoin-forks"
+       target="new">Github</a>
+
+       
+    <h3>We are more than happy to receive a donation from you</h3>
+    <ul>
+
+        {{#each donations}}
+
+        <li>{{name}}: {{address}}</li>
+
+        {{/each}}
+
+    </ul>
+
+</div>
+{{> footer}}
