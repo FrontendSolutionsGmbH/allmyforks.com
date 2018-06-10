@@ -65,3 +65,18 @@ for (var i = 0, len = currElems.length; i < len; i++) {
 window.localStorage && window.localStorage.setItem('fiat', currentFiatId);
 
 
+
+
+var cookieMessage = document.getElementById('cookie-message');
+var cookiesAccepted = (window.localStorage && window.localStorage.getItem('cookiesAccepted')) 
+if (cookiesAccepted == 'yes') {
+    cookieMessage.style.display = 'none';
+} else {
+    cookieMessage.style.display = 'block';
+}
+
+window.acceptCookies = function(event) {
+    event.preventDefault()
+    window.localStorage && window.localStorage.setItem('cookiesAccepted', 'yes');
+    cookieMessage.style.display = 'none';
+}

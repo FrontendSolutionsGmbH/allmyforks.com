@@ -1,10 +1,16 @@
+<div class="w3-container">
+	<div id="cookie-message" class="w3-panel w3-green">
+	  <p>{{{intlGet "cookie_message"}}} <a href="" onclick="window.acceptCookies(event)">{{{intlGet "cookie_ok"}}}</a></p>
+	</div> 
+</div>
+
 <div class="w3-container w3-bar w3-large w3-theme-d4">
     <a class="w3-bar-item w3-button" href="/{{language.id}}/what-is-a-fork/">{{intlGet "whatisafork"}}</a>
-    <a class="w3-bar-item w3-button" href="/{{language.id}}/how-to-claim-forked-coins">{{intlGet "howtoclaimmyforkedcoins"}}
-        coins</a>
+    <a class="w3-bar-item w3-button" href="/{{language.id}}/how-to-claim-forked-coins">{{intlGet "howtoclaimmyforkedcoins"}}</a>
 
-    <a class="w3-bar-item w3-button w3-right" href="/{{language.id}}/imprint/">Imprint</a>
-    <a class="w3-bar-item w3-button w3-right" href="/{{language.id}}/privacy/">Data Privacy</a>
+    <a class="w3-bar-item w3-button w3-right" href="/{{language.id}}/imprint/">{{intlGet "imprint"}}</a>
+    <a class="w3-bar-item w3-button w3-right" href="/{{language.id}}/privacy/">{{intlGet "data_privacy"}}</a>
+    <a class="w3-bar-item w3-button w3-right" href="/{{language.id}}/disclaimer/">{{intlGet "disclaimer"}}</a>
 </div>
 
 {{> javascript}}

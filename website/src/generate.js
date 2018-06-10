@@ -8,12 +8,13 @@ const aggregator = require('./aggregator.js')
 var sourceList = fs.readFileSync('./src/forklist.html', 'utf8')
 var sourceImprint = fs.readFileSync('./src/imprint.html', 'utf8')
 var sourcePrivacy = fs.readFileSync('./src/privacy.html', 'utf8')
+var sourceDisclaimer = fs.readFileSync('./src/disclaimer.html', 'utf8')
 var sourceHowTo = fs.readFileSync('./src/howtoclaimforkedcoins.html', 'utf8')
 var sourceSupportUs = fs.readFileSync('./src/supportus.html', 'utf8')
 var sourceWhatAreForks = fs.readFileSync('./src/whatisafork.html', 'utf8')
 var sourceDetails = fs.readFileSync('./src/details.html', 'utf8')
-var javascriptAsString = fs.readFileSync('./src/inc/general.js', 'utf8') + '\r\n' + fs.readFileSync('./src/inc/sortable.js', 'utf8')
-var stylesAsString = fs.readFileSync('./src/inc/w3pro.css', 'utf8')
+var javascriptAsString = fs.readFileSync('./src/inc/custom.js', 'utf8') + '\r\n' + fs.readFileSync('./src/inc/sortable.js', 'utf8')
+var stylesAsString = fs.readFileSync('./src/inc/w3.css', 'utf8')+fs.readFileSync('./src/inc/custom.css', 'utf8')
 var sourceFooter = fs.readFileSync('./src/inc/footer.html', 'utf8')
 
 const crawledData = require('./input/crawl.json')
@@ -54,7 +55,7 @@ var templateHowTo = Handlebars.compile(sourceHowTo)
 var templateWhatAreForks = Handlebars.compile(sourceWhatAreForks)
 var templateSupportUs = Handlebars.compile(sourceSupportUs)
 var templateJavascript = Handlebars.compile(javascriptAsString)
-
+var templateDisclaimer = Handlebars.compile(sourceDisclaimer)
 Handlebars.registerPartial('header-static', fs.readFileSync('./src/inc/header.html', 'utf8'))
 Handlebars.registerPartial('header-list', fs.readFileSync('./src/inc/header.html', 'utf8'))
 Handlebars.registerPartial('footer', sourceFooter)
@@ -91,6 +92,7 @@ var generateStaticGeneralSites = function (data, dir) {
     generatePage(data, dir + '/how-to-claim-forked-coins', templateHowTo, 'howto')
     generatePage(data, dir + '/what-is-a-fork', templateWhatAreForks, 'whatareforks')
     generatePage(data, dir + '/support-allmyforks', templateSupportUs, 'supportus')
+    generatePage(data, dir + '/disclaimer', templateDisclaimer, 'disclaimer')
 
 }
 

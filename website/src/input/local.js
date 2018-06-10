@@ -25,6 +25,9 @@ const data = {
         "privacy": {
             "title": "Privacy Policy"
         },
+        "disclaimer": {
+            "title": "Disclaimer"
+        },
         "supportus": {
             "title": "Support allmyforks.com"
         },

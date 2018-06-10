@@ -25,22 +25,7 @@
         <option value="{{url}}" {{selected}}>{{title}}</option>
         {{/each}}
     </select>
-        <!-- <table>
-             <tr>
-                 <td>
-                     <small style="font-size: 13px;"><a href="/{{language.id}}/what-is-a-fork/">{{intlGet
-                         "whatisafork"}}</a></small>
-                 </td>
-             </tr>
-             <tr>
-                 <td>
-                     <small style="font-size: 13px;"><a href="/{{language.id}}/how-to-claim-forked-coins">{{intlGet
-                         "howtoclaimmyforkedcoins"}}</a></small>
-                 </td>
-             </tr>
-         </table>-->
     </h2>
-    <!--{{prettifyDate timestamp}}-->
 
     <small>{{intlGet "last_update"}}: {{{localDateInSpan dateTime "datetime"}}}</small>
 </div>
@@ -63,11 +48,6 @@
         <b>{{coin.shortName}}-Forks = {{{fiatWithCurrencyInSpan coin.priceSumForks fiat language}}}</b>
     </div>
 </div>
-
-
-<!--<div class="w3-container w3-content">
-  <input class="w3-button w3-right w3-button" type="" value="Filter by date">
-</div>-->
 
 <div class="w3-container w3-content">
     <div id="table-forks-outer">
@@ -124,8 +104,8 @@
 </div>
 
 <div class="w3-container w3-content">
-    If you like this project, <a href="/{{language.id}}/support-allmyforks/">support
-    us</a> !
+
+    {{intlGet "like_this_project"}} <a href="/{{language.id}}/support-allmyforks/">{{intlGet "support_us"}}</a> !
 </div>
 
 {{> footer}}
