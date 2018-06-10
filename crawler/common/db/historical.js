@@ -41,4 +41,7 @@ const CourseHistoricalSchema = new Schema({
 
 CourseHistoricalSchema.index({ from: 1, to: 1, date: 1 }, { unique: true });
 
-module.exports = mongoose.model('course_historical', CourseHistoricalSchema);
+module.exports = {
+  schema: CourseHistoricalSchema,
+  model: mongoose.model('course_historical', CourseHistoricalSchema),
+};

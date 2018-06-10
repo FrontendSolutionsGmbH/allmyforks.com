@@ -1,6 +1,6 @@
 "use strict";
 
-const HistoricalCourse = require('../common/db/historical');
+const HistoricalCourse = require('../common/db/historical').model;
 const config = require('./config');
 const RequestRepeater = require('../common/request_repeater');
 const { request } = RequestRepeater(config);
