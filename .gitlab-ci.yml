@@ -1,7 +1,16 @@
 image: rainu/docker-node
 
 stages:
+  - test
   - dockerrize
+
+aggregator-test:
+  image: node:alpine
+  scripts:
+    - apk --update add git
+    - cd aggregator/course
+    - npm install
+    - npm run test
 
 dockerrize-crawler:
   image: tmaier/docker-compose:latest
