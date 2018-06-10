@@ -4,6 +4,8 @@
   "fork_date": "Fork date",
   "disclaimer": "Disclaimer",
   "imprint": "Imprint",
+   "no_financial_advice_title": "Warning",
+  "no_financial_advice_message": "This is not financial advice. You act on your own risk.",
   "data_privacy": "Data Privacy",
   "fork_block": "Fork Block",
   "price": "Price",

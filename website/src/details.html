@@ -24,7 +24,7 @@
             <li>Change (24h): + 2%</li>
 
             {{#each parents}}
-            <li>Forked from: <a href="/{{../../language.id}}/{{id}}/">{{name}}</a></li>
+            <li>Forked from: {{name}}</li>
             {{/each}}
         </ul>
 
@@ -40,8 +40,10 @@
 
     <div class="w3-container w3-cell">
         <h2>How do i claim my
-            forked {{name}} coins.
+            forked '{{name}}' coins.
         </h2>
+
+{{intlGet "no_financial_advice_title"}}: {{intlGet "no_financial_advice_message"}}
 
         <ol>
             <li>Read our general introduction on <a href="/{{../language.id}}/how-to-claim-forked-coins/">how to claim

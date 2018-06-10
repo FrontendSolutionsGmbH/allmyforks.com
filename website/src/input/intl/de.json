@@ -2,6 +2,8 @@
   "list_forks_for": "Forks für",
   "name": "Name",
   "fork_date": "Fork Datum",
+  "no_financial_advice_title": "Achtung",
+  "no_financial_advice_message": "Dies ist keine finanzielle Empfehlung unsererseits. Sie handeln auf eigenes Risiko !",
   "disclaimer": "Haftungsauschluss",
   "imprint": "Impressum",
   "data_privacy": "Datenschutzerklärung",
