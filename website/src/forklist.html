@@ -71,7 +71,9 @@
                 <td class="w3-hide-small">{{{localDateInSpan date dateFormat}}}
                 </td>
 
-                <td class="w3-hide-small">{{block}}</td>
+                <td class="w3-hide-small">
+                    {{block}}{{#unless block}}-{{/unless}}
+            </td>
 
                 <td class="w3-hide-small w3-right" sorttable_customkey="{{price}}">{{{fiatWithCurrencyInSpan price
                     ../fiat
