@@ -40,16 +40,24 @@ const data = {
     },
     "links": [
         {
-            "url": "https://www.findmycoins.ninja/"
+            "url": "https://www.findmycoins.ninja/",
+            "title": "FindMyCoins.Ninja",
+            "description": "external_page_findmycoins_ninja"
         },
         {
-            "url": " https://forkdrop.io/"
+            "url": " https://forkdrop.io/",
+            "title": "Forkdrop.io",
+            "description": "external_page_forkdrop_io"
         },
         {
-            "url": " https://forks.net/"
+            "url": " https://forks.net/",
+            "title": "Forks.net",
+            "description": "external_page_forks_net"
         },
         {
-            "url": "https://coinmarketcap.com"
+            "url": "https://coinmarketcap.com",
+            "title": "CoinMarketCap",
+            "description": "external_page_coinmarketcap"
         }
     ],
     "fiats": [
