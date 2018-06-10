@@ -1,34 +1,32 @@
 {{> header-list}}
 
-<div class="w3-cell-row">
-    <div class="w3-container w3-cell">
+<div class="w3-row">
+    <div class="w3-container w3-half">
 
         <h1>{{coin.name}}</h1>
     </div>
 </div>
 
-<div class="w3-cell-row">
+<div class="w3-row">
     {{#with coin}}
-    <div class="w3-container w3-cell">
-
-
-        <h2>Details</h2>
+    <div class="w3-container w3-third">
+        <h2>{{intlGet "details"}}</h2>
 
         <ul>
-            <li>Name: {{name}}</li>
-            <li>Fork date: {{date}}</li>
-            <li>Fork Block: {{block}}</li>
-            <li>Price: {{{fiatWithCurrencyInSpan price ../fiat ../language}}}</li>
+            <li>{{intlGet "name"}}: {{name}}</li>
+            <li>{{intlGet "fork_date"}}: {{date}}</li>
+            <li>{{intlGet "fork_block"}}: {{block}}</li>
+            <li>{{intlGet "price"}}: {{{fiatWithCurrencyInSpan price ../fiat ../language}}}</li>
             <li>1 {{coin.shortName}}= {{ratio}} {{shortName}}</li>
             <li>1 {{coin.shortName}}= {{{fiatWithCurrencyInSpan priceTimesForkRatio ../fiat ../language}}}</li>
-            <li>Change (24h): + 2%</li>
+            <li>{{intlGet "change"}} ({{intlGet "24hours"}}): + 2%</li>
 
             {{#each parents}}
-            <li>Forked from: {{name}}</li>
+            <li>{{intlGet "forked_from"}}: {{name}}</li>
             {{/each}}
         </ul>
 
-        <h2>Price Graph (7d)</h2>
+        <h2>{{intlGet "price_graph"}} ({{intlGet "7days"}})</h2>
         {{#with priceGraphData}}
         <svg xmlns="http://www.w3.org/2000/svg" version="1" width="{{width}}" height="{{height}}"
         >
@@ -38,37 +36,36 @@
         {{/with}}
     </div>
 
-    <div class="w3-container w3-cell">
-        <h2>How do i claim my
-            forked '{{name}}' coins.
+    <div class="w3-container w3-twothird">
+        <h2>
+            {{formatMessage (intlGet "howtoclaimmyforkedcoin") name=(lookup . 'name')}}
         </h2>
 
-{{intlGet "no_financial_advice_title"}}: {{intlGet "no_financial_advice_message"}}
+         <div class="w3-container w3-twothird w3-panel w3-green">
+            {{intlGet "no_financial_advice_title"}}: {{intlGet "no_financial_advice_message"}}
+        </div>
+        
+        <div class="w3-container w3-full">
+            <ol>
+                <li>Read our general introduction on <a href="/{{../language.id}}/what-is-a-fork/">{{intlGet "whatisafork"}}</a> and <a href="/{{../language.id}}/how-to-claim-forked-coins/">{{formatMessage (intlGet "howtoclaimmyforkedcoin") name="_____"}}</a></li>
+                <li>Make sure what you wanna do with your '{{name}}' and if it safe to use by reading more about it, by checking out the following links:
+                    <ul>
+                        {{#each links}}
+                        <li><a href="{{url}}" target="link-{{id}}">{{type}}</a></li>
+                        {{/each}}
+                    </ul>
+                </li>
+                <li>Go to the website of '{{name}}' and download a wallet that suits you. </li>
+                <li>Sell your coin on any of the following markets
+                    <ul>
+                        {{#each ../markets}}
+                        <li><a href="{{url}}" target="market-{{id}}">{{name}}</a></li>
+                        {{/each}}
+                        </li>
+                    </ul>
 
-        <ol>
-            <li>Read our general introduction on <a href="/{{../language.id}}/how-to-claim-forked-coins/">how to claim
-                forked coins</a></li>
-            <li>Go to the website of {{name}} linked below and download the Wallet. Also make sure what you wanna do
-                with the
-                coin and checkout some of the following links
-
-
-                <ul>
-                    {{#each links}}
-                    <li><a href="{{url}}" target="link-{{id}}">{{type}}</a></li>
-                    {{/each}}
-                </ul>
-            </li>
-            <li>Sell your coin on any of the following markets
-
-                <ul>
-                    {{#each ../markets}}
-                    <li><a href="{{url}}" target="market-{{id}}">{{name}}</a></li>
-                    {{/each}}
-                    </li>
-                </ul>
-
-        </ol>
+            </ol>
+        </div>
 
     </div>
 
