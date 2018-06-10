@@ -11,31 +11,40 @@ const data = {
 
     "pages": {
         "default": {
-            "title": "allmyforks.com"
+            "title": "allmyforks.com",
+            "description": "Cryptocurrency Fork Overview"
         },
         "imprint": {
-            "title": "Imprint"
+            "title": "Imprint",
+            "description": "Imprint"
         },
         "howto": {
-            "title": "How to get fork money"
+            "title": "How to claim my forked coins",
+            "description": "How to claim my forked coins"
         },
         "whatareforks": {
-            "title": "What are Forks"
+            "title": "What is a fork",
+            "description": "What is a fork and what are the differences between soft and hard forks"
         },
         "privacy": {
-            "title": "Privacy Policy"
+            "title": "Privacy Policy",
+            "description": "AllMyForks Privacy Policy"
         },
         "disclaimer": {
-            "title": "Disclaimer"
+            "title": "Disclaimer",
+            "description": "AllMyForks Disclaimer"
         },
         "supportus": {
-            "title": "Support allmyforks.com"
+            "title": "Support allmyforks.com",
+            "description": "Support allmyforks.com"
         },
         "list": {
-            "title": "{{coin.shortName}}-Forks {{{fiatWithCurrency coin.priceSumForks fiat language}}}"
+            "title": "{{coin.shortName}}-Forks {{{fiatWithCurrency coin.priceSumForks fiat language}}}",
+            "description": "Cryptocurrency Fork rankings, charts, and more"
         },
         "details": {
-            "title": "{{coin.shortName}} fork details"
+            "title": "{{coin.shortName}} fork details",
+            "description": "Claim {{coin.shortName}} forked coins"
         }
     },
     "links": [
