@@ -18,7 +18,7 @@ function checkJob(job){
 }
 
 function spawnJobs(jobs) {
-  for (let job of config.job) {
+  for (let job of jobs) {
     if (!checkJob(job)) {
       log.error("Invalid Job: " + JSON.stringify(job));
       continue;
