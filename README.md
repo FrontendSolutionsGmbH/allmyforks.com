@@ -23,7 +23,31 @@ The website builder creates optimized .html and .json files for a fast user expe
 
 ### Website
 
-The final website. It contains only static files (html, js, ...). No backend is needed. As much as possible will be inline
+The final website. It contains only static files (html, js, ...). No backend is needed. As much as possible is inline to optimize performance. 
+
+To install, run 
+
+```
+cd website
+npm install
+```
+
+To build
+
+```
+cd website
+npm run build
+```
+
+To develop
+
+```
+cd website
+npm run dev
+```
+
+and then open http://localhost:8080 in your browser.
+
 
 ### Planner
 
