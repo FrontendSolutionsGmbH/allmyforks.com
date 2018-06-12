@@ -107,8 +107,7 @@ services:
     environment:
       - CFG_MONGO_HOST=db
       - CFG_MONGO_DB=bitfinex
-      - CFG_JOB_0_SYMBOL=BTC
-      - CFG_JOB_0_CRON=0 0 */4 * * *
+      - CFG_CRON=0 0 */4 * * *
     command: "bitfinex.js"
     restart: always
     depends_on:
