@@ -94,7 +94,7 @@ services:
     environment:
       - CFG_MONGO_HOST=db
       - CFG_MONGO_DB=coinmarketcap
-      - CFG_CRON=0 0 */12 * * *
+      - CFG_CRON=0 0 */4 * * *
     command: "coinmarketcap.js"
     restart: always
     depends_on:
@@ -108,7 +108,7 @@ services:
       - CFG_MONGO_HOST=db
       - CFG_MONGO_DB=bitfinex
       - CFG_JOB_0_SYMBOL=BTC
-      - CFG_JOB_0_CRON=0 0 */12 * * *
+      - CFG_JOB_0_CRON=0 0 */4 * * *
     command: "bitfinex.js"
     restart: always
     depends_on:
@@ -121,7 +121,7 @@ services:
     environment:
       - CFG_MONGO_HOST=db
       - CFG_MONGO_DB=binance
-      - CFG_CRON=0 0 */12 * * *
+      - CFG_CRON=0 0 */4 * * *
     command: "binance.js"
     restart: always
     depends_on:
@@ -135,13 +135,13 @@ services:
       - CFG_MONGO_HOST=db
       - CFG_MONGO_DB=coinbase
       - CFG_JOB_0_SYMBOL=BTC
-      - CFG_JOB_0_CRON=0 0 */12 * * *
+      - CFG_JOB_0_CRON=0 0 */4 * * *
       - CFG_JOB_1_SYMBOL=BCH
-      - CFG_JOB_1_CRON=0 0 */12 * * *
+      - CFG_JOB_1_CRON=0 0 */4 * * *
       - CFG_JOB_2_SYMBOL=ETH
-      - CFG_JOB_2_CRON=0 0 */12 * * *
+      - CFG_JOB_2_CRON=0 0 */4 * * *
       - CFG_JOB_3_SYMBOL=LTC
-      - CFG_JOB_3_CRON=0 0 */12 * * *
+      - CFG_JOB_3_CRON=0 0 */4 * * *
     command: "coinbase.js"
     restart: always
     depends_on:
@@ -152,3 +152,30 @@ services:
     volumes:
       - ./db:/data/db
     restart: always
+
+###################
+#
+# AGGREGATOR INTO DB
+#
+
+  course_aggregator:
+    image: rainu/cryptoaggregator
+    build:
+      context: ../aggregator/course
+    environment:
+      - CFG_CRON=0 0 */12 * * *
+      - CFG_OUTPUT_DIR=/courses
+      - CFG_SOURCE_0_URL=mongodb://db/coinmarketcap
+      - CFG_SOURCE_0_NAME=coinmarketcap.com
+      - CFG_SOURCE_1_URL=mongodb://db/bitfinex
+      - CFG_SOURCE_1_NAME=bitfinex.com
+      - CFG_SOURCE_2_URL=mongodb://db/binance
+      - CFG_SOURCE_2_NAME=binance.com
+      - CFG_SOURCE_3_URL=mongodb://db/coinbase
+      - CFG_SOURCE_3_NAME=coinbase.com
+      - CFG_SYMBOL_0=BTC
+    volumes:
+      - ./courses:/courses
+    restart: always
+    depends_on:
+      - db

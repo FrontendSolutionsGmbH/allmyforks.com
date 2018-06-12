@@ -24,3 +24,14 @@ dockerrize-crawler:
     - docker-compose push crawler_coinmarketcap
   only:
     - master
+
+dockerrize-aggregator:
+  image: tmaier/docker-compose:latest
+  stage: dockerrize
+  script:
+    - docker login -u ${DOCKER_USER} -p ${DOCKER_PASSWORD}
+    - cd crawler
+    - docker-compose build course_aggregator
+    - docker-compose push course_aggregator
+  only:
+    - master

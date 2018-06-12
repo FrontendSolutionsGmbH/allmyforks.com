@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const CourseHistorical = require('../../../crawler/common/db/historical')
+const CourseHistorical = require('./db/historical')
 const config = require('./config');
 
 const check = function(dbConnection){
