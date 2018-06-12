@@ -2,11 +2,11 @@
  *
  * @param tradingPairs a list of trading pairs:
  * [{
- *  "in": {
+ *  "from": {
  *    "name": "BTC",
  *    "type": "crypto"
  *  },
- *  "out": {
+ *  "to": {
  *    "name": "EUR",
  *    "type": "fiat"
  *  },
@@ -26,11 +26,11 @@
  * @return Array with a array of list of nodes (trading pairs)
  * [
  *  [{
- *    "in": {
+ *    "from": {
  *      "name": "BTC",
  *      "type": "crypto"
  *    },
- *    "out": {
+ *    "to": {
  *      "name": "EUR",
  *      "type": "fiat"
  *    },
@@ -42,8 +42,8 @@ const find = function(tradingPairs, source, destination){
   let result = []
 
   let possible = tradingPairs.filter(tp => {
-    if(tp.in.name === source.name && tp.in.type === source.type) {
-      if(tp.out.name === destination.name && tp.out.type === destination.type) {
+    if(tp.from.name === source.name && tp.from.type === source.type) {
+      if(tp.to.name === destination.name && tp.to.type === destination.type) {
         return true;
       }
     }
@@ -57,7 +57,7 @@ const find = function(tradingPairs, source, destination){
 
   //try to route
   let possibleStarts = tradingPairs.filter(tp => {
-    if(tp.in.name === source.name && tp.in.type === source.type) {
+    if(tp.from.name === source.name && tp.from.type === source.type) {
       return true;
     }
 
@@ -67,9 +67,9 @@ const find = function(tradingPairs, source, destination){
   //go through all possible starts
   //and try to find the target
   for(let start of possibleStarts) {
-    let tmpSrc = start.out
+    let tmpSrc = start.to
     let purgedPairs = tradingPairs.filter(tp => {
-      if(tp.out.name === tmpSrc.name && tp.out.type === tmpSrc.type) {
+      if(tp.to.name === tmpSrc.name && tp.to.type === tmpSrc.type) {
         return false;
       }
 

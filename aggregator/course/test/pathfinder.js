@@ -6,8 +6,8 @@ describe('Pathfinder: find the path in different scenario', () => {
   it(`only one choise`, () => {
     //given
     const pairs = [{
-     in: { name: 'BTC', type: 'crypto'},
-     out: { name: 'EUR', type: 'fiat'},
+     from: { name: 'BTC', type: 'crypto'},
+     to: { name: 'EUR', type: 'fiat'},
      source: "bitcoin.de",
     }]
     const src = { name: 'BTC', type: 'crypto'}
@@ -25,12 +25,12 @@ describe('Pathfinder: find the path in different scenario', () => {
   it(`multiple choise`, () => {
     //given
     const pairs = [{
-      in: { name: 'ETH', type: 'crypto'},
-      out: { name: 'EUR', type: 'fiat'},
+      from: { name: 'ETH', type: 'crypto'},
+      to: { name: 'EUR', type: 'fiat'},
       source: "bitcoin.de",
     },{
-     in: { name: 'BTC', type: 'crypto'},
-     out: { name: 'EUR', type: 'fiat'},
+     from: { name: 'BTC', type: 'crypto'},
+     to: { name: 'EUR', type: 'fiat'},
      source: "bitcoin.de",
     }]
     const src = { name: 'BTC', type: 'crypto'}
@@ -48,16 +48,16 @@ describe('Pathfinder: find the path in different scenario', () => {
   it(`multiple hits`, () => {
     //given
     const pairs = [{
-      in: { name: 'BTC', type: 'crypto'},
-      out: { name: 'EUR', type: 'fiat'},
+      from: { name: 'BTC', type: 'crypto'},
+      to: { name: 'EUR', type: 'fiat'},
       source: "kraken.com",
     },{
-      in: { name: 'ETH', type: 'crypto'},
-      out: { name: 'EUR', type: 'fiat'},
+      from: { name: 'ETH', type: 'crypto'},
+      to: { name: 'EUR', type: 'fiat'},
       source: "bitcoin.de",
     },{
-     in: { name: 'BTC', type: 'crypto'},
-     out: { name: 'EUR', type: 'fiat'},
+     from: { name: 'BTC', type: 'crypto'},
+     to: { name: 'EUR', type: 'fiat'},
      source: "bitcoin.de",
     }]
     const src = { name: 'BTC', type: 'crypto'}
@@ -76,12 +76,12 @@ describe('Pathfinder: find the path in different scenario', () => {
   it(`one hop`, () => {
     //given
     const pairs = [{
-      in: { name: 'ETH', type: 'crypto'},
-      out: { name: 'EUR', type: 'fiat'},
+      from: { name: 'ETH', type: 'crypto'},
+      to: { name: 'EUR', type: 'fiat'},
       source: "bitcoin.de",
     },{
-      in: { name: 'BTC', type: 'crypto'},
-      out: { name: 'ETH', type: 'crypto'},
+      from: { name: 'BTC', type: 'crypto'},
+      to: { name: 'ETH', type: 'crypto'},
       source: "coinbase.com",
     }]
     const src = { name: 'BTC', type: 'crypto'}
@@ -102,16 +102,16 @@ describe('Pathfinder: find the path in different scenario', () => {
   it(`two hops`, () => {
     //given
     const pairs = [{
-      in: { name: 'PAY', type: 'crypto'},
-      out: { name: 'ETH', type: 'crypto'},
+      from: { name: 'PAY', type: 'crypto'},
+      to: { name: 'ETH', type: 'crypto'},
       source: "etherdelta.com",
     },{
-      in: { name: 'BTC', type: 'crypto'},
-      out: { name: 'EUR', type: 'fiat'},
+      from: { name: 'BTC', type: 'crypto'},
+      to: { name: 'EUR', type: 'fiat'},
       source: "bitcoin.de",
     },{
-      in: { name: 'ETH', type: 'crypto'},
-      out: { name: 'BTC', type: 'crypto'},
+      from: { name: 'ETH', type: 'crypto'},
+      to: { name: 'BTC', type: 'crypto'},
       source: "coinbase.com",
     }]
     const src = { name: 'PAY', type: 'crypto'}
@@ -133,16 +133,16 @@ describe('Pathfinder: find the path in different scenario', () => {
   it(`one hop and one direct`, () => {
     //given
     const pairs = [{
-      in: { name: 'BTC', type: 'crypto'},
-      out: { name: 'EUR', type: 'fiat'},
+      from: { name: 'BTC', type: 'crypto'},
+      to: { name: 'EUR', type: 'fiat'},
       source: "bitcoin.de",
     },{
-      in: { name: 'ETH', type: 'crypto'},
-      out: { name: 'EUR', type: 'fiat'},
+      from: { name: 'ETH', type: 'crypto'},
+      to: { name: 'EUR', type: 'fiat'},
       source: "bitcoin.de",
     },{
-      in: { name: 'BTC', type: 'crypto'},
-      out: { name: 'ETH', type: 'crypto'},
+      from: { name: 'BTC', type: 'crypto'},
+      to: { name: 'ETH', type: 'crypto'},
       source: "coinbase.com",
     }]
     const src = { name: 'BTC', type: 'crypto'}
@@ -165,20 +165,20 @@ describe('Pathfinder: find the path in different scenario', () => {
   it(`two hops and one direct`, () => {
     //given
     const pairs = [{
-      in: { name: 'PAY', type: 'crypto'},
-      out: { name: 'EUR', type: 'fiat'},
+      from: { name: 'PAY', type: 'crypto'},
+      to: { name: 'EUR', type: 'fiat'},
       source: "someExchange",
     },{
-      in: { name: 'PAY', type: 'crypto'},
-      out: { name: 'ETH', type: 'crypto'},
+      from: { name: 'PAY', type: 'crypto'},
+      to: { name: 'ETH', type: 'crypto'},
       source: "etherdelta.com",
     },{
-      in: { name: 'BTC', type: 'crypto'},
-      out: { name: 'EUR', type: 'fiat'},
+      from: { name: 'BTC', type: 'crypto'},
+      to: { name: 'EUR', type: 'fiat'},
       source: "bitcoin.de",
     },{
-      in: { name: 'ETH', type: 'crypto'},
-      out: { name: 'BTC', type: 'crypto'},
+      from: { name: 'ETH', type: 'crypto'},
+      to: { name: 'BTC', type: 'crypto'},
       source: "coinbase.com",
     }]
     const src = { name: 'PAY', type: 'crypto'}
