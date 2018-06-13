@@ -12,19 +12,24 @@ function checkJob(job){
   return true;
 }
 
+function doJob(job){
+  log.info("Start crawling '" + job.symbol + "'");
+  return crawler.get(job.symbol).then(() => {
+    log.info("Finishing crawling '" + job.symbol + "'");
+  }).catch(err => {
+    log.error("Error while crawling crawling '" + job.symbol + "'", err);
+  })
+}
+
 for(let job of config.job) {
   if(!checkJob(job)) {
     log.error("Invalid Job: " + JSON.stringify(job));
     continue;
   }
 
-  log.info("Spawn job " + JSON.stringify(job));
-  new cron.CronJob(job.cron, () => {
-    log.info("Start crawling '" + job.symbol + "'");
-    crawler.get(job.symbol).then(() => {
-      log.info("Finishing crawling '" + job.symbol + "'");
-    }).catch(err => {
-      log.error("Error while crawling crawling '" + job.symbol + "'", err);
+  doJob(job)
+    .finally(() => {
+      log.info("Spawn job " + JSON.stringify(job));
+      new cron.CronJob(job.cron, () => doJob(job), null, true);
     })
-  }, null, true);
 }
