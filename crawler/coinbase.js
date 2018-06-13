@@ -21,6 +21,11 @@ function doJob(job){
   })
 }
 
+function spawnJob(job) {
+  log.info("Spawn job " + JSON.stringify(job));
+  new cron.CronJob(job.cron, () => doJob(job), null, true);
+}
+
 for(let job of config.job) {
   if(!checkJob(job)) {
     log.error("Invalid Job: " + JSON.stringify(job));
@@ -28,8 +33,6 @@ for(let job of config.job) {
   }
 
   doJob(job)
-    .finally(() => {
-      log.info("Spawn job " + JSON.stringify(job));
-      new cron.CronJob(job.cron, () => doJob(job), null, true);
-    })
+    .then(() => spawnJob(job))
+    .catch(() => spawnJob(job))
 }

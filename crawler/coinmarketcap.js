@@ -23,6 +23,11 @@ function doJob(job) {
   })
 }
 
+function spawnJob(job) {
+  log.info("Spawn job " + JSON.stringify(job));
+  new cron.CronJob(job.cron, () => doJob(job), null, true);
+}
+
 function spawnJobs(jobs){
   for(let job of jobs) {
     if(!checkJob(job)) {
@@ -31,10 +36,8 @@ function spawnJobs(jobs){
     }
 
     doJob(job)
-      .finally(() => {
-        log.info("Spawn job " + JSON.stringify(job));
-        new cron.CronJob(job.cron, () => doJob(job), null, true);
-      })
+      .then(() => spawnJob(job))
+      .catch(() => spawnJob(job))
   }
 }
 
