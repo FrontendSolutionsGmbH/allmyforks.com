@@ -12,4 +12,4 @@ COPY ./src/ /application
 RUN npm install
 
 ENTRYPOINT [ "node" ]
-CMD [ "run.js" ]
+CMD [ "cron.js" ]

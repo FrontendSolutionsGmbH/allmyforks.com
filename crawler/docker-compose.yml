@@ -86,9 +86,7 @@ services:
       - CFG_SOURCE_2_NAME=binance.com
       - CFG_SOURCE_3_URL=mongodb://db/coinbase
       - CFG_SOURCE_3_NAME=coinbase.com
-      - CFG_SYMBOL_0=BTC
-    volumes:
-      - ./courses:/courses
+    command: "server.js"
     restart: always
     depends_on:
       - db
