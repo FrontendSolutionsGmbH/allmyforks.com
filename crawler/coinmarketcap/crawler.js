@@ -14,11 +14,11 @@ const determineStartDate = function(symbol, fiat, defaultStartDate) {
   return new Promise((resolve, reject) => {
     HistoricalCourse.find({
       from: {
-        symbol: symbol,
+        name: symbol,
         type: 'crypto'
       },
       to: {
-        symbol: fiat,
+        name: fiat,
         type: 'fiat'
       }
     })
@@ -57,7 +57,7 @@ const parse = function(content) {
     const data = {
       date: moment(rawDate, "MMM DD, YYYY").hour(0).minute(0).toDate(),
       to: {
-        symbol: 'USD',
+        name: 'USD',
         type: 'fiat'
       },
       open: saveParseFloat(cells.eq(1).data('format-value')),
@@ -97,7 +97,7 @@ const parseCourses = function(coin, body) {
   return parse(body).map(curCourse => {
     return {
       from: {
-        symbol: coin.symbol,
+        name: coin.symbol,
         type: 'crypto'
       },
       ...curCourse,
