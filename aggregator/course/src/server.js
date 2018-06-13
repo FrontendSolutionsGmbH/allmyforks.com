@@ -7,7 +7,7 @@ var app = express()
 app.route('/api/ratios/:type/:symbol')
   .get(function(req, res) {
     coursefinder({
-      name: req.params.name,
+      name: req.params.symbol,
       type: req.params.type
     })
     .then(ratios => {
