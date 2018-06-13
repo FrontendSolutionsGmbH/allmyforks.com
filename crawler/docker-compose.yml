@@ -87,6 +87,8 @@ services:
       - CFG_SOURCE_3_URL=mongodb://db/coinbase
       - CFG_SOURCE_3_NAME=coinbase.com
     command: "server.js"
+    ports:
+      - "3000:3000"
     restart: always
     depends_on:
       - db
