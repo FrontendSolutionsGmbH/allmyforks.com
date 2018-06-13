@@ -12,23 +12,25 @@ const PAGE_SIZE = 500;
 
 const REGEX = /.*IP banned until ([0-9]+).*/
 
-const determineSleepTime = function(response){
+const determineSleepTime = function(response, body){
   //the time is responded in body:
   // {"code":-1003,"msg":"Way too many requests; IP banned until 1528915447267. Please use the websocket for live updates to avoid bans."}
 
-  let body = {}
+  let jsonBody = {}
   try{
-    body = JSON.parse(response.body)
+    jsonBody = JSON.parse(body)
   }catch(e){}
 
-  if(body.msg){
-    let match = REGEX.exec(body.msg)
-    const until = match[1]
+  if(jsonBody.msg){
+    let match = REGEX.exec(jsonBody.msg)
+    if(match) {
+      const until = match[1]
 
-    if(until) {
-      let parsed = Number.parseInt(until)
-      if(!Number.isNaN(parsed)) {
-        return (parsed - new Date().getTime()) + 1000
+      if (until) {
+        let parsed = Number.parseInt(until)
+        if (!Number.isNaN(parsed)) {
+          return (parsed - new Date().getTime()) + 1000
+        }
       }
     }
   }

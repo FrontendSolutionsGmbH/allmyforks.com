@@ -8,7 +8,7 @@ const RequestRepeater = function(config){
   const REQUEST_TIMEOUT = config.request.timeout;
   const MAX_RETRY = config.request.maxretry;
 
-  const confgTime = function(response) {
+  const confgTime = function(response, body) {
     return config.request.repeatsleep
   };
 
@@ -39,7 +39,7 @@ const RequestRepeater = function(config){
                 }, (err) => {
                   reject(err);
                 });
-              }, determineSleepTime(resp));
+              }, determineSleepTime(resp, body));
           }
 
           return;

@@ -10,7 +10,7 @@ const currencyHelper = require('../common/currency_helper');
 const MIN_DATE = moment('2009-01-01'); //before BTC-Birthday
 const PAGE_SIZE = 500;
 
-const determineSleepTime = function(response){
+const determineSleepTime = function(response, body){
   if(response.headers['retry-after']) {
     //in this header the seconds will be given when we should try again
     return Number.parseInt(response.headers['retry-after']) * 1000 + 1000
