@@ -1,6 +1,6 @@
 "use strict";
 
-const HistoricalCourse = require('../common/db/historical');
+const HistoricalCourse = require('../common/db/historical').model;
 const config = require('./config');
 const RequestRepeater = require('../common/request_repeater');
 const { request } = RequestRepeater(config);
@@ -9,6 +9,34 @@ const currencyHelper = require('../common/currency_helper')
 
 const MIN_DATE = moment('2009-01-01'); //before BTC-Birthday
 const PAGE_SIZE = 500;
+
+const REGEX = /.*IP banned until ([0-9]+).*/
+
+const determineSleepTime = function(response, body){
+  //the time is responded in body:
+  // {"code":-1003,"msg":"Way too many requests; IP banned until 1528915447267. Please use the websocket for live updates to avoid bans."}
+
+  let jsonBody = {}
+  try{
+    jsonBody = JSON.parse(body)
+  }catch(e){}
+
+  if(jsonBody.msg){
+    let match = REGEX.exec(jsonBody.msg)
+    if(match) {
+      const until = match[1]
+
+      if (until) {
+        let parsed = Number.parseInt(until)
+        if (!Number.isNaN(parsed)) {
+          return (parsed - new Date().getTime()) + 1000
+        }
+      }
+    }
+  }
+
+  return config.request.repeatsleep
+}
 
 const determineStartDate = function(source, target, defaultStartDate) {
   return new Promise((resolve, reject) => {
@@ -84,7 +112,7 @@ const processEachCourse = function(source, target, body){
 
 const get = function(source, target, from) {
   const url = `https://api.binance.com/api/v1/klines?symbol=${source.name}${target.name}&interval=1d&startTime=${from.unix()}000&limit=${PAGE_SIZE}`;
-  return request(url)
+  return request(url, determineSleepTime)
     .then(({body}) => processEachCourse(source, target, body))
 };
 
@@ -108,7 +136,7 @@ const crawl = function(source, target = {name: "USDT", type: "crypto"}, from = M
 
 const list = function() {
   const url = 'https://api.binance.com/api/v1/exchangeInfo'
-  return request(url)
+  return request(url, determineSleepTime)
     .then(({body}) => {
       const data = JSON.parse(body);
 

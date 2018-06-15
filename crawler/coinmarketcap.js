@@ -14,6 +14,20 @@ function checkJob(job){
   return true;
 }
 
+function doJob(job) {
+  log.info("Start crawling '" + job.coin.symbol + "'");
+  return crawler.crawl(job.coin).then(() => {
+    log.info("Finishing crawling '" + job.coin.symbol + "'");
+  }).catch(err => {
+    log.error("Error while crawling crawling '" + job.coin.symbol + "'", err);
+  })
+}
+
+function spawnJob(job) {
+  log.info("Spawn job " + JSON.stringify(job));
+  new cron.CronJob(job.cron, () => doJob(job), null, true);
+}
+
 function spawnJobs(jobs){
   for(let job of jobs) {
     if(!checkJob(job)) {
@@ -21,15 +35,9 @@ function spawnJobs(jobs){
       continue;
     }
 
-    log.info("Spawn job " + JSON.stringify(job));
-    new cron.CronJob(job.cron, () => {
-      log.info("Start crawling '" + job.coin.symbol + "'");
-      crawler.crawl(job.coin).then(() => {
-        log.info("Finishing crawling '" + job.coin.symbol + "'");
-      }).catch(err => {
-        log.error("Error while crawling crawling '" + job.coin.symbol + "'", err);
-      })
-    }, null, true);
+    doJob(job)
+      .then(() => spawnJob(job))
+      .catch(() => spawnJob(job))
   }
 }
 

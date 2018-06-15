@@ -17,22 +17,30 @@ function checkJob(job){
   return true;
 }
 
+function doJob(job){
+  log.info("Start crawling '" + job.from.name + job.to.name + "'");
+  return crawler.crawl(job.from, job.to).then(() => {
+    log.info("Finishing crawling '" + job.from.name + job.to.name + "'");
+  }).catch(err => {
+    log.error("Error while crawling crawling '" + job.from.name + job.to.name + "'", err);
+  })
+}
+
+function spawnJob(job){
+  log.info("Spawn job " + JSON.stringify(job));
+  return new cron.CronJob(job.cron, () => doJob(job), null, true);
+}
+
 function spawnJobs(jobs) {
-  for (let job of config.job) {
+  for (let job of jobs) {
     if (!checkJob(job)) {
       log.error("Invalid Job: " + JSON.stringify(job));
       continue;
     }
 
-    log.info("Spawn job " + JSON.stringify(job));
-    new cron.CronJob(job.cron, () => {
-      log.info("Start crawling '" + job.from.name + job.to.name + "'");
-      crawler.crawl(job.from, job.to).then(() => {
-        log.info("Finishing crawling '" + job.from.name + job.to.name + "'");
-      }).catch(err => {
-        log.error("Error while crawling crawling '" + job.from.name + job.to.name + "'", err);
-      })
-    }, null, true);
+    doJob(job)
+      .then(() => spawnJob(job))
+      .catch(() => spawnJob(job))
   }
 }
 
@@ -47,7 +55,7 @@ if(!config.job || config.job.length === 0) {
         to: pair.target,
       }
     }))
-   .then(jobs => spawnJobs(jobs))
+    .then(jobs => spawnJobs(jobs))
 }else{
   spawnJobs(config.job)
 }

@@ -1,91 +1,5 @@
 version: '3'
 services:
-  crawl_btcde:
-    restart: always
-    image: jsonfry/curl-cron
-    volumes:
-     - ./output/bitcoin.de:/output
-     - ./curl.sh:/curl.sh
-    environment:
-     - "OPTIONS=https://www.bitcoin.de/de/btceur/market"
-     - "CRON_SCHEDULE=0 * * * *"
-
-  crawl_cnmarketcap_main:
-    restart: always
-    image: jsonfry/curl-cron
-    volumes:
-     - ./output/coinmarketcap.com:/output
-     - ./curl.sh:/curl.sh
-    environment:
-     - "OPTIONS=https://coinmarketcap.com/"
-     - "CRON_SCHEDULE=0 * * * *"
-
-  crawl_cnmarketcap_btc:
-    restart: always
-    image: jsonfry/curl-cron
-    volumes:
-     - ./output/coinmarketcap.com.markets:/output
-     - ./curl.sh:/curl.sh
-    environment:
-     - "OPTIONS=https://coinmarketcap.com/currencies/bitcoin/#markets"
-     - "CRON_SCHEDULE=0 * * * *"
-
-  crawl_cnmarketcap_api:
-    restart: always
-    image: jsonfry/curl-cron
-    volumes:
-     - ./output/coinmarketcap.com.api:/output
-     - ./curl.sh:/curl.sh
-    environment:
-     - "OPTIONS=https://api.coinmarketcap.com/v1/ticker/?convert=EUR&limit=1000"
-     - "CRON_SCHEDULE=0 * * * *"
-
-  crawl_cnmarketcap_all:
-    image: froso/bitcoin-forks-crawler-cmc
-    build:
-      context: ./coinmarketcap/
-    environment:
-      - CFG_OUTPUT_DIR=/output
-    volumes:
-       - ./output/coinmarketcap.com.all:/output
-    restart: always
-
-  crawl_simple:
-    image: rainu/cryptocrawler
-    build:
-      context: ./
-    environment:
-     - "CFG_JOB_0_URL=https://api.coinmarketcap.com/v1/ticker/?convert=EUR&limit=1000"
-     - "CFG_JOB_0_DIR=/cmc_api/"
-     - "CFG_JOB_0_SUFFIX=.json"
-     - "CFG_JOB_0_CRON=0 0 * * * *"
-     - "CFG_JOB_1_URL=https://coinmarketcap.com/currencies/bitcoin/#markets"
-     - "CFG_JOB_1_DIR=/cmc_markets/"
-     - "CFG_JOB_1_SUFFIX=.html"
-     - "CFG_JOB_1_CRON=0 0 * * * *"
-     - "CFG_JOB_2_URL=https://www.bitcoin.de/de/btceur/market"
-     - "CFG_JOB_2_DIR=/bitcoin/"
-     - "CFG_JOB_2_SUFFIX=.html"
-     - "CFG_JOB_2_CRON=0 0 * * * *"
-    command: "simple.js"
-    volumes:
-     - ./output/simple/cmc_api:/cmc_api
-     - ./output/simple/cmc_markets:/cmc_markets
-     - ./output/simple/bitcoin:/bitcoin
-    restart: always
-
-  webserver_crawler:
-    restart: always
-    image: halverneus/static-file-server
-    volumes:
-     - ./output:/web
-    ports:
-     - "9876:8080"
-
-###################
-#
-# CRAWLER INTO DB
-#
 
   crawler_coinmarketcap:
     image: rainu/cryptocrawler
@@ -94,7 +8,7 @@ services:
     environment:
       - CFG_MONGO_HOST=db
       - CFG_MONGO_DB=coinmarketcap
-      - CFG_CRON=0 0 */12 * * *
+      - CFG_CRON=0 0 */4 * * *
     command: "coinmarketcap.js"
     restart: always
     depends_on:
@@ -107,8 +21,7 @@ services:
     environment:
       - CFG_MONGO_HOST=db
       - CFG_MONGO_DB=bitfinex
-      - CFG_JOB_0_SYMBOL=BTC
-      - CFG_JOB_0_CRON=0 0 */12 * * *
+      - CFG_CRON=0 0 */4 * * *
     command: "bitfinex.js"
     restart: always
     depends_on:
@@ -121,7 +34,7 @@ services:
     environment:
       - CFG_MONGO_HOST=db
       - CFG_MONGO_DB=binance
-      - CFG_CRON=0 0 */12 * * *
+      - CFG_CRON=0 0 */4 * * *
     command: "binance.js"
     restart: always
     depends_on:
@@ -135,13 +48,13 @@ services:
       - CFG_MONGO_HOST=db
       - CFG_MONGO_DB=coinbase
       - CFG_JOB_0_SYMBOL=BTC
-      - CFG_JOB_0_CRON=0 0 */12 * * *
+      - CFG_JOB_0_CRON=0 0 */4 * * *
       - CFG_JOB_1_SYMBOL=BCH
-      - CFG_JOB_1_CRON=0 0 */12 * * *
+      - CFG_JOB_1_CRON=0 0 */4 * * *
       - CFG_JOB_2_SYMBOL=ETH
-      - CFG_JOB_2_CRON=0 0 */12 * * *
+      - CFG_JOB_2_CRON=0 0 */4 * * *
       - CFG_JOB_3_SYMBOL=LTC
-      - CFG_JOB_3_CRON=0 0 */12 * * *
+      - CFG_JOB_3_CRON=0 0 */4 * * *
     command: "coinbase.js"
     restart: always
     depends_on:
@@ -152,3 +65,30 @@ services:
     volumes:
       - ./db:/data/db
     restart: always
+
+###################
+#
+# AGGREGATOR
+#
+
+  course_aggregator:
+    image: rainu/cryptoaggregator
+    build:
+      context: ../aggregator/course
+    environment:
+      - CFG_CRON=0 0 */1 * * *
+      - CFG_OUTPUT_DIR=/courses
+      - CFG_SOURCE_0_URL=mongodb://db/coinmarketcap
+      - CFG_SOURCE_0_NAME=coinmarketcap.com
+      - CFG_SOURCE_1_URL=mongodb://db/bitfinex
+      - CFG_SOURCE_1_NAME=bitfinex.com
+      - CFG_SOURCE_2_URL=mongodb://db/binance
+      - CFG_SOURCE_2_NAME=binance.com
+      - CFG_SOURCE_3_URL=mongodb://db/coinbase
+      - CFG_SOURCE_3_NAME=coinbase.com
+    command: "server.js"
+    ports:
+      - "3000:3000"
+    restart: always
+    depends_on:
+      - db

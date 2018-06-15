@@ -14,6 +14,12 @@ COPY ./coinmarketcap.js /application/coinmarketcap.js
 COPY ./coinbase/ /application/coinbase
 COPY ./coinbase.js /application/coinbase.js
 
+COPY ./binance/ /application/binance
+COPY ./binance.js /application/binance.js
+
+COPY ./bitfinex/ /application/bitfinex
+COPY ./bitfinex.js /application/bitfinex.js
+
 RUN npm install
 
 ENTRYPOINT [ "node" ]

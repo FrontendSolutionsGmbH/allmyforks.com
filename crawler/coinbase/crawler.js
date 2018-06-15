@@ -1,6 +1,6 @@
 "use strict";
 
-const HistoricalCourse = require('../common/db/historical');
+const HistoricalCourse = require('../common/db/historical').model;
 const config = require('./config');
 const RequestRepeater = require('../common/request_repeater');
 const { request } = RequestRepeater(config);
@@ -16,11 +16,11 @@ const processEachCourse = function(body){
   for(let price of data.data.prices){
     let entity = {
       from: {
-        symbol: symbol,
+        name: symbol,
         type: 'crypto'
       },
       to: {
-        symbol: fiat,
+        name: fiat,
         type: 'fiat'
       },
       date: price.time,

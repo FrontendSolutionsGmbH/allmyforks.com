@@ -1,7 +1,17 @@
 image: rainu/docker-node
 
 stages:
+  - test
   - dockerrize
+
+aggregator-test:
+  image: node:alpine
+  stage: test
+  script:
+    - apk --update add git
+    - cd aggregator/course
+    - npm install
+    - npm run test
 
 dockerrize-crawler:
   image: tmaier/docker-compose:latest
@@ -12,5 +22,16 @@ dockerrize-crawler:
     # it doesn't matter what a crawler we choose: all crawler have the same Dockerfile
     - docker-compose build crawler_coinmarketcap
     - docker-compose push crawler_coinmarketcap
+  only:
+    - master
+
+dockerrize-aggregator:
+  image: tmaier/docker-compose:latest
+  stage: dockerrize
+  script:
+    - docker login -u ${DOCKER_USER} -p ${DOCKER_PASSWORD}
+    - cd crawler
+    - docker-compose build course_aggregator
+    - docker-compose push course_aggregator
   only:
     - master
