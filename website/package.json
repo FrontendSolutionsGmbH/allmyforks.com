@@ -8,6 +8,7 @@
     "handlebars": "^4.0.11",
     "handlebars-intl": "^1.1.2",
     "http-server": "^0.11.1",
+    "node-fetch": "^2.1.2",
     "node-watch": "^0.5.8",
     "ufp-optimizer": "^0.12.1"
   },
@@ -17,7 +18,9 @@
     "build": "node src/generate.js && ufp-optimizer-cli optimize dist distOptimized --config=ufp-optimizer.json ",
     "generate": "node src/generate.js",
     "dev": "concurrently --kill-others \"http-server ./dist\" \"node watch.js\"",
-    "serve": "http-server ./dist"
+    "serve": "http-server ./dist",
+    "crawl": "node misc/crawl.js",
+    "aggregate": "node misc/aggregate.js"
   },
   "author": "",
   "license": "ISC"

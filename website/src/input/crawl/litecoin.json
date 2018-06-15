@@ -1,0 +1,1567 @@
+{
+  "ratios": [
+    {
+      "ratio": 101.154,
+      "path": [
+        {
+          "from": {
+            "name": "LTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com"
+        }
+      ]
+    },
+    {
+      "ratio": 98.74,
+      "path": [
+        {
+          "from": {
+            "name": "LTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinbase.com"
+        }
+      ]
+    },
+    {
+      "ratio": 100.82,
+      "path": [
+        {
+          "from": {
+            "name": "LTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "bitfinex.com"
+        }
+      ]
+    },
+    {
+      "ratio": 96.56593044,
+      "path": [
+        {
+          "from": {
+            "name": "LTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinbase.com"
+        }
+      ]
+    },
+    {
+      "ratio": 100.04347045,
+      "path": [
+        {
+          "from": {
+            "name": "LTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com"
+        }
+      ]
+    },
+    {
+      "ratio": 99.4672203,
+      "path": [
+        {
+          "from": {
+            "name": "LTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "bitfinex.com"
+        }
+      ]
+    },
+    {
+      "ratio": 98.67950358,
+      "path": [
+        {
+          "from": {
+            "name": "LTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinbase.com"
+        }
+      ]
+    },
+    {
+      "ratio": 97.90068310000001,
+      "path": [
+        {
+          "from": {
+            "name": "LTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com"
+        }
+      ]
+    },
+    {
+      "ratio": 98.75742840000001,
+      "path": [
+        {
+          "from": {
+            "name": "LTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "bitfinex.com"
+        }
+      ]
+    },
+    {
+      "ratio": 97.3367754,
+      "path": [
+        {
+          "from": {
+            "name": "LTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "bitfinex.com"
+        }
+      ]
+    },
+    {
+      "ratio": 98.51579879999998,
+      "path": [
+        {
+          "from": {
+            "name": "LTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com"
+        }
+      ]
+    },
+    {
+      "ratio": 101.69271972,
+      "path": [
+        {
+          "from": {
+            "name": "LTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com"
+        }
+      ]
+    },
+    {
+      "ratio": 99.0450486,
+      "path": [
+        {
+          "from": {
+            "name": "LTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinbase.com"
+        }
+      ]
+    },
+    {
+      "ratio": 95.776779,
+      "path": [
+        {
+          "from": {
+            "name": "LTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BNB",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "BNB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com"
+        }
+      ]
+    },
+    {
+      "ratio": 97.27053649235998,
+      "path": [
+        {
+          "from": {
+            "name": "LTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BNB",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "BNB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com"
+        }
+      ]
+    },
+    {
+      "ratio": 98.582684532264,
+      "path": [
+        {
+          "from": {
+            "name": "LTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "bitfinex.com"
+        }
+      ]
+    },
+    {
+      "ratio": 94.4628884892,
+      "path": [
+        {
+          "from": {
+            "name": "LTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BNB",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "BNB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "bitfinex.com"
+        }
+      ]
+    },
+    {
+      "ratio": 98.33544864550001,
+      "path": [
+        {
+          "from": {
+            "name": "LTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BNB",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "BNB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com"
+        }
+      ]
+    },
+    {
+      "ratio": 99.02096095557958,
+      "path": [
+        {
+          "from": {
+            "name": "LTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com"
+        }
+      ]
+    },
+    {
+      "ratio": 97.8019727693904,
+      "path": [
+        {
+          "from": {
+            "name": "LTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinbase.com"
+        }
+      ]
+    },
+    {
+      "ratio": 96.90007428935279,
+      "path": [
+        {
+          "from": {
+            "name": "LTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com"
+        }
+      ]
+    },
+    {
+      "ratio": 97.76903669699999,
+      "path": [
+        {
+          "from": {
+            "name": "LTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BNB",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "BNB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "bitfinex.com"
+        }
+      ]
+    },
+    {
+      "ratio": 96.99476850420001,
+      "path": [
+        {
+          "from": {
+            "name": "LTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BNB",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "BNB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinbase.com"
+        }
+      ]
+    },
+    {
+      "ratio": 96.25206806847,
+      "path": [
+        {
+          "from": {
+            "name": "LTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BNB",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "BNB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com"
+        }
+      ]
+    },
+    {
+      "ratio": 102.185265976497,
+      "path": [
+        {
+          "from": {
+            "name": "LTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com"
+        }
+      ]
+    },
+    {
+      "ratio": 101.596679089398,
+      "path": [
+        {
+          "from": {
+            "name": "LTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "bitfinex.com"
+        }
+      ]
+    },
+    {
+      "ratio": 100.7920984187628,
+      "path": [
+        {
+          "from": {
+            "name": "LTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinbase.com"
+        }
+      ]
+    },
+    {
+      "ratio": 98.559336698388,
+      "path": [
+        {
+          "from": {
+            "name": "LTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com"
+        }
+      ]
+    },
+    {
+      "ratio": 99.153810241596,
+      "path": [
+        {
+          "from": {
+            "name": "LTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com"
+        }
+      ]
+    },
+    {
+      "ratio": 94.73800131179999,
+      "path": [
+        {
+          "from": {
+            "name": "LTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BNB",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "BNB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinbase.com"
+        }
+      ]
+    },
+    {
+      "ratio": 101.14086593538624,
+      "path": [
+        {
+          "from": {
+            "name": "LTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com"
+        }
+      ]
+    },
+    {
+      "ratio": 96.40907937538054,
+      "path": [
+        {
+          "from": {
+            "name": "LTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BNB",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "BNB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinbase.com"
+        }
+      ]
+    },
+    {
+      "ratio": 94.27341095193341,
+      "path": [
+        {
+          "from": {
+            "name": "LTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BNB",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "BNB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com"
+        }
+      ]
+    },
+    {
+      "ratio": 94.84203337286554,
+      "path": [
+        {
+          "from": {
+            "name": "LTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BNB",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "BNB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com"
+        }
+      ]
+    },
+    {
+      "ratio": 94.29574348796261,
+      "path": [
+        {
+          "from": {
+            "name": "LTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BNB",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "BNB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "bitfinex.com"
+        }
+      ]
+    },
+    {
+      "ratio": 93.54898155426959,
+      "path": [
+        {
+          "from": {
+            "name": "LTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BNB",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "BNB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinbase.com"
+        }
+      ]
+    },
+    {
+      "ratio": 98.14039365454686,
+      "path": [
+        {
+          "from": {
+            "name": "LTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com"
+        }
+      ]
+    },
+    {
+      "ratio": 97.33039624751899,
+      "path": [
+        {
+          "from": {
+            "name": "LTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BNB",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "BNB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com"
+        }
+      ]
+    },
+    {
+      "ratio": 97.74166401012805,
+      "path": [
+        {
+          "from": {
+            "name": "LTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BNB",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "BNB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com"
+        }
+      ]
+    },
+    {
+      "ratio": 97.17867225970456,
+      "path": [
+        {
+          "from": {
+            "name": "LTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BNB",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "BNB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "bitfinex.com"
+        }
+      ]
+    },
+    {
+      "ratio": 96.74268047825672,
+      "path": [
+        {
+          "from": {
+            "name": "LTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BNB",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "BNB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com"
+        }
+      ]
+    },
+    {
+      "ratio": 93.87268595661052,
+      "path": [
+        {
+          "from": {
+            "name": "LTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BNB",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "BNB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com"
+        }
+      ]
+    }
+  ]
+}

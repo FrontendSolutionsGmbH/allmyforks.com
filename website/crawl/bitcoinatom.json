@@ -1,0 +1,20 @@
+{
+  "ratios": [
+    {
+      "ratio": 0.616681,
+      "path": [
+        {
+          "from": {
+            "name": "BCA",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com"
+        }
+      ]
+    }
+  ]
+}

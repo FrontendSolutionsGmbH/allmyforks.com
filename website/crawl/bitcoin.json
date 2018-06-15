@@ -1,0 +1,79 @@
+{
+  "ratios": [
+    {
+      "ratio": 6675.35,
+      "path": [
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com"
+        }
+      ]
+    },
+    {
+      "ratio": 6636.9,
+      "path": [
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "bitfinex.com"
+        }
+      ]
+    },
+    {
+      "ratio": 6638.33,
+      "path": [
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinbase.com"
+        }
+      ]
+    },
+    {
+      "ratio": 6607.1235707999995,
+      "path": [
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "source": "binance.com"
+        },
+        {
+          "from": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com"
+        }
+      ]
+    }
+  ]
+}

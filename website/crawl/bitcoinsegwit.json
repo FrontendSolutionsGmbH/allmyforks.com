@@ -1,0 +1,20 @@
+{
+  "ratios": [
+    {
+      "ratio": 0.577677,
+      "path": [
+        {
+          "from": {
+            "name": "B2X",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com"
+        }
+      ]
+    }
+  ]
+}
