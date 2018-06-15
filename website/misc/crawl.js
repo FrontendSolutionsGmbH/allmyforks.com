@@ -7,6 +7,11 @@ var coins = localData.coins
 
 var baseUrl = process.argv[process.argv.length - 1]
 
+if (baseUrl.indexOf('http') < 0) {
+    console.log('missing http(s) url without /api/... as argument e.g. npm run crawl http://froso.de:3000 )
+    process.exit(1)
+}
+
 console.log('lets crawl ' + baseUrl)
 var apiCrypto = baseUrl + '/api/ratios/crypto/'
 
@@ -36,7 +41,7 @@ var downloadCrawledData = function (coins) {
                 if (json.ratios && json.ratios.length < 1) {
                     console.log('no data', coin.shortName)
                 }
-                if (!fs.existsSync(fileName) || json.fail !== true) {
+                if (!fs.existsSync(fileName) || json.ratios && json.ratios.length > 0) {
                     fs.writeFileSync(fileName, JSON.stringify(json, null, 2), 'utf-8')
                 }
                 return json

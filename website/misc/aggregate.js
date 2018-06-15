@@ -1,49 +1,63 @@
 const util = require('util');
 const localData = require('../src/input/local.js')
 const fs = require('fs-extra');
-const outputDir = './src/input/crawl/'
+const crawlDir = './src/input/crawl/'
+const outputDir = './src/input/'
 var coins = localData.coins
+console.log('lets aggregate ' + coins.length + ' cryptos')
 
-console.log('lets aggregate ' + coins.length)
-var apiCrypto = baseUrl + '/api/ratios/crypto/'
-
-console.log('crypto-api: ' + apiCrypto)
-console.log('local-crypto-tokens: ' + coins.length)
-
-
-
+if (!fs.existsSync(outputDir)) {
+    fs.mkdirSync(outputDir)
+}
 
 
 var aggregateData = function (coins) {
 
+    return coins.map((coin) => {
+        var result = {
+            id: coin.id,
+            price: '',
+            // ratios: []
+        }
+        var fileName = crawlDir + coin.id + '.json'
 
-    var promises = coins.map((coin)=> {
-        var url = apiCrypto + coin.shortName
-        return fetch(url)
-            .then((res) => {
-                if (res.status === 200) {
-                    //  console.log('fetching success ', res.status, coin.shortName)
-                    return res.json()
-                } else {
-                    console.log('status != 200', coin.shortName, res.status)
-                    return {fail: true}
-                }
-            }).catch((res) => {
-                console.log('network problem', coin.shortName, res.message)
-                return {}
-            }).then((json) => {
-                var fileName = outputDir + coin.id + '.json'
-                if (json.ratios && json.ratios.length < 1) {
-                    console.log('no data', coin.shortName)
-                }
-                if (!fs.existsSync(fileName) || json.fail !== true) {
-                    fs.writeFileSync(fileName, JSON.stringify(json, null, 2), 'utf-8')
-                }
-                return json
-            })
+        if (!fs.existsSync(fileName)) {
+            console.log('file does not exist for coin', coin.id)
+        } else {
+            crawledCoin = JSON.parse(fs.readFileSync(fileName))
+
+            if (crawledCoin.ratios && crawledCoin.ratios.length > 0) {
+                // result.ratios = crawledCoin.ratios
+                //result.price = Math.max(...(result.ratios.map(r=>r.ratio)))
+                result.price = crawledCoin.ratios[0].ratio
+            }
+
+        }
+
+        return result
+
     })
 
-
-    return Promise.all(promises)
 }
+
+
+var data = aggregateData(coins)
+var result = {
+    coins: data
+}
+result.fiats = [
+    {
+        "id": "dollar",
+        "ratio": 1
+    },
+    {
+        "id": "euro",
+        "ratio": 0.849855227
+    }
+]
+
+var fileName = outputDir + 'crawl.json'
+fs.writeFileSync(fileName, JSON.stringify(result, null, 2), 'utf-8')
+
+console.log('completed ' + coins.length + ' cryptos to ' + fileName)
 
