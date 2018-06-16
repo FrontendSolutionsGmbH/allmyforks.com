@@ -2,8 +2,8 @@
 
 const HistoricalCourse = require('../common/db/historical').model;
 const config = require('./config');
-const RequestRepeater = require('../common/request_repeater');
-const { request } = RequestRepeater(config);
+const RequestPool = require('../common/request_pool');
+const { request } = RequestPool(config.request);
 
 const processEachCourse = function(body){
   const data = JSON.parse(body);
@@ -44,6 +44,17 @@ const get = function(symbol){
   const url = `https://www.coinbase.com/api/v2/prices/${symbol}-USD/historic?period=all`;
   return request(url)
     .then(({body}) => processEachCourse(body))
+    .catch(({error, response}) => {
+      if(response && response.statusCode === HttpStatus.INTERNAL_SERVER_ERROR){
+        //ignore this case
+        return Promise.resolve();
+      }
+      if(response && response.statusCode !== HttpStatus.OK) {
+        return Promise.reject(new Error("Bad status code: " + response.statusCode))
+      }
+
+      return Promise.reject(error)
+    })
 };
 
 module.exports = {

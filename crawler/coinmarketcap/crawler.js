@@ -2,8 +2,8 @@
 
 const cheerio = require('cheerio');
 const config = require('./config');
-const RequestRepeater = require('../common/request_repeater');
-const { request } = RequestRepeater(config);
+const RequestPool = require('../common/request_pool');
+const { request } = RequestPool(config.request);
 const HistoricalCourse = require('../common/db/historical').model;
 const log = require('../common/log');
 const moment = require("moment");

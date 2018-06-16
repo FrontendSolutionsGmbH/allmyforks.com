@@ -62,7 +62,8 @@ So we have to set this env-variables:
 | ------------- |:-------------:|:-------------:| ------------|
 | LOG_LEVEL               | info | false | The log level |
 | CFG_REQUEST_TIMEOUT     | 60000 | false | The timeout of one request in ms |
-| CFG_REQUEST_REPEATSLEEP | 65000 | false | The sleep time (in ms) between repeating of failing download |
+| CFG_REQUEST_BATCH       | 400 | false | The maximum amount of parallel requests |
+| CFG_REQUEST_COOLDOWN    | 30000 | false | The sleep time (in ms) between batched requests |
 | CFG_REQUEST_MAXRETRY    | 10 | false | Maximal count of retries |
 | CFG_JOB_*N*_CRON        |  | true | The cron string. See [Cron-Syntax](https://github.com/kelektiv/node-cron#available-cron-patterns) |
 | CFG_JOB_*N*_FROM_NAME   |  | true | The symbol name of the source coin |
@@ -79,7 +80,8 @@ If no JOB is configured, ALL symbols from binance will be crawled!
 | ------------- |:-------------:|:-------------:| ------------|
 | LOG_LEVEL               | info | false | The log level |
 | CFG_REQUEST_TIMEOUT     | 60000 | false | The timeout of one request in ms |
-| CFG_REQUEST_REPEATSLEEP | 60000 | false | The sleep time (in ms) between repeating of failing download. This will only used if no 'retry-after'-HEADER was sent. |
+| CFG_REQUEST_BATCH       | 40 | false | The maximum amount of parallel requests |
+| CFG_REQUEST_COOLDOWN    | 90000 | false | The sleep time (in ms) between batched requests |
 | CFG_REQUEST_MAXRETRY    | 10 | false | Maximal count of retries |
 | CFG_JOB_*N*_CRON        |  | true | The cron string. See [Cron-Syntax](https://github.com/kelektiv/node-cron#available-cron-patterns) |
 | CFG_JOB_*N*_FROM_NAME   |  | true | The symbol name of the source coin |
@@ -96,7 +98,8 @@ If no JOB is configured, ALL symbols from bitfinex will be crawled!
 | ------------- |:-------------:|:-------------:| ------------|
 | LOG_LEVEL               | info | false | The log level |
 | CFG_REQUEST_TIMEOUT     | 60000 | false | The timeout of one request in ms |
-| CFG_REQUEST_REPEATSLEEP | 1000 | false | The sleep time (in ms) between repeating of failing download |
+| CFG_REQUEST_BATCH       | 600 | false | The maximum amount of parallel requests |
+| CFG_REQUEST_COOLDOWN    | 60000 | false | The sleep time (in ms) between batched requests |
 | CFG_REQUEST_MAXRETRY    | 10 | false | Maximal count of retries |
 | CFG_JOB_*N*_CRON        |  | true | The cron string. See [Cron-Syntax](https://github.com/kelektiv/node-cron#available-cron-patterns) |
 | CFG_JOB_*N*_COIN_NAME   |  | true | The symbol name of the source coin |
