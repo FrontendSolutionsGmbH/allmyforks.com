@@ -6,6 +6,13 @@ const pairfinder = require('./pairfinder')
 
 const connections = {}
 
+const closeConnections = function() {
+  for(let key of Object.keys(connections)) {
+    connections[key].connection.close()
+    delete connection[key]
+  }
+}
+
 const getConnection = function(source, sources = config.source){
   if(!connections[source]) {
     for(let dbCon of sources) {
@@ -99,6 +106,10 @@ const getRatios = function(source, destination = { name: 'USD', type: 'fiat' }){
     .then(pairs => pathfinder(pairs, source, destination))
     .then(paths => paths.map(resolvePath))
     .then(promises => Promise.all(promises))
+    .then((ratios) => {
+      closeConnections()
+      return ratios
+    })
 }
 
 //do we call directly?
