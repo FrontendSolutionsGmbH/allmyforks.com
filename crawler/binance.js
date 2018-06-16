@@ -22,7 +22,7 @@ function doJob(job){
   return crawler.crawl(job.from, job.to).then(() => {
     log.info("Finishing crawling '" + job.from.name + job.to.name + "'");
   }).catch(err => {
-    log.error("Error while crawling crawling '" + job.from.name + job.to.name + "'", err);
+    log.error("Error while crawling '" + job.from.name + job.to.name + "'", err);
   })
 }
 

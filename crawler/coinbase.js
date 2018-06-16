@@ -17,7 +17,7 @@ function doJob(job){
   return crawler.get(job.symbol).then(() => {
     log.info("Finishing crawling '" + job.symbol + "'");
   }).catch(err => {
-    log.error("Error while crawling crawling '" + job.symbol + "'", err);
+    log.error("Error while crawling '" + job.symbol + "'", err);
   })
 }
 
