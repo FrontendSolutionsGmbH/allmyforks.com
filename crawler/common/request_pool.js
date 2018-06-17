@@ -59,22 +59,31 @@ const RequestPool = function(config){
       request({uri: job.request.uri, timeout: REQUEST_TIMEOUT},
         (err, resp, body) => {
           log.info("[CALL][DONE] " + job.request.uri);
+          let shouldRetry = false;
 
           if (err || resp.statusCode !== HttpStatus.OK) {
             const statusCode = resp ? resp.statusCode : -1
             switch(statusCode) {
               case HttpStatus.TOO_MANY_REQUESTS:
               case HttpStatus.IM_A_TEAPOT:
-                log.debug("Request error or too many requests. Retry: " + job.request.uri);
+                shouldRetry = true;
+                log.debug("Request error: too many requests. Retry: " + job.request.uri);
+            }
 
-                if(job.request.retryCount < MAX_RETRY) {
-                  job.request.retryCount++;
+            if(err && err.code && err.code === 'ETIMEDOUT') {
+              log.debug("Request error: timed out. Retry: " + job.request.uri);
+              shouldRetry = true;
+            }
 
-                  //push this job back (retry)
-                  queue.push(job);
-                  job.internalPromise.resolve()
-                  return;
-                }
+            if(shouldRetry){
+              if(job.request.retryCount < MAX_RETRY) {
+                job.request.retryCount++;
+
+                //push this job back (retry)
+                queue.push(job);
+                job.internalPromise.resolve()
+                return;
+              }
             }
 
             //forward request answer to promise
