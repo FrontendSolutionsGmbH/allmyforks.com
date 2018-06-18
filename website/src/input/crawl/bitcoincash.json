@@ -1,7 +1,9 @@
 {
   "ratios": [
     {
-      "ratio": 897.602,
+      "ratio": 845.75,
+      "minDate": "2018-06-18T00:00:00Z",
+      "maxDate": "2018-06-18T00:00:00Z",
       "path": [
         {
           "from": {
@@ -12,12 +14,16 @@
             "name": "USD",
             "type": "fiat"
           },
-          "source": "coinmarketcap.com"
+          "source": "coinbase.com",
+          "date": "2018-06-18T00:00:00Z",
+          "ratio": 845.75
         }
       ]
     },
     {
-      "ratio": 873.87,
+      "ratio": 852.102,
+      "minDate": "2018-06-17T00:00:00.000Z",
+      "maxDate": "2018-06-17T00:00:00.000Z",
       "path": [
         {
           "from": {
@@ -28,12 +34,16 @@
             "name": "USD",
             "type": "fiat"
           },
-          "source": "coinbase.com"
+          "source": "coinmarketcap.com",
+          "date": "2018-06-17T00:00:00.000Z",
+          "ratio": 852.102
         }
       ]
     },
     {
-      "ratio": 859.37,
+      "ratio": 832.77,
+      "minDate": "2018-06-18T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
       "path": [
         {
           "from": {
@@ -44,12 +54,16 @@
             "name": "USD",
             "type": "fiat"
           },
-          "source": "bitfinex.com"
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 832.77
         }
       ]
     },
     {
-      "ratio": 926.3361666,
+      "ratio": 837.065043,
+      "minDate": "2018-06-18T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
       "path": [
         {
           "from": {
@@ -60,7 +74,9 @@
             "name": "ETH",
             "type": "crypto"
           },
-          "source": "bitfinex.com"
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 1.6893
         },
         {
           "from": {
@@ -71,12 +87,16 @@
             "name": "USD",
             "type": "fiat"
           },
-          "source": "coinmarketcap.com"
+          "source": "coinbase.com",
+          "date": "2018-06-18T00:00:00Z",
+          "ratio": 495.51
         }
       ]
     },
     {
-      "ratio": 902.218083,
+      "ratio": 831.422781,
+      "minDate": "2018-06-18T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
       "path": [
         {
           "from": {
@@ -87,7 +107,9 @@
             "name": "ETH",
             "type": "crypto"
           },
-          "source": "bitfinex.com"
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 1.6893
         },
         {
           "from": {
@@ -98,39 +120,16 @@
             "name": "USD",
             "type": "fiat"
           },
-          "source": "coinbase.com"
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 492.17
         }
       ]
     },
     {
-      "ratio": 899.598102,
-      "path": [
-        {
-          "from": {
-            "name": "BCH",
-            "type": "crypto"
-          },
-          "to": {
-            "name": "ETH",
-            "type": "crypto"
-          },
-          "source": "bitfinex.com"
-        },
-        {
-          "from": {
-            "name": "ETH",
-            "type": "crypto"
-          },
-          "to": {
-            "name": "USD",
-            "type": "fiat"
-          },
-          "source": "bitfinex.com"
-        }
-      ]
-    },
-    {
-      "ratio": 862.6802268,
+      "ratio": 833.7411289999999,
+      "minDate": "2018-06-18T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
       "path": [
         {
           "from": {
@@ -141,7 +140,9 @@
             "name": "BTC",
             "type": "crypto"
           },
-          "source": "bitfinex.com"
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 0.13001
         },
         {
           "from": {
@@ -152,12 +153,16 @@
             "name": "USD",
             "type": "fiat"
           },
-          "source": "coinbase.com"
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 6412.9
         }
       ]
     },
     {
-      "ratio": 869.5666379999999,
+      "ratio": 838.4656923999999,
+      "minDate": "2018-06-18T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
       "path": [
         {
           "from": {
@@ -168,7 +173,9 @@
             "name": "BTC",
             "type": "crypto"
           },
-          "source": "bitfinex.com"
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 0.13001
         },
         {
           "from": {
@@ -179,61 +186,29 @@
             "name": "USD",
             "type": "fiat"
           },
-          "source": "bitfinex.com"
+          "source": "coinbase.com",
+          "date": "2018-06-18T00:00:00Z",
+          "ratio": 6449.24
         }
       ]
     },
     {
-      "ratio": 874.604357,
+      "ratio": 840.0986495999999,
+      "minDate": "2018-06-17T00:00:00.000Z",
+      "maxDate": "2018-06-17T16:00:00.000Z",
       "path": [
         {
           "from": {
             "name": "BCH",
-            "type": "crypto"
-          },
-          "to": {
-            "name": "BTC",
-            "type": "crypto"
-          },
-          "source": "bitfinex.com"
-        },
-        {
-          "from": {
-            "name": "BTC",
-            "type": "crypto"
-          },
-          "to": {
-            "name": "USD",
-            "type": "fiat"
-          },
-          "source": "coinmarketcap.com"
-        }
-      ]
-    },
-    {
-      "ratio": 865.665330246216,
-      "path": [
-        {
-          "from": {
-            "name": "BCH",
-            "type": "crypto"
-          },
-          "to": {
-            "name": "BTC",
-            "type": "crypto"
-          },
-          "source": "bitfinex.com"
-        },
-        {
-          "from": {
-            "name": "BTC",
             "type": "crypto"
           },
           "to": {
             "name": "USDT",
             "type": "crypto"
           },
-          "source": "binance.com"
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "835.52"
         },
         {
           "from": {
@@ -244,12 +219,16 @@
             "name": "USD",
             "type": "fiat"
           },
-          "source": "coinmarketcap.com"
+          "source": "coinmarketcap.com",
+          "date": "2018-06-17T00:00:00.000Z",
+          "ratio": 1.00548
         }
       ]
     },
     {
-      "ratio": 903.20881117038,
+      "ratio": 845.4068063999999,
+      "minDate": "2018-06-17T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
       "path": [
         {
           "from": {
@@ -260,7 +239,9 @@
             "name": "ETH",
             "type": "crypto"
           },
-          "source": "bitfinex.com"
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 1.6893
         },
         {
           "from": {
@@ -268,10 +249,32 @@
             "type": "crypto"
           },
           "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com",
+          "date": "2018-06-17T00:00:00.000Z",
+          "ratio": 500.448
+        }
+      ]
+    },
+    {
+      "ratio": 851.5863015999998,
+      "minDate": "2018-06-16T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
             "name": "BTC",
             "type": "crypto"
           },
-          "source": "binance.com"
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 0.13001
         },
         {
           "from": {
@@ -282,12 +285,16 @@
             "name": "USD",
             "type": "fiat"
           },
-          "source": "coinmarketcap.com"
+          "source": "coinmarketcap.com",
+          "date": "2018-06-16T00:00:00.000Z",
+          "ratio": 6550.16
         }
       ]
     },
     {
-      "ratio": 898.00633058292,
+      "ratio": 853.721981268,
+      "minDate": "2018-06-16T00:00:00.000Z",
+      "maxDate": "2018-06-17T16:00:00.000Z",
       "path": [
         {
           "from": {
@@ -295,21 +302,12 @@
             "type": "crypto"
           },
           "to": {
-            "name": "ETH",
-            "type": "crypto"
-          },
-          "source": "bitfinex.com"
-        },
-        {
-          "from": {
-            "name": "ETH",
-            "type": "crypto"
-          },
-          "to": {
             "name": "BTC",
             "type": "crypto"
           },
-          "source": "binance.com"
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.13033605"
         },
         {
           "from": {
@@ -320,12 +318,16 @@
             "name": "USD",
             "type": "fiat"
           },
-          "source": "bitfinex.com"
+          "source": "coinmarketcap.com",
+          "date": "2018-06-16T00:00:00.000Z",
+          "ratio": 6550.16
         }
       ]
     },
     {
-      "ratio": 890.894695220712,
+      "ratio": 835.8320550450001,
+      "minDate": "2018-06-17T16:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
       "path": [
         {
           "from": {
@@ -333,21 +335,12 @@
             "type": "crypto"
           },
           "to": {
-            "name": "ETH",
-            "type": "crypto"
-          },
-          "source": "bitfinex.com"
-        },
-        {
-          "from": {
-            "name": "ETH",
-            "type": "crypto"
-          },
-          "to": {
             "name": "BTC",
             "type": "crypto"
           },
-          "source": "binance.com"
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.13033605"
         },
         {
           "from": {
@@ -358,12 +351,16 @@
             "name": "USD",
             "type": "fiat"
           },
-          "source": "coinbase.com"
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 6412.9
         }
       ]
     },
     {
-      "ratio": 930.8228536742852,
+      "ratio": 840.568467102,
+      "minDate": "2018-06-17T16:00:00.000Z",
+      "maxDate": "2018-06-17T16:00:00.000Z",
       "path": [
         {
           "from": {
@@ -371,21 +368,12 @@
             "type": "crypto"
           },
           "to": {
-            "name": "ETH",
-            "type": "crypto"
-          },
-          "source": "bitfinex.com"
-        },
-        {
-          "from": {
-            "name": "ETH",
-            "type": "crypto"
-          },
-          "to": {
             "name": "BTC",
             "type": "crypto"
           },
-          "source": "bitfinex.com"
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.13033605"
         },
         {
           "from": {
@@ -396,12 +384,16 @@
             "name": "USD",
             "type": "fiat"
           },
-          "source": "coinmarketcap.com"
+          "source": "coinbase.com",
+          "date": "2018-06-18T00:00:00Z",
+          "ratio": 6449.24
         }
       ]
     },
     {
-      "ratio": 925.46131626819,
+      "ratio": 843.95559728064,
+      "minDate": "2018-06-17T00:00:00.000Z",
+      "maxDate": "2018-06-17T16:00:00.000Z",
       "path": [
         {
           "from": {
@@ -412,34 +404,29 @@
             "name": "ETH",
             "type": "crypto"
           },
-          "source": "bitfinex.com"
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "1.68640018"
         },
         {
           "from": {
             "name": "ETH",
-            "type": "crypto"
-          },
-          "to": {
-            "name": "BTC",
-            "type": "crypto"
-          },
-          "source": "bitfinex.com"
-        },
-        {
-          "from": {
-            "name": "BTC",
             "type": "crypto"
           },
           "to": {
             "name": "USD",
             "type": "fiat"
           },
-          "source": "bitfinex.com"
+          "source": "coinmarketcap.com",
+          "date": "2018-06-17T00:00:00.000Z",
+          "ratio": 500.448
         }
       ]
     },
     {
-      "ratio": 918.1322549921341,
+      "ratio": 835.6281531917999,
+      "minDate": "2018-06-17T16:00:00.000Z",
+      "maxDate": "2018-06-17T16:00:00.000Z",
       "path": [
         {
           "from": {
@@ -450,34 +437,29 @@
             "name": "ETH",
             "type": "crypto"
           },
-          "source": "bitfinex.com"
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "1.68640018"
         },
         {
           "from": {
             "name": "ETH",
-            "type": "crypto"
-          },
-          "to": {
-            "name": "BTC",
-            "type": "crypto"
-          },
-          "source": "bitfinex.com"
-        },
-        {
-          "from": {
-            "name": "BTC",
             "type": "crypto"
           },
           "to": {
             "name": "USD",
             "type": "fiat"
           },
-          "source": "coinbase.com"
+          "source": "coinbase.com",
+          "date": "2018-06-18T00:00:00Z",
+          "ratio": 495.51
         }
       ]
     },
     {
-      "ratio": 897.7936512191399,
+      "ratio": 829.9955765906,
+      "minDate": "2018-06-17T16:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
       "path": [
         {
           "from": {
@@ -488,7 +470,42 @@
             "name": "ETH",
             "type": "crypto"
           },
-          "source": "bitfinex.com"
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "1.68640018"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 492.17
+        }
+      ]
+    },
+    {
+      "ratio": 838.5607850331598,
+      "minDate": "2018-06-17T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 1.6893
         },
         {
           "from": {
@@ -499,7 +516,9 @@
             "name": "USDT",
             "type": "crypto"
           },
-          "source": "binance.com"
+          "source": "binance.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 493.69
         },
         {
           "from": {
@@ -510,12 +529,16 @@
             "name": "USD",
             "type": "fiat"
           },
-          "source": "coinmarketcap.com"
+          "source": "coinmarketcap.com",
+          "date": "2018-06-17T00:00:00.000Z",
+          "ratio": 1.00548
         }
       ]
     },
     {
-      "ratio": 921.3092372311097,
+      "ratio": 837.8458753411768,
+      "minDate": "2018-06-17T00:00:00.000Z",
+      "maxDate": "2018-06-17T16:00:00.000Z",
       "path": [
         {
           "from": {
@@ -526,7 +549,9 @@
             "name": "ETH",
             "type": "crypto"
           },
-          "source": "bitfinex.com"
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "1.68640018"
         },
         {
           "from": {
@@ -534,21 +559,12 @@
             "type": "crypto"
           },
           "to": {
-            "name": "BTC",
-            "type": "crypto"
-          },
-          "source": "bitfinex.com"
-        },
-        {
-          "from": {
-            "name": "BTC",
-            "type": "crypto"
-          },
-          "to": {
             "name": "USDT",
             "type": "crypto"
           },
-          "source": "binance.com"
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "494.1173"
         },
         {
           "from": {
@@ -559,12 +575,16 @@
             "name": "USD",
             "type": "fiat"
           },
-          "source": "coinmarketcap.com"
+          "source": "coinmarketcap.com",
+          "date": "2018-06-17T00:00:00.000Z",
+          "ratio": 1.00548
         }
       ]
     },
     {
-      "ratio": 893.9774282454199,
+      "ratio": 851.122987167672,
+      "minDate": "2018-06-16T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
       "path": [
         {
           "from": {
@@ -575,7 +595,9 @@
             "name": "ETH",
             "type": "crypto"
           },
-          "source": "bitfinex.com"
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 1.6893
         },
         {
           "from": {
@@ -586,7 +608,134 @@
             "name": "BTC",
             "type": "crypto"
           },
-          "source": "binance.com"
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 0.076919
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com",
+          "date": "2018-06-16T00:00:00.000Z",
+          "ratio": 6550.16
+        }
+      ]
+    },
+    {
+      "ratio": 833.2875234204299,
+      "minDate": "2018-06-18T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 1.6893
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 0.076919
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 6412.9
+        }
+      ]
+    },
+    {
+      "ratio": 832.773277902812,
+      "minDate": "2018-06-15T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 0.13001
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "EUR",
+            "type": "fiat"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 5523.8492275
+        },
+        {
+          "from": {
+            "name": "EUR",
+            "type": "fiat"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "fiat",
+          "date": "2018-06-15T00:00:00.000Z",
+          "ratio": 1.1596
+        }
+      ]
+    },
+    {
+      "ratio": 838.1361695220359,
+      "minDate": "2018-06-17T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 0.13001
         },
         {
           "from": {
@@ -597,7 +746,9 @@
             "name": "USDT",
             "type": "crypto"
           },
-          "source": "binance.com"
+          "source": "binance.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 6411.57
         },
         {
           "from": {
@@ -608,7 +759,4030 @@
             "name": "USD",
             "type": "fiat"
           },
-          "source": "coinmarketcap.com"
+          "source": "coinmarketcap.com",
+          "date": "2018-06-17T00:00:00.000Z",
+          "ratio": 1.00548
+        }
+      ]
+    },
+    {
+      "ratio": 838.3404625743973,
+      "minDate": "2018-06-17T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 0.13001
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "6413.1328"
+        },
+        {
+          "from": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com",
+          "date": "2018-06-17T00:00:00.000Z",
+          "ratio": 1.00548
+        }
+      ]
+    },
+    {
+      "ratio": 838.009516372308,
+      "minDate": "2018-06-18T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 1.6893
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 0.076919
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinbase.com",
+          "date": "2018-06-18T00:00:00Z",
+          "ratio": 6449.24
+        }
+      ]
+    },
+    {
+      "ratio": 839.5262288305199,
+      "minDate": "2018-06-17T00:00:00.000Z",
+      "maxDate": "2018-06-17T16:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "213.8158"
+        },
+        {
+          "from": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "3.905"
+        },
+        {
+          "from": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com",
+          "date": "2018-06-17T00:00:00.000Z",
+          "ratio": 1.00548
+        }
+      ]
+    },
+    {
+      "ratio": 838.9397094694084,
+      "minDate": "2018-06-17T16:00:00.000Z",
+      "maxDate": "2018-06-17T16:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "213.8158"
+        },
+        {
+          "from": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.00791842"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinbase.com",
+          "date": "2018-06-18T00:00:00Z",
+          "ratio": 495.51
+        }
+      ]
+    },
+    {
+      "ratio": 839.848650870401,
+      "minDate": "2018-06-17T16:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 1.6893
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.07708781"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinbase.com",
+          "date": "2018-06-18T00:00:00Z",
+          "ratio": 6449.24
+        }
+      ]
+    },
+    {
+      "ratio": 847.3001548395521,
+      "minDate": "2018-06-17T00:00:00.000Z",
+      "maxDate": "2018-06-17T16:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "213.8158"
+        },
+        {
+          "from": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.00791842"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com",
+          "date": "2018-06-17T00:00:00.000Z",
+          "ratio": 500.448
+        }
+      ]
+    },
+    {
+      "ratio": 838.6080836866348,
+      "minDate": "2018-06-17T16:00:00.000Z",
+      "maxDate": "2018-06-17T16:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "213.8158"
+        },
+        {
+          "from": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.00060815"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinbase.com",
+          "date": "2018-06-18T00:00:00Z",
+          "ratio": 6449.24
+        }
+      ]
+    },
+    {
+      "ratio": 833.882717944133,
+      "minDate": "2018-06-17T16:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "213.8158"
+        },
+        {
+          "from": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.00060815"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 6412.9
+        }
+      ]
+    },
+    {
+      "ratio": 851.7309210761032,
+      "minDate": "2018-06-16T00:00:00.000Z",
+      "maxDate": "2018-06-17T16:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "213.8158"
+        },
+        {
+          "from": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.00060815"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com",
+          "date": "2018-06-16T00:00:00.000Z",
+          "ratio": 6550.16
+        }
+      ]
+    },
+    {
+      "ratio": 835.1162948140858,
+      "minDate": "2018-06-17T16:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 1.6893
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.07708781"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 6412.9
+        }
+      ]
+    },
+    {
+      "ratio": 837.1213276628557,
+      "minDate": "2018-06-17T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "1.68640018"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "source": "binance.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 493.69
+        },
+        {
+          "from": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com",
+          "date": "2018-06-17T00:00:00.000Z",
+          "ratio": 1.00548
+        }
+      ]
+    },
+    {
+      "ratio": 852.9909010961394,
+      "minDate": "2018-06-16T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 1.6893
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.07708781"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com",
+          "date": "2018-06-16T00:00:00.000Z",
+          "ratio": 6550.16
+        }
+      ]
+    },
+    {
+      "ratio": 833.5563533855999,
+      "minDate": "2018-06-15T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 1.6893
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "EUR",
+            "type": "fiat"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 425.52
+        },
+        {
+          "from": {
+            "name": "EUR",
+            "type": "fiat"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "fiat",
+          "date": "2018-06-15T00:00:00.000Z",
+          "ratio": 1.1596
+        }
+      ]
+    },
+    {
+      "ratio": 852.019267176,
+      "minDate": "2018-06-16T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 1.6893
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "binance.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 0.077
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com",
+          "date": "2018-06-16T00:00:00.000Z",
+          "ratio": 6550.16
+        }
+      ]
+    },
+    {
+      "ratio": 834.8617766895225,
+      "minDate": "2018-06-15T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.13033605"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "EUR",
+            "type": "fiat"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 5523.8492275
+        },
+        {
+          "from": {
+            "name": "EUR",
+            "type": "fiat"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "fiat",
+          "date": "2018-06-15T00:00:00.000Z",
+          "ratio": 1.1596
+        }
+      ]
+    },
+    {
+      "ratio": 840.2381178188798,
+      "minDate": "2018-06-17T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.13033605"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "source": "binance.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 6411.57
+        },
+        {
+          "from": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com",
+          "date": "2018-06-17T00:00:00.000Z",
+          "ratio": 1.00548
+        }
+      ]
+    },
+    {
+      "ratio": 840.4429232145204,
+      "minDate": "2018-06-17T00:00:00.000Z",
+      "maxDate": "2018-06-17T16:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.13033605"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "6413.1328"
+        },
+        {
+          "from": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com",
+          "date": "2018-06-17T00:00:00.000Z",
+          "ratio": 1.00548
+        }
+      ]
+    },
+    {
+      "ratio": 834.16502169,
+      "minDate": "2018-06-18T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 1.6893
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "binance.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 0.077
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 6412.9
+        }
+      ]
+    },
+    {
+      "ratio": 838.8919871639999,
+      "minDate": "2018-06-18T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 1.6893
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "binance.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 0.077
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinbase.com",
+          "date": "2018-06-18T00:00:00Z",
+          "ratio": 6449.24
+        }
+      ]
+    },
+    {
+      "ratio": 839.2865785947972,
+      "minDate": "2018-06-17T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 1.6893
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "494.1173"
+        },
+        {
+          "from": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com",
+          "date": "2018-06-17T00:00:00.000Z",
+          "ratio": 1.00548
+        }
+      ]
+    },
+    {
+      "ratio": 849.6619657619723,
+      "minDate": "2018-06-16T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "1.68640018"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 0.076919
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com",
+          "date": "2018-06-16T00:00:00.000Z",
+          "ratio": 6550.16
+        }
+      ]
+    },
+    {
+      "ratio": 831.8571180299339,
+      "minDate": "2018-06-17T16:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "1.68640018"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 0.076919
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 6412.9
+        }
+      ]
+    },
+    {
+      "ratio": 836.5710052992205,
+      "minDate": "2018-06-17T16:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "1.68640018"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 0.076919
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinbase.com",
+          "date": "2018-06-18T00:00:00Z",
+          "ratio": 6449.24
+        }
+      ]
+    },
+    {
+      "ratio": 838.4069827742859,
+      "minDate": "2018-06-17T16:00:00.000Z",
+      "maxDate": "2018-06-17T16:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "1.68640018"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.07708781"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinbase.com",
+          "date": "2018-06-18T00:00:00Z",
+          "ratio": 6449.24
+        }
+      ]
+    },
+    {
+      "ratio": 833.6827501896686,
+      "minDate": "2018-06-17T16:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "1.68640018"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.07708781"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 6412.9
+        }
+      ]
+    },
+    {
+      "ratio": 851.5266732651935,
+      "minDate": "2018-06-16T00:00:00.000Z",
+      "maxDate": "2018-06-17T16:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "1.68640018"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.07708781"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com",
+          "date": "2018-06-16T00:00:00.000Z",
+          "ratio": 6550.16
+        }
+      ]
+    },
+    {
+      "ratio": 832.1254865267384,
+      "minDate": "2018-06-15T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "1.68640018"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "EUR",
+            "type": "fiat"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 425.52
+        },
+        {
+          "from": {
+            "name": "EUR",
+            "type": "fiat"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "fiat",
+          "date": "2018-06-15T00:00:00.000Z",
+          "ratio": 1.1596
+        }
+      ]
+    },
+    {
+      "ratio": 850.5567072332176,
+      "minDate": "2018-06-16T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "1.68640018"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "binance.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 0.077
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com",
+          "date": "2018-06-16T00:00:00.000Z",
+          "ratio": 6550.16
+        }
+      ]
+    },
+    {
+      "ratio": 832.733110002794,
+      "minDate": "2018-06-17T16:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "1.68640018"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "binance.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 0.077
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 6412.9
+        }
+      ]
+    },
+    {
+      "ratio": 837.4519612584663,
+      "minDate": "2018-06-17T16:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "1.68640018"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "binance.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 0.077
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinbase.com",
+          "date": "2018-06-18T00:00:00Z",
+          "ratio": 6449.24
+        }
+      ]
+    },
+    {
+      "ratio": 833.2848112239082,
+      "minDate": "2018-06-17T16:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "213.8158"
+        },
+        {
+          "from": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.00791842"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 492.17
+        }
+      ]
+    },
+    {
+      "ratio": 835.1537298671047,
+      "minDate": "2018-06-17T16:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "213.8158"
+        },
+        {
+          "from": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.00791842"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 0.076919
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 6412.9
+        }
+      ]
+    },
+    {
+      "ratio": 839.8862980567492,
+      "minDate": "2018-06-17T16:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "213.8158"
+        },
+        {
+          "from": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.00791842"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 0.076919
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinbase.com",
+          "date": "2018-06-18T00:00:00Z",
+          "ratio": 6449.24
+        }
+      ]
+    },
+    {
+      "ratio": 840.4388013228241,
+      "minDate": "2018-06-17T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "213.8158"
+        },
+        {
+          "from": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.00791842"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "source": "binance.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 493.69
+        },
+        {
+          "from": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com",
+          "date": "2018-06-17T00:00:00.000Z",
+          "ratio": 1.00548
+        }
+      ]
+    },
+    {
+      "ratio": 838.0774829696152,
+      "minDate": "2018-06-17T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "1.68640018"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.07708781"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "source": "binance.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 6411.57
+        },
+        {
+          "from": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com",
+          "date": "2018-06-17T00:00:00.000Z",
+          "ratio": 1.00548
+        }
+      ]
+    },
+    {
+      "ratio": 832.7149668617122,
+      "minDate": "2018-06-15T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "1.68640018"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.07708781"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "EUR",
+            "type": "fiat"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 5523.8492275
+        },
+        {
+          "from": {
+            "name": "EUR",
+            "type": "fiat"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "fiat",
+          "date": "2018-06-15T00:00:00.000Z",
+          "ratio": 1.1596
+        }
+      ]
+    },
+    {
+      "ratio": 830.8914539929989,
+      "minDate": "2018-06-15T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "1.68640018"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 0.076919
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "EUR",
+            "type": "fiat"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 5523.8492275
+        },
+        {
+          "from": {
+            "name": "EUR",
+            "type": "fiat"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "fiat",
+          "date": "2018-06-15T00:00:00.000Z",
+          "ratio": 1.1596
+        }
+      ]
+    },
+    {
+      "ratio": 836.2422270465308,
+      "minDate": "2018-06-17T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "1.68640018"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 0.076919
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "source": "binance.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 6411.57
+        },
+        {
+          "from": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com",
+          "date": "2018-06-17T00:00:00.000Z",
+          "ratio": 1.00548
+        }
+      ]
+    },
+    {
+      "ratio": 836.4460584563773,
+      "minDate": "2018-06-17T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "1.68640018"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 0.076919
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "6413.1328"
+        },
+        {
+          "from": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com",
+          "date": "2018-06-17T00:00:00.000Z",
+          "ratio": 1.00548
+        }
+      ]
+    },
+    {
+      "ratio": 831.7664290677325,
+      "minDate": "2018-06-15T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "1.68640018"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "binance.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 0.077
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "EUR",
+            "type": "fiat"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 5523.8492275
+        },
+        {
+          "from": {
+            "name": "EUR",
+            "type": "fiat"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "fiat",
+          "date": "2018-06-15T00:00:00.000Z",
+          "ratio": 1.1596
+        }
+      ]
+    },
+    {
+      "ratio": 837.1228367839268,
+      "minDate": "2018-06-17T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "1.68640018"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "binance.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 0.077
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "source": "binance.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 6411.57
+        },
+        {
+          "from": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com",
+          "date": "2018-06-17T00:00:00.000Z",
+          "ratio": 1.00548
+        }
+      ]
+    },
+    {
+      "ratio": 837.3268828396241,
+      "minDate": "2018-06-17T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "1.68640018"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "binance.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 0.077
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "6413.1328"
+        },
+        {
+          "from": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com",
+          "date": "2018-06-17T00:00:00.000Z",
+          "ratio": 1.00548
+        }
+      ]
+    },
+    {
+      "ratio": 837.6801727747115,
+      "minDate": "2018-06-17T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 1.6893
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 0.076919
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "source": "binance.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 6411.57
+        },
+        {
+          "from": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com",
+          "date": "2018-06-17T00:00:00.000Z",
+          "ratio": 1.00548
+        }
+      ]
+    },
+    {
+      "ratio": 832.3201988927523,
+      "minDate": "2018-06-15T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 1.6893
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 0.076919
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "EUR",
+            "type": "fiat"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 5523.8492275
+        },
+        {
+          "from": {
+            "name": "EUR",
+            "type": "fiat"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "fiat",
+          "date": "2018-06-15T00:00:00.000Z",
+          "ratio": 1.1596
+        }
+      ]
+    },
+    {
+      "ratio": 834.1468473511968,
+      "minDate": "2018-06-15T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 1.6893
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.07708781"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "EUR",
+            "type": "fiat"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 5523.8492275
+        },
+        {
+          "from": {
+            "name": "EUR",
+            "type": "fiat"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "fiat",
+          "date": "2018-06-15T00:00:00.000Z",
+          "ratio": 1.1596
+        }
+      ]
+    },
+    {
+      "ratio": 839.5185844800912,
+      "minDate": "2018-06-17T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 1.6893
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.07708781"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "source": "binance.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 6411.57
+        },
+        {
+          "from": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com",
+          "date": "2018-06-17T00:00:00.000Z",
+          "ratio": 1.00548
+        }
+      ]
+    },
+    {
+      "ratio": 839.7232144917461,
+      "minDate": "2018-06-17T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 1.6893
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.07708781"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "6413.1328"
+        },
+        {
+          "from": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com",
+          "date": "2018-06-17T00:00:00.000Z",
+          "ratio": 1.00548
+        }
+      ]
+    },
+    {
+      "ratio": 838.2817617173142,
+      "minDate": "2018-06-17T00:00:00.000Z",
+      "maxDate": "2018-06-17T16:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "1.68640018"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.07708781"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "6413.1328"
+        },
+        {
+          "from": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com",
+          "date": "2018-06-17T00:00:00.000Z",
+          "ratio": 1.00548
+        }
+      ]
+    },
+    {
+      "ratio": 838.7666936687452,
+      "minDate": "2018-06-17T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 1.6893
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "binance.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 0.077
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "6413.1328"
+        },
+        {
+          "from": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com",
+          "date": "2018-06-17T00:00:00.000Z",
+          "ratio": 1.00548
+        }
+      ]
+    },
+    {
+      "ratio": 838.5622967492138,
+      "minDate": "2018-06-17T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 1.6893
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "binance.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 0.077
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "source": "binance.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 6411.57
+        },
+        {
+          "from": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com",
+          "date": "2018-06-17T00:00:00.000Z",
+          "ratio": 1.00548
+        }
+      ]
+    },
+    {
+      "ratio": 833.1966785156063,
+      "minDate": "2018-06-15T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 1.6893
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "binance.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 0.077
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "EUR",
+            "type": "fiat"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 5523.8492275
+        },
+        {
+          "from": {
+            "name": "EUR",
+            "type": "fiat"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "fiat",
+          "date": "2018-06-15T00:00:00.000Z",
+          "ratio": 1.1596
+        }
+      ]
+    },
+    {
+      "ratio": 841.7295514268523,
+      "minDate": "2018-06-17T16:00:00.000Z",
+      "maxDate": "2018-06-17T16:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "213.8158"
+        },
+        {
+          "from": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.00791842"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.07708781"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinbase.com",
+          "date": "2018-06-18T00:00:00Z",
+          "ratio": 6449.24
+        }
+      ]
+    },
+    {
+      "ratio": 836.986596923864,
+      "minDate": "2018-06-17T16:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "213.8158"
+        },
+        {
+          "from": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.00791842"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.07708781"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 6412.9
+        }
+      ]
+    },
+    {
+      "ratio": 854.9012346530925,
+      "minDate": "2018-06-16T00:00:00.000Z",
+      "maxDate": "2018-06-17T16:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "213.8158"
+        },
+        {
+          "from": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.00791842"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.07708781"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com",
+          "date": "2018-06-16T00:00:00.000Z",
+          "ratio": 6550.16
+        }
+      ]
+    },
+    {
+      "ratio": 835.4231618960281,
+      "minDate": "2018-06-15T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "213.8158"
+        },
+        {
+          "from": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.00791842"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "EUR",
+            "type": "fiat"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 425.52
+        },
+        {
+          "from": {
+            "name": "EUR",
+            "type": "fiat"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "fiat",
+          "date": "2018-06-15T00:00:00.000Z",
+          "ratio": 1.1596
+        }
+      ]
+    },
+    {
+      "ratio": 853.9274246899494,
+      "minDate": "2018-06-16T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "213.8158"
+        },
+        {
+          "from": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.00791842"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "binance.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 0.077
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com",
+          "date": "2018-06-16T00:00:00.000Z",
+          "ratio": 6550.16
+        }
+      ]
+    },
+    {
+      "ratio": 836.0331933562197,
+      "minDate": "2018-06-17T16:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "213.8158"
+        },
+        {
+          "from": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.00791842"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "binance.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 0.077
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 6412.9
+        }
+      ]
+    },
+    {
+      "ratio": 837.8843546793015,
+      "minDate": "2018-06-17T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 1.6893
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 0.076919
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "6413.1328"
+        },
+        {
+          "from": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com",
+          "date": "2018-06-17T00:00:00.000Z",
+          "ratio": 1.00548
+        }
+      ]
+    },
+    {
+      "ratio": 841.1662203505647,
+      "minDate": "2018-06-17T00:00:00.000Z",
+      "maxDate": "2018-06-17T16:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "213.8158"
+        },
+        {
+          "from": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.00791842"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "494.1173"
+        },
+        {
+          "from": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com",
+          "date": "2018-06-17T00:00:00.000Z",
+          "ratio": 1.00548
+        }
+      ]
+    },
+    {
+      "ratio": 838.4828325940488,
+      "minDate": "2018-06-17T00:00:00.000Z",
+      "maxDate": "2018-06-17T16:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "213.8158"
+        },
+        {
+          "from": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.00060815"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "6413.1328"
+        },
+        {
+          "from": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com",
+          "date": "2018-06-17T00:00:00.000Z",
+          "ratio": 1.00548
+        }
+      ]
+    },
+    {
+      "ratio": 838.2785048478997,
+      "minDate": "2018-06-17T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "213.8158"
+        },
+        {
+          "from": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.00060815"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "source": "binance.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 6411.57
+        },
+        {
+          "from": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com",
+          "date": "2018-06-17T00:00:00.000Z",
+          "ratio": 1.00548
+        }
+      ]
+    },
+    {
+      "ratio": 832.9147024829595,
+      "minDate": "2018-06-15T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "213.8158"
+        },
+        {
+          "from": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.00060815"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "EUR",
+            "type": "fiat"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 5523.8492275
+        },
+        {
+          "from": {
+            "name": "EUR",
+            "type": "fiat"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "fiat",
+          "date": "2018-06-15T00:00:00.000Z",
+          "ratio": 1.1596
+        }
+      ]
+    },
+    {
+      "ratio": 853.0291373990417,
+      "minDate": "2018-06-16T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "213.8158"
+        },
+        {
+          "from": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.00791842"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 0.076919
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com",
+          "date": "2018-06-16T00:00:00.000Z",
+          "ratio": 6550.16
+        }
+      ]
+    },
+    {
+      "ratio": 840.7707452043016,
+      "minDate": "2018-06-17T16:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "213.8158"
+        },
+        {
+          "from": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.00791842"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "binance.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 0.077
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinbase.com",
+          "date": "2018-06-18T00:00:00Z",
+          "ratio": 6449.24
+        }
+      ]
+    },
+    {
+      "ratio": 840.6451711053874,
+      "minDate": "2018-06-17T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "213.8158"
+        },
+        {
+          "from": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.00791842"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "binance.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 0.077
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "6413.1328"
+        },
+        {
+          "from": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com",
+          "date": "2018-06-17T00:00:00.000Z",
+          "ratio": 1.00548
+        }
+      ]
+    },
+    {
+      "ratio": 840.4403164244733,
+      "minDate": "2018-06-17T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "213.8158"
+        },
+        {
+          "from": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.00791842"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "binance.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 0.077
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "source": "binance.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 6411.57
+        },
+        {
+          "from": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com",
+          "date": "2018-06-17T00:00:00.000Z",
+          "ratio": 1.00548
+        }
+      ]
+    },
+    {
+      "ratio": 835.0626815086803,
+      "minDate": "2018-06-15T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "213.8158"
+        },
+        {
+          "from": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.00791842"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "binance.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 0.077
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "EUR",
+            "type": "fiat"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 5523.8492275
+        },
+        {
+          "from": {
+            "name": "EUR",
+            "type": "fiat"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "fiat",
+          "date": "2018-06-15T00:00:00.000Z",
+          "ratio": 1.1596
+        }
+      ]
+    },
+    {
+      "ratio": 839.7608560552636,
+      "minDate": "2018-06-17T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "213.8158"
+        },
+        {
+          "from": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.00791842"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 0.076919
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "6413.1328"
+        },
+        {
+          "from": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com",
+          "date": "2018-06-17T00:00:00.000Z",
+          "ratio": 1.00548
+        }
+      ]
+    },
+    {
+      "ratio": 839.556216870832,
+      "minDate": "2018-06-17T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "213.8158"
+        },
+        {
+          "from": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.00791842"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 0.076919
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "source": "binance.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 6411.57
+        },
+        {
+          "from": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com",
+          "date": "2018-06-17T00:00:00.000Z",
+          "ratio": 1.00548
+        }
+      ]
+    },
+    {
+      "ratio": 841.6038341245403,
+      "minDate": "2018-06-17T00:00:00.000Z",
+      "maxDate": "2018-06-17T16:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "213.8158"
+        },
+        {
+          "from": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.00791842"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.07708781"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "6413.1328"
+        },
+        {
+          "from": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com",
+          "date": "2018-06-17T00:00:00.000Z",
+          "ratio": 1.00548
+        }
+      ]
+    },
+    {
+      "ratio": 841.3987458294763,
+      "minDate": "2018-06-17T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "213.8158"
+        },
+        {
+          "from": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.00791842"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.07708781"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "source": "binance.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 6411.57
+        },
+        {
+          "from": {
+            "name": "USDT",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "coinmarketcap.com",
+          "date": "2018-06-17T00:00:00.000Z",
+          "ratio": 1.00548
+        }
+      ]
+    },
+    {
+      "ratio": 836.014978314697,
+      "minDate": "2018-06-15T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "213.8158"
+        },
+        {
+          "from": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.00791842"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.07708781"
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "EUR",
+            "type": "fiat"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 5523.8492275
+        },
+        {
+          "from": {
+            "name": "EUR",
+            "type": "fiat"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "fiat",
+          "date": "2018-06-15T00:00:00.000Z",
+          "ratio": 1.1596
+        }
+      ]
+    },
+    {
+      "ratio": 834.1842389476127,
+      "minDate": "2018-06-15T00:00:00.000Z",
+      "maxDate": "2018-06-18T00:00:00.000Z",
+      "path": [
+        {
+          "from": {
+            "name": "BCH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "213.8158"
+        },
+        {
+          "from": {
+            "name": "OKB",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "source": "okex.com",
+          "date": "2018-06-17T16:00:00.000Z",
+          "ratio": "0.00791842"
+        },
+        {
+          "from": {
+            "name": "ETH",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 0.076919
+        },
+        {
+          "from": {
+            "name": "BTC",
+            "type": "crypto"
+          },
+          "to": {
+            "name": "EUR",
+            "type": "fiat"
+          },
+          "source": "bitfinex.com",
+          "date": "2018-06-18T00:00:00.000Z",
+          "ratio": 5523.8492275
+        },
+        {
+          "from": {
+            "name": "EUR",
+            "type": "fiat"
+          },
+          "to": {
+            "name": "USD",
+            "type": "fiat"
+          },
+          "source": "fiat",
+          "date": "2018-06-15T00:00:00.000Z",
+          "ratio": 1.1596
         }
       ]
     }
