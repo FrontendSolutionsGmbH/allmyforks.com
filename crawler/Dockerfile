@@ -20,6 +20,12 @@ COPY ./binance.js /application/binance.js
 COPY ./bitfinex/ /application/bitfinex
 COPY ./bitfinex.js /application/bitfinex.js
 
+COPY ./okex/ /application/okex
+COPY ./okex.js /application/okex.js
+
+COPY ./fiat/ /application/fiat
+COPY ./fiat.js /application/fiat.js
+
 RUN npm install
 
 ENTRYPOINT [ "node" ]

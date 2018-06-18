@@ -1,7 +1,7 @@
 const log = require('./common/log');
-const config = require('./binance/config');
+const config = require('./okex/config');
 require('./common/db/setup')(config);
-const crawler = require('./binance/crawler');
+const crawler = require('./okex/crawler');
 const cron = require('cron');
 
 function checkJob(job){
@@ -26,7 +26,7 @@ function doJob(job){
   })
 }
 
-function spawnJob(job) {
+function spawnJob(job){
   log.info("Spawn job " + JSON.stringify(job));
   return new cron.CronJob(job.cron, () => doJob(job), null, true);
 }
