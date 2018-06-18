@@ -23,6 +23,28 @@ app.route('/api/ratios/:type/:symbol')
     })
   })
 
+app.route('/api/ratios/:fType/:fSymbol/:tType/:tSymbol')
+  .get(function(req, res) {
+    coursefinder({
+      name: req.params.fSymbol,
+      type: req.params.fType
+    },{
+      name: req.params.tSymbol,
+      type: req.params.tType
+    })
+    .then(ratios => {
+      res.send({
+        ratios: ratios
+      })
+    })
+    .catch(err => {
+      res.status(500);
+      res.send({
+        error: err
+      })
+    })
+  })
+
 app.route('/api/pairs')
   .get(function(req, res) {
     pairfinder()

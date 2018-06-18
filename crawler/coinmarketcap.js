@@ -19,7 +19,7 @@ function doJob(job) {
   return crawler.crawl(job.coin).then(() => {
     log.info("Finishing crawling '" + job.coin.symbol + "'");
   }).catch(err => {
-    log.error("Error while crawling crawling '" + job.coin.symbol + "'", err);
+    log.error("Error while crawling '" + job.coin.symbol + "'", err);
   })
 }
 

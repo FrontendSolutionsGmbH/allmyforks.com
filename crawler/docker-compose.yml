@@ -1,6 +1,19 @@
 version: '3'
 services:
 
+  crawler_fiat:
+    image: rainu/cryptocrawler
+    build:
+      context: ./
+    environment:
+      - CFG_MONGO_HOST=db
+      - CFG_MONGO_DB=fiat
+      - CFG_CRON=0 0 */12 * * *
+    command: "fiat.js"
+    restart: always
+    depends_on:
+      - db
+
   crawler_coinmarketcap:
     image: rainu/cryptocrawler
     build:
@@ -36,6 +49,19 @@ services:
       - CFG_MONGO_DB=binance
       - CFG_CRON=0 0 */4 * * *
     command: "binance.js"
+    restart: always
+    depends_on:
+      - db
+
+  crawler_okex:
+    image: rainu/cryptocrawler
+    build:
+      context: ./
+    environment:
+      - CFG_MONGO_HOST=db
+      - CFG_MONGO_DB=okex
+      - CFG_CRON=0 0 */4 * * *
+    command: "okex.js"
     restart: always
     depends_on:
       - db
@@ -76,8 +102,6 @@ services:
     build:
       context: ../aggregator/course
     environment:
-      - CFG_CRON=0 0 */1 * * *
-      - CFG_OUTPUT_DIR=/courses
       - CFG_SOURCE_0_URL=mongodb://db/coinmarketcap
       - CFG_SOURCE_0_NAME=coinmarketcap.com
       - CFG_SOURCE_1_URL=mongodb://db/bitfinex
@@ -86,6 +110,10 @@ services:
       - CFG_SOURCE_2_NAME=binance.com
       - CFG_SOURCE_3_URL=mongodb://db/coinbase
       - CFG_SOURCE_3_NAME=coinbase.com
+      - CFG_SOURCE_4_URL=mongodb://db/fiat
+      - CFG_SOURCE_4_NAME=fiat
+      - CFG_SOURCE_5_URL=mongodb://db/okex
+      - CFG_SOURCE_5_NAME=okex.com
     command: "server.js"
     ports:
       - "3000:3000"

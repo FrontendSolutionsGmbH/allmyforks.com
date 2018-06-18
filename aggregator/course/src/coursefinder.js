@@ -5,7 +5,6 @@ const pathfinder = require('./pathfinder')
 const pairfinder = require('./pairfinder')
 
 const connections = {}
-
 const getConnection = function(source, sources = config.source){
   if(!connections[source]) {
     for(let dbCon of sources) {
@@ -42,10 +41,16 @@ const resolvePath = function(path) {
     })
     .limit(1)
     .sort({ date: -1 })
-    .select({ "close": 1, "_id": 0})
+    .select({ "close": 1, "date": 1, "_id": 0})
     .lean()
     .then(result => {
-      courses[i] = result[0].close
+      node.date = result[0].date
+      node.ratio = result[0].close
+
+      courses[i] = {
+        ratio: result[0].close,
+        date: result[0].date
+      }
     })
 
     promises.push(p)
@@ -54,13 +59,26 @@ const resolvePath = function(path) {
   return Promise.all(promises)
     .then(() => {
       let ratio = 1;
+      let minDate = null
+      let maxDate = null
 
       for(let course of courses) {
-        ratio *= course
+        ratio *= course.ratio
+
+        if(!minDate || minDate > course.date) {
+          minDate = course.date
+        }
+        if(!maxDate || maxDate < course.date) {
+          maxDate = course.date
+        }
+
       }
 
       return {
-        ratio, path
+        ratio,
+        minDate,
+        maxDate,
+        path
       }
     })
 }
@@ -81,6 +99,8 @@ const resolvePath = function(path) {
  * @return An array with all found ratios
  * [{
  *   "ratio": 13.12,
+ *   "maxDate: "2018-12-13T00:00:00.000Z",
+ *   "minDate: "2018-12-13T00:00:00.000Z",
  *   "path": [{
  *     "from": {
  *       "name": "BTC",
@@ -90,6 +110,8 @@ const resolvePath = function(path) {
  *       "name": "USD",
  *       "type": "fiat"
  *     },
+ *     "ratio": 13.12,
+ *     "date": "2018-12-13T00:00:00.000Z"
  *     "source": "coinbase.com"
  *   }]
  * }]

@@ -2,22 +2,14 @@
 
 const HistoricalCourse = require('../common/db/historical').model;
 const config = require('./config');
-const RequestRepeater = require('../common/request_repeater');
-const { request } = RequestRepeater(config);
+const RequestPool = require('../common/request_pool');
+const { request } = RequestPool(config.request);
 const moment = require("moment");
 const currencyHelper = require('../common/currency_helper');
+const HttpStatus = require('http-status-codes');
 
 const MIN_DATE = moment('2009-01-01'); //before BTC-Birthday
 const PAGE_SIZE = 500;
-
-const determineSleepTime = function(response, body){
-  if(response.headers['retry-after']) {
-    //in this header the seconds will be given when we should try again
-    return Number.parseInt(response.headers['retry-after']) * 1000 + 1000
-  }
-
-  return config.request.repeatsleep
-}
 
 const determineStartDate = function(source, target, defaultStartDate) {
   return new Promise((resolve, reject) => {
@@ -87,8 +79,19 @@ const processEachCourse = function(source, target, body){
 
 const get = function(source, target, from) {
   const url = `https://api.bitfinex.com/v2/candles/trade:1D:t${source.name}${target.name}/hist?start=${from.unix()}000&limit=${PAGE_SIZE}&sort=1`;
-  return request(url, determineSleepTime)
+  return request(url)
     .then(({body}) => processEachCourse(source, target, body))
+    .catch(({error, response}) => {
+      if(response && response.statusCode === HttpStatus.INTERNAL_SERVER_ERROR){
+        //ignore this case
+        return Promise.resolve();
+      }
+      if(response && response.statusCode !== HttpStatus.OK) {
+        return Promise.reject(new Error("Bad status code: " + response.statusCode))
+      }
+
+      return Promise.reject(error)
+    })
 };
 
 const crawl = function(source, target = { name: 'USD', type: 'fiat' }, from = MIN_DATE){
@@ -111,7 +114,7 @@ const crawl = function(source, target = { name: 'USD', type: 'fiat' }, from = MI
 
 const list = function() {
   const url = 'https://api.bitfinex.com/v1/symbols';
-  return request(url, determineSleepTime)
+  return request(url)
     .then(({body}) => {
       let data = JSON.parse(body);
 
