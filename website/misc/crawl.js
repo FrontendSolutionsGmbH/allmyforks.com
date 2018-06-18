@@ -8,7 +8,7 @@ var coins = localData.coins
 var baseUrl = process.argv[process.argv.length - 1]
 
 if (baseUrl.indexOf('http') < 0) {
-    console.log('missing http(s) url without /api/... as argument e.g. npm run crawl http://froso.de:3000 )
+    console.log('missing http(s) url without /api/... as argument e.g. npm run crawl http://froso.de:3000')
     process.exit(1)
 }
 
