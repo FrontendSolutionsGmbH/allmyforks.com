@@ -2,27 +2,27 @@
   "coins": [
     {
       "id": "bitcoin",
-      "price": 6675.35
+      "price": 6550.16
     },
     {
       "id": "bitcoincash",
-      "price": 897.602
+      "price": 845.75
     },
     {
       "id": "superbitcoin",
-      "price": 7.46075
+      "price": 6.92723
     },
     {
       "id": "bitcoinx",
-      "price": 0.0130656
+      "price": 0.0150614
     },
     {
       "id": "bitcoinlightning",
-      "price": 0.00183366
+      "price": 0.00173178
     },
     {
       "id": "bitcoingod",
-      "price": 18.602
+      "price": 17.728
     },
     {
       "id": "bitcoincashplus",
@@ -34,11 +34,11 @@
     },
     {
       "id": "bitcoinatom",
-      "price": 0.648911
+      "price": 0.640519
     },
     {
       "id": "bitcoinsilver",
-      "price": 0.0212082
+      "price": 0.020928
     },
     {
       "id": "unitedbitcoin",
@@ -46,7 +46,7 @@
     },
     {
       "id": "bitcoindiamond",
-      "price": 2.40218
+      "price": 2.34956
     },
     {
       "id": "bitcoinoil",
@@ -54,11 +54,11 @@
     },
     {
       "id": "bitcoinworld",
-      "price": 0.021233
+      "price": 0.0253323
     },
     {
       "id": "bitcoinstake",
-      "price": 0.0212082
+      "price": 0.020928
     },
     {
       "id": "bitcoinfaith",
@@ -74,7 +74,7 @@
     },
     {
       "id": "bitcoinsegwit",
-      "price": 0.577677
+      "price": 0.571104
     },
     {
       "id": "bitcoinpizza",
@@ -86,7 +86,7 @@
     },
     {
       "id": "bitcoinore",
-      "price": 1.34619
+      "price": 1.24544
     },
     {
       "id": "bitcoinlite",
@@ -94,7 +94,7 @@
     },
     {
       "id": "bitcoininterest",
-      "price": 4.14181
+      "price": 3.73549
     },
     {
       "id": "quantumbitcoin",
@@ -102,7 +102,7 @@
     },
     {
       "id": "bitcoinprivate",
-      "price": 15.9319
+      "price": 15.2446
     },
     {
       "id": "abitcoin",
@@ -130,11 +130,11 @@
     },
     {
       "id": "ethereum",
-      "price": 519.742
+      "price": 500.448
     },
     {
       "id": "litecoin",
-      "price": 101.154
+      "price": 96.1026
     },
     {
       "id": "etherinc",
@@ -142,7 +142,7 @@
     },
     {
       "id": "etherzero",
-      "price": 0.32275
+      "price": 0.306693
     },
     {
       "id": "ethereumfog",
@@ -154,11 +154,11 @@
     },
     {
       "id": "ethereumgold",
-      "price": 0.018339
+      "price": 0.0188191
     },
     {
       "id": "litecoincash",
-      "price": 0.0542229
+      "price": 0.0668544
     },
     {
       "id": "superlitecoin",

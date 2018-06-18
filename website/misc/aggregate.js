@@ -10,6 +10,9 @@ if (!fs.existsSync(outputDir)) {
     fs.mkdirSync(outputDir)
 }
 
+var missingCryptos = []
+var foundCryptos = []
+var emptyCryptos = []
 
 var aggregateData = function (coins) {
 
@@ -23,6 +26,7 @@ var aggregateData = function (coins) {
 
         if (!fs.existsSync(fileName)) {
             console.log('file does not exist for coin', coin.id)
+            missingCryptos.push(coin)
         } else {
             crawledCoin = JSON.parse(fs.readFileSync(fileName))
 
@@ -30,6 +34,9 @@ var aggregateData = function (coins) {
                 // result.ratios = crawledCoin.ratios
                 //result.price = Math.max(...(result.ratios.map(r=>r.ratio)))
                 result.price = crawledCoin.ratios[0].ratio
+                foundCryptos.push(coin)
+            } else {
+                emptyCryptos.push(coin)
             }
 
         }
@@ -59,5 +66,12 @@ result.fiats = [
 var fileName = outputDir + 'crawl.json'
 fs.writeFileSync(fileName, JSON.stringify(result, null, 2), 'utf-8')
 
-console.log('completed ' + coins.length + ' cryptos to ' + fileName)
+console.log('completed - ' + missingCryptos.length + ' missing, ' + emptyCryptos.length + ' without pairs, ' + foundCryptos.length + ' succesfull of ' + coins.length + ' cryptos to ' + fileName)
 
+console.log('found: ', foundCryptos.reduce((t, v) => {
+    return t + ' ' + v.shortName
+}, ''))
+
+console.log('missing pairs: ', emptyCryptos.reduce((t, v) => {
+    return t + ' ' + v.shortName
+}, ''))
