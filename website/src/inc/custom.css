@@ -1,3 +1,7 @@
 .js_enabled #cookie-message {
     display: none;
 }
+
+.table-cut {
+    border-right: 1px solid black;
+}

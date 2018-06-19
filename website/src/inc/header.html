@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
 
 
-    <meta property="og:title" content="{{title}}" />
-    <meta name="description" content="{{description}}" />
+    <meta property="og:title" content="{{title}}"/>
+    <meta name="description" content="{{description}}"/>
 
     <meta property="og:type" content="website">
     <meta property="og:image" content="splash_600x315.png">
@@ -15,18 +15,18 @@
     <meta property="og:image:width" content="600">
     <meta property="og:image:height" content="315">
 
-{{#each selectLanguages}}
-  {{#ifCond id '==' ../language.id}}
+    {{#each selectLanguages}}
+    {{#ifCond id '==' ../language.id}}
     <meta property="og:url" content="https://allmyforks.com{{value}}">
-   {{/ifCond}}
-{{/each}}
+    {{/ifCond}}
+    {{/each}}
 
 
-{{#each selectLanguages}}
-  {{#ifCond id '!=' ../language.id}}
-  <link rel="alternate" href="https://allmyforks.com{{value}}" hreflang="{{id}}">
-  {{/ifCond}}
-{{/each}}
+    {{#each selectLanguages}}
+    {{#ifCond id '!=' ../language.id}}
+    <link rel="alternate" href="https://allmyforks.com{{value}}" hreflang="{{id}}">
+    {{/ifCond}}
+    {{/each}}
 
     <link rel="shortcut icon" href="/favicon.ico">
 
@@ -52,7 +52,7 @@
 
     <div class="w3-bar-item">
         <div style="width:22px">
-            <a href="/">
+            <a href="/{{language.id}}">
                 <svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0, 0, 64, 64">
                     <path fill="#f7931a" d="M63 40A32 32 0 1 1 1 24a32 32 0 0 1 62 16z"/>
                     <path fill="#FFF"
@@ -62,7 +62,7 @@
         </div>
     </div>
 
-    <a class="w3-bar-item w3-button" href="/">allmyforks.com</a>
+    <a class="w3-bar-item w3-button" href="/{{language.id}}">allmyforks.com</a>
   <span class="w3-bar-item w3-right"><select style="width:auto" name="option" id="select-languages"
                                              onchange="location = this.value;">
       {{#each selectLanguages}}

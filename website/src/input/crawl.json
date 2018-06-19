@@ -2,7 +2,7 @@
   "coins": [
     {
       "id": "bitcoin",
-      "price": 6550.16
+      "price": 6499.27
     },
     {
       "id": "bitcoincash",
@@ -18,7 +18,7 @@
     },
     {
       "id": "bitcoinlightning",
-      "price": 0.00173178
+      "price": 21.3745
     },
     {
       "id": "bitcoingod",
@@ -54,7 +54,7 @@
     },
     {
       "id": "bitcoinworld",
-      "price": 0.0253323
+      "price": 0.0300446
     },
     {
       "id": "bitcoinstake",
@@ -129,12 +129,224 @@
       "price": ""
     },
     {
+      "id": "bitcoinboy",
+      "price": ""
+    },
+    {
+      "id": "bitcoinzero",
+      "price": ""
+    },
+    {
+      "id": "classicbitcoin",
+      "price": ""
+    },
+    {
+      "id": "bitvote",
+      "price": ""
+    },
+    {
+      "id": "bitcoinsmart",
+      "price": ""
+    },
+    {
+      "id": "bitcoinall",
+      "price": 0.113759
+    },
+    {
+      "id": "quantumbitcoin",
+      "price": ""
+    },
+    {
+      "id": "bitcoinnew",
+      "price": ""
+    },
+    {
+      "id": "bitcoinnano",
+      "price": ""
+    },
+    {
+      "id": "bitcore",
+      "price": 2.17878
+    },
+    {
+      "id": "bitcoinclashic",
+      "price": ""
+    },
+    {
+      "id": "bitcoinpay",
+      "price": ""
+    },
+    {
+      "id": "bitclassic",
+      "price": ""
+    },
+    {
+      "id": "bitcoineco",
+      "price": 0.10607813999999999
+    },
+    {
+      "id": "fastbitcoin",
+      "price": ""
+    },
+    {
+      "id": "bitcoincommunity",
+      "price": ""
+    },
+    {
+      "id": "clam",
+      "price": 2.36075
+    },
+    {
+      "id": "bitcoincore",
+      "price": 0.493551
+    },
+    {
+      "id": "bitcoinatcbc",
+      "price": ""
+    },
+    {
+      "id": "bitcoincandy",
+      "price": ""
+    },
+    {
+      "id": "bitcoinwonder",
+      "price": ""
+    },
+    {
+      "id": "newbitcoin",
+      "price": ""
+    },
+    {
+      "id": "bigbitcoin",
+      "price": 0.0280059
+    },
+    {
+      "id": "xenon",
+      "price": 0.00544108
+    },
+    {
+      "id": "bitcoinhush",
+      "price": ""
+    },
+    {
+      "id": "worldbitcoin",
+      "price": 0.049394452000000005
+    },
+    {
+      "id": "bitcointwo",
+      "price": ""
+    },
+    {
+      "id": "bitcoinprime",
+      "price": ""
+    },
+    {
+      "id": "anonymousbitcoin",
+      "price": ""
+    },
+    {
+      "id": "bitcoinparallel",
+      "price": ""
+    },
+    {
+      "id": "dalilcoin",
+      "price": 0.00620098
+    },
+    {
+      "id": "bitcoincloud",
+      "price": ""
+    },
+    {
+      "id": "foxbtc",
+      "price": ""
+    },
+    {
+      "id": "microbitcoin",
+      "price": ""
+    },
+    {
+      "id": "bitcoinair",
+      "price": 0.00666798
+    },
+    {
+      "id": "bitcoinhex",
+      "price": ""
+    },
+    {
+      "id": "bitcoin_lambo",
+      "price": ""
+    },
+    {
+      "id": "bitcoinclass",
+      "price": ""
+    },
+    {
+      "id": "bitcoinpro",
+      "price": ""
+    },
+    {
+      "id": "qeditas",
+      "price": ""
+    },
+    {
+      "id": "bitcoinholocaust",
+      "price": ""
+    },
+    {
+      "id": "bitcointi",
+      "price": ""
+    },
+    {
+      "id": "bitcoindollar",
+      "price": ""
+    },
+    {
+      "id": "smartbitcoin",
+      "price": ""
+    },
+    {
+      "id": "bitcoindao",
+      "price": ""
+    },
+    {
+      "id": "bitcoinblvck",
+      "price": ""
+    },
+    {
+      "id": "bitcoincoral",
+      "price": ""
+    },
+    {
+      "id": "bitcoinsudu",
+      "price": ""
+    },
+    {
+      "id": "bitcoinking",
+      "price": ""
+    },
+    {
+      "id": "bitcoinx2",
+      "price": ""
+    },
+    {
+      "id": "bitcoinmetal",
+      "price": ""
+    },
+    {
+      "id": "bitclassiccoin",
+      "price": ""
+    },
+    {
       "id": "ethereum",
       "price": 500.448
     },
     {
       "id": "litecoin",
       "price": 96.1026
+    },
+    {
+      "id": "byteether",
+      "price": ""
     },
     {
       "id": "etherinc",

@@ -1,13 +1,13 @@
 {
   "ratios": [
     {
-      "ratio": 0.0300446,
+      "ratio": 0.00620098,
       "minDate": "2018-06-17T00:00:00.000Z",
       "maxDate": "2018-06-17T00:00:00.000Z",
       "path": [
         {
           "from": {
-            "name": "BTW",
+            "name": "DLC",
             "type": "crypto"
           },
           "to": {
@@ -16,7 +16,7 @@
           },
           "source": "coinmarketcap.com",
           "date": "2018-06-17T00:00:00.000Z",
-          "ratio": 0.0300446
+          "ratio": 0.00620098
         }
       ]
     }
