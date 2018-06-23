@@ -15,7 +15,6 @@ const data = [
                 "ratio": 1,
                 "block": "4730666",
                 "date": "14.12.2017"
-
             },
             {
                 "id": "ethereumfog",
@@ -54,6 +53,8 @@ const data = [
                 "type": "coinmarketcap",
                 "url": "https://coinmarketcap.com/currencies/ethereum/"
             }
+        ],
+        "parents": [
         ]
     },
     {
@@ -64,6 +65,14 @@ const data = [
             {
                 "type": "website",
                 "url": "http://www.bytether.com/"
+            }
+        ],
+        "parents": [
+            {
+               "id": "ethereum",
+                "ratio": 1,
+                "block": "478558",
+                "date": ""
             }
         ]
     },
@@ -76,6 +85,14 @@ const data = [
                 "type": "website",
                 "url": "https://einc.io/"
             }
+        ],
+        "parents": [
+            {
+               "id": "ethereum",
+                "ratio": 1,
+                "block": "5078585",
+                "date": "12.02.2018"
+            }
         ]
     },
     {
@@ -86,6 +103,14 @@ const data = [
             {
                 "type": "website",
                 "url": "https://etherzero.org/"
+            }
+        ],
+        "parents": [
+            {
+               "id": "ethereum",
+                "ratio": 1,
+                "block": "4936270",
+                "date": "20.01.2018"
             }
         ]
     },
@@ -98,6 +123,14 @@ const data = [
                 "type": "website",
                 "url": "http://ethereumfog.org/"
             }
+        ],
+        "parents": [
+            {
+               "id": "ethereum",
+                "ratio": 1,
+                "block": "4730660",
+                "date": "01.01.2018"
+            }
         ]
     },
     {
@@ -108,6 +141,14 @@ const data = [
             {
                 "type": "website",
                 "url": "https://ethmod.org/"
+            }
+        ],
+        "parents": [
+            {
+               "id": "ethereum",
+                "ratio": 1,
+                "block": "4730666",
+                "date": "14.12.2017"
             }
         ]
     },
@@ -123,6 +164,14 @@ const data = [
             {
                 "type": "coinmarketcap",
                 "url": "https://coinmarketcap.com/currencies/ethereum-gold/"
+            }
+        ],
+        "parents": [
+            {
+               "id": "ethereum",
+                "ratio": 1,
+                "block": "4730666",
+                "date": "15.12.2017"
             }
         ]
     }

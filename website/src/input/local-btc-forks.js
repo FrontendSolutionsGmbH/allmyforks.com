@@ -428,6 +428,8 @@ const data = [
         {
             "id": "bitclassiccoin"
         }
+    ],
+    "parents": [
     ]
 },
 {
@@ -451,6 +453,11 @@ const data = [
         {
             "id": "binance"
         }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
     ]
 },
 {
@@ -465,6 +472,11 @@ const data = [
         {
             "type": "coinmarketcap",
             "url": "https://coinmarketcap.com/currencies/super-bitcoin"
+        }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
         }
     ]
 },
@@ -481,6 +493,11 @@ const data = [
             "type": "coinmarketcap",
             "url": "https://coinmarketcap.com/currencies/bitcoinx"
         }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
     ]
 },
 {
@@ -495,6 +512,11 @@ const data = [
         {
             "type": "coinmarketcap",
             "url": "https://coinmarketcap.com/currencies/lightning-bitcoin"
+        }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
         }
     ]
 },
@@ -511,6 +533,11 @@ const data = [
             "type": "coinmarketcap",
             "url": "https://coinmarketcap.com/currencies/bitcoin-god"
         }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
     ]
 },
 {
@@ -523,6 +550,11 @@ const data = [
             "type": "website",
             "url": "http://www.bitcoincashplus.org/"
         }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
     ]
 },
 {
@@ -533,6 +565,11 @@ const data = [
         {
             "type": "website",
             "url": "https://github.com/BitcoinUranium"
+        }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
         }
     ]
 },
@@ -548,6 +585,11 @@ const data = [
         {
             "type": "coinmarketcap",
             "url": "https://coinmarketcap.com/currencies/bitcoin-atom/"
+        }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
         }
     ]
 
@@ -565,6 +607,11 @@ const data = [
             "type": "coinmarketcap",
             "url": "https://coinmarketcap.com/de/currencies/bitcoin-silver/"
         }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
     ]
 },
 {
@@ -579,6 +626,11 @@ const data = [
         {
             "type": "coinmarketcap",
             "url": "https://coinmarketcap.com/currencies/united-bitcoin/"
+        }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
         }
     ]
 },
@@ -595,13 +647,23 @@ const data = [
             "type": "coinmarketcap",
             "url": "https://coinmarketcap.com/currencies/bitcoin-diamond/"
         }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
     ]
 },
 {
     "id": "bitcoinoil",
     "name": "Bitcoin Oil ",
     "shortName": "OBTC",
-    "links": []
+    "links": [],
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
+    ]
 },
 {
     "id": "bitcoinworld",
@@ -611,6 +673,11 @@ const data = [
         {
             "type": "website",
             "url": "https://www.btw.one/"
+        }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
         }
     ]
 },
@@ -623,6 +690,11 @@ const data = [
             "type": "website",
             "url": "https://bitcoinstake.net/"
         }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
     ]
 },
 {
@@ -633,6 +705,11 @@ const data = [
         {
             "type": "website",
             "url": "http://bitcoinfaith.org/"
+        }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
         }
     ]
 },
@@ -645,6 +722,11 @@ const data = [
             "type": "website",
             "url": "https://www.bitcointop.org/"
         }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
     ]
 },
 {
@@ -655,6 +737,11 @@ const data = [
         {
             "type": "website",
             "url": "https://www.bitcoinfile.org"
+        }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
         }
     ]
 },
@@ -671,6 +758,11 @@ const data = [
             "type": "coinmarketcap",
             "url": "https://coinmarketcap.com/currencies/segwit2x/"
         }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
     ]
 },
 {
@@ -681,6 +773,11 @@ const data = [
         {
             "type": "website",
             "url": "http://www.p.top/"
+        }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
         }
     ]
 },
@@ -694,6 +791,11 @@ const data = [
             "type": "website",
             "url": "http://bcs.info/"
         }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
     ]
 },
 {
@@ -704,6 +806,11 @@ const data = [
         {
             "type": "website",
             "url": "http://www.bitcoinore.org/"
+        }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
         }
     ]
 },
@@ -716,6 +823,11 @@ const data = [
             "type": "website",
             "url": "http://www.bitcoinlite.us/"
         }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
     ]
 },
 {
@@ -727,6 +839,11 @@ const data = [
             "type": "website",
             "url": "https://www.bitcoininterest.io/"
         }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
     ]
 },
 {
@@ -737,6 +854,11 @@ const data = [
         {
             "type": "website",
             "url": "http://www.quantumbitcoin.top/"
+        }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
         }
     ]
 },
@@ -753,6 +875,11 @@ const data = [
             "type": "coinmarketcap",
             "url": "https://coinmarketcap.com/currencies/bitcoin-private/"
         }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
     ]
 },
 {
@@ -763,6 +890,11 @@ const data = [
         {
             "type": "website",
             "url": "https://www.abitcoin.one/"
+        }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
         }
     ]
 },
@@ -775,6 +907,11 @@ const data = [
             "type": "website",
             "url": "https://bithot.org/"
         }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
     ]
 },
 {
@@ -786,6 +923,11 @@ const data = [
             "type": "website",
             "url": "https://www.bitethereum.io/"
         }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
     ]
 },
 {
@@ -796,6 +938,11 @@ const data = [
         {
             "type": "website",
             "url": "https://www.bitcoinrh.org/"
+        }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
         }
     ]
 },
@@ -809,6 +956,11 @@ const data = [
             "type": "news",
             "url": "https://cointelegraph.com/news/bitcoin-platinum-created-by-south-korean-teenager-as-a-scam-local-market-erupts"
         }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
     ]
 },
 {
@@ -819,6 +971,11 @@ const data = [
         {
             "type": "website",
             "url": "https://www.bitcoinclean.org/"
+        }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
         }
     ]
 },
@@ -831,6 +988,11 @@ const data = [
             "type": "website",
             "url": "http://www.bitcoinboy.org/"
         }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
     ]
 },
 {
@@ -841,6 +1003,11 @@ const data = [
         {
             "type": "website",
             "url": "https://www.hexxcoin.net/"
+        }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
         }
     ]
 },
@@ -853,6 +1020,11 @@ const data = [
             "type": "website",
             "url": "http://bitclassic.info/"
         }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
     ]
 },
 {
@@ -863,6 +1035,11 @@ const data = [
         {
             "type": "website",
             "url": "https://www.bitvote.one/"
+        }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
         }
     ]
 },
@@ -875,6 +1052,11 @@ const data = [
             "type": "website",
             "url": "http://bcs.info/"
         }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
     ]
 },
 {
@@ -885,6 +1067,11 @@ const data = [
         {
             "type": "website",
             "url": "http://www.bitcoinall.org/"
+        }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
         }
     ]
 },
@@ -897,6 +1084,11 @@ const data = [
             "type": "website",
             "url": "http://www.quantumbitcoin.top/"
         }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
     ]
 },
 {
@@ -907,6 +1099,11 @@ const data = [
         {
             "type": "website",
             "url": "https://www.btn.org/"
+        }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
         }
     ]
 },
@@ -919,6 +1116,11 @@ const data = [
             "type": "website",
             "url": "https://www.btcnano.org/"
         }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
     ]
 },
 {
@@ -929,6 +1131,11 @@ const data = [
         {
             "type": "website",
             "url": "https://bitcore.cc/"
+        }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
         }
     ]
 },
@@ -942,6 +1149,11 @@ const data = [
             "type": "website",
             "url": "http://bitcoinclashic.org/"
         }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
     ]
 },
 {
@@ -952,6 +1164,11 @@ const data = [
         {
             "type": "website",
             "url": "http://www.btceasypay.com/"
+        }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
         }
     ]
 },
@@ -964,6 +1181,11 @@ const data = [
             "type": "website",
             "url": "https://bitclassic.org/"
         }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
     ]
 },
 {
@@ -974,6 +1196,11 @@ const data = [
         {
             "type": "website",
             "url": "http://biteco.io/"
+        }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
         }
     ]
 },
@@ -986,6 +1213,11 @@ const data = [
             "type": "website",
             "url": "https://fbtc.pro/"
         }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
     ]
 },
 {
@@ -996,6 +1228,11 @@ const data = [
         {
             "type": "website",
             "url": "http://btsq.top/"
+        }
+    ],
+    "parents": [
+        {
+           "id": "bitcoin",
         }
     ]
 },
@@ -1012,7 +1249,12 @@ const data = [
     ],
     "ratio": 1,
     "block": "300377",
-    "date": ""
+    "date": "",
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
+    ]
 },
 {
     "id": "bitcoincore",
@@ -1026,7 +1268,12 @@ const data = [
     ],
     "ratio": 1,
     "block": "300377",
-    "date": ""
+    "date": "",
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
+    ]
 },
 {
     "id": "bitcoinatcbc",
@@ -1040,7 +1287,12 @@ const data = [
     ],
     "ratio": 1,
     "block": "498754",
-    "date": ""
+    "date": "",
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
+    ]
 },
 {
     "id": "bitcoincandy",
@@ -1054,7 +1306,12 @@ const data = [
     ],
     "ratio": 1,
     "block": "512666",
-    "date": ""
+    "date": "",
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
+    ]
 },
 {
     "id": "bitcoinwonder",
@@ -1068,7 +1325,12 @@ const data = [
     ],
     "ratio": 1,
     "block": "500000",
-    "date": ""
+    "date": "",
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
+    ]
 },
 {
     "id": "newbitcoin",
@@ -1082,7 +1344,12 @@ const data = [
     ],
     "ratio": 1,
     "block": "501225",
-    "date": ""
+    "date": "",
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
+    ]
 },
 {
     "id": "bigbitcoin",
@@ -1096,7 +1363,12 @@ const data = [
     ],
     "ratio": 1,
     "block": "508888",
-    "date": ""
+    "date": "",
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
+    ]
 },
 {
     "id": "xenon",
@@ -1110,7 +1382,12 @@ const data = [
     ],
     "ratio": 1,
     "block": "",
-    "date": ""
+    "date": "",
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
+    ]
 },
 {
     "id": "bitcoinhush",
@@ -1124,7 +1401,12 @@ const data = [
     ],
     "ratio": 1,
     "block": "507089",
-    "date": ""
+    "date": "",
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
+    ]
 },
 {
     "id": "worldbitcoin",
@@ -1138,7 +1420,12 @@ const data = [
     ],
     "ratio": 1,
     "block": "503888",
-    "date": ""
+    "date": "",
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
+    ]
 },
 {
     "id": "bitcointwo",
@@ -1152,7 +1439,12 @@ const data = [
     ],
     "ratio": 1,
     "block": "507850",
-    "date": ""
+    "date": "",
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
+    ]
 },
 {
     "id": "bitcoinprime",
@@ -1166,7 +1458,12 @@ const data = [
     ],
     "ratio": 1,
     "block": "",
-    "date": ""
+    "date": "",
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
+    ]
 },
 {
     "id": "anonymousbitcoin",
@@ -1180,7 +1477,12 @@ const data = [
     ],
     "ratio": 1,
     "block": "",
-    "date": ""
+    "date": "",
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
+    ]
 },
 {
     "id": "bitcoinparallel",
@@ -1194,7 +1496,12 @@ const data = [
     ],
     "ratio": 1,
     "block": "507000",
-    "date": ""
+    "date": "",
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
+    ]
 },
 {
     "id": "dalilcoin",
@@ -1208,7 +1515,12 @@ const data = [
     ],
     "ratio": 1,
     "block": "350000",
-    "date": ""
+    "date": "",
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
+    ]
 },
 {
     "id": "bitcoincloud",
@@ -1222,7 +1534,12 @@ const data = [
     ],
     "ratio": 1,
     "block": "510048",
-    "date": ""
+    "date": "",
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
+    ]
 },
 {
     "id": "foxbtc",
@@ -1236,7 +1553,12 @@ const data = [
     ],
     "ratio": 1,
     "block": "520419",
-    "date": ""
+    "date": "",
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
+    ]
 },
 {
     "id": "microbitcoin",
@@ -1250,7 +1572,12 @@ const data = [
     ],
     "ratio": 1,
     "block": "525000",
-    "date": ""
+    "date": "",
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
+    ]
 },
 {
     "id": "bitcoinair",
@@ -1264,7 +1591,12 @@ const data = [
     ],
     "ratio": 1,
     "block": "",
-    "date": ""
+    "date": "",
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
+    ]
 },
 {
     "id": "bitcoinhex",
@@ -1278,7 +1610,12 @@ const data = [
     ],
     "ratio": 1,
     "block": "",
-    "date": ""
+    "date": "",
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
+    ]
 },
 {
     "id": "bitcoin_lambo",
@@ -1292,7 +1629,12 @@ const data = [
     ],
     "ratio": 1,
     "block": "515350",
-    "date": ""
+    "date": "",
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
+    ]
 },
 {
     "id": "bitcoinclass",
@@ -1307,7 +1649,12 @@ const data = [
     "note": "BCH Fork",
     "ratio": 1,
     "block": "528000",
-    "date": ""
+    "date": "",
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
+    ]
 },
 {
     "id": "bitcoinpro",
@@ -1321,7 +1668,12 @@ const data = [
     ],
     "ratio": 1,
     "block": "506984",
-    "date": ""
+    "date": "",
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
+    ]
 },
 {
     "id": "qeditas",
@@ -1335,7 +1687,12 @@ const data = [
     ],
     "ratio": 1,
     "block": "350000",
-    "date": ""
+    "date": "",
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
+    ]
 },
 {
     "id": "bitcoinholocaust",
@@ -1349,7 +1706,12 @@ const data = [
     ],
     "ratio": 1,
     "block": "501488",
-    "date": ""
+    "date": "",
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
+    ]
 },
 {
     "id": "bitcointi",
@@ -1363,7 +1725,12 @@ const data = [
     ],
     "ratio": 1,
     "block": "512480",
-    "date": ""
+    "date": "",
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
+    ]
 },
 {
     "id": "bitcoindollar",
@@ -1377,7 +1744,12 @@ const data = [
     ],
     "ratio": 1,
     "block": "",
-    "date": ""
+    "date": "",
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
+    ]
 },
 {
     "id": "smartbitcoin",
@@ -1391,7 +1763,12 @@ const data = [
     ],
     "ratio": 1,
     "block": "520000",
-    "date": ""
+    "date": "",
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
+    ]
 },
 {
     "id": "bitcoindao",
@@ -1405,7 +1782,12 @@ const data = [
     ],
     "ratio": 1,
     "block": "531650",
-    "date": ""
+    "date": "",
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
+    ]
 },
 {
     "id": "bitcoinblvck",
@@ -1419,7 +1801,12 @@ const data = [
     ],
     "ratio": 1,
     "block": "507777",
-    "date": ""
+    "date": "",
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
+    ]
 },
 {
     "id": "bitcoincoral",
@@ -1433,7 +1820,12 @@ const data = [
     ],
     "ratio": 1,
     "block": "491407",
-    "date": ""
+    "date": "",
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
+    ]
 },
 {
     "id": "bitcoinsudu",
@@ -1447,7 +1839,12 @@ const data = [
     ],
     "ratio": 1,
     "block": "",
-    "date": ""
+    "date": "",
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
+    ]
 },
 {
     "id": "bitcoinking",
@@ -1461,7 +1858,12 @@ const data = [
     ],
     "ratio": 1,
     "block": "499999",
-    "date": ""
+    "date": "",
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
+    ]
 },
 {
     "id": "bitcoinx2",
@@ -1475,7 +1877,12 @@ const data = [
     ],
     "ratio": 1,
     "block": "",
-    "date": ""
+    "date": "",
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
+    ]
 },
 {
     "id": "bitcoinmetal",
@@ -1489,7 +1896,12 @@ const data = [
     ],
     "ratio": 1,
     "block": "",
-    "date": ""
+    "date": "",
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
+    ]
 },
 {
     "id": "bitclassiccoin",
@@ -1503,8 +1915,14 @@ const data = [
     ],
     "ratio": 1,
     "block": "498888",
-    "date": ""
-    }
+    "date": "",
+    "parents": [
+        {
+           "id": "bitcoin",
+        }
+    ]
+}
+    
 ]
 
 module.exports = data

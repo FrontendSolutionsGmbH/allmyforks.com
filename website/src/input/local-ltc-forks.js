@@ -32,6 +32,8 @@ const data = [
                 "type": "coinmarketcap",
                 "url": "https://coinmarketcap.com/currencies/litecoin/"
             }
+        ],
+         "parents": [
         ]
 
     },
@@ -48,6 +50,14 @@ const data = [
                 "type": "coinmarketcap",
                 "url": "https://coinmarketcap.com/currencies/litecoin-cash/"
             }
+        ],
+        "parents": [
+            {
+               "id": "litecoin",
+               "ratio": 1,
+                "block": "1371111",
+                "date": "17.01.2018",
+            }
         ]
     },
     {
@@ -58,6 +68,14 @@ const data = [
             {
                 "type": "website",
                 "url": "http://www.superltc.com/"
+            }
+        ],
+        "parents": [
+            {
+               "id": "litecoin",
+                "ratio": 1,
+                "block": "",
+                "date": "18.02.2018",    
             }
         ]
     }
