@@ -37,6 +37,23 @@
     </div>
 
     <div class="w3-container w3-twothird">
+       
+        <ul>
+            
+            {{#each ratios}}
+             <li>{{{fiatWithCurrencyInSpan ratio ../../fiat ../../language}}}
+                <ol>{{#each path}}
+                    <li>{{from.name}}->{{to.name}} {{source}} </li>
+                {{/each}}
+                </ol> 
+                </li>
+            {{/each}}
+
+        </ul>
+    </div>
+
+{{#unless ../mvp}}
+    <div class="w3-container w3-twothird">
         <h2>
             {{formatMessage (intlGet "howtoclaimmyforkedcoin") name=(lookup . 'name')}}
         </h2>
@@ -68,6 +85,7 @@
         </div>
 
     </div>
+    {{/unless}}
 
 
     {{/with}}

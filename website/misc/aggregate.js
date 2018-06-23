@@ -34,6 +34,7 @@ var aggregateData = function (coins) {
                 // result.ratios = crawledCoin.ratios
                 //result.price = Math.max(...(result.ratios.map(r=>r.ratio)))
                 result.price = crawledCoin.ratios[0].ratio
+                result.ratios = crawledCoin.ratios
                 foundCryptos.push(coin)
             } else {
                 emptyCryptos.push(coin)

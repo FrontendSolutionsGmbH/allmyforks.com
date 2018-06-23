@@ -135,7 +135,12 @@ var mergeData = function (localData, crawledData) {
             d.forks.sort((a, b) => {
                 return b.priceTimesForkRatio - a.priceTimesForkRatio
             })
+        }
 
+        if (d.ratios) {
+            d.ratios.sort((a, b) => {
+                return b.ratio - a.ratio
+            })
         }
 
          if (d.parents) {

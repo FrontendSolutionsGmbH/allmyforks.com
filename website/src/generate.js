@@ -111,7 +111,7 @@ data.dateTime = (new Date()).toUTCString()
 data.fiat = data.fiats[0]
 data.coin = data.coins[0]
 data.language = data.languages[0]
-
+data.mvp = true
 
 data.languages.map((lang) => {
     data.language = lang
