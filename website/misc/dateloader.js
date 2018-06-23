@@ -39,21 +39,24 @@ function getTimestamp(dateobj) {
 function isNumeric(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
 }
+const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
-var getBitcoinTimeByBlock = function(block) {
+var getBitcoinTimeByBlock = function(block, timeout) {
 	var url = 'http://blockchain.info/de/block-height/' + block
 
-	 return fetch(url)
+	
+	 var callPromise = () => {
+	 	return fetch(url)
             .then((res) => {
                 if (res.status === 200) {
                     //  console.log('fetching success ', res.status, coin.shortName)
                     return res.text()
                 } else {
-                console.log('!= 200', block)
+                console.log('!= 200', block, res.status)
                     return ''
                 }
             }).catch((res) => {
-                console.log('network problem', block)
+                console.log('network problem', block, res)
                 return ''
             }).then((body) => {
 
@@ -66,6 +69,9 @@ var getBitcoinTimeByBlock = function(block) {
 
                 return json
             })
+      }
+
+      return delay(timeout).then(callPromise)
 }
 
 /*getBitcoinTimeByBlock(478558).then((r) => {
@@ -77,13 +83,13 @@ const localBTCData = require('../src/input/local-btc-forks.js')
 var coins = localBTCData.filter(c => c.parents && c.parents.length > 0)
 
 
-var promises = coins.map((coin) => {
+var promises = coins.map((coin, index) => {
 		var parents = coin.parents.filter(p =>(isNumeric(p.block) /*&& (p.date.indexOf('T') < 0 || p.date.indexOf('Z') < 0)*/))
 
 		return Promise.all(parents.map((parent) => {
-				return getBitcoinTimeByBlock(parent.block).then((r) => {
+				return getBitcoinTimeByBlock(parent.block, index*100).then((r) => {
 					if (r) {
-						console.log(coin.id, r)
+						//console.log(coin.id, r)
 						parent.date = r
 					} else {
 						console.log('problem', coin.id)

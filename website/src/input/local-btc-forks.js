@@ -520,7 +520,7 @@ const data = [
         "id": "bitcoin",
         "ratio": 1,
         "block": "501368",
-        "date": ""
+        "date": "2017-12-28T03:29:53Z"
       }
     ]
   },
@@ -793,7 +793,7 @@ const data = [
         "id": "bitcoin",
         "ratio": 1,
         "block": "501368",
-        "date": "2017-12-25T16:42:45Z"
+        "date": "2017-12-28T03:29:53Z"
       }
     ]
   },
@@ -965,7 +965,7 @@ const data = [
         "id": "bitcoin",
         "ratio": 1,
         "block": "506066",
-        "date": "2009-04-06T01:23:33Z"
+        "date": "2018-01-25T14:20:45Z"
       }
     ]
   },
