@@ -206,50 +206,50 @@ const data = {
                     "ratio": 1,
                     "price": "10.63",
                     "block": "498777",
-                    "date": "12.12.2017"
+                    "date": "2017-12-11T17:19:12Z"
                 },
                 {
                     "id": "bitcoindiamond",
                     "ratio": 10,
                     "price": "4.61",
                     "block": "495866",
-                    "date": "24.11.2017"
+                    "date": "2017-11-24T08:20:12Z"
                 },
                 {
                     "id": "bitcoinoil",
                     "ratio": 10,
                     "block": "498888",
-                    "date": "12.12.2017"
+                    "date": "2017-12-12T09:29:53Z"
                 },
                 {
                     "id": "bitcoinworld",
                     "ratio": 10000,
                     "block": "499777",
-                    "date": "17.12.2017"
+                    "date": "2017-12-17T11:11:17Z"
                 },
                 {
                     "id": "bitcoinstake",
                     "ratio": 100,
                     "block": "499999",
-                    "date": "19.12.2017"
+                    "date": "2017-12-18T17:34:47Z"
                 },
                 {
                     "id": "bitcoinfaith",
                     "ratio": 1,
                     "block": "500000",
-                    "date": "19.12.2017"
+                    "date": "2017-12-18T17:35:25Z"
                 },
                 {
                     "id": "bitcointop",
                     "ratio": 1,
                     "block": "501118",
-                    "date": "26.12.2017"
+                    "date": "2017-12-26T12:50:32Z"
                 },
                 {
                     "id": "bitcoinfile",
                     "ratio": 1000,
                     "block": "501225",
-                    "date": "27.12.2017"
+                    "date": "2017-12-27T05:55:44Z"
                 },
                 {
                     "id": "bitcoinsegwit",
