@@ -3,22 +3,6 @@ const data = [
         "id": "litecoin",
         "name": "Litecoin",
         "shortName": "LTC",
-        "forks": [
-            {
-                "id": "superlitecoin",
-                "ratio": 1,
-                "block": "",
-                "date": "18.02.2018",
-
-            },
-            {
-                "id": "litecoincash",
-                "ratio": 1,
-                "block": "1371111",
-                "date": "17.01.2018",
-
-            }
-        ],
         "links": [
             {
                 "type": "website",

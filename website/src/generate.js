@@ -102,7 +102,7 @@ fs.mkdirSync('./dist')
 
 var data = mergedData;
 
-data.coinsWithForks = data.coins.filter(f => f.forks)
+data.coinsWithForks = data.coins.filter(f => f.forks && f.forks.length > 0)
 data.timestamp = Date.now()
 data.dateTime = (new Date()).toUTCString()
 

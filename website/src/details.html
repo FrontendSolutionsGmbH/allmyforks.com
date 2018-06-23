@@ -14,15 +14,15 @@
 
         <ul>
             <li>{{intlGet "name"}}: {{name}}</li>
-            <li>{{intlGet "fork_date"}}: {{date}}</li>
-            <li>{{intlGet "fork_block"}}: {{block}}</li>
             <li>{{intlGet "price"}}: {{{fiatWithCurrencyInSpan price ../fiat ../language}}}</li>
-            <li>1 {{coin.shortName}}= {{ratio}} {{shortName}}</li>
-            <li>1 {{coin.shortName}}= {{{fiatWithCurrencyInSpan priceTimesForkRatio ../fiat ../language}}}</li>
             <li>{{intlGet "change"}} ({{intlGet "24hours"}}): + 2%</li>
-
+        
             {{#each parents}}
             <li>{{intlGet "forked_from"}}: {{name}}</li>
+            <li>{{intlGet "fork_date"}}: {{{localDateInSpan date dateFormat}}}</li>
+            <li>{{intlGet "fork_block"}}: {{block}}</li>
+            <li>1 {{shortName}}= {{ratio}} {{../shortName}}</li>
+            <li>1 {{shortName}}= {{{fiatWithCurrencyInSpan priceTimesForkRatio ../../fiat ../../language}}}</li> 
             {{/each}}
         </ul>
 
