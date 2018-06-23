@@ -20,6 +20,7 @@
     "dev": "concurrently --kill-others \"http-server ./dist\" \"node watch.js\"",
     "serve": "http-server ./dist",
     "crawl": "node misc/crawl.js",
+    "crawl-dates": "node misc/dateloader.js",
     "aggregate": "node misc/aggregate.js"
   },
   "author": "",

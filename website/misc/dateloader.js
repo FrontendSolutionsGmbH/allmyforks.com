@@ -97,5 +97,5 @@ var promises = coins.map((coin) => {
 				
 Promise.all(promises).then((result) => {
 	//console.log(coins)
-      fs.writeFileSync('../src/input/local-btc-forks.js', 'const data = ' + JSON.stringify(localBTCData, null, 2) + "\r\nmodule.exports = data", 'utf-8')
+      fs.writeFileSync('./src/input/local-btc-forks.js', 'const data = ' + JSON.stringify(localBTCData, null, 2) + "\r\nmodule.exports = data\r\n", 'utf-8')
  })
