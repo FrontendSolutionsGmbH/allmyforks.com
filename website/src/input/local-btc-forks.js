@@ -225,7 +225,7 @@ const data = [
       {
         "id": "bitcoin",
         "ratio": 1,
-        "block": "TODO",
+        "block": "",
         "date": "2017-12-28T09:52:58Z",
         "dateFormat": "monthAndYear"
       }
