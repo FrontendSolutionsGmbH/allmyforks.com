@@ -1,4 +1,6 @@
-const http = require('http');
+
+const fetch = require('node-fetch')
+const fs = require('fs-extra');
 function getTimestamp(dateobj) {
     dateobj.setTime(dateobj.getTime() + (dateobj.getTimezoneOffset() * 60000));
 
@@ -34,54 +36,76 @@ function getTimestamp(dateobj) {
         + datetime.time.join(':') + 'Z';
 }
 
-
-
-var getBitcoinTimeByBlock = function(block, callback) {
-
-	var options = {
-	  host: 'blockchain.info',
-	  port: 80,
-	  path: '/de/block-height/' + block
-	};
-
-	http.get(options, function(res) {
-	  //console.log("Got response: " + res.statusCode);
-	  
-
-	   if (res.statusCode === 200) {
-
-	   	var body = '';
-		  res.on('data', function(chunk) {
-		    body += chunk;
-		  });
-
-	   	 res.on('end', function () {
-	    	//console.log(body)
-	   	  var re = new RegExp('Zeit.*?<td>(.*?)</td>');
-			var r  = body.replace(/(?:\r\n|\r|\n)/g, '').match(re);
-			if (r)
-			    callback(r[1])
-			else 
-				callback(null)
-
-	  	 });
-
-
-	   }
-	 
-	}).on('error', function(e) {
-	  //console.log("Got error: " + e.message);
-	  callback(null)
-	});
-
-
-	
+function isNumeric(n) {
+    return !isNaN(parseFloat(n)) && isFinite(n);
 }
 
-getBitcoinTimeByBlock(501225, (result) => {
-	if (result) {
-		console.log(getTimestamp(new Date(result)))
-	} else {
-		console.log('not fount')
-	}
+var getBitcoinTimeByBlock = function(block) {
+	var url = 'http://blockchain.info/de/block-height/' + block
+
+	 return fetch(url)
+            .then((res) => {
+                if (res.status === 200) {
+                    //  console.log('fetching success ', res.status, coin.shortName)
+                    return res.text()
+                } else {
+                console.log('!= 200', block)
+                    return ''
+                }
+            }).catch((res) => {
+                console.log('network problem', block)
+                return ''
+            }).then((body) => {
+
+            	 var re = new RegExp('Zeit.*?<td>(.*?)</td>');
+				var r  = body.replace(/(?:\r\n|\r|\n)/g, '').match(re);
+				if (r)
+				    return getTimestamp(new Date(r[1]))
+				else 
+					return ''
+
+                return json
+            })
+}
+
+/*getBitcoinTimeByBlock(478558).then((r) => {
+	console.log(r)
+})*/
+
+
+const localBTCData = require('../src/input/local-btc-forks.js')
+var coins = localBTCData.filter(c => c.parents && c.parents.length > 0)
+
+
+var promises = coins.map((coin) => {
+		var parents = coin.parents.filter(p =>(isNumeric(p.block) && (p.date.indexOf('T') < 0 || p.date.indexOf('Z') < 0)))
+
+		return Promise.all(parents.map((parent) => {
+				return getBitcoinTimeByBlock(parent.block).then((r) => {
+					if (r) {
+						console.log(coin.id, r)
+						parent.date = r
+					}
+				})
+
+			}))
+	})
+	
+
+				
+Promise.all(promises).then((result) => {
+	//console.log(coins)
+      fs.writeFileSync('test.json', JSON.stringify(localBTCData, null, 2), 'utf-8')           
 })
+
+
+
+
+
+               /* var fileName = outputDir + coin.id + '.json'
+                if (json.ratios && json.ratios.length < 1) {
+                    console.log('no data', coin.shortName)
+                }
+                if (!fs.existsSync(fileName) || json.ratios && json.ratios.length > 0) {
+                    fs.writeFileSync(fileName, JSON.stringify(json, null, 2), 'utf-8')
+                }*/
