@@ -13,6 +13,5 @@ const data = {
     ...dataFiats
 }
 
-console.log(data)
 
 module.exports = data
