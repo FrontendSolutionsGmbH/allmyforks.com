@@ -78,7 +78,7 @@ var coins = localBTCData.filter(c => c.parents && c.parents.length > 0)
 
 
 var promises = coins.map((coin) => {
-		var parents = coin.parents.filter(p =>(isNumeric(p.block) && (p.date.indexOf('T') < 0 || p.date.indexOf('Z') < 0)))
+		var parents = coin.parents.filter(p =>(isNumeric(p.block) /*&& (p.date.indexOf('T') < 0 || p.date.indexOf('Z') < 0)*/))
 
 		return Promise.all(parents.map((parent) => {
 				return getBitcoinTimeByBlock(parent.block).then((r) => {

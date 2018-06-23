@@ -27,6 +27,7 @@ Handlebars.registerHelper('fiatWithCurrency', helper.fiatWithCurrency);
 Handlebars.registerHelper('fiatWithCurrencyInSpan', helper.fiatWithCurrencyInSpan);
 Handlebars.registerHelper("math", helper.mathHelper);
 Handlebars.registerHelper("localDateInSpan", helper.localDateInSpan);
+Handlebars.registerHelper("localDate", helper.localDate);
 Handlebars.registerHelper("ifCond", helper.ifConditionHelper);
 
 Handlebars.registerHelper("prettifyDate", function (timestamp) {

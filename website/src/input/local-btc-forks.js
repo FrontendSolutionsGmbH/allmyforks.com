@@ -481,8 +481,8 @@ const data = [
       {
         "id": "bitcoin",
         "ratio": 1,
-        "block": "XXX",
-        "date": "30.01.2018"
+        "block": "",
+        "date": ""
       }
     ]
   },
@@ -519,8 +519,8 @@ const data = [
       {
         "id": "bitcoin",
         "ratio": 1,
-        "block": "XXX",
-        "date": "28.01.2018"
+        "block": "501368",
+        "date": ""
       }
     ]
   },
@@ -619,7 +619,7 @@ const data = [
         "id": "bitcoin",
         "ratio": 1,
         "block": "",
-        "date": "10.01.2018"
+        "date": ""
       }
     ]
   },
@@ -695,9 +695,9 @@ const data = [
       {
         "id": "bitcoin",
         "ratio": 1,
-        "block": "",
+        "block": "TBD",
         "status": "unforked",
-        "date": "30.09.2018"
+        "date": "2018-08-31T05:01:43Z"
       }
     ]
   },
@@ -792,7 +792,7 @@ const data = [
       {
         "id": "bitcoin",
         "ratio": 1,
-        "block": "501000",
+        "block": "501368",
         "date": "2017-12-25T16:42:45Z"
       }
     ]
@@ -964,7 +964,7 @@ const data = [
       {
         "id": "bitcoin",
         "ratio": 1,
-        "block": "10000",
+        "block": "506066",
         "date": "2009-04-06T01:23:33Z"
       }
     ]
@@ -1002,7 +1002,7 @@ const data = [
       {
         "id": "bitcoin",
         "ratio": 1,
-        "block": "300377",
+        "block": "576698",
         "date": "2014-05-12T10:48:17Z"
       }
     ]

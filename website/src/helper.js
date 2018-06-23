@@ -28,9 +28,13 @@ var localDate = function (valueUTC, format, defaultValue, currentLanguage) {
                 return date.toLocaleString(currentLanguage.id, {month: "long", year: "numeric"})
             } else if (format === 'year') {
                 return date.toLocaleString(currentLanguage.id, {year: "numeric"})
+            } else if (format === 'timestamp') {
+                return date.getTime()
             }
         }
     }
+
+    return ''
 }
 
 var localDateInSpan = function (valueUTC, format, currentLanguage) {
@@ -142,5 +146,6 @@ module.exports = {
     getSelectorsLangFiatCoins: getSelectorsLangFiatCoins,
     mathHelper: mathHelper,
     localDateInSpan: localDateInSpan,
+    localDate: localDate,
     ifConditionHelper: ifConditionHelper
 }
