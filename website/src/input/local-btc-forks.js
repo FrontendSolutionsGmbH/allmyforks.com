@@ -178,7 +178,7 @@ const data = [
       {
         "id": "bitcoin",
         "ratio": 1,
-        "block": "~501407",
+        "block": "501407",
         "date": "2017-12-28T09:52:58Z",
         "dateFormat": "monthAndYear"
       }
@@ -203,7 +203,7 @@ const data = [
         "id": "bitcoin",
         "ratio": 1,
         "block": "505888",
-        "date": "2018-01-24T13:26:41Z",
+        "date": "2018-01-24T13:26:41Z"
       }
     ]
   },
@@ -716,7 +716,7 @@ const data = [
         "id": "bitcoin",
         "ratio": 10000,
         "block": "516095",
-        "date": ""
+        "date": "2018-04-01T05:01:43Z"
       }
     ]
   },
@@ -812,7 +812,7 @@ const data = [
         "id": "bitcoin",
         "ratio": 1,
         "block": "501000",
-        "date": ""
+        "date": "2017-12-25T16:42:45Z"
       }
     ]
   },
@@ -888,7 +888,7 @@ const data = [
         "id": "bitcoin",
         "ratio": 1,
         "block": "499345",
-        "date": ""
+        "date": "2017-12-14T23:15:00Z"
       }
     ]
   },
@@ -927,7 +927,7 @@ const data = [
         "ratio": 10000,
         "status": "pending",
         "block": "",
-        "date": "",
+        "date": ""
       }
     ]
   },
@@ -1136,7 +1136,7 @@ const data = [
         "id": "bitcoin",
         "ratio": 1,
         "block": "507089",
-        "date": ""
+        "date": "2018-02-01T10:55:44Z"
       }
     ]
   },
@@ -1288,7 +1288,7 @@ const data = [
         "id": "bitcoin",
         "ratio": 1,
         "block": "520419",
-        "date": ""
+        "date": "2018-04-29T08:43:10Z"
       }
     ]
   },
@@ -1364,7 +1364,7 @@ const data = [
         "id": "bitcoin",
         "ratio": 1,
         "block": "515350",
-        "date": ""
+        "date": "2018-03-27T03:46:52Z"
       }
     ]
   },
@@ -1498,7 +1498,7 @@ const data = [
         "id": "bitcoin",
         "ratio": 1,
         "block": "520000",
-        "date": ""
+        "date": "2018-04-26T08:40:17Z"
       }
     ]
   },
@@ -1593,7 +1593,7 @@ const data = [
         "id": "bitcoin",
         "ratio": 1,
         "block": "499999",
-        "date": ""
+        "date": "2017-12-18T17:34:47Z"
       }
     ]
   },

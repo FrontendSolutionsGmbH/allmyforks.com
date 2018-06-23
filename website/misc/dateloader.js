@@ -85,6 +85,8 @@ var promises = coins.map((coin) => {
 					if (r) {
 						console.log(coin.id, r)
 						parent.date = r
+					} else {
+						console.log('problem', coin.id)
 					}
 				})
 
@@ -95,17 +97,5 @@ var promises = coins.map((coin) => {
 				
 Promise.all(promises).then((result) => {
 	//console.log(coins)
-      fs.writeFileSync('test.json', JSON.stringify(localBTCData, null, 2), 'utf-8')           
-})
-
-
-
-
-
-               /* var fileName = outputDir + coin.id + '.json'
-                if (json.ratios && json.ratios.length < 1) {
-                    console.log('no data', coin.shortName)
-                }
-                if (!fs.existsSync(fileName) || json.ratios && json.ratios.length > 0) {
-                    fs.writeFileSync(fileName, JSON.stringify(json, null, 2), 'utf-8')
-                }*/
+      fs.writeFileSync('../src/input/local-btc-forks.js', 'const data = ' + JSON.stringify(localBTCData, null, 2) + "\r\nmodule.exports = data", 'utf-8')
+ })

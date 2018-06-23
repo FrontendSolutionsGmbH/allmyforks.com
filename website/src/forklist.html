@@ -69,10 +69,10 @@
                 <td sorttable_customkey="{{math @index '+' 1}}">#{{math @index '+' 1}}</td>
                 <td><a href="/{{../language.id}}/details/{{id}}/">{{name}}</a></td>
                 <td class="w3-hide-small">{{ratio}} {{shortName}}</td>
-                <td class="w3-hide-small">{{{localDateInSpan date dateFormat}}}
+                <td class="w3-hide-small" sorttable_customkey="{{date}}{{#unless date}}9999{{/unless}}">{{{localDateInSpan date dateFormat}}}
                 </td>
 
-                <td class="w3-hide-small  table-cut">
+                <td class="w3-hide-small  table-cut" sorttable_customkey="{{block}}{{#unless block}}999999999{{/unless}}">
                     {{block}}{{#unless block}}-{{/unless}}
                 </td>
 
