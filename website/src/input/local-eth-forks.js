@@ -50,7 +50,7 @@ const data = [
                "id": "ethereum",
                 "ratio": 1,
                 "block": "5078585",
-                "date": "12.02.2018"
+                "date": "2018-02-12T19:27:45Z"
             }
         ]
     },
@@ -69,7 +69,7 @@ const data = [
                "id": "ethereum",
                 "ratio": 1,
                 "block": "4936270",
-                "date": "20.01.2018"
+                "date": "2018-01-19T18:58:45Z"
             }
         ]
     },
@@ -88,7 +88,7 @@ const data = [
                "id": "ethereum",
                 "ratio": 1,
                 "block": "4730660",
-                "date": "01.01.2018"
+                "date": "2017-12-14T18:58:45Z"
             }
         ]
     },
@@ -107,7 +107,7 @@ const data = [
                "id": "ethereum",
                 "ratio": 1,
                 "block": "4730666",
-                "date": "14.12.2017"
+                "date": "2017-12-14T18:58:45Z"
             }
         ]
     },
@@ -130,7 +130,7 @@ const data = [
                "id": "ethereum",
                 "ratio": 1,
                 "block": "4730666",
-                "date": "15.12.2017"
+                "date": "2017-12-14T18:58:45Z"
             }
         ]
     }

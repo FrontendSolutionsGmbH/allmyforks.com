@@ -40,7 +40,7 @@ const data = [
                "id": "litecoin",
                "ratio": 1,
                 "block": "1371111",
-                "date": "17.01.2018",
+                "date": "2018-02-18T19:33:24Z",
             }
         ]
     },
