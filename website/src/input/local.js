@@ -8,7 +8,7 @@ const data = {
     coins: [...dataBTCForks,
         ...dataLTCForks,
         ...dataETHForks
-        ],
+    ],
     ...dataPages,
     ...dataFiats
 }

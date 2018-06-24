@@ -13,8 +13,7 @@ const data = [
                 "url": "https://coinmarketcap.com/currencies/ethereum/"
             }
         ],
-        "parents": [
-        ]
+        "parents": []
     },
     {
         "id": "byteether",
@@ -28,7 +27,7 @@ const data = [
         ],
         "parents": [
             {
-               "id": "ethereum",
+                "id": "ethereum",
                 "ratio": 1,
                 "block": "478558",
                 "date": ""
@@ -47,7 +46,7 @@ const data = [
         ],
         "parents": [
             {
-               "id": "ethereum",
+                "id": "ethereum",
                 "ratio": 1,
                 "block": "5078585",
                 "date": "2018-02-12T19:27:45Z"
@@ -66,7 +65,7 @@ const data = [
         ],
         "parents": [
             {
-               "id": "ethereum",
+                "id": "ethereum",
                 "ratio": 1,
                 "block": "4936270",
                 "date": "2018-01-19T18:58:45Z"
@@ -85,7 +84,7 @@ const data = [
         ],
         "parents": [
             {
-               "id": "ethereum",
+                "id": "ethereum",
                 "ratio": 1,
                 "block": "4730660",
                 "date": "2017-12-14T18:58:45Z"
@@ -104,7 +103,7 @@ const data = [
         ],
         "parents": [
             {
-               "id": "ethereum",
+                "id": "ethereum",
                 "ratio": 1,
                 "block": "4730666",
                 "date": "2017-12-14T18:58:45Z"
@@ -127,7 +126,7 @@ const data = [
         ],
         "parents": [
             {
-               "id": "ethereum",
+                "id": "ethereum",
                 "ratio": 1,
                 "block": "4730666",
                 "date": "2017-12-14T18:58:45Z"

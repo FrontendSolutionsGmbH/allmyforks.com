@@ -17,8 +17,7 @@ const data = [
                 "url": "https://coinmarketcap.com/currencies/litecoin/"
             }
         ],
-         "parents": [
-        ]
+        "parents": []
 
     },
     {
@@ -37,8 +36,8 @@ const data = [
         ],
         "parents": [
             {
-               "id": "litecoin",
-               "ratio": 1,
+                "id": "litecoin",
+                "ratio": 1,
                 "block": "1371111",
                 "date": "2018-02-18T19:33:24Z",
             }
@@ -56,10 +55,10 @@ const data = [
         ],
         "parents": [
             {
-               "id": "litecoin",
+                "id": "litecoin",
                 "ratio": 1,
                 "block": "",
-                "date": "18.02.2018",    
+                "date": "18.02.2018",
             }
         ]
     }
