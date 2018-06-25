@@ -133,6 +133,12 @@ data.languages.map((lang) => {
                 "day": "2-digit",
                 "month": "2-digit",
                 "year": "numeric"
+            },
+
+        },
+        "number": {
+            "percentage": {
+                "style": "percent"
             }
         }
     }

@@ -13,7 +13,7 @@
   "data_privacy": "Data Privacy",
   "fork_block": "Fork Block",
   "price": "Price",
-  "cookie_message":"This website saves on your computer, which currency you prefer. This information will not be submitted to our servers.",
+  "cookie_message":"This website saves which currency you prefer and if you closed this message. The information is  stored on your computer only and not be submitted to our server.",
   "cookie_ok": "Good to know",
   "change": "Change",
   "24hours": "24h",
