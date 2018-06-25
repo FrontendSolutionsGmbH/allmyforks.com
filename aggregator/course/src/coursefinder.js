@@ -25,9 +25,21 @@ const getConnection = function(source, sources = config.source){
   return connections[source]
 }
 
-const resolvePath = function(path) {
+const getSave = function(array, index, defaultValue) {
+  if(!array) return defaultValue;
+
+  if(index >= array.length) {
+    if(index === 0) return defaultValue;
+
+    return getSave(array, index - 1, defaultValue)
+  }
+
+  return array[index];
+}
+
+const resolvePath = function(path, days) {
   let promises = []
-  let courses = new Array(path.length)
+  let hops = new Array(path.length)
 
   for(let i=0; i < path.length; i++) {
     const node = path[i]
@@ -39,18 +51,23 @@ const resolvePath = function(path) {
       "to.name": node.to.name,
       "to.type": node.to.type,
     })
-    .limit(1)
+    .limit(days)
     .sort({ date: -1 })
     .select({ "close": 1, "date": 1, "_id": 0})
     .lean()
     .then(result => {
-      node.date = result[0].date
-      node.ratio = result[0].close
-
-      courses[i] = {
-        ratio: result[0].close,
-        date: result[0].date
+      hops[i] = {
+        courses: []
       }
+
+      for(let doc of result) {
+        hops[i].courses.push({
+          ratio: doc.close,
+          date: doc.date
+        })
+      }
+
+      node.courses = hops[i].courses
     })
 
     promises.push(p)
@@ -58,30 +75,35 @@ const resolvePath = function(path) {
 
   return Promise.all(promises)
     .then(() => {
-      let ratio = 1;
-      let minDate = null
-      let maxDate = null
-
-      for(let course of courses) {
-        ratio *= course.ratio
-
-        if(!minDate || minDate > course.date) {
-          minDate = course.date
-        }
-        if(!maxDate || maxDate < course.date) {
-          maxDate = course.date
-        }
-
-      }
-
-      return {
-        ratio,
-        minDate,
-        maxDate,
+      let result = {
+        courses: [],
+        minDate: null,
+        maxDate: null,
         path
       }
+
+      for(let i=0; i < days; i++) {
+        result.courses.push(1)
+
+        for(let hop of hops) {
+          let hopCourse = getSave(hop.courses, i, { ratio: 1})
+          result.courses[i] *= hopCourse.ratio
+
+          if(!result.minDate || result.minDate > hopCourse.date) {
+            result.minDate = hopCourse.date
+          }
+          if(!result.maxDate || result.maxDate < hopCourse.date) {
+            result.maxDate = hopCourse.date
+          }
+        }
+      }
+
+      return result
     })
 }
+
+const DEFAULT_DESTINATION = { name: 'USD', type: 'fiat' }
+const DEFAULT_DAYS = 1
 
 /**
  * Get all found ratios of given source
@@ -96,9 +118,10 @@ const resolvePath = function(path) {
  *  "name": "USD",
  *  "type": "fiat"
  * }
+ * @param days how many historical days should be returned
  * @return An array with all found ratios
  * [{
- *   "ratio": 13.12,
+ *   "courses": [ 13.12 ],
  *   "maxDate: "2018-12-13T00:00:00.000Z",
  *   "minDate: "2018-12-13T00:00:00.000Z",
  *   "path": [{
@@ -110,16 +133,18 @@ const resolvePath = function(path) {
  *       "name": "USD",
  *       "type": "fiat"
  *     },
- *     "ratio": 13.12,
- *     "date": "2018-12-13T00:00:00.000Z"
+ *     "courses": [{
+ *      "ratio": 13.12,
+ *      "date": "2018-12-13T00:00:00.000Z"
+ *     }]
  *     "source": "coinbase.com"
  *   }]
  * }]
  */
-const getRatios = function(source, destination = { name: 'USD', type: 'fiat' }){
+const getRatios = function(source, destination = DEFAULT_DESTINATION, days = DEFAULT_DAYS){
   return pairfinder()
     .then(pairs => pathfinder(pairs, source, destination))
-    .then(paths => paths.map(resolvePath))
+    .then(paths => paths.map(path => resolvePath(path, days)))
     .then(promises => Promise.all(promises))
 }
 
@@ -134,4 +159,8 @@ if (require.main === module) {
   })
 }
 
-module.exports = getRatios;
+module.exports = {
+  DEFAULT_DESTINATION,
+  DEFAULT_DAYS,
+  getRatios
+};
