@@ -31,9 +31,19 @@ var aggregateData = function (coins) {
             crawledCoin = JSON.parse(fs.readFileSync(fileName))
 
             if (crawledCoin.ratios && crawledCoin.ratios.length > 0) {
+                // console.log('read', coin.id)
                 // result.ratios = crawledCoin.ratios
                 //result.price = Math.max(...(result.ratios.map(r=>r.ratio)))
-                result.price = crawledCoin.ratios[0].ratio
+
+                if (crawledCoin.ratios[0].ratio) {
+                    result.price = crawledCoin.ratios[0].ratio
+                }
+
+                if (crawledCoin.ratios[0].courses && crawledCoin.ratios[0].courses.length > 0) {
+                    result.price = crawledCoin.ratios[0].courses[0]
+                    result.priceHistory = crawledCoin.ratios[0].courses
+                }
+
                 result.ratios = crawledCoin.ratios
                 foundCryptos.push(coin)
             } else {

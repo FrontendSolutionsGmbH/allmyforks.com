@@ -35,9 +35,9 @@
     <div class="left" id="sum-forks-top-left">
 
         1 {{coin.name}}={{{fiatWithCurrencyInSpan coin.priceSumForksPlusOwnPrice fiat language}}}
-        (Price: {{{fiatWithCurrencyInSpan coin.price fiat language}}} + Forks: {{{fiatWithCurrencyInSpan
+        ({{{fiatWithCurrencyInSpan coin.price fiat language}}} + {{{fiatWithCurrencyInSpan
         coin.priceSumForks fiat
-        language}}})
+        language}}} from forks)
     </div>
 </div>
 
@@ -61,6 +61,7 @@
                 <th class="w3-hide-small table-cut">{{intlGet "fork_block"}}</th>
                 <th class="w3-hide-small">{{intlGet "price"}}</th>
                 <th class="w3-hide-small">{{intlGet "change"}} ({{intlGet "24hours"}})</th>
+                <th class="w3-hide-small">{{intlGet "change"}} ({{intlGet "7days"}})</th>
                 <th class="w3-hide-small">{{intlGet "price_graph"}} ({{intlGet "7days"}})</th>
                 <th>1 {{coin.shortName}}=</th>
             </tr>
@@ -69,10 +70,13 @@
                 <td sorttable_customkey="{{math @index '+' 1}}">#{{math @index '+' 1}}</td>
                 <td><a href="/{{../language.id}}/details/{{id}}/">{{name}}</a></td>
                 <td class="w3-hide-small" sorttable_customkey="{{ratio}}">{{ratio}} {{shortName}}</td>
-                <td class="w3-hide-small" sorttable_customkey="{{{localDate date 'timestamp'}}}{{#unless date}}9999991703000{{/unless}}">{{{localDateInSpan date dateFormat}}}
+                <td class="w3-hide-small"
+                    sorttable_customkey="{{{localDate date 'timestamp'}}}{{#unless date}}9999991703000{{/unless}}">
+                    {{{localDateInSpan date dateFormat}}}
                 </td>
 
-                <td class="w3-hide-small  table-cut" sorttable_customkey="{{block}}{{#unless block}}999999999{{/unless}}">
+                <td class="w3-hide-small  table-cut"
+                    sorttable_customkey="{{block}}{{#unless block}}999999999{{/unless}}">
                     {{block}}{{#unless block}}-{{/unless}}
                 </td>
 
@@ -80,10 +84,25 @@
                     ../fiat
                     ../language}}}
                 </td>
-                <td class="w3-hide-small">+ 2%</td>
+                <td sorttable_customkey="{{priceChangeOneDayPercentage}}{{#unless priceChangeOneDayPercentage}}-999{{/unless}}"
+                    class="w3-hide-small {{#if priceChangeOneDayIsPositive}}w3-text-green{{/if}} {{#if priceChangeOneDayIsNegative}}w3-text-red{{/if}}">
+                    {{#if priceChangeOneDayPercentage}}{{#if
+                    priceChangeOneDayIsPositive}}+{{/if}}{{formatNumber priceChangeOneDayPercentage
+                    "percentage"}}{{/if}}
+                </td>
+
+                <td sorttable_customkey="{{priceChangeSevenDaysPercentage}}{{#unless priceChangeSevenDaysPercentage}}-999{{/unless}}"
+                    class="w3-hide-small {{#if priceChangeSevenDaysIsPositive}}w3-text-green{{/if}} {{#if priceChangeSevenDaysIsNegative}}w3-text-red{{/if}}">
+                    {{#if priceChangeSevenDaysPercentage}}{{#if
+                    priceChangeSevenDaysIsPositive}}+{{/if}}{{formatNumber priceChangeSevenDaysPercentage
+                    "percentage"}}{{/if}}
+                </td>
+
+
                 <td class="w3-hide-small">
                     {{#with priceGraphData}}
-                    <svg xmlns="http://www.w3.org/2000/svg" version="1" width="{{width}}" height="{{height}}">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1" width="{{width}}"
+                         height="{{height}}">
                         <path stroke="#f7931a" stroke-width="2" fill="transparent" stroke-linecap="square"
                               d="{{data}}"/>
                     </svg>
