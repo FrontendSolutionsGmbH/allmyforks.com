@@ -19,6 +19,7 @@ COPY ./binance.js /application/binance.js
 
 COPY ./bitfinex/ /application/bitfinex
 COPY ./bitfinex.js /application/bitfinex.js
+COPY ./bitfinex_ticker.js /application/bitfinex_ticker.js
 
 COPY ./okex/ /application/okex
 COPY ./okex.js /application/okex.js

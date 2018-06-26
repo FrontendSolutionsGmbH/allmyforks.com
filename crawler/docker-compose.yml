@@ -40,6 +40,18 @@ services:
     depends_on:
       - db
 
+  ticker_bitfinex:
+    image: rainu/cryptocrawler
+    build:
+      context: ./
+    environment:
+      - CFG_MONGO_HOST=db
+      - CFG_MONGO_DB=bitfinex
+    command: "bitfinex_ticker.js"
+    restart: always
+    depends_on:
+      - db
+
   crawler_binance:
     image: rainu/cryptocrawler
     build:
