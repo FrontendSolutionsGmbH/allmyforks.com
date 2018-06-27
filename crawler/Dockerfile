@@ -10,6 +10,7 @@ COPY ./common /application/common
 
 COPY ./coinmarketcap/ /application/coinmarketcap
 COPY ./coinmarketcap.js /application/coinmarketcap.js
+COPY ./coinmarketcap_ticker.js /application/coinmarketcap_ticker.js
 
 COPY ./coinbase/ /application/coinbase
 COPY ./coinbase.js /application/coinbase.js

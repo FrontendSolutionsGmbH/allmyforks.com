@@ -27,6 +27,21 @@ services:
     depends_on:
       - db
 
+  ticker_coinmarketcap:
+    image: rainu/cryptocrawler
+    build:
+      context: ./
+    environment:
+      - CFG_MONGO_HOST=db
+      - CFG_MONGO_DB=coinmarketcap
+      - CFG_CRON=0 */5 * * * *
+      - CFG_REQUEST_BATCH=25
+      - CFG_REQUEST_COOLDOWN=60000
+    command: "coinmarketcap_ticker.js"
+    restart: always
+    depends_on:
+      - db
+
   crawler_bitfinex:
     image: rainu/cryptocrawler
     build:
