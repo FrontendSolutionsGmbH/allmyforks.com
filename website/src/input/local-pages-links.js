@@ -43,7 +43,7 @@ const data = {
             "description": "Cryptocurrency Fork rankings, charts, and more"
         },
         "details": {
-            "title": "{{coin.shortName}} Fork Details",
+            "title": "{{coin.name}} ({{coin.shortName}}) Fork",
             "description": "Claim {{coin.shortName}} forked coins"
         }
     },

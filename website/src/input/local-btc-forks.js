@@ -1201,7 +1201,7 @@ const data = [
         "id": "worldbitcoin",
         "name": "World Bitcoin",
         "shortName": "WBTC",
-        "isCrawlable": true,
+        "isCrawlable": false,
         "links": [
             {
                 "type": "website",
