@@ -23,6 +23,7 @@ COPY ./bitfinex_ticker.js /application/bitfinex_ticker.js
 
 COPY ./okex/ /application/okex
 COPY ./okex.js /application/okex.js
+COPY ./okex_ticker.js /application/okex_ticker.js
 
 COPY ./fiat/ /application/fiat
 COPY ./fiat.js /application/fiat.js

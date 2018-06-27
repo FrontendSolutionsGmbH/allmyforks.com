@@ -78,6 +78,18 @@ services:
     depends_on:
       - db
 
+  ticker_okex:
+    image: rainu/cryptocrawler
+    build:
+      context: ./
+    environment:
+      - CFG_MONGO_HOST=db
+      - CFG_MONGO_DB=okex
+    command: "okex_ticker.js"
+    restart: always
+    depends_on:
+      - db
+
   crawler_coinbase:
     image: rainu/cryptocrawler
     build:
