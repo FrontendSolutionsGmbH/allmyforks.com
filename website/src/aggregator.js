@@ -103,7 +103,13 @@ var mergeData = function (localData, crawledData) {
     // merge only raw information per coin
     data.coins = data.coins.map((d) => {
         var crawledCoin = crawledData.coins.find(cf => cf.id === d.id)
-        var mergedCoin = Object.assign(d, crawledCoin)
+
+
+        var mergedCoin = d
+        if (d.isCrawlable) {
+            mergedCoin = Object.assign(d, crawledCoin)
+        }
+
 
         if (isNumeric(mergedCoin.price)) {
             mergedCoin.price = parseFloat(mergedCoin.price)

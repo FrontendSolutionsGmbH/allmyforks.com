@@ -3,6 +3,7 @@ const data = [
         "id": "litecoin",
         "name": "Litecoin",
         "shortName": "LTC",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -24,6 +25,7 @@ const data = [
         "id": "litecoincash",
         "name": "Litecoin Cash",
         "shortName": "LCC",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -47,6 +49,7 @@ const data = [
         "id": "superlitecoin",
         "name": "Super Litecoin",
         "shortName": "SLTC",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",

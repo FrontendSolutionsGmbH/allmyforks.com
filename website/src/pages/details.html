@@ -50,13 +50,21 @@
 
     <div class="w3-container w3-twothird">
 
+        Links: <br/>
+        <ul>
+            {{#each links}}
+            <li><a href="{{url}}" target="link-{{id}}" style="text-transform: capitalize;">{{type}}</a></li>
+            {{/each}}
+        </ul>
+
+        Hops: <br/>
         <ul>
 
             {{#each ratios}}
             <li>{{#if ratio}}{{{fiatWithCurrencyInSpan ratio ../../fiat ../../language}}}{{/if}}
                 {{#if courses}}{{{fiatWithCurrencyInSpan courses.[0] ../../fiat ../../language}}}{{/if}}
                 <ol>{{#each path}}
-                    <li>{{from.name}}->{{to.name}} {{source}}</li>
+                    <li>{{from.name}}->{{to.name}} <a target="new" href="http://{{source}}">{{source}}</a></li>
                     {{/each}}
                 </ol>
             </li>

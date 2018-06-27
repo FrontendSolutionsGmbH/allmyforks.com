@@ -3,6 +3,7 @@ const data = [
         "id": "ethereum",
         "name": "Ethereum",
         "shortName": "ETH",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -19,6 +20,7 @@ const data = [
         "id": "byteether",
         "name": "Bytether",
         "shortName": "BTH",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -38,6 +40,7 @@ const data = [
         "id": "etherinc",
         "name": "Ether Inc",
         "shortName": "ETI",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -57,6 +60,7 @@ const data = [
         "id": "etherzero",
         "name": "EtherZero",
         "shortName": "ETZ",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -76,6 +80,7 @@ const data = [
         "id": "ethereumfog",
         "name": "EthereumFog",
         "shortName": "ETF",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -95,6 +100,7 @@ const data = [
         "id": "ethereummodification",
         "name": "Ethereum Modification",
         "shortName": "EMO",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -114,6 +120,7 @@ const data = [
         "id": "ethereumgold",
         "name": "Ethereum Gold",
         "shortName": "ETG",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",

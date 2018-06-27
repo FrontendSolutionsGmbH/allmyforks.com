@@ -3,6 +3,7 @@ const data = [
         "id": "bitcoin",
         "name": "Bitcoin",
         "shortName": "BTC",
+        "isCrawlable": true,
         "descriptions": [
             {
                 "text": "Bitcoin uses peer-to-peer technology to operate with no central authority or banks; managing transactions and the issuing of bitcoins is carried out collectively by the network. Bitcoin is open-source; its design is public, nobody owns or controls Bitcoin and everyone can take part. Through many of its unique properties, Bitcoin allows exciting uses that could not be covered by any previous payment system.",
@@ -25,6 +26,7 @@ const data = [
         "id": "bitcoincash",
         "name": "Bitcoin Cash",
         "shortName": "BCH",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -56,6 +58,7 @@ const data = [
         "id": "superbitcoin",
         "name": "Super Bitcoin",
         "shortName": "SBTC",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -79,6 +82,7 @@ const data = [
         "id": "bitcoinx",
         "name": "BitcoinX",
         "shortName": "BCX",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -102,6 +106,7 @@ const data = [
         "id": "bitcoinlightning",
         "name": "Lightning Bitcoin",
         "shortName": "LBTC",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -125,6 +130,7 @@ const data = [
         "id": "bitcoingod",
         "name": "Bitcoin God",
         "shortName": "GOD",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -148,6 +154,7 @@ const data = [
         "id": "bitcoincashplus",
         "name": "Bitcoin Cash Plus",
         "shortName": "BCP",
+        "isCrawlable": true,
         "block": "509695",
         "links": [
             {
@@ -168,6 +175,7 @@ const data = [
         "id": "bitcoinuranium",
         "name": "Bitcoin Uranium",
         "shortName": "BUM",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -188,6 +196,7 @@ const data = [
         "id": "bitcoinatom",
         "name": "Bitcoin Atom",
         "shortName": "BCA",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -211,6 +220,7 @@ const data = [
         "id": "bitcoinsilver",
         "name": "Bitcoin Silver",
         "shortName": "BTCS",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -235,6 +245,7 @@ const data = [
         "id": "unitedbitcoin",
         "name": "UnitedBitcoin ",
         "shortName": "UB",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -258,6 +269,7 @@ const data = [
         "id": "bitcoindiamond",
         "name": "Bitcoin Diamond",
         "shortName": "BCD",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -281,6 +293,7 @@ const data = [
         "id": "bitcoinoil",
         "name": "Bitcoin Oil ",
         "shortName": "OBTC",
+        "isCrawlable": true,
         "links": [],
         "parents": [
             {
@@ -295,6 +308,7 @@ const data = [
         "id": "bitcoinworld",
         "name": "Bitcoin World",
         "shortName": "BTW",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -314,6 +328,7 @@ const data = [
         "id": "bitcoinstake",
         "name": "Bitcoin Stake",
         "shortName": "BTCS",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -333,6 +348,7 @@ const data = [
         "id": "bitcoinfaith",
         "name": "Bitcoin Faith",
         "shortName": "BTF",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -352,6 +368,7 @@ const data = [
         "id": "bitcointop",
         "name": "Bitcoin Top",
         "shortName": "BTT",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -371,6 +388,7 @@ const data = [
         "id": "bitcoinfile",
         "name": "Bitcoin File",
         "shortName": "BIFI",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -390,6 +408,7 @@ const data = [
         "id": "bitcoinsegwit",
         "name": "Bitcoin Segwit2X X11",
         "shortName": "B2X",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -413,6 +432,7 @@ const data = [
         "id": "bitcoinpizza",
         "name": "Bitcoin Pizza",
         "shortName": "BPA",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -432,6 +452,7 @@ const data = [
         "id": "bitcoinsmart",
         "name": "Bitcoin Smart",
         "shortName": "BCS",
+        "isCrawlable": true,
         "status": "pending",
         "links": [
             {
@@ -452,6 +473,7 @@ const data = [
         "id": "bitcoinore",
         "name": "Bitcoin Ore",
         "shortName": "BCO",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -471,6 +493,7 @@ const data = [
         "id": "bitcoinlite",
         "name": "Bitcoin LITE",
         "shortName": "BTCL",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -490,6 +513,7 @@ const data = [
         "id": "bitcoininterest",
         "name": "Bitcoin Interest",
         "shortName": "BCI",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -509,6 +533,7 @@ const data = [
         "id": "quantumbitcoin",
         "name": "Quantum Bitcoin",
         "shortName": "QBTC",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -528,6 +553,7 @@ const data = [
         "id": "bitcoinprivate",
         "name": "Bitcoin Private",
         "shortName": "BTCP",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -551,6 +577,7 @@ const data = [
         "id": "abitcoin",
         "name": "ABitcoin ",
         "shortName": "ABTC",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -570,6 +597,7 @@ const data = [
         "id": "bitcoinhot",
         "name": "Bitcoin Hot ",
         "shortName": "BTH",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -589,6 +617,7 @@ const data = [
         "id": "bitethereum",
         "name": "BitEthereum",
         "shortName": "BITE",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -608,6 +637,7 @@ const data = [
         "id": "bitcoinrhodium",
         "name": "Bitcoin Rhodium",
         "shortName": "BTR",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -628,6 +658,7 @@ const data = [
         "name": "Bitcoin Platinum",
         "scam": true,
         "shortName": "BTP",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "news",
@@ -647,6 +678,7 @@ const data = [
         "id": "bitcoinclean",
         "name": "BitcoinClean",
         "shortName": "BCL",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -666,6 +698,7 @@ const data = [
         "id": "bitcoinboy",
         "name": "BitCoinBoy",
         "shortName": "BCB",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -685,6 +718,7 @@ const data = [
         "id": "bitcoinzero",
         "name": "Bitcoin Zero",
         "shortName": "BZX",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -705,6 +739,7 @@ const data = [
         "id": "classicbitcoin",
         "name": "ClassicBitcoin",
         "shortName": "CBTC",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -724,6 +759,7 @@ const data = [
         "id": "bitvote",
         "name": "BitVote",
         "shortName": "BTV",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -743,6 +779,7 @@ const data = [
         "id": "bitcoinsmart",
         "name": "Bitcoin Smart",
         "shortName": "BCS",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -763,6 +800,7 @@ const data = [
         "id": "bitcoinall",
         "name": "Bitcoin All",
         "shortName": "BTA",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -782,6 +820,7 @@ const data = [
         "id": "quantumbitcoin",
         "name": "Quantum Bitcoin",
         "shortName": "QBTC",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -801,6 +840,7 @@ const data = [
         "id": "bitcoinnew",
         "name": "Bitcoin New",
         "shortName": "BTN",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -820,6 +860,7 @@ const data = [
         "id": "bitcoinnano",
         "name": "Bitcoin Nano",
         "shortName": "BTN",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -839,6 +880,7 @@ const data = [
         "id": "bitcore",
         "name": "Bitcore",
         "shortName": "BTX",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -858,6 +900,7 @@ const data = [
         "id": "bitcoinclashic",
         "name": "Bitcoin Clashic",
         "shortName": "BCHC",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -877,6 +920,7 @@ const data = [
         "id": "bitcoinpay",
         "name": "Bitcoin Pay",
         "shortName": "BTP",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -896,6 +940,7 @@ const data = [
         "id": "bitclassic",
         "name": "Bitclassic",
         "shortName": "B2C",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -915,6 +960,7 @@ const data = [
         "id": "bitcoineco",
         "name": "Bitcoin Eco",
         "shortName": "BEC",
+        "isCrawlable": false,
         "links": [
             {
                 "type": "website",
@@ -935,6 +981,7 @@ const data = [
         "id": "fastbitcoin",
         "name": "Fast Bitcoin",
         "shortName": "FBTC",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -954,6 +1001,7 @@ const data = [
         "id": "bitcoincommunity",
         "name": "Bitcoin Community",
         "shortName": "BTSQ",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -973,6 +1021,7 @@ const data = [
         "id": "clam",
         "name": "Clam",
         "shortName": "CLAM",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -992,6 +1041,7 @@ const data = [
         "id": "bitcoincore",
         "name": "Bitcoin Core",
         "shortName": "BCC",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -1011,6 +1061,7 @@ const data = [
         "id": "bitcoinatcbc",
         "name": "Bitcoin@CBC",
         "shortName": "BCBC",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -1030,6 +1081,7 @@ const data = [
         "id": "bitcoincandy",
         "name": "Bitcoin Candy",
         "shortName": "CDY",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -1049,6 +1101,7 @@ const data = [
         "id": "bitcoinwonder",
         "name": "Bitcoin Wonder",
         "shortName": "BCW",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -1068,6 +1121,7 @@ const data = [
         "id": "newbitcoin",
         "name": "New Bitcoin",
         "shortName": "NBTC",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -1087,6 +1141,7 @@ const data = [
         "id": "bigbitcoin",
         "name": "Big Bitcoin",
         "shortName": "BBC",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -1106,6 +1161,7 @@ const data = [
         "id": "xenon",
         "name": "Xenon",
         "shortName": "XNN",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -1125,6 +1181,7 @@ const data = [
         "id": "bitcoinhush",
         "name": "Bitcoin Hush",
         "shortName": "BTCH",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -1144,6 +1201,7 @@ const data = [
         "id": "worldbitcoin",
         "name": "World Bitcoin",
         "shortName": "WBTC",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -1163,6 +1221,7 @@ const data = [
         "id": "bitcointwo",
         "name": "Bitcoin 2",
         "shortName": "BTC2",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -1182,6 +1241,7 @@ const data = [
         "id": "bitcoinprime",
         "name": "Bitcoin Prime",
         "shortName": "BPR",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -1201,6 +1261,7 @@ const data = [
         "id": "anonymousbitcoin",
         "name": "Anonymous Bitcoin",
         "shortName": "ANON",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -1220,6 +1281,7 @@ const data = [
         "id": "bitcoinparallel",
         "name": "Bitcoin Parallel",
         "shortName": "BCP",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -1239,6 +1301,7 @@ const data = [
         "id": "dalilcoin",
         "name": "Dalilcoin",
         "shortName": "DLC",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -1258,6 +1321,7 @@ const data = [
         "id": "bitcoincloud",
         "name": "Bitcoin Cloud",
         "shortName": "BCL",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -1277,6 +1341,7 @@ const data = [
         "id": "foxbtc",
         "name": "Fox BTC",
         "shortName": "FOXBTC",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -1296,6 +1361,7 @@ const data = [
         "id": "microbitcoin",
         "name": "MicroBitcoin",
         "shortName": "MBC",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -1315,6 +1381,7 @@ const data = [
         "id": "bitcoinair",
         "name": "Bitcoin Air",
         "shortName": "AIR",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -1334,6 +1401,7 @@ const data = [
         "id": "bitcoinhex",
         "name": "BitcoinHEX",
         "shortName": "BHX",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -1353,6 +1421,7 @@ const data = [
         "id": "bitcoin_lambo",
         "name": "Bitcoin Lambo",
         "shortName": "BTL",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -1372,6 +1441,7 @@ const data = [
         "id": "bitcoinclass",
         "name": "Bitcoin Class",
         "shortName": "BCS",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -1392,6 +1462,7 @@ const data = [
         "id": "bitcoinpro",
         "name": "Bitcoin Pro",
         "shortName": "BTP",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -1411,6 +1482,7 @@ const data = [
         "id": "qeditas",
         "name": "Qeditas",
         "shortName": "QED",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -1430,6 +1502,7 @@ const data = [
         "id": "bitcoinholocaust",
         "name": "Bitcoin Holocaust",
         "shortName": "BTHOL",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -1449,6 +1522,7 @@ const data = [
         "id": "bitcointi",
         "name": "BitcoinTi",
         "shortName": "BTCTI",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -1468,6 +1542,7 @@ const data = [
         "id": "bitcoindollar",
         "name": "Bitcoin Dollar",
         "shortName": "BTD",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -1487,6 +1562,7 @@ const data = [
         "id": "smartbitcoin",
         "name": "Smart Bitcoin",
         "shortName": "SBC",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -1506,6 +1582,7 @@ const data = [
         "id": "bitcoindao",
         "name": "Bitcoin Dao",
         "shortName": "BTD",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -1525,6 +1602,7 @@ const data = [
         "id": "bitcoinblvck",
         "name": "Bitcoin Blvck",
         "shortName": "BTCV",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -1544,6 +1622,7 @@ const data = [
         "id": "bitcoincoral",
         "name": "Bitcoin Coral",
         "shortName": "BTCO",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -1563,6 +1642,7 @@ const data = [
         "id": "bitcoinsudu",
         "name": "Bitcoin Sudu",
         "shortName": "SUDU",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -1582,6 +1662,7 @@ const data = [
         "id": "bitcoinking",
         "name": "Bitcoin King",
         "shortName": "BCK",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -1601,6 +1682,7 @@ const data = [
         "id": "bitcoinx2",
         "name": "Bitcoinx2",
         "shortName": "BTCX2",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -1620,6 +1702,7 @@ const data = [
         "id": "bitcoinmetal",
         "name": "Bitcoin Metal",
         "shortName": "BTCM",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -1639,6 +1722,7 @@ const data = [
         "id": "bitclassiccoin",
         "name": "BitClassic Coin",
         "shortName": "BICC",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
