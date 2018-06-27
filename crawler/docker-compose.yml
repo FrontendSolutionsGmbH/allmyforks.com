@@ -65,6 +65,18 @@ services:
     depends_on:
       - db
 
+  ticker_binance:
+    image: rainu/cryptocrawler
+    build:
+      context: ./
+    environment:
+      - CFG_MONGO_HOST=db
+      - CFG_MONGO_DB=binance
+    command: "binance_ticker.js"
+    restart: always
+    depends_on:
+      - db
+
   crawler_okex:
     image: rainu/cryptocrawler
     build:

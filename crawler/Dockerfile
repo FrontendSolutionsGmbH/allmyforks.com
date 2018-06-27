@@ -16,6 +16,7 @@ COPY ./coinbase.js /application/coinbase.js
 
 COPY ./binance/ /application/binance
 COPY ./binance.js /application/binance.js
+COPY ./binance_ticker.js /application/binance_ticker.js
 
 COPY ./bitfinex/ /application/bitfinex
 COPY ./bitfinex.js /application/bitfinex.js
