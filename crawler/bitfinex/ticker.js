@@ -120,11 +120,11 @@ const start = function (currencies) {
   socket.on('open', () => {
     //register foreach currency
     for (let currency of currencies) {
-      let msg = JSON.stringify({
-        event: "subscribe",
-        channel: "ticker",
-        symbol: currency.symbol
-      })
+      let msg = `{
+        "event": "subscribe",
+        "channel": "ticker",
+        "symbol": "${currency.symbol}"
+      }`
 
       socket.send(msg)
     }
