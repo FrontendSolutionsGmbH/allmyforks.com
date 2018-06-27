@@ -35,7 +35,7 @@ const transformData = function(currency, data) {
   return {
     from: currency.source,
     to: currency.target,
-    date: new Date(data.t),
+    date: new Date(),
     course: close,
     volume: Number.parseFloat(data.Q),
     change: {
