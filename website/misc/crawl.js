@@ -72,4 +72,4 @@ var doDownload = function (coins, currentStep, stepWidth) {
 }
 
 
-doDownload(coins, 0, 2)
+doDownload(coins, 0, 5)

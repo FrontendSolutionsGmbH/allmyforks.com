@@ -57,6 +57,7 @@
             {{/each}}
         </ul>
 
+        {{#if ratios}}
         Hops: <br/>
         <ul>
 
@@ -71,6 +72,17 @@
             {{/each}}
 
         </ul>
+        {{/if}}
+
+        {{#unless isCrawlable}}
+        Duplicate Symbols:
+        <ul>
+            {{#each crawlAlternativesWithSameSymbol}}
+            <li>{{name}}</li>
+            {{/each}}
+        </ul>
+        {{/unless}}
+
     </div>
 
 

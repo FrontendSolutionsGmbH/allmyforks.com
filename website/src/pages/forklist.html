@@ -69,7 +69,12 @@
             <tr>
                 <td sorttable_customkey="{{math @index '+' 1}}">#{{math @index '+' 1}}</td>
                 <td><a href="/{{../language.id}}/details/{{id}}/">{{name}}</a></td>
-                <td class="w3-hide-small" sorttable_customkey="{{ratio}}">{{ratio}} {{shortName}}</td>
+                <td class="w3-hide-small" sorttable_customkey="{{ratio}}" style="white-space: nowrap;" title="{{#unless
+                    isCrawlable}}{{#each crawlAlternativesWithSameSymbol}}{{name}}{{#unless @last}}, {{/unless}}{{/each}}{{/unless}}">
+                    {{ratio}}
+                    {{shortName}}{{#unless
+                    isCrawlable}}*{{/unless}}
+                </td>
                 <td class="w3-hide-small"
                     sorttable_customkey="{{{localDate date 'timestamp'}}}{{#unless date}}9999991703000{{/unless}}">
                     {{{localDateInSpan date dateFormat}}}

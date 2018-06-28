@@ -270,6 +270,7 @@ const data = [
         "name": "Bitcoin Diamond",
         "shortName": "BCD",
         "isCrawlable": true,
+        "notes": "check price of binance",
         "links": [
             {
                 "type": "website",
@@ -308,7 +309,8 @@ const data = [
         "id": "bitcoinworld",
         "name": "Bitcoin World",
         "shortName": "BTW",
-        "isCrawlable": true,
+        "isCrawlable": false,
+        "crawlAlternativesWithSameSymbol": [{name: "BitWhite"}],
         "links": [
             {
                 "type": "website",
@@ -328,7 +330,8 @@ const data = [
         "id": "bitcoinstake",
         "name": "Bitcoin Stake",
         "shortName": "BTCS",
-        "isCrawlable": true,
+        "isCrawlable": false,
+        "crawlAlternativesWithSameSymbol": [{name: "Bitcoin Scrypt"}],
         "links": [
             {
                 "type": "website",
@@ -473,7 +476,8 @@ const data = [
         "id": "bitcoinore",
         "name": "Bitcoin Ore",
         "shortName": "BCO",
-        "isCrawlable": true,
+        "isCrawlable": false,
+        "crawlAlternativesWithSameSymbol": [{name: "BridgeCoin"}],
         "links": [
             {
                 "type": "website",
@@ -518,6 +522,10 @@ const data = [
             {
                 "type": "website",
                 "url": "https://www.bitcoininterest.io/"
+            },
+            {
+                "type": "coinmarketcap",
+                "url": "https://coinmarketcap.com/currencies/bitcoin-interest/"
             }
         ],
         "parents": [
@@ -800,7 +808,8 @@ const data = [
         "id": "bitcoinall",
         "name": "Bitcoin All",
         "shortName": "BTA",
-        "isCrawlable": true,
+        "isCrawlable": false,
+        "crawlAlternativesWithSameSymbol": [{name: "Allion"}],
         "links": [
             {
                 "type": "website",
@@ -885,6 +894,10 @@ const data = [
             {
                 "type": "website",
                 "url": "https://bitcore.cc/"
+            },
+            {
+                "type": "coinmarketcap",
+                "url": "https://coinmarketcap.com/currencies/bitcore"
             }
         ],
         "parents": [
@@ -961,6 +974,7 @@ const data = [
         "name": "Bitcoin Eco",
         "shortName": "BEC",
         "isCrawlable": false,
+        "crawlAlternativesWithSameSymbol": [{name: "BeaoCoin"}, {name: "BeautyChain"}],
         "links": [
             {
                 "type": "website",
@@ -1141,7 +1155,8 @@ const data = [
         "id": "bigbitcoin",
         "name": "Big Bitcoin",
         "shortName": "BBC",
-        "isCrawlable": true,
+        "isCrawlable": false,
+        "crawlAlternativesWithSameSymbol": [{name: "TraDove B2BCoin"}],
         "links": [
             {
                 "type": "website",
@@ -1166,6 +1181,10 @@ const data = [
             {
                 "type": "website",
                 "url": "http://xenon.network/"
+            },
+            {
+                "type": "coinmarketcap",
+                "url": "https://coinmarketcap.com/currencies/xenon"
             }
         ],
         "parents": [
@@ -1201,7 +1220,7 @@ const data = [
         "id": "worldbitcoin",
         "name": "World Bitcoin",
         "shortName": "WBTC",
-        "isCrawlable": false,
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -1301,7 +1320,8 @@ const data = [
         "id": "dalilcoin",
         "name": "Dalilcoin",
         "shortName": "DLC",
-        "isCrawlable": true,
+        "isCrawlable": false,
+        "crawlAlternativesWithSameSymbol": [{name: "Dollarcoin"}],
         "links": [
             {
                 "type": "website",
@@ -1381,7 +1401,8 @@ const data = [
         "id": "bitcoinair",
         "name": "Bitcoin Air",
         "shortName": "AIR",
-        "isCrawlable": true,
+        "isCrawlable": false,
+        "crawlAlternativesWithSameSymbol": [{name: "AirToken"}],
         "links": [
             {
                 "type": "website",
@@ -1562,7 +1583,8 @@ const data = [
         "id": "smartbitcoin",
         "name": "Smart Bitcoin",
         "shortName": "SBC",
-        "isCrawlable": true,
+        "isCrawlable": false,
+        "crawlAlternativesWithSameSymbol": [{name: "StrikeBitClub"}],
         "links": [
             {
                 "type": "website",
@@ -1702,7 +1724,8 @@ const data = [
         "id": "bitcoinmetal",
         "name": "Bitcoin Metal",
         "shortName": "BTCM",
-        "isCrawlable": true,
+        "isCrawlable": false,
+        "crawlAlternativesWithSameSymbol": [{name: "BTCMoon"}],
         "links": [
             {
                 "type": "website",
