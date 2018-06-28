@@ -131,6 +131,7 @@ const list = function() {
 
       return data.data.map(entity => {
         return {
+          id: entity.id,
           symbol: entity.symbol,
           slug: entity.website_slug,
         }

@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const CourseHistorical = require('./db/historical')
+const CourseTicker = require('./db/ticker')
 const config = require('./config');
 const pathfinder = require('./pathfinder')
 const pairfinder = require('./pairfinder')
@@ -10,11 +11,13 @@ const getConnection = function(source, sources = config.source){
     for(let dbCon of sources) {
       if(dbCon.name === source){
         let mc = mongoose.createConnection(dbCon.url)
-        let model = mc.model(CourseHistorical.name, CourseHistorical.schema)
 
         connections[source] = {
           connection: mc,
-          model: model
+          model: {
+            ticker: mc.model(CourseTicker.name, CourseTicker.schema),
+            historical: mc.model(CourseHistorical.name, CourseHistorical.schema)
+          }
         }
 
         break;
@@ -45,29 +48,59 @@ const resolvePath = function(path, days) {
     const node = path[i]
     const dbCon = getConnection(node.source)
 
-    let p = dbCon.model.find({
+    //first we look at ticker -> there are the latest courses (if available)
+    //second we look for the rest in the historical
+
+    let p = dbCon.model.ticker.find({
       "from.name": node.from.name,
       "from.type": node.from.type,
       "to.name": node.to.name,
       "to.type": node.to.type,
     })
-    .limit(days)
-    .sort({ date: -1 })
-    .select({ "close": 1, "date": 1, "_id": 0})
+    .select({ "course": 1, "date": 1, "_id": 0 })
     .lean()
     .then(result => {
       hops[i] = {
         courses: []
       }
 
+      let count = 0;
       for(let doc of result) {
         hops[i].courses.push({
-          ratio: doc.close,
+          ratio: doc.course,
           date: doc.date
         })
+        count++;
       }
 
       node.courses = hops[i].courses
+
+      return count;
+    })
+    .then((courseCount) => {
+      const fetchLimit = days - courseCount;
+      if(fetchLimit <= 0) return;
+
+      let hP = dbCon.model.historical.find({
+        "from.name": node.from.name,
+        "from.type": node.from.type,
+        "to.name": node.to.name,
+        "to.type": node.to.type,
+      })
+      .limit(fetchLimit)
+      .sort({ date: -1 })
+      .select({ "close": 1, "date": 1, "_id": 0})
+      .lean()
+      .then(result => {
+        for(let doc of result) {
+          hops[i].courses.push({
+            ratio: doc.close,
+            date: doc.date
+          })
+        }
+      })
+
+      return hP
     })
 
     promises.push(p)
