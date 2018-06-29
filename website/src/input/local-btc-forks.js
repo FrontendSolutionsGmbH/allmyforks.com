@@ -35,20 +35,35 @@ const data = [
         "url": "https://coinmarketcap.com/currencies/bitcoin-cash"
       }
     ],
-    "markets": [
-      {
-        "id": "okex"
-      },
-      {
-        "id": "binance"
-      }
-    ],
     "parents": [
       {
         "id": "bitcoin",
         "ratio": 1,
         "block": "478558",
         "date": "2017-08-01T11:16:14Z"
+      }
+    ]
+  },
+  {
+    "id": "bitcoingold",
+    "name": "Bitcoin Gold",
+    "shortName": "BTG",
+    "links": [
+      {
+        "type": "website",
+        "url": "https://bitcoingold.org/"
+      },
+      {
+        "type": "coinmarketcap",
+        "url": "https://coinmarketcap.com/currencies/bitcoin-gold/"
+      }
+    ],
+    "parents": [
+      {
+        "id": "bitcoin",
+        "ratio": 1,
+        "block": "491407",
+        "date": "2017-10-23T23:20:39Z"
       }
     ]
   },

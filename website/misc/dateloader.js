@@ -44,7 +44,7 @@ function isNumeric(n) {
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 var getBitcoinTimeByBlock = function(block, timeout) {
-	var url = 'http://blockchain.info/de/block-height/' + block
+	var url = 'http://blockchain.com/de/btc/block-height/' + block
 
 	
 	 var callPromise = () => {
