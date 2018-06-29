@@ -17,26 +17,6 @@ const data = [
         "parents": []
     },
     {
-        "id": "byteether",
-        "name": "Bytether",
-        "shortName": "BTH",
-        "isCrawlable": true,
-        "links": [
-            {
-                "type": "website",
-                "url": "http://www.bytether.com/"
-            }
-        ],
-        "parents": [
-            {
-                "id": "ethereum",
-                "ratio": 1,
-                "block": "478558",
-                "date": ""
-            }
-        ]
-    },
-    {
         "id": "etherinc",
         "name": "Ether Inc",
         "shortName": "ETI",
@@ -52,7 +32,8 @@ const data = [
                 "id": "ethereum",
                 "ratio": 1,
                 "block": "5078585",
-                "date": "2018-02-12T19:27:45Z"
+                "date": "2018-02-12T19:27:45Z",
+                "type": "hardfork"
             }
         ]
     },
@@ -72,7 +53,8 @@ const data = [
                 "id": "ethereum",
                 "ratio": 1,
                 "block": "4936270",
-                "date": "2018-01-19T18:58:45Z"
+                "date": "2018-01-19T18:58:45Z",
+                "type": "hardfork"
             }
         ]
     },
@@ -92,7 +74,8 @@ const data = [
                 "id": "ethereum",
                 "ratio": 1,
                 "block": "4730660",
-                "date": "2017-12-14T18:58:45Z"
+                "date": "2017-12-14T18:58:45Z",
+                "type": "hardfork"
             }
         ]
     },
@@ -112,7 +95,8 @@ const data = [
                 "id": "ethereum",
                 "ratio": 1,
                 "block": "4730666",
-                "date": "2017-12-14T18:58:45Z"
+                "date": "2017-12-14T18:58:45Z",
+                "type": "hardfork"
             }
         ]
     },
@@ -136,10 +120,65 @@ const data = [
                 "id": "ethereum",
                 "ratio": 1,
                 "block": "4730666",
-                "date": "2017-12-14T18:58:45Z"
+                "date": "2017-12-14T18:58:45Z",
+                "type": "hardfork"
+            }
+        ]
+    },
+    {
+        "id": "ethereumclassic",
+        "name": "Ethereum Classic",
+        "shortName": "ETC",
+        "isCrawlable": true,
+        "links": [
+            {
+                "type": "website",
+                "url": "https://ethereumclassic.github.io/"
+            },
+            {
+                "type": "coinmarketcap",
+                "url": "https://coinmarketcap.com/currencies/ethereum-classic/"
+            }
+        ],
+        "parents": [
+            {
+                "id": "ethereum",
+                "ratio": 1,
+                "block": "1920000",
+                "date": "2016-07-20T18:58:45Z",
+                "type": "hardfork"
+            }
+        ]
+    },
+    {
+        "id": "ethereumcrystal",
+        "name": "Ethereum Crystal",
+        "shortName": "CRT",
+        "isCrawlable": true,
+        "links": [
+            {
+                "type": "website",
+                "url": "http://ethergold.gold/"
+            },
+            {
+                "type": "coinmarketcap",
+                "url": "https://coinmarketcap.com/currencies/ethereum-gold/"
+            }
+        ],
+        "parents": [
+            {
+                "id": "ethereum",
+                "ratio": 1,
+                "block": "5300000",
+                "date": "2018-03-22T18:58:45Z",
+                "type": "hardfork"
             }
         ]
     }
 ]
+
+
+
+
 
 module.exports = data
