@@ -27,6 +27,21 @@ services:
     depends_on:
       - db
 
+  ticker_coinmarketcap:
+    image: rainu/cryptocrawler
+    build:
+      context: ./
+    environment:
+      - CFG_MONGO_HOST=db
+      - CFG_MONGO_DB=coinmarketcap
+      - CFG_CRON=0 */5 * * * *
+      - CFG_REQUEST_BATCH=25
+      - CFG_REQUEST_COOLDOWN=60000
+    command: "coinmarketcap_ticker.js"
+    restart: always
+    depends_on:
+      - db
+
   crawler_bitfinex:
     image: rainu/cryptocrawler
     build:
@@ -36,6 +51,18 @@ services:
       - CFG_MONGO_DB=bitfinex
       - CFG_CRON=0 0 */4 * * *
     command: "bitfinex.js"
+    restart: always
+    depends_on:
+      - db
+
+  ticker_bitfinex:
+    image: rainu/cryptocrawler
+    build:
+      context: ./
+    environment:
+      - CFG_MONGO_HOST=db
+      - CFG_MONGO_DB=bitfinex
+    command: "bitfinex_ticker.js"
     restart: always
     depends_on:
       - db
@@ -53,6 +80,18 @@ services:
     depends_on:
       - db
 
+  ticker_binance:
+    image: rainu/cryptocrawler
+    build:
+      context: ./
+    environment:
+      - CFG_MONGO_HOST=db
+      - CFG_MONGO_DB=binance
+    command: "binance_ticker.js"
+    restart: always
+    depends_on:
+      - db
+
   crawler_okex:
     image: rainu/cryptocrawler
     build:
@@ -62,6 +101,18 @@ services:
       - CFG_MONGO_DB=okex
       - CFG_CRON=0 0 */4 * * *
     command: "okex.js"
+    restart: always
+    depends_on:
+      - db
+
+  ticker_okex:
+    image: rainu/cryptocrawler
+    build:
+      context: ./
+    environment:
+      - CFG_MONGO_HOST=db
+      - CFG_MONGO_DB=okex
+    command: "okex_ticker.js"
     restart: always
     depends_on:
       - db
@@ -114,7 +165,7 @@ services:
       - CFG_SOURCE_4_NAME=fiat
       - CFG_SOURCE_5_URL=mongodb://db/okex
       - CFG_SOURCE_5_NAME=okex.com
-    command: "server.js"
+    command: "--max-old-space-size=4096 server.js"
     ports:
       - "3000:3000"
     restart: always

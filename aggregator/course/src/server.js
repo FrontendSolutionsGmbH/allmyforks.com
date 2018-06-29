@@ -6,10 +6,12 @@ var app = express()
 
 app.route('/api/ratios/:type/:symbol')
   .get(function(req, res) {
-    coursefinder({
+    const days = Number.parseInt(req.query.days) || coursefinder.DEFAULT_DAYS
+
+    coursefinder.getRatios({
       name: req.params.symbol,
       type: req.params.type
-    })
+    }, coursefinder.DEFAULT_DESTINATION, days)
     .then(ratios => {
       res.send({
         ratios: ratios
@@ -25,13 +27,15 @@ app.route('/api/ratios/:type/:symbol')
 
 app.route('/api/ratios/:fType/:fSymbol/:tType/:tSymbol')
   .get(function(req, res) {
-    coursefinder({
+    const days = Number.parseInt(req.query.days) || coursefinder.DEFAULT_DAYS
+
+    coursefinder.getRatios({
       name: req.params.fSymbol,
       type: req.params.fType
     },{
       name: req.params.tSymbol,
       type: req.params.tType
-    })
+    }, days)
     .then(ratios => {
       res.send({
         ratios: ratios

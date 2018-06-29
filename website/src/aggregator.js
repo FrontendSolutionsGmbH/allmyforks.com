@@ -2,11 +2,11 @@ function isNumeric(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
 }
 
-var enrichPricesAndParents = function(coin) {
+var enrichPricesAndParents = function (coin) {
 
-    if (!coin.priceHistory) {
-         coin.priceHistory = [Math.random(), Math.random(), Math.random(), Math.random(), Math.random(), Math.random(), Math.random(), Math.random(), Math.random()]
-    }
+    /*if (!coin.priceHistory) {
+     coin.priceHistory = [Math.random(), Math.random(), Math.random(), Math.random(), Math.random(), Math.random(), Math.random(), Math.random(), Math.random()]
+     }*/
 
     if (coin.price && coin.priceHistory) {
         var max = Math.max(...coin.priceHistory)
@@ -17,9 +17,22 @@ var enrichPricesAndParents = function(coin) {
         var fy = height / (max - min)
         coin.priceGraphData = {
             width: width,
-            height: height,
-            data: coin.priceHistory.reduce((t, e, i) => (t ? t + 'L ' : 'M') + '' + i * fx + ' ' + (e - min) * fy, '')
+            height: height + 10,
+            data: coin.priceHistory.reduce((t, e, i) => (t ? t + 'L ' : 'M') + '' + i * fx + ' ' + (((e - min) * fy) + 5), '')
         }
+
+        if (coin.priceHistory.length > 1 && coin.priceHistory[1] > 0.0) {
+            coin.priceChangeOneDayPercentage = (coin.priceHistory[0] - coin.priceHistory[1]) / coin.priceHistory[1]
+            coin.priceChangeOneDayIsPositive = coin.priceChangeOneDayPercentage > 0.0
+            coin.priceChangeOneDayIsNegative = coin.priceChangeOneDayPercentage < 0.0
+        }
+
+        if (coin.priceHistory.length > 7 && coin.priceHistory[1] > 0.0) {
+            coin.priceChangeSevenDaysPercentage = (coin.priceHistory[0] - coin.priceHistory[7]) / coin.priceHistory[7]
+            coin.priceChangeSevenDaysIsPositive = coin.priceChangeSevenDaysPercentage > 0.0
+            coin.priceChangeSevenDaysIsNegative = coin.priceChangeSevenDaysPercentage < 0.0
+        }
+
     }
 
 
@@ -30,13 +43,13 @@ var enrichPricesAndParents = function(coin) {
             p.priceTimesForkRatio = ''
         }
 
-         if (!p.dateFormat) {
-             p.dateFormat = "date"
-         }
+        if (!p.dateFormat) {
+            p.dateFormat = "date"
+        }
     })
 
     if (coin.id === 'bitcoincash') {
-      //  console.log(coin)
+        //  console.log(coin)
         //process.exit()
     }
     return coin
@@ -59,7 +72,7 @@ var enrichForks = function (currentCoin) {
             }
 
 
-         })
+        })
     }
 
     currentCoin.priceSumForks = sumValues
@@ -81,7 +94,6 @@ var mergeData = function (localData, crawledData) {
     }
 
 
-
     // merge fiat crawled and local information
     data.fiats = data.fiats.map((f) => {
         var crawledFiat = crawledData.fiats.find(cf => cf.id === f.id)
@@ -91,7 +103,13 @@ var mergeData = function (localData, crawledData) {
     // merge only raw information per coin
     data.coins = data.coins.map((d) => {
         var crawledCoin = crawledData.coins.find(cf => cf.id === d.id)
-        var mergedCoin = Object.assign(d, crawledCoin)
+
+
+        var mergedCoin = d
+        if (d.isCrawlable) {
+            mergedCoin = Object.assign(d, crawledCoin)
+        }
+
 
         if (isNumeric(mergedCoin.price)) {
             mergedCoin.price = parseFloat(mergedCoin.price)
@@ -114,10 +132,10 @@ var mergeData = function (localData, crawledData) {
     data.coins.map((d) => {
         if (d.parents && d.parents.length > 0) {
             d.parents.map((p) => {
-                 var parentCoin = data.coins.find(cf => cf.id === p.id)
-                 if (parentCoin) {
+                var parentCoin = data.coins.find(cf => cf.id === p.id)
+                if (parentCoin) {
                     parentCoin.forks.push(d)
-                 }
+                }
             })
         }
     })
@@ -126,7 +144,7 @@ var mergeData = function (localData, crawledData) {
     data.coins = data.coins.map((d) => {
         return enrichForks(d)
     })
-    
+
 
     // sort forks by highest price*ratio
     // add parent information
@@ -143,12 +161,12 @@ var mergeData = function (localData, crawledData) {
             })
         }
 
-         if (d.parents) {
-                d.parents = d.parents.map((p) => {
-                      var fullParent = data.coins.find(cf => cf.id === p.id)  
-                      return Object.assign(p, fullParent)
-                })
-         }
+        if (d.parents) {
+            d.parents = d.parents.map((p) => {
+                var fullParent = data.coins.find(cf => cf.id === p.id)
+                return Object.assign(p, fullParent)
+            })
+        }
 
         return d
     })

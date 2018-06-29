@@ -5,16 +5,16 @@ var fs = require('fs-extra');
 const helper = require('./helper.js')
 const aggregator = require('./aggregator.js')
 
-var sourceList = fs.readFileSync('./src/forklist.html', 'utf8')
-var sourceImprint = fs.readFileSync('./src/imprint.html', 'utf8')
-var sourcePrivacy = fs.readFileSync('./src/privacy.html', 'utf8')
-var sourceDisclaimer = fs.readFileSync('./src/disclaimer.html', 'utf8')
-var sourceHowTo = fs.readFileSync('./src/howtoclaimforkedcoins.html', 'utf8')
-var sourceSupportUs = fs.readFileSync('./src/supportus.html', 'utf8')
-var sourceWhatAreForks = fs.readFileSync('./src/whatisafork.html', 'utf8')
-var sourceDetails = fs.readFileSync('./src/details.html', 'utf8')
+var sourceList = fs.readFileSync('./src/pages/forklist.html', 'utf8')
+var sourceImprint = fs.readFileSync('./src/pages/imprint.html', 'utf8')
+var sourcePrivacy = fs.readFileSync('./src/pages/privacy.html', 'utf8')
+var sourceDisclaimer = fs.readFileSync('./src/pages/disclaimer.html', 'utf8')
+var sourceHowTo = fs.readFileSync('./src/pages/howtoclaimforkedcoins.html', 'utf8')
+var sourceSupportUs = fs.readFileSync('./src/pages/supportus.html', 'utf8')
+var sourceWhatAreForks = fs.readFileSync('./src/pages/whatisafork.html', 'utf8')
+var sourceDetails = fs.readFileSync('./src/pages/details.html', 'utf8')
 var javascriptAsString = fs.readFileSync('./src/inc/custom.js', 'utf8') + '\r\n' + fs.readFileSync('./src/inc/sortable.js', 'utf8')
-var stylesAsString = fs.readFileSync('./src/inc/w3.css', 'utf8')+fs.readFileSync('./src/inc/custom.css', 'utf8')
+var stylesAsString = fs.readFileSync('./src/inc/w3.css', 'utf8') + fs.readFileSync('./src/inc/custom.css', 'utf8')
 var sourceFooter = fs.readFileSync('./src/inc/footer.html', 'utf8')
 
 const crawledData = require('./input/crawl.json')
@@ -133,6 +133,12 @@ data.languages.map((lang) => {
                 "day": "2-digit",
                 "month": "2-digit",
                 "year": "numeric"
+            },
+
+        },
+        "number": {
+            "percentage": {
+                "style": "percent"
             }
         }
     }

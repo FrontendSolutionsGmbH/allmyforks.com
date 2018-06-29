@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const CourseHistorical = require('./db/historical')
+const CourseTicker = require('./db/ticker')
 const config = require('./config');
 const pathfinder = require('./pathfinder')
 const pairfinder = require('./pairfinder')
@@ -10,11 +11,13 @@ const getConnection = function(source, sources = config.source){
     for(let dbCon of sources) {
       if(dbCon.name === source){
         let mc = mongoose.createConnection(dbCon.url)
-        let model = mc.model(CourseHistorical.name, CourseHistorical.schema)
 
         connections[source] = {
           connection: mc,
-          model: model
+          model: {
+            ticker: mc.model(CourseTicker.name, CourseTicker.schema),
+            historical: mc.model(CourseHistorical.name, CourseHistorical.schema)
+          }
         }
 
         break;
@@ -25,32 +28,79 @@ const getConnection = function(source, sources = config.source){
   return connections[source]
 }
 
-const resolvePath = function(path) {
+const getSave = function(array, index, defaultValue) {
+  if(!array) return defaultValue;
+
+  if(index >= array.length) {
+    if(index === 0) return defaultValue;
+
+    return getSave(array, index - 1, defaultValue)
+  }
+
+  return array[index];
+}
+
+const resolvePath = function(path, days) {
   let promises = []
-  let courses = new Array(path.length)
+  let hops = new Array(path.length)
 
   for(let i=0; i < path.length; i++) {
     const node = path[i]
     const dbCon = getConnection(node.source)
 
-    let p = dbCon.model.find({
+    //first we look at ticker -> there are the latest courses (if available)
+    //second we look for the rest in the historical
+
+    let p = dbCon.model.ticker.find({
       "from.name": node.from.name,
       "from.type": node.from.type,
       "to.name": node.to.name,
       "to.type": node.to.type,
     })
-    .limit(1)
-    .sort({ date: -1 })
-    .select({ "close": 1, "date": 1, "_id": 0})
+    .select({ "course": 1, "date": 1, "_id": 0 })
     .lean()
     .then(result => {
-      node.date = result[0].date
-      node.ratio = result[0].close
-
-      courses[i] = {
-        ratio: result[0].close,
-        date: result[0].date
+      hops[i] = {
+        courses: []
       }
+
+      let count = 0;
+      for(let doc of result) {
+        hops[i].courses.push({
+          ratio: doc.course,
+          date: doc.date
+        })
+        count++;
+      }
+
+      node.courses = hops[i].courses
+
+      return count;
+    })
+    .then((courseCount) => {
+      const fetchLimit = days - courseCount;
+      if(fetchLimit <= 0) return;
+
+      let hP = dbCon.model.historical.find({
+        "from.name": node.from.name,
+        "from.type": node.from.type,
+        "to.name": node.to.name,
+        "to.type": node.to.type,
+      })
+      .limit(fetchLimit)
+      .sort({ date: -1 })
+      .select({ "close": 1, "date": 1, "_id": 0})
+      .lean()
+      .then(result => {
+        for(let doc of result) {
+          hops[i].courses.push({
+            ratio: doc.close,
+            date: doc.date
+          })
+        }
+      })
+
+      return hP
     })
 
     promises.push(p)
@@ -58,30 +108,35 @@ const resolvePath = function(path) {
 
   return Promise.all(promises)
     .then(() => {
-      let ratio = 1;
-      let minDate = null
-      let maxDate = null
-
-      for(let course of courses) {
-        ratio *= course.ratio
-
-        if(!minDate || minDate > course.date) {
-          minDate = course.date
-        }
-        if(!maxDate || maxDate < course.date) {
-          maxDate = course.date
-        }
-
-      }
-
-      return {
-        ratio,
-        minDate,
-        maxDate,
+      let result = {
+        courses: [],
+        minDate: null,
+        maxDate: null,
         path
       }
+
+      for(let i=0; i < days; i++) {
+        result.courses.push(1)
+
+        for(let hop of hops) {
+          let hopCourse = getSave(hop.courses, i, { ratio: 1})
+          result.courses[i] *= hopCourse.ratio
+
+          if(!result.minDate || result.minDate > hopCourse.date) {
+            result.minDate = hopCourse.date
+          }
+          if(!result.maxDate || result.maxDate < hopCourse.date) {
+            result.maxDate = hopCourse.date
+          }
+        }
+      }
+
+      return result
     })
 }
+
+const DEFAULT_DESTINATION = { name: 'USD', type: 'fiat' }
+const DEFAULT_DAYS = 1
 
 /**
  * Get all found ratios of given source
@@ -96,9 +151,10 @@ const resolvePath = function(path) {
  *  "name": "USD",
  *  "type": "fiat"
  * }
+ * @param days how many historical days should be returned
  * @return An array with all found ratios
  * [{
- *   "ratio": 13.12,
+ *   "courses": [ 13.12 ],
  *   "maxDate: "2018-12-13T00:00:00.000Z",
  *   "minDate: "2018-12-13T00:00:00.000Z",
  *   "path": [{
@@ -110,16 +166,18 @@ const resolvePath = function(path) {
  *       "name": "USD",
  *       "type": "fiat"
  *     },
- *     "ratio": 13.12,
- *     "date": "2018-12-13T00:00:00.000Z"
+ *     "courses": [{
+ *      "ratio": 13.12,
+ *      "date": "2018-12-13T00:00:00.000Z"
+ *     }]
  *     "source": "coinbase.com"
  *   }]
  * }]
  */
-const getRatios = function(source, destination = { name: 'USD', type: 'fiat' }){
+const getRatios = function(source, destination = DEFAULT_DESTINATION, days = DEFAULT_DAYS){
   return pairfinder()
     .then(pairs => pathfinder(pairs, source, destination))
-    .then(paths => paths.map(resolvePath))
+    .then(paths => paths.map(path => resolvePath(path, days)))
     .then(promises => Promise.all(promises))
 }
 
@@ -134,4 +192,8 @@ if (require.main === module) {
   })
 }
 
-module.exports = getRatios;
+module.exports = {
+  DEFAULT_DESTINATION,
+  DEFAULT_DAYS,
+  getRatios
+};

@@ -23,7 +23,7 @@ const data = {
             "description": "How to claim my forked coins"
         },
         "whatareforks": {
-            "title": "What is a fork",
+            "title": "What is a Fork",
             "description": "What is a fork and what are the differences between soft and hard forks"
         },
         "privacy": {
@@ -43,7 +43,7 @@ const data = {
             "description": "Cryptocurrency Fork rankings, charts, and more"
         },
         "details": {
-            "title": "{{coin.shortName}} fork details",
+            "title": "{{coin.name}} ({{coin.shortName}}) Fork",
             "description": "Claim {{coin.shortName}} forked coins"
         }
     },

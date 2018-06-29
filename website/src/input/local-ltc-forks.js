@@ -3,6 +3,7 @@ const data = [
         "id": "litecoin",
         "name": "Litecoin",
         "shortName": "LTC",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -17,14 +18,14 @@ const data = [
                 "url": "https://coinmarketcap.com/currencies/litecoin/"
             }
         ],
-         "parents": [
-        ]
+        "parents": []
 
     },
     {
         "id": "litecoincash",
         "name": "Litecoin Cash",
         "shortName": "LCC",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -37,8 +38,8 @@ const data = [
         ],
         "parents": [
             {
-               "id": "litecoin",
-               "ratio": 1,
+                "id": "litecoin",
+                "ratio": 1,
                 "block": "1371111",
                 "date": "2018-02-18T19:33:24Z",
             }
@@ -48,6 +49,7 @@ const data = [
         "id": "superlitecoin",
         "name": "Super Litecoin",
         "shortName": "SLTC",
+        "isCrawlable": true,
         "links": [
             {
                 "type": "website",
@@ -56,10 +58,10 @@ const data = [
         ],
         "parents": [
             {
-               "id": "litecoin",
+                "id": "litecoin",
                 "ratio": 1,
                 "block": "",
-                "date": "18.02.2018",    
+                "date": "18.02.2018",
             }
         ]
     }

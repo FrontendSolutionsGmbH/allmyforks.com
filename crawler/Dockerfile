@@ -10,18 +10,22 @@ COPY ./common /application/common
 
 COPY ./coinmarketcap/ /application/coinmarketcap
 COPY ./coinmarketcap.js /application/coinmarketcap.js
+COPY ./coinmarketcap_ticker.js /application/coinmarketcap_ticker.js
 
 COPY ./coinbase/ /application/coinbase
 COPY ./coinbase.js /application/coinbase.js
 
 COPY ./binance/ /application/binance
 COPY ./binance.js /application/binance.js
+COPY ./binance_ticker.js /application/binance_ticker.js
 
 COPY ./bitfinex/ /application/bitfinex
 COPY ./bitfinex.js /application/bitfinex.js
+COPY ./bitfinex_ticker.js /application/bitfinex_ticker.js
 
 COPY ./okex/ /application/okex
 COPY ./okex.js /application/okex.js
+COPY ./okex_ticker.js /application/okex_ticker.js
 
 COPY ./fiat/ /application/fiat
 COPY ./fiat.js /application/fiat.js

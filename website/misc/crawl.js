@@ -23,8 +23,8 @@ var downloadCrawledData = function (coins) {
 
 
     var promises = coins.map((coin)=> {
-        var url = apiCrypto + coin.shortName
-        return fetch(url)
+        var url = apiCrypto + coin.shortName + '?days=8'
+        return fetch(url, {timeout: 120000})
             .then((res) => {
                 if (res.status === 200) {
                     //  console.log('fetching success ', res.status, coin.shortName)
@@ -65,7 +65,7 @@ var doDownload = function (coins, currentStep, stepWidth) {
     console.time(coinsText)
     return downloadCrawledData(slice).then((result) => {
         console.timeEnd(coinsText)
-        if (currentStep + 5 < coins.length) {
+        if (currentStep + stepWidth < coins.length) {
             return doDownload(coins, currentStep + stepWidth, stepWidth)
         }
     })

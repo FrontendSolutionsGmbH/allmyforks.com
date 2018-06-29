@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const currency = mongoose.Schema({
-  symbol: {
+  name: {
     type: String
   },
   type: {

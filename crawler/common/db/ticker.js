@@ -12,7 +12,7 @@ const currency = mongoose.Schema({
   }
 },{ _id : false });
 
-const CourseHistoricalSchema = new Schema({
+const CourseTickerSchema = new Schema({
   from: {
     type: currency,
   },
@@ -22,27 +22,21 @@ const CourseHistoricalSchema = new Schema({
   date: {
     type: Date,
   },
-  open: {
-    type: Number,
-  },
-  high: {
-    type: Number,
-  },
-  low: {
-    type: Number,
-  },
-  close: {
+  course: {
     type: Number,
   },
   volume: {
     type: Number,
+  },
+  change: {
+    type: Object,
   }
 });
 
-CourseHistoricalSchema.index({ from: 1, to: 1, date: 1 }, { unique: true });
+CourseTickerSchema.index({ from: 1, to: 1 }, { unique: true });
 
 module.exports = {
-  name: 'course_historical',
-  schema: CourseHistoricalSchema,
-  model: mongoose.model('course_historical', CourseHistoricalSchema),
+  name: 'course_ticker',
+  schema: CourseTickerSchema,
+  model: mongoose.model('course_ticker', CourseTickerSchema),
 };
