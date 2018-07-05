@@ -5,7 +5,7 @@ stages:
   - dockerize
 
 aggregator-test:
-  image: node:alpine
+  image: rainu/docker-node
   stage: test
   script:
     - apk --update add git
