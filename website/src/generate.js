@@ -125,8 +125,8 @@ data.language = data.languages[0]
 data.mvp = true
 
 
-var apiObject = helper.preventCircularJson(Object.assign({}, data))
-delete(apiObject.languages)
+var apiObject = helper.preventCircularJson(Object.assign({}, crawledData))
+//delete(apiObject.languages)
 generatePage({data: JSON.stringify(apiObject, null, 4)}, '', templateApi, 'api', true, 'api.json')
 
 data.languages.map((lang) => {
