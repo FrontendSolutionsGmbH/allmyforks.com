@@ -10,6 +10,7 @@ var sourceImprint = fs.readFileSync('./src/pages/imprint.html', 'utf8')
 var sourcePrivacy = fs.readFileSync('./src/pages/privacy.html', 'utf8')
 var sourceDisclaimer = fs.readFileSync('./src/pages/disclaimer.html', 'utf8')
 var sourceHowTo = fs.readFileSync('./src/pages/howtoclaimforkedcoins.html', 'utf8')
+var sourceApi = fs.readFileSync('./src/pages/api.json', 'utf8')
 var sourceSupportUs = fs.readFileSync('./src/pages/supportus.html', 'utf8')
 var sourceWhatAreForks = fs.readFileSync('./src/pages/whatisafork.html', 'utf8')
 var sourceDetails = fs.readFileSync('./src/pages/details.html', 'utf8')
@@ -53,10 +54,12 @@ var templateImprint = Handlebars.compile(sourceImprint)
 var templatePrivacy = Handlebars.compile(sourcePrivacy)
 var templateDetails = Handlebars.compile(sourceDetails)
 var templateHowTo = Handlebars.compile(sourceHowTo)
+var templateApi = Handlebars.compile(sourceApi)
 var templateWhatAreForks = Handlebars.compile(sourceWhatAreForks)
 var templateSupportUs = Handlebars.compile(sourceSupportUs)
 var templateJavascript = Handlebars.compile(javascriptAsString)
 var templateDisclaimer = Handlebars.compile(sourceDisclaimer)
+
 Handlebars.registerPartial('header-static', fs.readFileSync('./src/inc/header.html', 'utf8'))
 Handlebars.registerPartial('header-list', fs.readFileSync('./src/inc/header.html', 'utf8'))
 Handlebars.registerPartial('footer', sourceFooter)
@@ -64,21 +67,29 @@ Handlebars.registerPartial('styles', '<style>' + stylesAsString + '</style>')
 //Handlebars.registerPartial('prettifyDate', sourceFooter)
 
 
-var generatePage = function (data, directoryFromRoot, templateFunc, pageId) {
+var generatePage = function (data, directoryFromRoot, templateFunc, pageId, raw, filenameWanted) {
     var directory = './dist/' + directoryFromRoot
-    var filename = directory + '/' + 'index.html'
+    if (!filenameWanted) {
+        filenameWanted = 'index.html'
+    }
+    var filename = directory + '/' + filenameWanted
     fs.ensureDirSync(directory)
     console.log('generate', filename)
-    data.url = '/' + directoryFromRoot
-    data.pageId = pageId || 'default'
 
-    var selectors = helper.getSelectorsLangFiatCoins(data)
 
-    data.selectLanguages = selectors.selectLanguages
-    data.selectFiats = selectors.selectFiats
-    data.selectCoins = selectors.selectCoins
+    if (!raw) {
+        data.url = '/' + directoryFromRoot
+        data.pageId = pageId || 'default'
 
-    data.title = Handlebars.compile(data.pages[data.pageId].title)(data)
+        var selectors = helper.getSelectorsLangFiatCoins(data)
+
+        data.selectLanguages = selectors.selectLanguages
+        data.selectFiats = selectors.selectFiats
+        data.selectCoins = selectors.selectCoins
+
+        data.title = Handlebars.compile(data.pages[data.pageId].title)(data)
+    }
+
 
     fs.writeFileSync(filename, templateFunc(data, {
         data: data,
@@ -112,6 +123,11 @@ data.fiat = data.fiats[0]
 data.coin = data.coins[0]
 data.language = data.languages[0]
 data.mvp = true
+
+
+var apiObject = helper.preventCircularJson(Object.assign({}, data))
+delete(apiObject.languages)
+generatePage({data: JSON.stringify(apiObject, null, 4)}, '', templateApi, 'api', true, 'api.json')
 
 data.languages.map((lang) => {
     data.language = lang
