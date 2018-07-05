@@ -26,13 +26,13 @@ dockerize-crawler:
     - master
 
 dockerize-aggregator:
-  image: tmaier/docker-compose:latest
+  image: rainu/docker-node
   stage: dockerize
   script:
-    - apk --update --no-cache python make g++
+    - apk --update --no-cache docker
     - docker login -u ${DOCKER_USER} -p ${DOCKER_PASSWORD}
-    - cd crawler
-    - docker-compose build course_aggregator
-    - docker-compose push course_aggregator
+    - cd aggregator/course
+    - docker build . -t rainu/cryptoaggregator
+    - docker push rainu/cryptoaggregator
   only:
     - master
