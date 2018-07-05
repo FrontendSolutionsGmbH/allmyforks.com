@@ -9,7 +9,9 @@ COPY ./package-lock.json /application/
 
 COPY ./src/ /application
 
-RUN npm install
+RUN apk --update --no-cache add python make g++ &&\
+    npm install &&\
+    apk del python make g++
 
 ENTRYPOINT [ "node" ]
 CMD [ "cron.js" ]
