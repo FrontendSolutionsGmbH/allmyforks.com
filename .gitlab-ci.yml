@@ -29,6 +29,7 @@ dockerize-aggregator:
   image: tmaier/docker-compose:latest
   stage: dockerize
   script:
+    - apk --update --no-cache python make g++
     - docker login -u ${DOCKER_USER} -p ${DOCKER_PASSWORD}
     - cd crawler
     - docker-compose build course_aggregator
