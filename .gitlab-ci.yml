@@ -29,7 +29,7 @@ dockerize-aggregator:
   image: rainu/docker-node
   stage: dockerize
   script:
-    - apk --update --no-cache docker
+    - apk --update --no-cache add docker
     - docker login -u ${DOCKER_USER} -p ${DOCKER_PASSWORD}
     - cd aggregator/course
     - docker build . -t rainu/cryptoaggregator
