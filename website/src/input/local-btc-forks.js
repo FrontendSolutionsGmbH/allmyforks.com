@@ -61,6 +61,7 @@ const data = [
     "id": "bitcoingold",
     "name": "Bitcoin Gold",
     "shortName": "BTG",
+    "isCrawlable": true,
     "links": [
       {
         "type": "website",
