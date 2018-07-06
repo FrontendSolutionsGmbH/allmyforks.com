@@ -156,10 +156,76 @@ var mergeData = function (localData, crawledData) {
         }
 
         if (d.ratios) {
-            d.ratios.sort((a, b) => {
-                return b.ratio - a.ratio
+            d.ratios.sort((a,b) => {
+                return b.courses[0] - a.courses[0]
+            })
+
+
+            d.markets = {}
+
+            d.ratios.map(r => {
+
+                r.isValid = true
+                r.path && r.path.map(p => {
+                    p.url = 'http://' + p.source
+                    p.title = p.source
+
+                    if (p.source === 'coinmarketcap.com') {
+                        var fullLink = d.links.find(l => l.type === 'coinmarketcap')
+                        if (fullLink) {
+                            p.url = fullLink.url
+                        }
+                        r.isValid = false
+                    }
+
+                    if (p.source === 'binance.com') {
+                        p.url = 'https://www.binance.com/en/trade/' + p.from.name + '_' + p.to.name
+                    }
+
+                    if (p.source === 'okex.com') {
+                        p.url = 'https://www.okex.com/market?product=' + p.from.name.toLowerCase() + '_' + p.to.name.toLowerCase()
+                    }
+                   /* if (p.source === 'bitfinex.com') {
+                        p.url = 'https://www.bfxdata.com/orderbooks/' +  p.from.name.toLowerCase() + p.to.name.toLowerCase()
+                    }*/
+                    if (p.source ==='fiat') {
+                        p.url = ''
+                        p.title = ''
+                    }
+
+
+
+                })
+            })
+
+            d.ratiosValid = d.ratios.filter(r => r.isValid)
+
+            d.ratiosValid.map(r => {
+                r.path && r.path.map(p => {
+
+                    if (p.source === 'fiat') {
+                        return
+                    }
+
+                    if (d.markets[p.source]) {
+                        if (r.courses[0] > d.markets[p.source].ratio) {
+                            d.markets[p.source].ratio = r.courses[0]
+                        }
+                    } else {
+                        d.markets[p.source] = {
+                            url: 'http://' + p.source,
+                            title: p.source,
+                            source: p.source,
+                            ratio: r.courses[0]
+                        }
+                    }
+
+                })
             })
         }
+
+
+
 
         if (d.parents) {
             d.parents = d.parents.map((p) => {

@@ -135,7 +135,7 @@ const data = [
   {
     "id": "bitcoinlightning",
     "name": "Lightning Bitcoin",
-    "shortName": "LBTC",
+    "shortName": "LBTCX",
     "isCrawlable": true,
     "links": [
       {
@@ -1155,7 +1155,12 @@ const data = [
     "id": "bitcoincore",
     "name": "Bitcoin Core",
     "shortName": "BCC",
-    "isCrawlable": true,
+    "isCrawlable": false,
+      "crawlAlternativesWithSameSymbol": [
+          {
+              "name": "Bitcoin Cash"
+          }
+      ],
     "links": [
       {
         "type": "website",
