@@ -9,7 +9,7 @@ const TickerCourse = require('../common/db/ticker').model;
 const mapCoinSymbol = function(slug, symbol) {
   for(let mapping of config.mapping) {
     if(slug === mapping.slug){
-      log.info(`Apply mapping ${symbol} => ${mapping.symbol} (${slug})`)
+      log.debug(`Apply mapping ${symbol} => ${mapping.symbol} (${slug})`)
       return mapping.symbol
     }
   }

@@ -96,7 +96,7 @@ const saveCourses = function(courses){
 const mapCoinSymbol = function(coin) {
   for(let mapping of config.mapping) {
     if(coin.slug === mapping.slug){
-      log.info(`Apply mapping ${coin.symbol} => ${mapping.symbol} (${coin.slug})`)
+      log.debug(`Apply mapping ${coin.symbol} => ${mapping.symbol} (${coin.slug})`)
       let mapped = {
         ...coin
       }
