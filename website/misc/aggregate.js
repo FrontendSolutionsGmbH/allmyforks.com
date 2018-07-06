@@ -48,7 +48,7 @@ var aggregateData = function (coins) {
                    coin.price = crawledCoin.ratios[0].courses[0]
                     coin.priceHistory = crawledCoin.ratios[0].courses
 
-                    console.log(coin.ratios)
+                 //   console.log(coin.ratios)
                 }
 
 
