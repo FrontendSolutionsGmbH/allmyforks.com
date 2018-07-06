@@ -10,5 +10,19 @@
         "outputFile": "/.htaccess"
       }
     }
+  },
+  "zipOptim": {
+    "enabled": true,
+    "brotli": {
+      "enabled": false
+    },
+    "zopfli": {
+      "enabled": true,
+      "options": {}
+    },
+    "zlib": {
+      "enabled": false,
+      "options": {}
+    }
   }
 }
