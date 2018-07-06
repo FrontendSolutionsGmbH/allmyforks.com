@@ -2,10 +2,10 @@ image: rainu/docker-node
 
 stages:
   - test
-  - dockerrize
+  - dockerize
 
 aggregator-test:
-  image: node:alpine
+  image: rainu/docker-node
   stage: test
   script:
     - apk --update add git
@@ -13,9 +13,9 @@ aggregator-test:
     - npm install
     - npm run test
 
-dockerrize-crawler:
+dockerize-crawler:
   image: tmaier/docker-compose:latest
-  stage: dockerrize
+  stage: dockerize
   script:
     - docker login -u ${DOCKER_USER} -p ${DOCKER_PASSWORD}
     - cd crawler
@@ -25,13 +25,14 @@ dockerrize-crawler:
   only:
     - master
 
-dockerrize-aggregator:
-  image: tmaier/docker-compose:latest
-  stage: dockerrize
+dockerize-aggregator:
+  image: rainu/docker-node
+  stage: dockerize
   script:
+    - apk --update --no-cache add docker
     - docker login -u ${DOCKER_USER} -p ${DOCKER_PASSWORD}
-    - cd crawler
-    - docker-compose build course_aggregator
-    - docker-compose push course_aggregator
+    - cd aggregator/course
+    - docker build . -t rainu/cryptoaggregator
+    - docker push rainu/cryptoaggregator
   only:
     - master

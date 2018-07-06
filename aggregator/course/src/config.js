@@ -3,6 +3,13 @@
 const envParser = require('rainu-env-parser');
 
 const defaults = {
+  debug: {
+    heap: {
+      dump: {
+        directory: './'
+      }
+    }
+  },
   output: {
     dir: "./"
   },

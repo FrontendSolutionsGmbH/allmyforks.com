@@ -66,6 +66,12 @@ const handleData = function(data, state) {
   data = data[0]
 
   const channelId = data.channel
+
+  //skip this channel(s)
+  if(channelId === "addChannel") {
+    return;
+  }
+
   const channel = state.channelMapping[channelId]
   if(!channel){
     log.error("Unknown channel id: " + channelId)
