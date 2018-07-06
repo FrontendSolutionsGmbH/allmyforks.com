@@ -93,6 +93,20 @@ const saveCourses = function(courses){
   return Promise.resolve()
 }
 
+const mapCoinSymbol = function(coin) {
+  for(let mapping of config.mapping) {
+    if(coin.slug === mapping.slug){
+      log.info(`Apply mapping ${coin.symbol} => ${mapping.symbol} (${coin.slug})`)
+      let mapped = {
+        ...coin
+      }
+      mapped.symbol = mapping.symbol
+      return mapped;
+    }
+  }
+  return coin
+}
+
 const parseCourses = function(coin, body) {
   return parse(body).map(curCourse => {
     return {
@@ -119,8 +133,10 @@ const processCourse = function(coin, startDate){
 }
 
 const crawl = function(coin, from = MIN_DATE){
-  return determineStartDate(coin.symbol, 'USD', from)
-    .then((startDate) => processCourse(coin, startDate))
+  const mappedCoin = mapCoinSymbol(coin)
+
+  return determineStartDate(mappedCoin.symbol, 'USD', from)
+    .then((startDate) => processCourse(mappedCoin, startDate))
 };
 
 const list = function() {
@@ -132,6 +148,7 @@ const list = function() {
       return data.data.map(entity => {
         return {
           id: entity.id,
+          name: entity.name,
           symbol: entity.symbol,
           slug: entity.website_slug,
         }
