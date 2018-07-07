@@ -14,6 +14,11 @@ const defaults = {
     port: 27017,
     db: "binance"
   },
+  mapping: [{
+    from: "BCC",
+    to: "BCH",
+    name: "BitcoinCash"
+  }],
   cron: '0 0 */12 * * *'
 };
 

@@ -6,6 +6,16 @@ const RequestPool = require('../common/request_pool');
 const { request } = RequestPool(config.request);
 const TickerCourse = require('../common/db/ticker').model;
 
+const mapCoinSymbol = function(slug, symbol) {
+  for(let mapping of config.mapping) {
+    if(slug === mapping.slug){
+      log.debug(`Apply mapping ${symbol} => ${mapping.symbol} (${slug})`)
+      return mapping.symbol
+    }
+  }
+  return symbol
+}
+
 const transform = function(data) {
   /*
     {
@@ -46,7 +56,7 @@ const transform = function(data) {
 
   return {
     from: {
-      name: data.symbol,
+      name: mapCoinSymbol(data['website_slug'], data.symbol),
       type: "crypto"
     },
     to: {

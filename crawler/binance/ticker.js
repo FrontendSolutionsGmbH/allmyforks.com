@@ -1,8 +1,26 @@
 "use strict";
 
+const config = require('./config');
 const log = require('../common/log');
 const TickerCourse = require('../common/db/ticker').model;
 const WebSocket = require('ws');
+
+const mapCoinSymbol = function(coin) {
+  if(coin.type === 'crypto') {
+    for(let mapping of config.mapping) {
+      if(mapping.from === coin.name) {
+        let mappedCoin = {...coin}
+        mappedCoin.name = mapping.to
+
+        log.debug(`Apply mapping ${coin.name} => ${mappedCoin.name} (${mapping.name})`)
+
+        return mappedCoin
+      }
+    }
+  }
+
+  return coin
+}
 
 const transformData = function(currency, data) {
   /*
@@ -33,8 +51,8 @@ const transformData = function(currency, data) {
 
 
   return {
-    from: currency.source,
-    to: currency.target,
+    from: mapCoinSymbol(currency.source),
+    to: mapCoinSymbol(currency.target),
     date: new Date(),
     course: close,
     volume: Number.parseFloat(data.Q),

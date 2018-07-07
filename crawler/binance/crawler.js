@@ -2,6 +2,7 @@
 
 const HistoricalCourse = require('../common/db/historical').model;
 const config = require('./config');
+const log = require('../common/log');
 const RequestPool = require('../common/request_pool');
 const { request } = RequestPool(config.request);
 const moment = require("moment");
@@ -10,11 +11,31 @@ const currencyHelper = require('../common/currency_helper')
 const MIN_DATE = moment('2009-01-01'); //before BTC-Birthday
 const PAGE_SIZE = 500;
 
+const mapCoinSymbol = function(coin) {
+  if(coin.type === 'crypto') {
+    for(let mapping of config.mapping) {
+      if(mapping.from === coin.name) {
+        let mappedCoin = {...coin}
+        mappedCoin.name = mapping.to
+
+        log.debug(`Apply mapping ${coin.name} => ${mappedCoin.name} (${mapping.name})`)
+
+        return mappedCoin
+      }
+    }
+  }
+
+  return coin
+}
+
 const determineStartDate = function(source, target, defaultStartDate) {
+  const mappedSource = mapCoinSymbol(source)
+  const mappedTarget = mapCoinSymbol(target)
+
   return new Promise((resolve, reject) => {
     HistoricalCourse.find({
-      from: source,
-      to: target
+      from: mappedSource,
+      to: mappedTarget
     })
     .limit(1)
     .sort({ date: 'desc' })
@@ -57,10 +78,13 @@ const processEachCourse = function(source, target, body){
   let bulk = HistoricalCourse.collection.initializeUnorderedBulkOp();
   let operationCount = 0;
 
+  const mappedSource = mapCoinSymbol(source)
+  const mappedTarget = mapCoinSymbol(target)
+
   for(let curEntity of data){
     let entity = {
-      from: source,
-      to: target,
+      from: mappedSource,
+      to: mappedTarget,
       date: moment(curEntity[0]).toDate(),
       open: Number.parseFloat(curEntity[1]),
       high: Number.parseFloat(curEntity[2]),
