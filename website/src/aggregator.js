@@ -156,12 +156,12 @@ var mergeData = function (localData, crawledData) {
         }
 
         if (d.ratios) {
-            d.ratios.sort((a,b) => {
+            d.ratios.sort((a, b) => {
                 return b.courses[0] - a.courses[0]
             })
 
 
-            d.markets = {}
+            d.markets = []
 
             d.ratios.map(r => {
 
@@ -185,14 +185,13 @@ var mergeData = function (localData, crawledData) {
                     if (p.source === 'okex.com') {
                         p.url = 'https://www.okex.com/market?product=' + p.from.name.toLowerCase() + '_' + p.to.name.toLowerCase()
                     }
-                   /* if (p.source === 'bitfinex.com') {
-                        p.url = 'https://www.bfxdata.com/orderbooks/' +  p.from.name.toLowerCase() + p.to.name.toLowerCase()
-                    }*/
-                    if (p.source ==='fiat') {
+                    /* if (p.source === 'bitfinex.com') {
+                     p.url = 'https://www.bfxdata.com/orderbooks/' +  p.from.name.toLowerCase() + p.to.name.toLowerCase()
+                     }*/
+                    if (p.source === 'fiat') {
                         p.url = ''
                         p.title = ''
                     }
-
 
 
                 })
@@ -207,24 +206,29 @@ var mergeData = function (localData, crawledData) {
                         return
                     }
 
-                    if (d.markets[p.source]) {
-                        if (r.courses[0] > d.markets[p.source].ratio) {
-                            d.markets[p.source].ratio = r.courses[0]
+                    var index = d.markets.findIndex(m => m.source === p.source)
+                    if (index >= 0) {
+                        if (r.courses[0] > d.markets[index].ratio) {
+                            d.markets[index].ratio = r.courses[0]
                         }
                     } else {
-                        d.markets[p.source] = {
+                        d.markets.push({
                             url: 'http://' + p.source,
                             title: p.source,
                             source: p.source,
                             ratio: r.courses[0]
-                        }
+                        })
                     }
 
                 })
             })
+
+            d.markets.sort((a, b) => {
+                return b.ratio - a.ratio
+            })
+
+
         }
-
-
 
 
         if (d.parents) {
