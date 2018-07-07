@@ -60,18 +60,25 @@
         {{/if}}
 
 
-
-
         {{#if markets.length}}
         <h2>Markets</h2>
 
+        <p>Use any of the following links to sell your {{name}}.</p>
+
         <ul>
-        {{#each markets}}
+            {{#each markets}}
             <li>
-                <a target="market-{{source}}" href="{{url}}">{{title}}</a>: {{{fiatWithCurrencyInSpan ratio ../../fiat ../../language}}}
+                <a target="market-{{source}}" href="{{url}}">{{title}}</a>{{#if hasReferral}}*{{/if}}:
+                {{{fiatWithCurrencyInSpan ratio ../../fiat
+                ../../language}}}
             </li>
-        {{/each}}
+            {{/each}}
         </ul>
+
+        <small>*: In case you register a new
+            account it would be great if you use this link as allmyforks.com will get a small commission fee (does not
+            cost you anything). Thanks in advance!
+        </small>
 
         {{/if}}
 
@@ -79,21 +86,23 @@
         {{#if ratiosValid}}
         <h2>Hops</h2>
 
-            {{#each ratiosValid}}
+        {{#each ratiosValid}}
 
-            <div class="w3-third">
-                {{#if ratio}}<p>{{{fiatWithCurrencyInSpan ratio ../../fiat ../../language}}}</p>{{/if}}
+        <div class="w3-third">
+            {{#if ratio}}<p>{{{fiatWithCurrencyInSpan ratio ../../fiat ../../language}}}</p>{{/if}}
 
-                {{#if courses}}{{{fiatWithCurrencyInSpan courses.[0] ../../fiat ../../language}}}{{/if}}
-                <ol>{{#each path}}
-                    <li>{{from.name}}->{{to.name}} <a target="market-{{source}}" href="{{url}}">{{title}}</a> {{!-- 1:{{courses.[0].ratio}} --}}</li>
-                    {{/each}}
-                </ol>
+            {{#if courses}}{{{fiatWithCurrencyInSpan courses.[0] ../../fiat ../../language}}}{{/if}}
+            <ol>{{#each path}}
+                <li>{{from.name}}->{{to.name}} <a target="market-{{source}}" href="{{url}}">{{title}}</a> {{!--
+                    1:{{courses.[0].ratio}} --}}
+                </li>
+                {{/each}}
+            </ol>
             </li>
-            </div>
+        </div>
 
 
-            {{/each}}
+        {{/each}}
 
 
         {{/if}}
