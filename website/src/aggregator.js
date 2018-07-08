@@ -214,8 +214,11 @@ var mergeData = function (localData, crawledData) {
             d.ratiosValid = d.ratios.filter(r => r.isValid)
 
             d.ratiosValid.map(r => {
-                r.path && r.path.map(p => {
+                r.path && r.path.map((p, pindex) => {
 
+                    if (pindex > 0) {
+                        return
+                    }
                     if (p.source === 'fiat') {
                         return
                     }
