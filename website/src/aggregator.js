@@ -166,7 +166,7 @@ var mergeData = function (localData, crawledData) {
             d.ratios.map(r => {
 
                 r.isValid = true
-                r.path && r.path.map(p => {
+                r.path && r.path.map((p, index) => {
                     p.url = 'http://' + p.source
                     p.title = p.source
 
@@ -199,6 +199,14 @@ var mergeData = function (localData, crawledData) {
                         p.title = ''
                     }
 
+
+                    if (index === 0) {
+                        p.from.value = 1
+                    } else {
+                        p.from.value = r.path[index - 1].to.value
+                    }
+                    p.ratio = parseFloat(p.courses[0].ratio)
+                    p.to.value = p.ratio * p.from.value
 
                 })
             })

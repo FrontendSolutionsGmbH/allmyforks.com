@@ -75,7 +75,7 @@
             {{/each}}
         </ul>
 
-        <small>*: In case you register a new
+        <small>* In case you register a new
             account it would be great if you use this link as allmyforks.com will get a small commission fee (does not
             cost you anything). Thanks in advance!
         </small>
@@ -86,24 +86,30 @@
         {{#if ratiosValid}}
         <h2>Hops</h2>
 
-        {{#each ratiosValid}}
+        <table>
+            {{#each ratiosValid}}
+            <tr>
+                <td colspan="4">
+                    {{#if courses}}<b>{{{fiatWithCurrencyInSpan courses.[0] ../../fiat ../../language}}}</b>{{/if}}
+                </td>
+            </tr>
+            {{#each path}}
+            <tr>
+                <td>{{formatNumber from.value}} {{from.name}}</td>
+                <td>-&gt;</td>
+                <td> {{formatNumber to.value}} {{to.name}}</td>
+                <td><a target="market-{{source}}"
+                       href="{{url}}">{{title}}</a></td>
+                <td>1:{{formatNumber ratio}}</td>
+                <td>{{{localDateInSpan courses.[0].date "datetime"}}}</td>
+            </tr>
+            {{/each}}
+            <tr>
+                <td colspan="4">&nbsp;</td>
+            </tr>
 
-        <div class="w3-third">
-            {{#if ratio}}<p>{{{fiatWithCurrencyInSpan ratio ../../fiat ../../language}}}</p>{{/if}}
-
-            {{#if courses}}{{{fiatWithCurrencyInSpan courses.[0] ../../fiat ../../language}}}{{/if}}
-            <ol>{{#each path}}
-                <li>{{from.name}}->{{to.name}} <a target="market-{{source}}" href="{{url}}">{{title}}</a> {{!--
-                    1:{{courses.[0].ratio}} --}}
-                </li>
-                {{/each}}
-            </ol>
-            </li>
-        </div>
-
-
-        {{/each}}
-
+            {{/each}}
+        </table>
 
         {{/if}}
 
