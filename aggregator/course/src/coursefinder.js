@@ -51,6 +51,8 @@ const freeMemory = function() {
     //delete from connections
     delete connections[ck]
   }
+
+  if (global.gc) global.gc();
 }
 
 const getSave = function(array, index, defaultValue) {

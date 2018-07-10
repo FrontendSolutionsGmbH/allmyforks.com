@@ -165,7 +165,7 @@ services:
       - CFG_SOURCE_4_NAME=fiat
       - CFG_SOURCE_5_URL=mongodb://db/okex
       - CFG_SOURCE_5_NAME=okex.com
-    command: "--max-old-space-size=4096 server.js"
+    command: "--expose-gc server.js"
     ports:
       - "3000:3000"
     restart: always
