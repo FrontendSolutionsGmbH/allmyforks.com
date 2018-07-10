@@ -28,6 +28,31 @@ const getConnection = function(source, sources = config.source){
   return connections[source]
 }
 
+const freeMemory = function() {
+  //mongoose holds a lot of data inside the connections/models
+  //see: https://github.com/Automattic/mongoose/issues/2874
+
+  for(let ck of Object.keys(connections)) {
+    let connectionHolder = connections[ck]
+
+    //remove models
+    for(let modelName of Object.keys(connectionHolder.connection.models)){
+      delete connectionHolder.connection.models[modelName]
+    }
+
+    //remove collections
+    for(let collectionName of Object.keys(connectionHolder.connection.collections)){
+      delete connectionHolder.connection.collections[collectionName]
+    }
+
+    //close connection
+    connectionHolder.connection.close()
+
+    //delete from connections
+    delete connections[ck]
+  }
+}
+
 const getSave = function(array, index, defaultValue) {
   if(!array) return defaultValue;
 
@@ -179,6 +204,10 @@ const getRatios = function(source, destination = DEFAULT_DESTINATION, days = DEF
     .then(pairs => pathfinder(pairs, source, destination))
     .then(paths => paths.map(path => resolvePath(path, days)))
     .then(promises => Promise.all(promises))
+    .then(result => {
+      freeMemory();
+      return result;
+    })
 }
 
 //do we call directly?
