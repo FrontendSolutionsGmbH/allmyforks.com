@@ -50,28 +50,52 @@
 
     <div class="w3-container w3-twothird">
 
-        Links: <br/>
+        {{#if links}}
+        <h2>Links</h2>
         <ul>
             {{#each links}}
             <li><a href="{{url}}" target="link-{{id}}" style="text-transform: capitalize;">{{type}}</a></li>
             {{/each}}
         </ul>
+        {{/if}}
 
-        {{#if ratios}}
-        Hops: <br/>
+
+
+
+        {{#if markets.length}}
+        <h2>Markets</h2>
+
         <ul>
+        {{#each markets}}
+            <li>
+                <a target="market-{{source}}" href="{{url}}">{{title}}</a>: {{{fiatWithCurrencyInSpan ratio ../../fiat ../../language}}}
+            </li>
+        {{/each}}
+        </ul>
 
-            {{#each ratios}}
-            <li>{{#if ratio}}{{{fiatWithCurrencyInSpan ratio ../../fiat ../../language}}}{{/if}}
+        {{/if}}
+
+
+        {{#if ratiosValid}}
+        <h2>Hops</h2>
+
+            {{#each ratiosValid}}
+
+            <div class="w3-third">
+                {{#if ratio}}<p>{{{fiatWithCurrencyInSpan ratio ../../fiat ../../language}}}</p>{{/if}}
+
                 {{#if courses}}{{{fiatWithCurrencyInSpan courses.[0] ../../fiat ../../language}}}{{/if}}
                 <ol>{{#each path}}
-                    <li>{{from.name}}->{{to.name}} <a target="new" href="http://{{source}}">{{source}}</a></li>
+                    <li>{{from.name}}->{{to.name}} <a target="market-{{source}}" href="{{url}}">{{title}}</a> {{!-- 1:{{courses.[0].ratio}} --}}</li>
                     {{/each}}
                 </ol>
             </li>
+            </div>
+
+
             {{/each}}
 
-        </ul>
+
         {{/if}}
 
         {{#unless isCrawlable}}

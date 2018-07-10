@@ -17,11 +17,7 @@ var emptyCryptos = []
 var aggregateData = function (coins) {
 
     return coins.map((coin) => {
-        var result = {
-            id: coin.id,
-            price: '',
-            // ratios: []
-        }
+
         var fileName = crawlDir + coin.id + '.json'
 
         if (!fs.existsSync(fileName)) {
@@ -32,19 +28,33 @@ var aggregateData = function (coins) {
 
             if (crawledCoin.ratios && crawledCoin.ratios.length > 0) {
                 // console.log('read', coin.id)
-                // result.ratios = crawledCoin.ratios
-                //result.price = Math.max(...(result.ratios.map(r=>r.ratio)))
+                // coin.ratios = crawledCoin.ratios
+                //coin.price = Math.max(...(result.ratios.map(r=>r.ratio)))
 
+                // old format
                 if (crawledCoin.ratios[0].ratio) {
-                    result.price = crawledCoin.ratios[0].ratio
+                    coin.price = crawledCoin.ratios[0].ratio
                 }
 
                 if (crawledCoin.ratios[0].courses && crawledCoin.ratios[0].courses.length > 0) {
-                    result.price = crawledCoin.ratios[0].courses[0]
-                    result.priceHistory = crawledCoin.ratios[0].courses
+
+                    coin.ratios = crawledCoin.ratios
+
+                    coin.ratios.sort((a,b) => {
+                       return b.courses[0] - a.courses[0]
+                    })
+                   // coin.price = Math.max(...crawledCoin.ratios.map(r => r.courses[0]))
+
+                   coin.price = crawledCoin.ratios[0].courses[0]
+                    coin.priceHistory = crawledCoin.ratios[0].courses
+
+                 //   console.log(coin.ratios)
                 }
 
-                result.ratios = crawledCoin.ratios
+
+
+
+
                 foundCryptos.push(coin)
             } else {
                 emptyCryptos.push(coin)
@@ -52,7 +62,7 @@ var aggregateData = function (coins) {
 
         }
 
-        return result
+        return coin
 
     })
 

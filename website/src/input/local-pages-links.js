@@ -45,6 +45,10 @@ const data = {
         "details": {
             "title": "{{coin.name}} ({{coin.shortName}}) Fork",
             "description": "Claim {{coin.shortName}} forked coins"
+        },
+        "api": {
+            "title": "allmyforks api",
+            "description": "allmyforks api‚"
         }
     },
     "links": [

@@ -5,3 +5,14 @@
 .table-cut {
     border-right: 1px solid black;
 }
+
+@media (max-width:1280px) {
+    .hide-below-extralage {
+        display: none !important;
+    }
+}
+
+.extralarge-content {
+    max-width: 1280px;
+    margin: auto;
+}
