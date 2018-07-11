@@ -34,10 +34,15 @@
 
     <div class="left" id="sum-forks-top-left">
 
+        <h3 class="w3-center">{{{formatMessage (intlGet "forklist_header") name=coin.name value=(fiatWithCurrencyInSpan coin.priceSumForks fiat language)}}}</h3>
+
+        {{#unless mvp}}
         1 {{coin.name}}={{{fiatWithCurrencyInSpan coin.priceSumForksPlusOwnPrice fiat language}}}
         ({{{fiatWithCurrencyInSpan coin.price fiat language}}} + {{{fiatWithCurrencyInSpan
         coin.priceSumForks fiat
         language}}} from forks)
+        {{/unless}}
+
     </div>
 </div>
 

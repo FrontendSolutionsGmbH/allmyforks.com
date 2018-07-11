@@ -1,9 +1,7 @@
-# bitcoin-forks
-coinmarketcap for bitcoin forks
+# AllMyForks.com
+overview for bitcoin, litecoin, ethereum forks
 
-Bitcoin-Forks is an open source and free to use project for collecting and aggregating forks of bitcoin. 
-It's purpose is to get an overview of the forked coins you as bitcoin holder got due to forks and how to get/sell the coins safely.
-
+This project collects and aggregates forks of bitcoin and other cryptos. It's purpose is to get an overview of all forked coins you as bitcoin holder got due to forks and how to get/sell the coins safely.
 
 ## Parts
 
@@ -16,10 +14,6 @@ The crawler is responsible for collecting needed data from coinmarketcap and oth
 ### Data Aggregator
 
 The aggregator works on the ouput of the crawler. It consumes the needed information for the Website Builder and makes it available in a json format
-
-### Website Builder
-
-The website builder creates optimized .html and .json files for a fast user experience on the website - speed is the name of the game ;-)
 
 ### Website
 
@@ -49,15 +43,13 @@ npm run dev
 and then open http://localhost:8080 in your browser.
 
 
-### Planner
+### Plan
 
 This directory contains some wiremocks and plans for further development
 
 
 ## General
 
-You are very welcome to help and join our awesome project :-)
-
-
+You are welcome to help and join our awesome project :-)
 
 2018 - Frontend Solutions

@@ -61,23 +61,21 @@
 
 
         {{#if markets.length}}
-        <h2>Markets</h2>
+        <h2>{{intlGet "markets"}}</h2>
 
-        <p>Use any of the following links to sell your {{name}}.</p>
+        <p>{{intlGet "use_any_of_the_following_links"}} {{name}}</p>
 
         <ul>
             {{#each markets}}
             <li>
-                <a target="market-{{source}}" href="{{url}}">{{title}}</a>{{#if hasReferral}}*{{/if}}:
+                <a target="market-{{source}}" href="{{url}}">{{title}}</a>{{#if hasReferral}}&sup1; {{/if}}:
                 {{{fiatWithCurrencyInSpan ratio ../../fiat
                 ../../language}}}
             </li>
             {{/each}}
         </ul>
 
-        <small>* In case you register a new
-            account it would be great if you use this link as allmyforks.com will get a small commission fee (does not
-            cost you anything). Thanks in advance!
+        <small>	&sup1; {{intlGet "affiliate_links"}}
         </small>
 
         {{/if}}
@@ -114,7 +112,7 @@
         {{/if}}
 
         {{#unless isCrawlable}}
-        Duplicate Symbols:
+        {{intlGet "duplicate_symbols"}}:
         <ul>
             {{#each crawlAlternativesWithSameSymbol}}
             <li>{{name}}</li>
