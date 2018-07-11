@@ -60,18 +60,23 @@
         {{/if}}
 
 
-
-
         {{#if markets.length}}
-        <h2>Markets</h2>
+        <h2>{{intlGet "markets"}}</h2>
+
+        <p>{{intlGet "use_any_of_the_following_links"}} {{name}}</p>
 
         <ul>
-        {{#each markets}}
+            {{#each markets}}
             <li>
-                <a target="market-{{source}}" href="{{url}}">{{title}}</a>: {{{fiatWithCurrencyInSpan ratio ../../fiat ../../language}}}
+                <a target="market-{{source}}" href="{{url}}">{{title}}</a>{{#if hasReferral}}&sup1; {{/if}}:
+                {{{fiatWithCurrencyInSpan ratio ../../fiat
+                ../../language}}}
             </li>
-        {{/each}}
+            {{/each}}
         </ul>
+
+        <small>	&sup1; {{intlGet "affiliate_links"}}
+        </small>
 
         {{/if}}
 
@@ -79,27 +84,35 @@
         {{#if ratiosValid}}
         <h2>Hops</h2>
 
+        <table>
             {{#each ratiosValid}}
-
-            <div class="w3-third">
-                {{#if ratio}}<p>{{{fiatWithCurrencyInSpan ratio ../../fiat ../../language}}}</p>{{/if}}
-
-                {{#if courses}}{{{fiatWithCurrencyInSpan courses.[0] ../../fiat ../../language}}}{{/if}}
-                <ol>{{#each path}}
-                    <li>{{from.name}}->{{to.name}} <a target="market-{{source}}" href="{{url}}">{{title}}</a> {{!-- 1:{{courses.[0].ratio}} --}}</li>
-                    {{/each}}
-                </ol>
-            </li>
-            </div>
-
+            <tr>
+                <td colspan="4">
+                    {{#if courses}}<b>{{{fiatWithCurrencyInSpan courses.[0] ../../fiat ../../language}}}</b>{{/if}}
+                </td>
+            </tr>
+            {{#each path}}
+            <tr>
+                <td>{{formatNumber from.value}} {{from.name}}</td>
+                <td>-&gt;</td>
+                <td> {{formatNumber to.value}} {{to.name}}</td>
+                <td><a target="market-{{source}}"
+                       href="{{url}}">{{title}}</a></td>
+                <td>1:{{formatNumber ratio}}</td>
+                <td>{{{localDateInSpan courses.[0].date "datetime"}}}</td>
+            </tr>
+            {{/each}}
+            <tr>
+                <td colspan="4">&nbsp;</td>
+            </tr>
 
             {{/each}}
-
+        </table>
 
         {{/if}}
 
         {{#unless isCrawlable}}
-        Duplicate Symbols:
+        {{intlGet "duplicate_symbols"}}:
         <ul>
             {{#each crawlAlternativesWithSameSymbol}}
             <li>{{name}}</li>
