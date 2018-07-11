@@ -1,7 +1,7 @@
 {
   "forklist_header": "1 {name} gives you up to <b>{value}</b> from forks",
   "markets":"Markets",
-  "use_any_of_the_following_links": "Use any of the following links to sell your",
+  "use_any_of_the_following_links": "The following markets support the exchange of",
   "affiliate_links": "In case you register a new account it would be great if you use this link as AllMyForks.com will get a small commission fee (does not cost you anything). Thanks in advance!",
   "duplicate_symbols": "Other crypto coins using the same symbol:",
   "beta_message": "AllMyForks.com is open source and currently in beta. If you have something to say we are more than happy to hear from you (see github link below)",
