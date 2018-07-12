@@ -6,7 +6,7 @@
     border-right: 1px solid black;
 }
 
-@media (max-width:1280px) {
+@media (max-width: 1280px) {
     .hide-below-extralage {
         display: none !important;
     }
@@ -16,3 +16,21 @@
     max-width: 1280px;
     margin: auto;
 }
+
+.table-header-fork-selected {
+    background-color: green;
+}
+
+.table-header-fork {
+
+}
+
+.table-header-fork-container {
+
+}
+
+.w3-primary, .w3-hover-primary:hover {
+    color: #fff !important;
+    background-color: #f44336 !important
+}
+
