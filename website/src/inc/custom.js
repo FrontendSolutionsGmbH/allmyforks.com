@@ -66,7 +66,7 @@ window.localStorage && window.localStorage.setItem('fiat', currentFiatId);
 
 
 
-/*
+
 var cookieMessage = document.getElementById('cookie-message');
 var cookiesAccepted = (window.localStorage && window.localStorage.getItem('cookiesAccepted')) 
 if (cookiesAccepted == 'yes') {
@@ -80,4 +80,3 @@ window.acceptCookies = function(event) {
     window.localStorage && window.localStorage.setItem('cookiesAccepted', 'yes');
     cookieMessage.style.display = 'none';
 }
-    */

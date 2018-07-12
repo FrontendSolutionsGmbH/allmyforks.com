@@ -1,11 +1,13 @@
-{{#unless mvp}}
 
 <div class="w3-container">
     <div id="cookie-message" class="w3-panel w3-green">
-        <p>{{{intlGet "cookie_message"}}} <a href="" onclick="window.acceptCookies(event)">{{{intlGet "cookie_ok"}}}</a>
+        <p>{{{intlGet "beta_message"}}} <a href="" onclick="window.acceptCookies(event)">{{{intlGet "cookie_ok"}}}</a>
         </p>
     </div>
 </div>
+
+{{#unless mvp}}
+
 {{/unless}}
 
 
@@ -20,7 +22,10 @@
     <a class="w3-bar-item w3-button w3-right" href="/{{language.id}}/imprint/">{{intlGet "imprint"}}</a>
     <a class="w3-bar-item w3-button w3-right" href="/{{language.id}}/privacy/">{{intlGet "data_privacy"}}</a>
     <a class="w3-bar-item w3-button w3-right" href="/{{language.id}}/disclaimer/">{{intlGet "disclaimer"}}</a>
+    <a class="w3-bar-item w3-button w3-right" href="https://github.com/FrontendSolutionsGmbH/allmyforks.com"
+       target="new">Github</a>
 </div>
+
 
 {{> javascript}}
 

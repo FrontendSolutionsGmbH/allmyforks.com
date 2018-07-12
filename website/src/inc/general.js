@@ -65,3 +65,5 @@ for (var i = 0, len = currElems.length; i < len; i++) {
 window.localStorage && window.localStorage.setItem('fiat', currentFiatId);
 
 
+
+

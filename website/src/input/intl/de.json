@@ -1,4 +1,10 @@
 {
+  "forklist_header": "1 {name} bringt dir bis zu <b>{value}</b> durch Forks",
+  "markets":"Märkte",
+  "use_any_of_the_following_links": "Folgende Märkte unterstützen den Tausch von",
+  "affiliate_links": "Wenn du über diesen Link einen neuen Account erstellst, bekommt AllMyForks.com eine kleine Provision vom Markt (Dich kostet das nichts !). Danke für deine Untesrstützung !",
+  "duplicate_symbols": "Andere CryptoCoins die das gleiche Symbol verwenden:",
+  "beta_message": "AllMyForks.com ist Open Source und hat aktuell den Status 'Beta'. Wir freuen uns auf Meinungen/Anregungen/Bugfixes über den Github-Link unten!",
   "list_forks_for": "Forks für",
   "name": "Name",
   "details": "Details",
