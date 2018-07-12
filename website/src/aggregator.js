@@ -166,7 +166,7 @@ var mergeData = function (localData, crawledData) {
             d.ratios.map(r => {
 
                 r.isValid = true
-                r.path && r.path.map(p => {
+                r.path && r.path.map((p, index) => {
                     p.url = 'http://' + p.source
                     p.title = p.source
 
@@ -178,8 +178,14 @@ var mergeData = function (localData, crawledData) {
                         r.isValid = false
                     }
 
+                    if (p.source === 'coinbase.com') {
+                        p.url = 'https://www.coinbase.com/join/5b40a148fae66f091eaecf4a'
+                        p.hasReferral = true
+                    }
+
                     if (p.source === 'binance.com') {
-                        p.url = 'https://www.binance.com/en/trade/' + p.from.name + '_' + p.to.name
+                        p.url = 'https://www.binance.com/en/trade/' + p.from.name + '_' + p.to.name + '?ref=35365745'
+                        p.hasReferral = true
                     }
 
                     if (p.source === 'okex.com') {
@@ -194,14 +200,25 @@ var mergeData = function (localData, crawledData) {
                     }
 
 
+                    if (index === 0) {
+                        p.from.value = 1
+                    } else {
+                        p.from.value = r.path[index - 1].to.value
+                    }
+                    p.ratio = parseFloat(p.courses[0].ratio)
+                    p.to.value = p.ratio * p.from.value
+
                 })
             })
 
             d.ratiosValid = d.ratios.filter(r => r.isValid)
 
             d.ratiosValid.map(r => {
-                r.path && r.path.map(p => {
+                r.path && r.path.map((p, pindex) => {
 
+                    if (pindex > 0) {
+                        return
+                    }
                     if (p.source === 'fiat') {
                         return
                     }
@@ -210,11 +227,13 @@ var mergeData = function (localData, crawledData) {
                     if (index >= 0) {
                         if (r.courses[0] > d.markets[index].ratio) {
                             d.markets[index].ratio = r.courses[0]
+                            d.markets[index].url = r.courses[0]
                         }
                     } else {
                         d.markets.push({
-                            url: 'http://' + p.source,
-                            title: p.source,
+                            hasReferral: p.hasReferral,
+                            url: p.url,
+                            title: p.title,
                             source: p.source,
                             ratio: r.courses[0]
                         })

@@ -1,20 +1,28 @@
+
 <div class="w3-container">
-	<div id="cookie-message" class="w3-panel w3-green">
-	  <p>{{{intlGet "cookie_message"}}} <a href="" onclick="window.acceptCookies(event)">{{{intlGet "cookie_ok"}}}</a></p>
-	</div> 
+    <div id="cookie-message" class="w3-panel w3-green">
+        <p>{{{intlGet "beta_message"}}} <a href="" onclick="window.acceptCookies(event)">{{{intlGet "cookie_ok"}}}</a>
+        </p>
+    </div>
 </div>
+
+{{#unless mvp}}
+
+{{/unless}}
+
 
 <div class="w3-container w3-bar w3-large w3-theme-d4">
 
-	{{#unless mvp}}
+    {{#unless mvp}}
     <a class="w3-bar-item w3-button" href="/{{language.id}}/what-is-a-fork/">{{intlGet "whatisafork"}}</a>
     <a class="w3-bar-item w3-button" href="/{{language.id}}/how-to-claim-forked-coins">
         {{formatMessage (intlGet "howtoclaimmyforkedcoin") name="_____"}}</a>
-      {{/unless}}
-
+    {{/unless}}
     <a class="w3-bar-item w3-button w3-right" href="/{{language.id}}/imprint/">{{intlGet "imprint"}}</a>
     <a class="w3-bar-item w3-button w3-right" href="/{{language.id}}/privacy/">{{intlGet "data_privacy"}}</a>
     <a class="w3-bar-item w3-button w3-right" href="/{{language.id}}/disclaimer/">{{intlGet "disclaimer"}}</a>
+    <a class="w3-bar-item w3-button w3-right" href="https://github.com/FrontendSolutionsGmbH/bitcoin-forks"
+       target="new">Github</a>
 </div>
 
 {{> javascript}}
@@ -22,3 +30,4 @@
 </body>
 
 </html>
+
