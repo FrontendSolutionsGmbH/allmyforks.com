@@ -171,7 +171,7 @@ services:
       - CFG_SOURCE_5_URL=mongodb://db/okex
       - CFG_SOURCE_5_NAME=okex.com
       - CFG_SOURCE_5_TYPE=exchange
-    command: "server.js"
+    command: "--max-old-space-size=2048 server.js"
     ports:
       - "3000:3000"
     restart: always
