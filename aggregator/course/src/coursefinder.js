@@ -6,13 +6,13 @@ const pathfinder = require('./pathfinder')
 const pairfinder = require('./pairfinder')
 
 const connections = {}
-const getConnection = function(source, sources = config.source){
-  if(!connections[source]) {
+const getConnection = function(sourceName, sources = config.source){
+  if(!connections[sourceName]) {
     for(let dbCon of sources) {
-      if(dbCon.name === source){
+      if(dbCon.name === sourceName){
         let mc = mongoose.createConnection(dbCon.url)
 
-        connections[source] = {
+        connections[sourceName] = {
           connection: mc,
           model: {
             ticker: mc.model(CourseTicker.name, CourseTicker.schema),
@@ -25,7 +25,7 @@ const getConnection = function(source, sources = config.source){
     }
   }
 
-  return connections[source]
+  return connections[sourceName]
 }
 
 const freeMemory = function() {
@@ -73,7 +73,7 @@ const resolvePath = function(path, days) {
 
   for(let i=0; i < path.length; i++) {
     const node = path[i]
-    const dbCon = getConnection(node.source)
+    const dbCon = getConnection(node.source.name)
 
     //first we look at ticker -> there are the latest courses (if available)
     //second we look for the rest in the historical

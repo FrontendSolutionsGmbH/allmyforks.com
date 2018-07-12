@@ -10,7 +10,10 @@
  *    "name": "EUR",
  *    "type": "fiat"
  *  },
- *  "source": "bitcoin.de"
+ *  "source": {
+ *    "name": "bitcoin.de",
+ *    "type": "exchange"
+*    }
  * }]
  * @param source the source currency
  * {
@@ -34,7 +37,10 @@
  *      "name": "EUR",
  *      "type": "fiat"
  *    },
- *    "source": "bitcoin.de"
+ *    "source": {
+ *      "name": "bitcoin.de",
+ *      "type": "exchange"
+       }
  *   }]
  * ]
  */

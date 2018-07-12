@@ -41,7 +41,7 @@ app.route('/api/ratios/:type/:symbol')
     .catch(err => {
       res.status(500);
       res.send({
-        error: err
+        error: "" + err
       })
     })
   })
@@ -65,7 +65,7 @@ app.route('/api/ratios/:fType/:fSymbol/:tType/:tSymbol')
     .catch(err => {
       res.status(500);
       res.send({
-        error: err
+        error: "" + err
       })
     })
   })
@@ -81,7 +81,7 @@ app.route('/api/pairs')
     .catch(err => {
       res.status(500);
       res.send({
-        error: err
+        error: "" + err
       })
     })
   })

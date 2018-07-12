@@ -44,7 +44,10 @@ const find = function(sources = config.source){
           if (!alreadyKnown.has(pairName)) {
             pairs.push({
               ...entity,
-              source: dbCon.name
+              source: {
+                name: dbCon.name,
+                type: dbCon.type || 'price',
+              }
             })
             alreadyKnown.add(pairName)
           }
