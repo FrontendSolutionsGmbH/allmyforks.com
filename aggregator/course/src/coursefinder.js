@@ -164,6 +164,7 @@ const resolvePath = function(path, days) {
 
 const DEFAULT_DESTINATION = { name: 'USD', type: 'fiat' }
 const DEFAULT_DAYS = 1
+const DEFAULT_MAX_DEPTH = pathfinder.DEFAULT_MAX_DEPTH
 
 /**
  * Get all found ratios of given source
@@ -179,6 +180,7 @@ const DEFAULT_DAYS = 1
  *  "type": "fiat"
  * }
  * @param days how many historical days should be returned
+ * @param maxDepth the maximal depth to go in
  * @return An array with all found ratios
  * [{
  *   "courses": [ 13.12 ],
@@ -201,9 +203,9 @@ const DEFAULT_DAYS = 1
  *   }]
  * }]
  */
-const getRatios = function(source, destination = DEFAULT_DESTINATION, days = DEFAULT_DAYS){
+const getRatios = function(source, destination = DEFAULT_DESTINATION, days = DEFAULT_DAYS, maxDepth = DEFAULT_MAX_DEPTH){
   return pairfinder()
-    .then(pairs => pathfinder(pairs, source, destination))
+    .then(pairs => pathfinder.find(pairs, source, destination, maxDepth))
     .then(paths => paths.map(path => resolvePath(path, days)))
     .then(promises => Promise.all(promises))
     .then(result => {
@@ -226,5 +228,6 @@ if (require.main === module) {
 module.exports = {
   DEFAULT_DESTINATION,
   DEFAULT_DAYS,
+  DEFAULT_MAX_DEPTH,
   getRatios
 };
