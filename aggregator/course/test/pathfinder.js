@@ -1,4 +1,4 @@
-const toTest = require('../src/pathfinder');
+const toTest = require('../src/pathfinder').find;
 const assert = require('assert');
 
 describe('Pathfinder: find the path in different scenario', () => {
