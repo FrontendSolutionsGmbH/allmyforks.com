@@ -13,5 +13,5 @@ RUN apk --update --no-cache add python make g++ &&\
     npm install &&\
     apk del python make g++
 
-ENTRYPOINT [ "node" ]
+ENTRYPOINT [ "node", "--expose-gc" ]
 CMD [ "cron.js" ]

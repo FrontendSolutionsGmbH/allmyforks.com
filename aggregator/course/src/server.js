@@ -28,11 +28,12 @@ app.route('/api/__debug/heapdump')
 app.route('/api/ratios/:type/:symbol')
   .get(function(req, res) {
     const days = Number.parseInt(req.query.days) || coursefinder.DEFAULT_DAYS
+    const depth = Number.parseInt(req.query.maxDepth) || coursefinder.DEFAULT_MAX_DEPTH
 
     coursefinder.getRatios({
       name: req.params.symbol,
       type: req.params.type
-    }, coursefinder.DEFAULT_DESTINATION, days)
+    }, coursefinder.DEFAULT_DESTINATION, days, depth)
     .then(ratios => {
       res.send({
         ratios: ratios
@@ -41,7 +42,7 @@ app.route('/api/ratios/:type/:symbol')
     .catch(err => {
       res.status(500);
       res.send({
-        error: err
+        error: "" + err
       })
     })
   })
@@ -49,6 +50,7 @@ app.route('/api/ratios/:type/:symbol')
 app.route('/api/ratios/:fType/:fSymbol/:tType/:tSymbol')
   .get(function(req, res) {
     const days = Number.parseInt(req.query.days) || coursefinder.DEFAULT_DAYS
+    const depth = Number.parseInt(req.query.maxDepth) || coursefinder.DEFAULT_MAX_DEPTH
 
     coursefinder.getRatios({
       name: req.params.fSymbol,
@@ -56,7 +58,7 @@ app.route('/api/ratios/:fType/:fSymbol/:tType/:tSymbol')
     },{
       name: req.params.tSymbol,
       type: req.params.tType
-    }, days)
+    }, days, depth)
     .then(ratios => {
       res.send({
         ratios: ratios
@@ -65,7 +67,7 @@ app.route('/api/ratios/:fType/:fSymbol/:tType/:tSymbol')
     .catch(err => {
       res.status(500);
       res.send({
-        error: err
+        error: "" + err
       })
     })
   })
@@ -81,7 +83,7 @@ app.route('/api/pairs')
     .catch(err => {
       res.status(500);
       res.send({
-        error: err
+        error: "" + err
       })
     })
   })

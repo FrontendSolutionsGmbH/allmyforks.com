@@ -1,4 +1,4 @@
-const toTest = require('../src/pathfinder');
+const toTest = require('../src/pathfinder').find;
 const assert = require('assert');
 
 describe('Pathfinder: find the path in different scenario', () => {
@@ -197,5 +197,38 @@ describe('Pathfinder: find the path in different scenario', () => {
     assert.equal(result[1][0], pairs[1])
     assert.equal(result[1][1], pairs[3])
     assert.equal(result[1][2], pairs[2])
+  })
+
+  it(`two hops and one direct but max depth reached`, () => {
+    //given
+    const pairs = [{
+      from: { name: 'PAY', type: 'crypto'},
+      to: { name: 'EUR', type: 'fiat'},
+      source: "someExchange",
+    },{
+      from: { name: 'PAY', type: 'crypto'},
+      to: { name: 'ETH', type: 'crypto'},
+      source: "etherdelta.com",
+    },{
+      from: { name: 'BTC', type: 'crypto'},
+      to: { name: 'EUR', type: 'fiat'},
+      source: "bitcoin.de",
+    },{
+      from: { name: 'ETH', type: 'crypto'},
+      to: { name: 'BTC', type: 'crypto'},
+      source: "coinbase.com",
+    }]
+    const src = { name: 'PAY', type: 'crypto'}
+    const dest = { name: 'EUR', type: 'fiat'}
+
+    //when
+    const result = toTest(pairs, src, dest, 1)
+
+    //then
+    assert(result)
+    assert.equal(result.length, 1)
+
+    // (PAY)someExchange
+    assert.equal(result[0][0], pairs[0])
   })
 })

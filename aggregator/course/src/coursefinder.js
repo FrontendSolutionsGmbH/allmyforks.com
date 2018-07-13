@@ -6,13 +6,13 @@ const pathfinder = require('./pathfinder')
 const pairfinder = require('./pairfinder')
 
 const connections = {}
-const getConnection = function(source, sources = config.source){
-  if(!connections[source]) {
+const getConnection = function(sourceName, sources = config.source){
+  if(!connections[sourceName]) {
     for(let dbCon of sources) {
-      if(dbCon.name === source){
+      if(dbCon.name === sourceName){
         let mc = mongoose.createConnection(dbCon.url)
 
-        connections[source] = {
+        connections[sourceName] = {
           connection: mc,
           model: {
             ticker: mc.model(CourseTicker.name, CourseTicker.schema),
@@ -25,7 +25,34 @@ const getConnection = function(source, sources = config.source){
     }
   }
 
-  return connections[source]
+  return connections[sourceName]
+}
+
+const freeMemory = function() {
+  //mongoose holds a lot of data inside the connections/models
+  //see: https://github.com/Automattic/mongoose/issues/2874
+
+  for(let ck of Object.keys(connections)) {
+    let connectionHolder = connections[ck]
+
+    //remove models
+    for(let modelName of Object.keys(connectionHolder.connection.models)){
+      delete connectionHolder.connection.models[modelName]
+    }
+
+    //remove collections
+    for(let collectionName of Object.keys(connectionHolder.connection.collections)){
+      delete connectionHolder.connection.collections[collectionName]
+    }
+
+    //close connection
+    connectionHolder.connection.close()
+
+    //delete from connections
+    delete connections[ck]
+  }
+
+  if (global.gc) global.gc();
 }
 
 const getSave = function(array, index, defaultValue) {
@@ -46,7 +73,7 @@ const resolvePath = function(path, days) {
 
   for(let i=0; i < path.length; i++) {
     const node = path[i]
-    const dbCon = getConnection(node.source)
+    const dbCon = getConnection(node.source.name)
 
     //first we look at ticker -> there are the latest courses (if available)
     //second we look for the rest in the historical
@@ -137,6 +164,7 @@ const resolvePath = function(path, days) {
 
 const DEFAULT_DESTINATION = { name: 'USD', type: 'fiat' }
 const DEFAULT_DAYS = 1
+const DEFAULT_MAX_DEPTH = pathfinder.DEFAULT_MAX_DEPTH
 
 /**
  * Get all found ratios of given source
@@ -152,6 +180,7 @@ const DEFAULT_DAYS = 1
  *  "type": "fiat"
  * }
  * @param days how many historical days should be returned
+ * @param maxDepth the maximal depth to go in
  * @return An array with all found ratios
  * [{
  *   "courses": [ 13.12 ],
@@ -174,11 +203,15 @@ const DEFAULT_DAYS = 1
  *   }]
  * }]
  */
-const getRatios = function(source, destination = DEFAULT_DESTINATION, days = DEFAULT_DAYS){
+const getRatios = function(source, destination = DEFAULT_DESTINATION, days = DEFAULT_DAYS, maxDepth = DEFAULT_MAX_DEPTH){
   return pairfinder()
-    .then(pairs => pathfinder(pairs, source, destination))
+    .then(pairs => pathfinder.find(pairs, source, destination, maxDepth))
     .then(paths => paths.map(path => resolvePath(path, days)))
     .then(promises => Promise.all(promises))
+    .then(result => {
+      freeMemory();
+      return result;
+    })
 }
 
 //do we call directly?
@@ -195,5 +228,6 @@ if (require.main === module) {
 module.exports = {
   DEFAULT_DESTINATION,
   DEFAULT_DAYS,
+  DEFAULT_MAX_DEPTH,
   getRatios
 };

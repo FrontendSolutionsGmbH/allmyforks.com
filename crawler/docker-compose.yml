@@ -155,17 +155,23 @@ services:
     environment:
       - CFG_SOURCE_0_URL=mongodb://db/coinmarketcap
       - CFG_SOURCE_0_NAME=coinmarketcap.com
+      - CFG_SOURCE_0_TYPE=price
       - CFG_SOURCE_1_URL=mongodb://db/bitfinex
       - CFG_SOURCE_1_NAME=bitfinex.com
+      - CFG_SOURCE_1_TYPE=exchange
       - CFG_SOURCE_2_URL=mongodb://db/binance
       - CFG_SOURCE_2_NAME=binance.com
+      - CFG_SOURCE_2_TYPE=exchange
       - CFG_SOURCE_3_URL=mongodb://db/coinbase
       - CFG_SOURCE_3_NAME=coinbase.com
+      - CFG_SOURCE_3_TYPE=exchange
       - CFG_SOURCE_4_URL=mongodb://db/fiat
       - CFG_SOURCE_4_NAME=fiat
+      - CFG_SOURCE_4_TYPE=price
       - CFG_SOURCE_5_URL=mongodb://db/okex
       - CFG_SOURCE_5_NAME=okex.com
-    command: "--max-old-space-size=4096 server.js"
+      - CFG_SOURCE_5_TYPE=exchange
+    command: "--max-old-space-size=2048 server.js"
     ports:
       - "3000:3000"
     restart: always

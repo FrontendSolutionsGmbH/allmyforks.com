@@ -1,3 +1,5 @@
+const DEFAULT_MAX_DEPTH = Number.MAX_VALUE
+
 /**
  *
  * @param tradingPairs a list of trading pairs:
@@ -10,7 +12,10 @@
  *    "name": "EUR",
  *    "type": "fiat"
  *  },
- *  "source": "bitcoin.de"
+ *  "source": {
+ *    "name": "bitcoin.de",
+ *    "type": "exchange"
+*    }
  * }]
  * @param source the source currency
  * {
@@ -22,6 +27,8 @@
  *   "name": "EUR",
  *   "type": "fiat"
  * }
+ * @param maxDepth the maximal depth to go in
+ * @param currentDepth the current depth (only for recursive purposes)
  *
  * @return Array with a array of list of nodes (trading pairs)
  * [
@@ -34,12 +41,19 @@
  *      "name": "EUR",
  *      "type": "fiat"
  *    },
- *    "source": "bitcoin.de"
+ *    "source": {
+ *      "name": "bitcoin.de",
+ *      "type": "exchange"
+       }
  *   }]
  * ]
  */
-const find = function(tradingPairs, source, destination){
+const find = function(tradingPairs, source, destination, maxDepth = DEFAULT_MAX_DEPTH, currentDepth = 0){
   let result = []
+
+  if(currentDepth >= maxDepth) {
+    return result;
+  }
 
   let possible = tradingPairs.filter(tp => {
     if(tp.from.name === source.name && tp.from.type === source.type) {
@@ -77,7 +91,7 @@ const find = function(tradingPairs, source, destination){
     })
 
     //recursion ahead!
-    let paths = find(purgedPairs, tmpSrc, destination)
+    let paths = find(purgedPairs, tmpSrc, destination, maxDepth, currentDepth + 1)
 
     for(let curPath of paths) {
       result.push([start, ...curPath])
@@ -96,4 +110,7 @@ const find = function(tradingPairs, source, destination){
   })
 }
 
-module.exports = find;
+module.exports = {
+  DEFAULT_MAX_DEPTH,
+  find
+};

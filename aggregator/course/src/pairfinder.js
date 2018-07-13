@@ -30,29 +30,24 @@ const find = function(sources = config.source){
     let mc = mongoose.createConnection(dbCon.url)
     let model = mc.model(CourseHistorical.name, CourseHistorical.schema)
 
-    let p = model
-      .find({})
-      .select({ "from": 1, "to": 1, "_id": 0})
-      .lean()
-      .then(entities => {
-        let pairs = []
-        let alreadyKnown = new Set()
-
-        for(let entity of entities) {
-          let pairName = `${entity.from.name}_${entity.from.type}__${entity.to.name}_${entity.to.type}`
-
-          if (!alreadyKnown.has(pairName)) {
-            pairs.push({
-              ...entity,
-              source: dbCon.name
-            })
-            alreadyKnown.add(pairName)
-          }
+    let p = model.aggregate([{
+      $group: {
+        _id: {
+          from: {name: "$from.name", type: "$from.type"},
+          to: {name: "$to.name", type: "$to.type"}
         }
-
-        mc.close()
-        return pairs
-      })
+      }
+    }])
+    .then(pairs => pairs.map(pair => {
+      return {
+        from: pair._id.from,
+        to: pair._id.to,
+        source: {
+          name: dbCon.name,
+          type: dbCon.type || 'price',
+        }
+      }
+    }))
 
     allPromises.push(p)
   }
