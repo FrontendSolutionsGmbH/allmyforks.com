@@ -27,9 +27,6 @@ var aggregateData = function (coins) {
             crawledCoin = JSON.parse(fs.readFileSync(fileName))
 
             if (crawledCoin.ratios && crawledCoin.ratios.length > 0) {
-                // console.log('read', coin.id)
-                // coin.ratios = crawledCoin.ratios
-                //coin.price = Math.max(...(result.ratios.map(r=>r.ratio)))
 
                 // old format
                 if (crawledCoin.ratios[0].ratio) {

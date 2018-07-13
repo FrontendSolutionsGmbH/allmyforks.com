@@ -1575,7 +1575,7 @@ const data = [
         ]
     },
     {
-        "id": "bitcoin_lambo",
+        "id": "bitcoinlambo",
         "name": "Bitcoin Lambo",
         "shortName": "BTL",
         "isCrawlable": true,

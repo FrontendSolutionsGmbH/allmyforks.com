@@ -3,12 +3,22 @@
 <div class="w3-container extralarge-content ">
 
 
-    <table class="w3-table w3-centered">
+    <div class="w3-center">{{intlGet "list_forks_for"}} </h1></div>
+    <table class="w3-table w3-centered table-header-fork-container">
         <tr>
             {{#each selectCoins}}
 
-            <td><a style="text-decoration: none" href="{{url}}">
-                <b> {{shortName}}-Forks<br/>{{{fiatWithCurrencyInSpan priceSumForks ../fiat ../language}}}</b></a></td>
+            <td>
+
+                <a style="text-decoration: none" href="{{url}}">
+                    <div class="ww3-card  w3-padding-32 table-header-fork {{#if selected}}table-header-fork-selected w3-primary{{/if}}{{#unless selected}}w3-light-gray{{/unless}}">
+                        {{#if selected}}<b>{{/if}} {{shortName}}-Forks<br/>{{{fiatWithCurrencyInSpan
+                        priceSumForks ../fiat
+                        ../language}}}{{#if selected}}</b>{{/if}}
+                    </div>
+                </a>
+
+            </td>
             {{/each}}
 
         </tr>
@@ -16,32 +26,14 @@
 
 </div>
 
-
-<div class="w3-container extralarge-content ">
-    {{coin.Name}}
-    <h2>{{intlGet "list_forks_for"}} <select class="w3-select" style="width:auto" name="option" id="select-forks"
-                                             onchange="location = this.value;">
-        {{#each selectCoins}}
-        <option value="{{url}}" {{selected}}>{{title}}</option>
-        {{/each}}
-    </select>
-    </h2>
-
-    <small>{{intlGet "last_update"}}: {{{localDateInSpan dateTime "datetime"}}}</small>
-</div>
-
 <div class="w3-container extralarge-content ">
 
-    <div class="left" id="sum-forks-top-left">
+    <div class="w3-center">
 
-        <h3 class="w3-center">{{{formatMessage (intlGet "forklist_header") name=coin.name value=(fiatWithCurrencyInSpan coin.priceSumForks fiat language)}}}</h3>
+        <h1>{{{formatMessage (intlGet "forklist_header") name=coin.name value=(fiatWithCurrencyInSpan
+            coin.priceSumForks fiat language)}}}</h1>
 
-        {{#unless mvp}}
-        1 {{coin.name}}={{{fiatWithCurrencyInSpan coin.priceSumForksPlusOwnPrice fiat language}}}
-        ({{{fiatWithCurrencyInSpan coin.price fiat language}}} + {{{fiatWithCurrencyInSpan
-        coin.priceSumForks fiat
-        language}}} from forks)
-        {{/unless}}
+        <small class="w3-text-grey"> {{intlGet "last_update"}}: {{{localDateInSpan dateTime "datetime"}}}</small>
 
     </div>
 </div>
@@ -50,7 +42,7 @@
 
     <div class="w3-right" id="sum-forks-top">
 
-        <b>{{coin.shortName}}-Forks = {{{fiatWithCurrencyInSpan coin.priceSumForks fiat language}}}</b>
+        <b>All forks: {{{fiatWithCurrencyInSpan coin.priceSumForks fiat language}}}</b>
     </div>
 </div>
 
@@ -67,7 +59,9 @@
                 <th class="w3-hide-small w3-hide-medium ">{{intlGet "price"}}</th>
                 <th class="w3-hide-small w3-hide-medium ">{{intlGet "change"}} ({{intlGet "24hours"}})</th>
                 <th class="w3-hide-small w3-hide-medium ">{{intlGet "change"}} ({{intlGet "7days"}})</th>
-                <th class="w3-hide-small w3-hide-medium hide-below-extralage">{{intlGet "price_graph"}} ({{intlGet "7days"}})</th>
+                <th class="w3-hide-small w3-hide-medium hide-below-extralage">{{intlGet "price_graph"}} ({{intlGet
+                    "7days"}})
+                </th>
                 <th>1 {{coin.shortName}}=</th>
             </tr>
             {{#each coin.forks}}
@@ -91,7 +85,8 @@
                 </td>
 
 
-                <td class="w3-hide-small w3-right w3-hide-medium " sorttable_customkey="{{price}}">{{{fiatWithCurrencyInSpan price
+                <td class="w3-hide-small w3-right w3-hide-medium " sorttable_customkey="{{price}}">
+                    {{{fiatWithCurrencyInSpan price
                     ../fiat
                     ../language}}}
                 </td>
@@ -131,7 +126,7 @@
 
 <div class="w3-container extralarge-content ">
     <div class="w3-right" id="sum-forks">
-        <b>{{coin.shortName}}-Forks = {{{fiatWithCurrencyInSpan coin.priceSumForks fiat language}}}</b>
+        <b>All forks: {{{fiatWithCurrencyInSpan coin.priceSumForks fiat language}}}</b>
     </div>
 </div>
 
