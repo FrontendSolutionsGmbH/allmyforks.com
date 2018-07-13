@@ -38,6 +38,22 @@ const find = function(sources = config.source){
         }
       }
     }])
+    .then(pairs => {
+      //remove models
+      for(let modelName of Object.keys(mc.models)){
+        delete mc.models[modelName]
+      }
+
+      //remove collections
+      for(let collectionName of Object.keys(mc.collections)){
+        delete mc.collections[collectionName]
+      }
+
+      //close connection
+      mc.close();
+
+      return pairs
+    })
     .then(pairs => pairs.map(pair => {
       return {
         from: pair._id.from,
