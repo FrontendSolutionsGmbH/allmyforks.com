@@ -12,13 +12,20 @@ if (baseUrl.indexOf('http') < 0) {
     process.exit(1)
 }
 
-console.log('lets crawl ' + baseUrl)
+const settings = {
+    parallelWorker: 2,
+    days: 8,
+    maxDepth: 2
+}
+
+console.log('lets crawl ' + baseUrl + ' with ' + settings.parallelWorker + ' workers, ' + settings.days + ' days and ' + settings.maxDepth + ' maximum depth')
 var apiCrypto = baseUrl + '/api/ratios/crypto/'
 var apiPairs = baseUrl + '/api/pairs'
 
 console.log('data-api: ' + apiCrypto)
 console.log('pairs-api: ' + apiPairs)
 console.log('local-crypto-tokens: ' + coins.length)
+
 
 
 
@@ -54,7 +61,7 @@ var downloadCrawledData = function (coins) {
 
 
     var promises = coins.map((coin)=> {
-        var url = apiCrypto + coin.shortName + '?days=8&maxDepth=2'
+        var url = apiCrypto + coin.shortName + '?days=' + settings.days + '&maxDepth='+ settings.maxDepth
         return fetch(url, {timeout: 120000})
             .then((res) => {
                 if (res.status === 200) {
@@ -106,5 +113,5 @@ var doDownload = function (coins, currentStep, stepWidth) {
 
 filterCoinList(coins).then((coins) => {
     console.log('tokens with symbol on backend: ' + coins.length)
-    doDownload(coins, 0, 2)
+    doDownload(coins, 0, settings.parallelWorker)
 })

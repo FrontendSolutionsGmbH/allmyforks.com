@@ -167,38 +167,29 @@ var mergeData = function (localData, crawledData) {
 
                 r.isValid = true
                 r.path && r.path.map((p, index) => {
-                    p.url = 'http://' + p.source
-                    p.title = p.source
+                    p.url = 'http://' + p.source.name
+                    p.title = p.source.name
 
-                    if (p.source === 'coinmarketcap.com') {
+
+                    if (p.source.name === 'coinmarketcap.com') {
                         var fullLink = d.links.find(l => l.type === 'coinmarketcap')
                         if (fullLink) {
                             p.url = fullLink.url
                         }
                         r.isValid = false
-                    }
-
-                    if (p.source === 'coinbase.com') {
+                    } else if (p.source.name === 'coinbase.com') {
                         p.url = 'https://www.coinbase.com/join/5b40a148fae66f091eaecf4a'
                         p.hasReferral = true
-                    }
-
-                    if (p.source === 'binance.com') {
-                        p.url = 'https://www.binance.com/en/trade/' + p.from.name + '_' + p.to.name + '?ref=35365745'
+                    } else if (p.source.name === 'binance.com') {
+                        //p.url = 'https://www.binance.com/en/trade/' + p.from.name + '_' + p.to.name + '?ref=35365745'
+                        p.url = 'https://www.binance.com/?ref=35365745'
                         p.hasReferral = true
-                    }
-
-                    if (p.source === 'okex.com') {
+                    } else if (p.source.name === 'okex.com') {
                         p.url = 'https://www.okex.com/market?product=' + p.from.name.toLowerCase() + '_' + p.to.name.toLowerCase()
-                    }
-                    /* if (p.source === 'bitfinex.com') {
-                     p.url = 'https://www.bfxdata.com/orderbooks/' +  p.from.name.toLowerCase() + p.to.name.toLowerCase()
-                     }*/
-                    if (p.source === 'fiat') {
+                    } else if (p.source.name === 'fiat' ) {
                         p.url = ''
                         p.title = ''
                     }
-
 
                     if (index === 0) {
                         p.from.value = 1
@@ -219,7 +210,7 @@ var mergeData = function (localData, crawledData) {
                     if (pindex > 0) {
                         return
                     }
-                    if (p.source === 'fiat') {
+                    if (p.source.type  !== 'exchange') {
                         return
                     }
 
