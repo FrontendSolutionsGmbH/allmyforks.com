@@ -12,6 +12,7 @@ app.route('/api/__debug/heapdump')
 
     heapdump.writeSnapshot(fileName, function(err, filename) {
       if(err) {
+        console.log("Error while calling heapdump", err)
         res.status(500)
         res.send({
           error: err
@@ -40,6 +41,7 @@ app.route('/api/ratios/:type/:symbol')
       })
     })
     .catch(err => {
+      console.log("Error while calling ratios", err)
       res.status(500);
       res.send({
         error: "" + err
@@ -65,6 +67,7 @@ app.route('/api/ratios/:fType/:fSymbol/:tType/:tSymbol')
       })
     })
     .catch(err => {
+      console.log("Error while calling ratios", err)
       res.status(500);
       res.send({
         error: "" + err
@@ -81,6 +84,7 @@ app.route('/api/pairs')
       })
     })
     .catch(err => {
+      console.log("Error while calling pairs", err)
       res.status(500);
       res.send({
         error: "" + err
