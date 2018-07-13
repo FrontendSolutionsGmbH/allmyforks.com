@@ -88,6 +88,7 @@ var generatePage = function (data, directoryFromRoot, templateFunc, pageId, raw,
         data.selectCoins = selectors.selectCoins
 
         data.title = Handlebars.compile(data.pages[data.pageId].title)(data)
+        data.description = Handlebars.compile(data.pages[data.pageId].description)(data)
     }
 
 

@@ -1,13 +1,14 @@
-<html>
+<html lang="{{language.id}}">
 
 <head>
     <title>{{{title}}}</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5"/>
 
 
     <meta property="og:title" content="{{title}}"/>
     <meta name="description" content="{{description}}"/>
+    <meta name="theme-color" content="#c66bdb">
 
     <meta property="og:type" content="website">
     <meta property="og:image" content="splash_600x315.png">
@@ -52,7 +53,7 @@
 
     <div class="w3-bar-item">
         <div style="width:22px">
-            <a href="/{{language.id}}">
+            <a href="/{{language.id}}" title="Go to home">
                 <svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0, 0, 64, 64">
                     <path fill="#f7931a" d="M63 40A32 32 0 1 1 1 24a32 32 0 0 1 62 16z"/>
                     <path fill="#FFF"
@@ -63,7 +64,7 @@
     </div>
 
     <a class="w3-bar-item w3-button" href="/{{language.id}}">allmyforks.com</a>
-  <span class="w3-bar-item w3-right"><select style="width:auto" name="option" id="select-languages"
+  <span class="w3-bar-item w3-right"><select title="languages" aria-label="language" style="width:auto" name="select-languages" id="select-languages"
                                              onchange="location = this.value;">
       {{#each selectLanguages}}
         <option value="{{value}}" {{selected}}>{{title}}</option>
@@ -72,7 +73,7 @@
   </select></span>
   
   
-  <span class="w3-bar-item w3-right"><select style="width:auto" name="option" id="select-currencies"
+  <span class="w3-bar-item w3-right"><select title="currency" aria-label="currency" style="width:auto" name="select-currencies" id="select-currencies"
                                              onchange="location = this.value;">
          {{#each selectFiats}}
         <option value="{{value}}" {{selected}} data-fiat-option="{{id}}">{{title}}</option>
