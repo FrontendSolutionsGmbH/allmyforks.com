@@ -14,10 +14,41 @@ if (baseUrl.indexOf('http') < 0) {
 
 console.log('lets crawl ' + baseUrl)
 var apiCrypto = baseUrl + '/api/ratios/crypto/'
+var apiPairs = baseUrl + '/api/pairs'
 
-console.log('crypto-api: ' + apiCrypto)
+console.log('data-api: ' + apiCrypto)
+console.log('pairs-api: ' + apiPairs)
 console.log('local-crypto-tokens: ' + coins.length)
 
+
+
+var filterCoinList = function(coins) {
+
+
+    console.log('reducing set of coins to available symbols')
+    var url = apiPairs
+    return fetch(url, {timeout: 120000}).then((res) => {
+        if (res.status === 200) {
+            //  console.log('fetching success ', res.status, coin.shortName)
+            return res.json()
+        } else {
+            console.log('status != 200 for pairs', res.status, res.statusText, url)
+            return {fail: true}
+        }
+    }).catch((res) => {
+        console.log('network problem for pairs')
+        return {fail: true}
+    }).then((json) => {
+
+        if (json.fail) {
+            return coins
+        }
+
+        var uniqueSymbols = json.pairs.map(p => p.from.name).filter((v, i, a) => a.indexOf(v) === i);
+
+        return coins.filter(c => uniqueSymbols.indexOf(c.shortName) > -1)
+    })
+}
 
 var downloadCrawledData = function (coins) {
 
@@ -30,12 +61,12 @@ var downloadCrawledData = function (coins) {
                     //  console.log('fetching success ', res.status, coin.shortName)
                     return res.json()
                 } else {
-                    console.log('status != 200', coin.shortName, res.status)
+                    console.log('status != 200', coin.shortName, res.status, res.statusText, url)
                     return {fail: true}
                 }
             }).catch((res) => {
                 console.log('network problem', coin.shortName, res.message)
-                return {}
+                return {fail: true}
             }).then((json) => {
                 var fileName = outputDir + coin.id + '.json'
                 if (json.ratios && json.ratios.length < 1) {
@@ -72,4 +103,8 @@ var doDownload = function (coins, currentStep, stepWidth) {
 }
 
 
-doDownload(coins, 0, 5)
+
+filterCoinList(coins).then((coins) => {
+    console.log('tokens with symbol on backend: ' + coins.length)
+    doDownload(coins, 0, 2)
+})
