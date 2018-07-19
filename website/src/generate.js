@@ -15,7 +15,7 @@ var sourceSupportUs = fs.readFileSync('./src/pages/supportus.html', 'utf8')
 var sourceWhatAreForks = fs.readFileSync('./src/pages/whatisafork.html', 'utf8')
 var sourceDetails = fs.readFileSync('./src/pages/details.html', 'utf8')
 var javascriptAsString = fs.readFileSync('./src/inc/custom.js', 'utf8') + '\r\n' + fs.readFileSync('./src/inc/sortable.js', 'utf8')
-var stylesAsString = fs.readFileSync('./src/inc/w3.css', 'utf8') + fs.readFileSync('./src/inc/custom.css', 'utf8') + fs.readFileSync('./src/inc/sass/css/css.css', 'utf8')
+var stylesAsString = fs.readFileSync('./src/inc/w3.css', 'utf8') + fs.readFileSync('./src/inc/custom.css', 'utf8')
 var sourceFooter = fs.readFileSync('./src/inc/footer.html', 'utf8')
 
 const crawledData = require('./input/crawl.json')
