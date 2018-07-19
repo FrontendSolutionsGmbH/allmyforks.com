@@ -9,6 +9,27 @@
         "maxage": 31536000,
         "outputFile": "/.htaccess"
       }
+    },
+    "htmlOptim": {
+      "enabled": true,
+      "options": {
+        "htmlMinifier": {
+          "enabled": true,
+          "options": {
+            "collapseBooleanAttributes": true,
+            "collapseInlineTagWhitespace": true,
+            "collapseWhitespace": true,
+            "conservativeCollapse": true,
+            "decodeEntities": true,
+            "removeComments": true,
+            "removeEmptyAttributes": false,
+            "removeEmptyElements": false,
+            "removeScriptTypeAttributes": false,
+            "sortAttributes": true,
+            "sortClassName": true
+          }
+        }
+      }
     }
   }
 }

@@ -35,8 +35,8 @@ const data = {
             "description": "AllMyForks Disclaimer"
         },
         "supportus": {
-            "title": "Support allmyforks.com",
-            "description": "Support allmyforks.com"
+            "title": "Support AllMyForks.com",
+            "description": "Support AllMyForks.com"
         },
         "list": {
             "title": "{{coin.shortName}}-Forks {{{fiatWithCurrency coin.priceSumForks fiat language}}}",

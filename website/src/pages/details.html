@@ -1,166 +1,177 @@
 {{> header-list}}
 
-<div class="w3-row">
-    <div class="w3-container w3-half">
-
-        <h1>{{coin.name}}</h1>
+<div class="w3-container extralarge-content js-main-page-heading">
+    <div class="w3-center">
+        <h1><b><span>{{coin.name}}</span></b></h1>
     </div>
 </div>
 
-<div class="w3-row">
-    {{#with coin}}
-    <div class="w3-container w3-third">
-        <h2>{{intlGet "details"}}</h2>
+<div class="w3-container js-detail-page-size">
+    <div class="w3-row">
 
-        <ul>
-            <li>{{intlGet "name"}}: {{name}}</li>
-            <li>{{intlGet "price"}}: {{{fiatWithCurrencyInSpan price ../fiat ../language}}}</li>
-            <li>{{intlGet "change"}} ({{intlGet "24hours"}}): <span
-                    class="{{#if priceChangeOneDayIsPositive}}w3-text-green{{/if}} {{#if priceChangeOneDayIsNegative}}w3-text-red{{/if}}">
+        {{#with coin}}
+
+        <div class="w3-container w3-full js-price-graph-detail">
+            <h2>{{intlGet "price_graph"}} ({{intlGet "7days"}})</h2>
+            {{#with priceGraphData}}
+            <div class="js-price-graph-back">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1" width="100%"
+                     viewBox="0 0 {{width}} {{height}}">
+                    <path stroke="#f7931a" stroke-width="2" fill="transparent" stroke-linecap="square" d="{{data}}"/>
+                </svg>
+            </div>
+            {{/with}}
+        </div>
+
+
+        <div class="w3-container w3-third">
+            <h2>{{intlGet "details"}}</h2>
+
+            <ul class="js-detail-list">
+                <li>{{intlGet "name"}}: {{name}}</li>
+                <li>{{intlGet "price"}}: {{{fiatWithCurrencyInSpan price ../fiat ../language}}}</li>
+                <li>{{intlGet "change"}} ({{intlGet "24hours"}}): <span
+                        class="{{#if priceChangeOneDayIsPositive}}w3-text-green{{/if}} {{#if priceChangeOneDayIsNegative}}w3-text-red{{/if}}">
                 {{#if priceChangeOneDayPercentage}}{{#if
                 priceChangeOneDayIsPositive}}+{{/if}}{{formatNumber priceChangeOneDayPercentage
                 "percentage"}}{{/if}}
             </span></li>
-            <li>{{intlGet "change"}} ({{intlGet "7days"}}): <span
-                    class="{{#if priceChangeSevenDaysIsPositive}}w3-text-green{{/if}} {{#if priceChangeSevenDaysIsNegative}}w3-text-red{{/if}}">
+                <li>{{intlGet "change"}} ({{intlGet "7days"}}): <span
+                        class="{{#if priceChangeSevenDaysIsPositive}}w3-text-green{{/if}} {{#if priceChangeSevenDaysIsNegative}}w3-text-red{{/if}}">
                 {{#if priceChangeSevenDaysPercentage}}{{#if
                 priceChangeSevenDaysIsPositive}}+{{/if}}{{formatNumber priceChangeSevenDaysPercentage
                 "percentage"}}{{/if}}
             </span>
-            </li>
+                </li>
 
-            {{#each parents}}
-            <li>{{intlGet "forked_from"}}: {{name}}</li>
-            <li>{{intlGet "fork_date"}}: {{{localDateInSpan date dateFormat}}}</li>
-            <li>{{intlGet "fork_block"}}: {{block}}</li>
-            <li>1 {{shortName}}= {{ratio}} {{../shortName}}</li>
-            <li>1 {{shortName}}= {{{fiatWithCurrencyInSpan priceTimesForkRatio ../../fiat ../../language}}}</li>
-            {{/each}}
-        </ul>
+                {{#each parents}}
+                <li>{{intlGet "forked_from"}}: {{name}}</li>
+                <li>{{intlGet "fork_date"}}: {{{localDateInSpan date dateFormat}}}</li>
+                <li>{{intlGet "fork_block"}}: {{block}}</li>
+                <li>1 {{shortName}}= {{ratio}} {{../shortName}}</li>
+                <li>1 {{shortName}}= {{{fiatWithCurrencyInSpan priceTimesForkRatio ../../fiat ../../language}}}</li>
+                {{/each}}
+            </ul>
 
-        <h2>{{intlGet "price_graph"}} ({{intlGet "7days"}})</h2>
-        {{#with priceGraphData}}
-        <svg xmlns="http://www.w3.org/2000/svg" version="1" width="{{width}}" height="{{height}}"
-        >
-            <path stroke="#f7931a" stroke-width="2" fill="transparent" stroke-linecap="square"
-                  d="{{data}}"/>
-        </svg>
-        {{/with}}
-    </div>
+        </div>
 
-    <div class="w3-container w3-twothird">
+        <div class="w3-container w3-twothird">
 
-        {{#if links}}
-        <h2>Links</h2>
-        <ul>
-            {{#each links}}
-            <li><a href="{{url}}" target="link-{{id}}" style="text-transform: capitalize;">{{type}}</a></li>
-            {{/each}}
-        </ul>
-        {{/if}}
+            {{#if links}}
+            <h2>Links</h2>
+            <ul class="js-detail-list">
+                {{#each links}}
+                <li><a href="{{url}}" target="link-{{id}}" style="text-transform: capitalize;">{{type}}</a></li>
+                {{/each}}
+            </ul>
+            {{/if}}
 
 
-        {{#if markets.length}}
-        <h2>{{intlGet "markets"}}</h2>
+            {{#if markets.length}}
+            <h2>{{intlGet "markets"}}</h2>
 
-        <p>{{intlGet "use_any_of_the_following_links"}} {{name}}</p>
+            <p>{{intlGet "use_any_of_the_following_links"}} {{name}}</p>
 
-        <ul>
-            {{#each markets}}
-            <li>
-                <a target="market-{{source}}" href="{{url}}">{{title}}</a>{{#if hasReferral}}&sup1; {{/if}}:
-                {{{fiatWithCurrencyInSpan ratio ../../fiat
-                ../../language}}}
-            </li>
-            {{/each}}
-        </ul>
+            <ul class="js-detail-list">
+                {{#each markets}}
+                <li>
+                    <a target="market-{{source}}" href="{{url}}">{{title}}</a>{{#if hasReferral}}&sup1; {{/if}}:
+                    {{{fiatWithCurrencyInSpan ratio ../../fiat
+                    ../../language}}}
+                </li>
+                {{/each}}
+            </ul>
 
-        <small>	&sup1; {{intlGet "affiliate_links"}}
-        </small>
+            <small>    &sup1; {{intlGet "affiliate_links"}}
+            </small>
 
-        {{/if}}
+            {{/if}}
+
+        </div>
+        <div class="w3-container">
+
+            {{#if ratiosValid}}
+            <h2>Hops</h2>
+
+            <table>
+                {{#each ratiosValid}}
+                <tr>
+                    <td colspan="4">
+                        {{#if courses}}<b>{{{fiatWithCurrencyInSpan courses.[0] ../../fiat ../../language}}}</b>{{/if}}
+                    </td>
+                </tr>
+                {{#each path}}
+                <tr>
+                    <td>{{formatNumber from.value}} {{from.name}}</td>
+                    <td class="nowrap">-&gt;</td>
+                    <td> {{formatNumber to.value}} {{to.name}}</td>
+                    <td><a target="market-{{source}}"
+                           href="{{url}}">{{title}}</a></td>
+                    <td class="w3-hide-small">1:{{formatNumber ratio}}</td>
+                    <td class="w3-hide-small">{{{localDateInSpan courses.[0].date "datetime"}}}</td>
+                </tr>
+                {{/each}}
+                <tr>
+                    <td colspan="4">&nbsp;</td>
+                </tr>
+
+                {{/each}}
+            </table>
+
+            {{/if}}
+
+            {{#unless isCrawlable}}
+            {{intlGet "duplicate_symbols"}}:
+            <ul>
+                {{#each crawlAlternativesWithSameSymbol}}
+                <li>{{name}}</li>
+                {{/each}}
+            </ul>
+            {{/unless}}
+
+        </div>
 
 
-        {{#if ratiosValid}}
-        <h2>Hops</h2>
+        {{#unless ../mvp}}
+        <div class="w3-container w3-twothird">
+            <h2>
+                {{formatMessage (intlGet "howtoclaimmyforkedcoin") name=(lookup . 'name')}}
+            </h2>
 
-        <table>
-            {{#each ratiosValid}}
-            <tr>
-                <td colspan="4">
-                    {{#if courses}}<b>{{{fiatWithCurrencyInSpan courses.[0] ../../fiat ../../language}}}</b>{{/if}}
-                </td>
-            </tr>
-            {{#each path}}
-            <tr>
-                <td>{{formatNumber from.value}} {{from.name}}</td>
-                <td>-&gt;</td>
-                <td> {{formatNumber to.value}} {{to.name}}</td>
-                <td><a target="market-{{source}}"
-                       href="{{url}}">{{title}}</a></td>
-                <td>1:{{formatNumber ratio}}</td>
-                <td>{{{localDateInSpan courses.[0].date "datetime"}}}</td>
-            </tr>
-            {{/each}}
-            <tr>
-                <td colspan="4">&nbsp;</td>
-            </tr>
+            <div class="w3-container w3-twothird w3-panel w3-green">
+                {{intlGet "no_financial_advice_title"}}: {{intlGet "no_financial_advice_message"}}
+            </div>
 
-            {{/each}}
-        </table>
+            <div class="w3-container w3-full">
+                <ol>
+                    <li>Read our general introduction on <a href="/{{../language.id}}/what-is-a-fork/">{{intlGet
+                        "whatisafork"}}</a> and <a href="/{{../language.id}}/how-to-claim-forked-coins/">{{formatMessage
+                        (intlGet "howtoclaimmyforkedcoin") name="_____"}}</a></li>
+                    <li>Make sure what you wanna do with your '{{name}}' and if it safe to use by reading more about it,
+                        by
+                        checking out the following links:
+                        <ul>
+                            {{#each links}}
+                            <li><a href="{{url}}" target="link-{{id}}">{{type}}</a></li>
+                            {{/each}}
+                        </ul>
+                    </li>
+                    <li>Go to the website of '{{name}}' and download a wallet that suits you.</li>
+                    <li>Sell your coin on any of the following markets
+                        <ul>
+                            {{#each ../markets}}
+                            <li><a href="{{url}}" target="market-{{id}}">{{name}}</a></li>
+                            {{/each}}
+                            </li>
+                        </ul>
 
-        {{/if}}
+                </ol>
+            </div>
 
-        {{#unless isCrawlable}}
-        {{intlGet "duplicate_symbols"}}:
-        <ul>
-            {{#each crawlAlternativesWithSameSymbol}}
-            <li>{{name}}</li>
-            {{/each}}
-        </ul>
+        </div>
         {{/unless}}
 
     </div>
-
-
-    {{#unless ../mvp}}
-    <div class="w3-container w3-twothird">
-        <h2>
-            {{formatMessage (intlGet "howtoclaimmyforkedcoin") name=(lookup . 'name')}}
-        </h2>
-
-        <div class="w3-container w3-twothird w3-panel w3-green">
-            {{intlGet "no_financial_advice_title"}}: {{intlGet "no_financial_advice_message"}}
-        </div>
-
-        <div class="w3-container w3-full">
-            <ol>
-                <li>Read our general introduction on <a href="/{{../language.id}}/what-is-a-fork/">{{intlGet
-                    "whatisafork"}}</a> and <a href="/{{../language.id}}/how-to-claim-forked-coins/">{{formatMessage
-                    (intlGet "howtoclaimmyforkedcoin") name="_____"}}</a></li>
-                <li>Make sure what you wanna do with your '{{name}}' and if it safe to use by reading more about it, by
-                    checking out the following links:
-                    <ul>
-                        {{#each links}}
-                        <li><a href="{{url}}" target="link-{{id}}">{{type}}</a></li>
-                        {{/each}}
-                    </ul>
-                </li>
-                <li>Go to the website of '{{name}}' and download a wallet that suits you.</li>
-                <li>Sell your coin on any of the following markets
-                    <ul>
-                        {{#each ../markets}}
-                        <li><a href="{{url}}" target="market-{{id}}">{{name}}</a></li>
-                        {{/each}}
-                        </li>
-                    </ul>
-
-            </ol>
-        </div>
-
-    </div>
-    {{/unless}}
-
 
     {{/with}}
 </div>
