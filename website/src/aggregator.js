@@ -18,7 +18,10 @@ var enrichPricesAndParents = function (coin) {
         coin.priceGraphData = {
             width: width,
             height: height + 10,
-            data: coin.priceHistory.reduce((t, e, i) => (t ? t + 'L ' : 'M') + '' + i * fx + ' ' + (((e - min) * fy) + 5), '')
+            data: coin.priceHistory.reduce((t, e, i) => (t ? t + 'L ' : 'M') + '' + i * fx + ' ' + (((e - min) * fy) + 5), ''),
+            max: max,
+            min: min,
+            maxMinusMin: max - min
         }
 
         if (coin.priceHistory.length > 1 && coin.priceHistory[1] > 0.0) {

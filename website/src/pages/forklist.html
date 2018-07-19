@@ -1,10 +1,9 @@
 {{> header-list}}
 
 <div class="w3-container extralarge-content ">
-    <div class="w3-center"><p>{{intlGet "list_forks_for"}}</p></div>
-<div class="js-coin-select">
-    {{#each selectCoins}}
-    {{#if selected}}
+    <div class="js-coin-select">
+        {{#each selectCoins}}
+        {{#if selected}}
     <span class="js-active-coin">
     {{/if}}
     {{#unless selected}}
@@ -19,12 +18,13 @@
     </a>
     </span>
     {{/each}}
-</div>
+    </div>
 </div>
 
 <div class="w3-container extralarge-content js-main-page-heading">
     <div class="w3-center">
-        <h1>{{{formatMessage (intlGet "forklist_header") name=coin.name value=(fiatWithCurrencyInSpan coin.priceSumForks fiat language)}}}</h1>
+        <h1>{{{formatMessage (intlGet "forklist_header") name=coin.name value=(fiatWithCurrencyInSpan coin.priceSumForks
+            fiat language)}}}</h1>
         <p class="w3-text-grey"> {{intlGet "last_update"}}: {{{localDateInSpan dateTime "datetime"}}}</p>
     </div>
 </div>
@@ -33,95 +33,115 @@
 
 <div class="js-forks-table-wrapper">
 
-<div class="w3-container extralarge-content ">
-    <div class="w3-right" id="sum-forks-top">
-        <b>All forks: {{{fiatWithCurrencyInSpan coin.priceSumForks fiat language}}}</b>
+    <div class="w3-container extralarge-content ">
+        <div class="w3-right" id="sum-forks-top">
+            <b>All forks: {{{fiatWithCurrencyInSpan coin.priceSumForks fiat language}}}</b>
+        </div>
     </div>
-</div>
 
-<div class="w3-container extralarge-content ">
-    <div id="table-forks-outer">
+    <div class="w3-container extralarge-content ">
+        <div id="table-forks-outer">
 
-        <table class="w3-table sortable" id="table-forks">
-            <tr>
-                <th><small>#</small></th>
-                <th><small>{{intlGet "name"}}</small></th>
-                <th class="w3-hide-small"><small>1&nbsp;{{coin.shortName}}&nbsp;=</small></th>
-                <th class="w3-hide-small"><small>{{intlGet "fork_date"}}</small></th>
-                <th class="w3-hide-small table-cut "><small>{{intlGet "fork_block"}}</small></th>
-                <th class="w3-hide-small w3-hide-medium "><small>{{intlGet "price"}}</small></th>
-                <th class="w3-hide-small w3-hide-medium "><small>{{intlGet "change"}} ({{intlGet "24hours"}})</small></th>
-                <th class="w3-hide-small w3-hide-medium "><small>{{intlGet "change"}} ({{intlGet "7days"}})</small></th>
-                <th class="w3-hide-small w3-hide-medium hide-below-extralage"><small>{{intlGet "price_graph"}} ({{intlGet
-                    "7days"}})</small>
-                </th>
-                <th><small>&nbsp;{{coin.shortName}}&nbsp;=</small></th>
-            </tr>
-            {{#each coin.forks}}
-            <tr>
-                <td sorttable_customkey="{{math @index '+' 1}}">{{math @index '+' 1}}</td>
-                <td><a href="/{{../language.id}}/details/{{id}}/">{{name}}</a></td>
-                <td class="w3-hide-small" sorttable_customkey="{{ratio}}" style="white-space: nowrap;" title="{{#unless
+            <table class="w3-table sortable" id="table-forks">
+                <tr>
+                    <th>
+                        <small>#</small>
+                    </th>
+                    <th>
+                        <small>{{intlGet "name"}}</small>
+                    </th>
+                    <th class="w3-hide-small">
+                        <small>1&nbsp;{{coin.shortName}}&nbsp;=</small>
+                    </th>
+                    <th class="w3-hide-small">
+                        <small>{{intlGet "fork_date"}}</small>
+                    </th>
+                    <th class="w3-hide-small table-cut ">
+                        <small>{{intlGet "fork_block"}}</small>
+                    </th>
+                    <th class="w3-hide-small w3-hide-medium ">
+                        <small>{{intlGet "price"}}</small>
+                    </th>
+                    <th class="w3-hide-small w3-hide-medium ">
+                        <small>{{intlGet "change"}} ({{intlGet "24hours"}})</small>
+                    </th>
+                    <th class="w3-hide-small w3-hide-medium ">
+                        <small>{{intlGet "change"}} ({{intlGet "7days"}})</small>
+                    </th>
+                    <th class="w3-hide-small w3-hide-medium hide-below-extralage">
+                        <small>{{intlGet "price_graph"}} ({{intlGet
+                            "7days"}})
+                        </small>
+                    </th>
+                    <th>
+                        <small>&nbsp;{{coin.shortName}}&nbsp;=</small>
+                    </th>
+                </tr>
+                {{#each coin.forks}}
+                <tr>
+                    <td sorttable_customkey="{{math @index '+' 1}}">{{math @index '+' 1}}</td>
+                    <td><a href="/{{../language.id}}/details/{{id}}/">{{name}}</a></td>
+                    <td class="w3-hide-small" sorttable_customkey="{{ratio}}" style="white-space: nowrap;" title="{{#unless
                     isCrawlable}}{{#each crawlAlternativesWithSameSymbol}}{{name}}{{#unless @last}}, {{/unless}}{{/each}}{{/unless}}">
-                    {{ratio}}
-                    {{shortName}}{{#unless
-                    isCrawlable}}*{{/unless}}
-                </td>
-                <td class="w3-hide-small"
-                    sorttable_customkey="{{{localDate date 'timestamp'}}}{{#unless date}}9999991703000{{/unless}}">
-                    {{{localDateInSpan date dateFormat}}}
-                </td>
+                        {{ratio}}
+                        {{shortName}}{{#unless
+                        isCrawlable}}*{{/unless}}
+                    </td>
+                    <td class="w3-hide-small"
+                        sorttable_customkey="{{{localDate date 'timestamp'}}}{{#unless date}}9999991703000{{/unless}}">
+                        {{{localDateInSpan date dateFormat}}}
+                    </td>
 
-                <td class="w3-hide-small  table-cut"
-                    sorttable_customkey="{{block}}{{#unless block}}999999999{{/unless}}">
-                    {{block}}{{#unless block}}-{{/unless}}
-                </td>
-
-
-                <td class="w3-hide-small js-right w3-hide-medium " sorttable_customkey="{{price}}">
-                    {{{fiatWithCurrencyInSpan price
-                    ../fiat
-                    ../language}}}
-                </td>
-                <td sorttable_customkey="{{priceChangeOneDayPercentage}}{{#unless priceChangeOneDayPercentage}}-999{{/unless}}"
-                    class="w3-hide-small w3-hide-medium {{#if priceChangeOneDayIsPositive}}w3-text-green{{/if}} {{#if priceChangeOneDayIsNegative}}w3-text-red{{/if}}">
-                    {{#if priceChangeOneDayPercentage}}{{#if
-                    priceChangeOneDayIsPositive}}+{{/if}}{{formatNumber priceChangeOneDayPercentage
-                    "percentage"}}{{/if}}
-                </td>
-
-                <td sorttable_customkey="{{priceChangeSevenDaysPercentage}}{{#unless priceChangeSevenDaysPercentage}}-999{{/unless}}"
-                    class="w3-hide-small w3-hide-medium {{#if priceChangeSevenDaysIsPositive}}w3-text-green{{/if}} {{#if priceChangeSevenDaysIsNegative}}w3-text-red{{/if}}">
-                    {{#if priceChangeSevenDaysPercentage}}{{#if
-                    priceChangeSevenDaysIsPositive}}+{{/if}}{{formatNumber priceChangeSevenDaysPercentage
-                    "percentage"}}{{/if}}
-                </td>
+                    <td class="w3-hide-small  table-cut"
+                        sorttable_customkey="{{block}}{{#unless block}}999999999{{/unless}}">
+                        {{block}}{{#unless block}}-{{/unless}}
+                    </td>
 
 
-                <td class="w3-hide-small w3-hide-medium hide-below-extralage">
-                    {{#with priceGraphData}}
-                    <svg xmlns="http://www.w3.org/2000/svg" version="1" width="{{width}}"
-                         height="{{height}}">
-                        <path stroke="#f7931a" stroke-width="2" fill="transparent" stroke-linecap="square"
-                              d="{{data}}"/>
-                    </svg>
-                    {{/with}}
-                </td>
-                <td class="js-right" sorttable_customkey="{{priceTimesForkRatio}}">{{{fiatWithCurrencyInSpan
-                    priceTimesForkRatio ../fiat
-                    ../language}}}
-                </td>
-            </tr>
-            {{/each}}
-        </table>
+                    <td class="w3-hide-small js-right w3-hide-medium " sorttable_customkey="{{price}}">
+                        {{{fiatWithCurrencyInSpan price
+                        ../fiat
+                        ../language}}}
+                    </td>
+                    <td sorttable_customkey="{{priceChangeOneDayPercentage}}{{#unless priceChangeOneDayPercentage}}-999{{/unless}}"
+                        class="w3-hide-small w3-hide-medium {{#if priceChangeOneDayIsPositive}}w3-text-green{{/if}} {{#if priceChangeOneDayIsNegative}}w3-text-red{{/if}}">
+                        {{#if priceChangeOneDayPercentage}}{{#if
+                        priceChangeOneDayIsPositive}}+{{/if}}{{formatNumber priceChangeOneDayPercentage
+                        "percentage"}}{{/if}}
+                    </td>
+
+                    <td sorttable_customkey="{{priceChangeSevenDaysPercentage}}{{#unless priceChangeSevenDaysPercentage}}-999{{/unless}}"
+                        class="w3-hide-small w3-hide-medium {{#if priceChangeSevenDaysIsPositive}}w3-text-green{{/if}} {{#if priceChangeSevenDaysIsNegative}}w3-text-red{{/if}}">
+                        {{#if priceChangeSevenDaysPercentage}}{{#if
+                        priceChangeSevenDaysIsPositive}}+{{/if}}{{formatNumber priceChangeSevenDaysPercentage
+                        "percentage"}}{{/if}}
+                    </td>
+
+
+                    <td class="w3-hide-small w3-hide-medium hide-below-extralage">
+                        {{#with priceGraphData}}
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1" width="{{width}}"
+                             height="{{height}}">
+                            <path stroke="#f7931a" stroke-width="2" fill="transparent" stroke-linecap="square"
+                                  d="{{data}}"/>
+                        </svg>
+                        {{/with}}
+                    </td>
+                    <td class="js-right" sorttable_customkey="{{priceTimesForkRatio}}">{{{fiatWithCurrencyInSpan
+                        priceTimesForkRatio ../fiat
+                        ../language}}}
+                    </td>
+                </tr>
+                {{/each}}
+            </table>
+        </div>
     </div>
-</div>
 
-<div class="w3-container extralarge-content ">
-    <div class="w3-right" id="sum-forks">
-        <b>All forks: {{{fiatWithCurrencyInSpan coin.priceSumForks fiat language}}}</b>
+    <div class="w3-container extralarge-content ">
+        <div class="w3-right" id="sum-forks">
+            <b>All forks: {{{fiatWithCurrencyInSpan coin.priceSumForks fiat language}}}</b>
+        </div>
     </div>
-</div>
 
 </div>
 
