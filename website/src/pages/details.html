@@ -1,18 +1,32 @@
 {{> header-list}}
 
-<div class="w3-row">
-    <div class="w3-container w3-half">
-
-        <h1>{{coin.name}}</h1>
-    </div>
+<div class="w3-container extralarge-content js-main-page-heading">
+    <div class="w3-center"> 
+        <h1><b><span>{{coin.name}}</span></b></h1>
+    </div>   
 </div>
 
+<div class="w3-container js-detail-page-size">
 <div class="w3-row">
-    {{#with coin}}
+
+        {{#with coin}}
+
+    <div class="w3-container w3-full js-price-graph-detail">
+        <h2>{{intlGet "price_graph"}} ({{intlGet "7days"}})</h2>
+        {{#with priceGraphData}}
+        <div class="js-price-graph-back">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1" width="100%" height="auto">
+            <path stroke="#f7931a" stroke-width="2" fill="transparent" stroke-linecap="square" d="{{data}}"/>
+        </svg>
+        </div>
+        {{/with}}        
+    </div>
+
+    
     <div class="w3-container w3-third">
         <h2>{{intlGet "details"}}</h2>
 
-        <ul>
+        <ul class="js-detail-list">
             <li>{{intlGet "name"}}: {{name}}</li>
             <li>{{intlGet "price"}}: {{{fiatWithCurrencyInSpan price ../fiat ../language}}}</li>
             <li>{{intlGet "change"}} ({{intlGet "24hours"}}): <span
@@ -38,21 +52,13 @@
             {{/each}}
         </ul>
 
-        <h2>{{intlGet "price_graph"}} ({{intlGet "7days"}})</h2>
-        {{#with priceGraphData}}
-        <svg xmlns="http://www.w3.org/2000/svg" version="1" width="{{width}}" height="{{height}}"
-        >
-            <path stroke="#f7931a" stroke-width="2" fill="transparent" stroke-linecap="square"
-                  d="{{data}}"/>
-        </svg>
-        {{/with}}
     </div>
 
     <div class="w3-container w3-twothird">
 
         {{#if links}}
         <h2>Links</h2>
-        <ul>
+        <ul class="js-detail-list">
             {{#each links}}
             <li><a href="{{url}}" target="link-{{id}}" style="text-transform: capitalize;">{{type}}</a></li>
             {{/each}}
@@ -65,7 +71,7 @@
 
         <p>{{intlGet "use_any_of_the_following_links"}} {{name}}</p>
 
-        <ul>
+        <ul class="js-detail-list">
             {{#each markets}}
             <li>
                 <a target="market-{{source}}" href="{{url}}">{{title}}</a>{{#if hasReferral}}&sup1; {{/if}}:
@@ -161,6 +167,7 @@
     </div>
     {{/unless}}
 
+</div>
 
     {{/with}}
 </div>
