@@ -38,12 +38,17 @@
 <body class="w3-theme-l3">
 
 <div class="js-header">
-    <a href="/{{language.id}}" class="js-logo">
+    <a href="/{{language.id}}" class="js-logo" title="Home">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 154 36" style="enable-background:new 0 0 154 36;" xml:space="preserve">
         <style type="text/css">
-            .st0{fill:#020203;}
-            .st1{fill:#CC1B59;}
+            .st0 {
+                fill: #020203;
+            }
+
+            .st1 {
+                fill: #CC1B59;
+            }
         </style>
         <g>
             <path class="st0" d="M41,10.1h2.6l6.1,16.8h-2.5l-1.8-5h-6.6l-1.8,5h-2.3L41,10.1z M44.8,20l-2.6-7.4L39.5,20H44.8z"/>
@@ -75,31 +80,32 @@
                 c0.6-0.2,1-0.8,0.8-1.5l-2.8-9.5l12.8-3.7c0.6-0.2,1-0.8,0.8-1.5l-1.5-5C24.6,12.2,23.9,11.9,23.3,12.1z"/>
             <circle class="st1" cx="6.3" cy="14.7" r="3.6"/>
         </g>
+        </svg>
     </a>
     <div class="js-header-select-section">
         <div class="js-custom-select">
             <label for="select-languages"></label>
             <select
-                title="languages"
-                aria-label="language"
-                name="select-languages"
-                id="select-languages"
-                onchange="location = this.value;">
+                    title="languages"
+                    aria-label="language"
+                    name="select-languages"
+                    id="select-languages"
+                    onchange="location = this.value;">
                 {{#each selectLanguages}}
-                    <option value="{{value}}" {{selected}}>{{title}}</option>
+                <option value="{{value}}" {{selected}}>{{title}}</option>
                 {{/each}}
             </select>
         </div>
         <div class="js-custom-select">
             <label for="select-currencies"></label>
             <select
-                title="currency"
-                aria-label="currency"
-                name="select-currencies"
-                id="select-currencies"
-                onchange="location = this.value;">
+                    title="currency"
+                    aria-label="currency"
+                    name="select-currencies"
+                    id="select-currencies"
+                    onchange="location = this.value;">
                 {{#each selectFiats}}
-                    <option value="{{value}}" {{selected}} data-fiat-option="{{id}}">{{title}}</option>
+                <option value="{{value}}" {{selected}} data-fiat-option="{{id}}">{{title}}</option>
                 {{/each}}
             </select>
         </div>
