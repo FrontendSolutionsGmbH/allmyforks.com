@@ -107,8 +107,8 @@
                     <td> {{formatNumber to.value}} {{to.name}}</td>
                     <td><a target="market-{{source}}"
                            href="{{url}}">{{title}}</a></td>
-                    <td>1:{{formatNumber ratio}}</td>
-                    <td>{{{localDateInSpan courses.[0].date "datetime"}}}</td>
+                    <td class="w3-hide-small">1:{{formatNumber ratio}}</td>
+                    <td class="w3-hide-small">{{{localDateInSpan courses.[0].date "datetime"}}}</td>
                 </tr>
                 {{/each}}
                 <tr>

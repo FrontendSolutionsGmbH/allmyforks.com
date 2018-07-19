@@ -37,3 +37,13 @@
 .nowrap {
     white-space: nowrap;
 }
+
+@media (max-width: 420px) {
+    .js-coin-select-outer {
+        padding: 0 0.4rem !important
+    }
+
+    .js-coin-select > span {
+        margin: 0 0.2rem !important;
+    }
+}
