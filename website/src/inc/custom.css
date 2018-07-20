@@ -52,3 +52,7 @@
 .js-forks-table-wrapper-decoration {
     pointer-events: none !important;
 }
+
+a.js-logo svg {
+    height: 45px !important;
+}
