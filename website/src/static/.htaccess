@@ -1,0 +1,4 @@
+#Force non-www:
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^www\.allmyforks\.com [NC]
+RewriteRule ^(.*)$ http://allmyforks.com/$1 [L,R=301]
