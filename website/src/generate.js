@@ -79,6 +79,7 @@ var generatePage = function (data, directoryFromRoot, templateFunc, pageId, raw,
 
     if (!raw) {
         data.url = '/' + directoryFromRoot
+        data.urlAfterLanguage = directoryFromRoot.substr(directoryFromRoot.indexOf('/')+1)
         data.pageId = pageId || 'default'
 
         var selectors = helper.getSelectorsLangFiatCoins(data)
