@@ -27,10 +27,7 @@
 
 
     {{#each selectLanguages}}
-    {{#ifCond id '!=' ../language.id}}
     <link rel="alternate" href="https://allmyforks.com{{value}}" hreflang="{{id}}">
-    {{/ifCond}}
-
     {{#ifCond id '==' 'en'}}
     {{#ifCond urlAfterLanguage '==' ''}}
     <link rel="alternate" href="https://allmyforks.com/" hreflang="en">
