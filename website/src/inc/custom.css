@@ -31,6 +31,28 @@
 
 .w3-primary, .w3-hover-primary:hover {
     color: #fff !important;
-    background-color: #f44336 !important
+    background-color: #CC1B59;
 }
 
+.nowrap {
+    white-space: nowrap;
+}
+
+@media (max-width: 420px) {
+    .js-coin-select-outer {
+        padding: 0 0.4rem !important
+    }
+
+    .js-coin-select > span {
+        margin: 0 0.2rem !important;
+    }
+}
+
+
+.js-forks-table-wrapper-decoration {
+    pointer-events: none !important;
+}
+
+a.js-logo svg {
+    height: 45px !important;
+}

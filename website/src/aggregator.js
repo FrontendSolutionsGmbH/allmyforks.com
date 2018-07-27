@@ -18,7 +18,10 @@ var enrichPricesAndParents = function (coin) {
         coin.priceGraphData = {
             width: width,
             height: height + 10,
-            data: coin.priceHistory.reduce((t, e, i) => (t ? t + 'L ' : 'M') + '' + i * fx + ' ' + (((e - min) * fy) + 5), '')
+            data: coin.priceHistory.reduce((t, e, i) => (t ? t + 'L ' : 'M') + '' + i * fx + ' ' + (((e - min) * fy) + 5), ''),
+            max: max,
+            min: min,
+            maxMinusMin: max - min
         }
 
         if (coin.priceHistory.length > 1 && coin.priceHistory[1] > 0.0) {
@@ -186,7 +189,7 @@ var mergeData = function (localData, crawledData) {
                         p.hasReferral = true
                     } else if (p.source.name === 'okex.com') {
                         p.url = 'https://www.okex.com/market?product=' + p.from.name.toLowerCase() + '_' + p.to.name.toLowerCase()
-                    } else if (p.source.name === 'fiat' ) {
+                    } else if (p.source.name === 'fiat') {
                         p.url = ''
                         p.title = ''
                     }
@@ -210,11 +213,11 @@ var mergeData = function (localData, crawledData) {
                     if (pindex > 0) {
                         return
                     }
-                    if (p.source.type  !== 'exchange') {
+                    if (p.source.type !== 'exchange') {
                         return
                     }
 
-                    var index = d.markets.findIndex(m => m.source === p.source)
+                    var index = d.markets.findIndex(m => m.source.name === p.source.name)
                     if (index >= 0) {
                         if (r.courses[0] > d.markets[index].ratio) {
                             d.markets[index].ratio = r.courses[0]

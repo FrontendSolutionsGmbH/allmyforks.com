@@ -11,7 +11,7 @@ const data = {
 
     "pages": {
         "default": {
-            "title": "allmyforks.com",
+            "title": "AllMyForks.com",
             "description": "Cryptocurrency Fork Overview"
         },
         "imprint": {
@@ -35,15 +35,15 @@ const data = {
             "description": "AllMyForks Disclaimer"
         },
         "supportus": {
-            "title": "Support allmyforks.com",
-            "description": "Support allmyforks.com"
+            "title": "Support AllMyForks.com",
+            "description": "Support AllMyForks.com"
         },
         "list": {
             "title": "{{coin.shortName}}-Forks {{{fiatWithCurrency coin.priceSumForks fiat language}}}",
-            "description": "Cryptocurrency Fork rankings, charts, and more"
+            "description": "1 {{coin.name}} gives you up to {{{fiatWithCurrency coin.priceSumForks fiat language}}} from forks"
         },
         "details": {
-            "title": "{{coin.name}} ({{coin.shortName}}) Fork",
+            "title": "{{coin.name}} ({{coin.shortName}}) fork",
             "description": "Claim {{coin.shortName}} forked coins"
         },
         "api": {
