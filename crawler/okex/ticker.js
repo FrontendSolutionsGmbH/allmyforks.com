@@ -123,6 +123,15 @@ const start = function (currencies) {
       socket.send(msg)
     }
   })
+
+  socket.on('error', err => {
+    log.error("Received an error!", err)
+  })
+
+  socket.on('close', () => {
+    log.info("Connection closed. Restarting now ...")
+    start(currencies)
+  })
 }
 
 module.exports = {

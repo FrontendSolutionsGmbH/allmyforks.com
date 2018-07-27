@@ -96,16 +96,24 @@ const handleMessage = function(message, currency) {
     .catch((err) => log.error("Failed to save course for: " + JSON.stringify(currency), err))
 }
 
+const startForCurrency = function(currency) {
+  const uri = `wss://stream.binance.com:9443/ws/${currency.symbol.toLowerCase()}@kline_1d`
+  const socket = new WebSocket(uri)
+
+  //we don't have to send anything... just listen
+  socket.on('message', (message) => handleMessage(message, currency))
+  socket.on('error', (err) => {
+    log.error(`Could not establish socket for ${currency.symbol}. URI: ${uri}`, err)
+  })
+  socket.on('close', () => {
+    log.info(`Connection for ${currency} closed. Restarting now ...`)
+    startForCurrency(currency)
+  })
+}
+
 const start = function (currencies) {
   for(let currency of currencies) {
-    const uri = `wss://stream.binance.com:9443/ws/${currency.symbol.toLowerCase()}@kline_1d`
-    const socket = new WebSocket(uri)
-
-    //we don't have to send anything... just listen
-    socket.on('message', (message) => handleMessage(message, currency))
-    socket.on('error', (err) => {
-      log.error(`Could not establish socket for ${currency.symbol}. URI: ${uri}`, err)
-    })
+    startForCurrency(currency)
   }
 }
 
