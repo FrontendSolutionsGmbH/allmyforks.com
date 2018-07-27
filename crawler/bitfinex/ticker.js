@@ -6,7 +6,12 @@ const WebSocket = require('ws');
 
 const WS_URI = 'wss://api.bitfinex.com/ws/2'
 
-const handleEvent = function(event, state){
+const handleEvent = function(event, state, socket){
+  if(event.code === 20051) {
+    //reconnect signal!
+    socket.close()
+    return
+  }
   if(event.event !== 'subscribed') {
     log.warn("Unknown event received: " + JSON.stringify(event));
     return
@@ -93,12 +98,12 @@ const handleData = function(data, state) {
     .catch((err) => log.error("Failed to save course for: " + JSON.stringify(currency), err))
 }
 
-const handleMessage = function(message, state) {
+const handleMessage = function(message, state, socket) {
   log.debug("Incoming Message: " + message)
   const parsed = JSON.parse(message);
 
   if(message.includes("event")){
-    handleEvent(parsed, state)
+    handleEvent(parsed, state, socket)
   }else{
     handleData(parsed, state)
   }
@@ -115,7 +120,7 @@ const start = function (currencies) {
     state.currencyMapping[currency.symbol] = currency
   }
 
-  socket.on('message', (message) => handleMessage(message, state))
+  socket.on('message', (message) => handleMessage(message, state, socket))
 
   socket.on('open', () => {
     //register foreach currency
@@ -128,6 +133,15 @@ const start = function (currencies) {
 
       socket.send(msg)
     }
+  })
+
+  socket.on('error', err => {
+    log.error("Received an error!", err)
+  })
+
+  socket.on('close', () => {
+    log.info("Connection closed. Restarting now ...")
+    start(currencies)
   })
 }
 
