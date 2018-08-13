@@ -41,7 +41,7 @@ app.route('/api/ratios/:type/:symbol')
       })
     })
     .catch(err => {
-      console.log("Error while calling ratios", err)
+      console.log(`Error while calling ratios for ${req.params.type}/${req.params.symbol}`, err)
       res.status(500);
       res.send({
         error: "" + err
@@ -67,7 +67,7 @@ app.route('/api/ratios/:fType/:fSymbol/:tType/:tSymbol')
       })
     })
     .catch(err => {
-      console.log("Error while calling ratios", err)
+      console.log(`Error while calling ratios for ${req.params.fType}/${req.params.fSymbol} => ${req.params.tType}/${req.params.tSymbol}`, err)
       res.status(500);
       res.send({
         error: "" + err
