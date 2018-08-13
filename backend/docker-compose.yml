@@ -1,0 +1,184 @@
+version: '3'
+services:
+
+  db:
+    image: mongo
+    volumes:
+      - ./db:/data/db
+    restart: always
+
+###################
+#
+# CRAWLER
+#
+
+  crawler_fiat:
+    image: rainu/allmyforks-backend
+    build:
+      context: ./
+    environment:
+      - CFG_MONGO_HOST=db
+      - CFG_MONGO_DB=fiat
+      - CFG_CRON=0 0 */12 * * *
+    command: "crawler/fiat.js"
+    restart: always
+    depends_on:
+      - db
+
+  crawler_coinmarketcap:
+    image: rainu/allmyforks-backend
+    build:
+      context: ./
+    environment:
+      - CFG_MONGO_HOST=db
+      - CFG_MONGO_DB=coinmarketcap
+      - CFG_CRON=0 0 */4 * * *
+    command: "crawler/coinmarketcap.js"
+    restart: always
+    depends_on:
+      - db
+
+  ticker_coinmarketcap:
+    image: rainu/allmyforks-backend
+    build:
+      context: ./
+    environment:
+      - CFG_MONGO_HOST=db
+      - CFG_MONGO_DB=coinmarketcap
+      - CFG_CRON=0 */5 * * * *
+      - CFG_REQUEST_BATCH=25
+      - CFG_REQUEST_COOLDOWN=60000
+    command: "crawler/coinmarketcap_ticker.js"
+    restart: always
+    depends_on:
+      - db
+
+  crawler_bitfinex:
+    image: rainu/allmyforks-backend
+    build:
+      context: ./
+    environment:
+      - CFG_MONGO_HOST=db
+      - CFG_MONGO_DB=bitfinex
+      - CFG_CRON=0 0 */4 * * *
+    command: "crawler/bitfinex.js"
+    restart: always
+    depends_on:
+      - db
+
+  ticker_bitfinex:
+    image: rainu/allmyforks-backend
+    build:
+      context: ./
+    environment:
+      - CFG_MONGO_HOST=db
+      - CFG_MONGO_DB=bitfinex
+    command: "crawler/bitfinex_ticker.js"
+    restart: always
+    depends_on:
+      - db
+
+  crawler_binance:
+    image: rainu/allmyforks-backend
+    build:
+      context: ./
+    environment:
+      - CFG_MONGO_HOST=db
+      - CFG_MONGO_DB=binance
+      - CFG_CRON=0 0 */4 * * *
+    command: "crawler/binance.js"
+    restart: always
+    depends_on:
+      - db
+
+  ticker_binance:
+    image: rainu/allmyforks-backend
+    build:
+      context: ./
+    environment:
+      - CFG_MONGO_HOST=db
+      - CFG_MONGO_DB=binance
+    command: "crawler/binance_ticker.js"
+    restart: always
+    depends_on:
+      - db
+
+  crawler_okex:
+    image: rainu/allmyforks-backend
+    build:
+      context: ./
+    environment:
+      - CFG_MONGO_HOST=db
+      - CFG_MONGO_DB=okex
+      - CFG_CRON=0 0 */4 * * *
+    command: "crawler/okex.js"
+    restart: always
+    depends_on:
+      - db
+
+  ticker_okex:
+    image: rainu/allmyforks-backend
+    build:
+      context: ./
+    environment:
+      - CFG_MONGO_HOST=db
+      - CFG_MONGO_DB=okex
+    command: "crawler/okex_ticker.js"
+    restart: always
+    depends_on:
+      - db
+
+  crawler_coinbase:
+    image: rainu/allmyforks-backend
+    build:
+      context: ./
+    environment:
+      - CFG_MONGO_HOST=db
+      - CFG_MONGO_DB=coinbase
+      - CFG_JOB_0_SYMBOL=BTC
+      - CFG_JOB_0_CRON=0 0 */4 * * *
+      - CFG_JOB_1_SYMBOL=BCH
+      - CFG_JOB_1_CRON=0 0 */4 * * *
+      - CFG_JOB_2_SYMBOL=ETH
+      - CFG_JOB_2_CRON=0 0 */4 * * *
+      - CFG_JOB_3_SYMBOL=LTC
+      - CFG_JOB_3_CRON=0 0 */4 * * *
+    command: "crawler/coinbase.js"
+    restart: always
+    depends_on:
+      - db
+
+###################
+#
+# AGGREGATOR
+#
+
+  course_aggregator:
+    image: rainu/allmyforks-backend
+    build:
+      context: ./
+    environment:
+      - CFG_SOURCE_0_URL=mongodb://db/coinmarketcap
+      - CFG_SOURCE_0_NAME=coinmarketcap.com
+      - CFG_SOURCE_0_TYPE=price
+      - CFG_SOURCE_1_URL=mongodb://db/bitfinex
+      - CFG_SOURCE_1_NAME=bitfinex.com
+      - CFG_SOURCE_1_TYPE=exchange
+      - CFG_SOURCE_2_URL=mongodb://db/binance
+      - CFG_SOURCE_2_NAME=binance.com
+      - CFG_SOURCE_2_TYPE=exchange
+      - CFG_SOURCE_3_URL=mongodb://db/coinbase
+      - CFG_SOURCE_3_NAME=coinbase.com
+      - CFG_SOURCE_3_TYPE=exchange
+      - CFG_SOURCE_4_URL=mongodb://db/fiat
+      - CFG_SOURCE_4_NAME=fiat
+      - CFG_SOURCE_4_TYPE=price
+      - CFG_SOURCE_5_URL=mongodb://db/okex
+      - CFG_SOURCE_5_NAME=okex.com
+      - CFG_SOURCE_5_TYPE=exchange
+    command: "--max-old-space-size=2048 aggregator/src/server.js"
+    ports:
+      - "3000:3000"
+    restart: always
+    depends_on:
+      - db

@@ -4,35 +4,21 @@ stages:
   - test
   - dockerize
 
-aggregator-test:
-  image: rainu/docker-node
+backend-test:
   stage: test
   script:
     - apk --update add git
-    - cd aggregator/course
+    - cd backend
     - npm install
     - npm run test
 
-dockerize-crawler:
-  image: tmaier/docker-compose:latest
-  stage: dockerize
-  script:
-    - docker login -u ${DOCKER_USER} -p ${DOCKER_PASSWORD}
-    - cd crawler
-    # it doesn't matter what a crawler we choose: all crawler have the same Dockerfile
-    - docker-compose build crawler_coinmarketcap
-    - docker-compose push crawler_coinmarketcap
-  only:
-    - master
-
-dockerize-aggregator:
-  image: rainu/docker-node
+dockerize-backend:
   stage: dockerize
   script:
     - apk --update --no-cache add docker
+    - cd backend
+    - docker build . -t rainu/allmyforks-backend
     - docker login -u ${DOCKER_USER} -p ${DOCKER_PASSWORD}
-    - cd aggregator/course
-    - docker build . -t rainu/cryptoaggregator
-    - docker push rainu/cryptoaggregator
+    - docker push rainu/allmyforks-backend
   only:
     - master
